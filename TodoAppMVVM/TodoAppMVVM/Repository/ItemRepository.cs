@@ -48,32 +48,32 @@ namespace TodoAppMVVM.Repository
             connect.Close();
         }
 
-        //public IEnumerable<Itemlist> GetAll(int id) //--------------------------------> Get All Itemm By Id
-        //{
-        //    var listFile = new List<Itemlist>();
-        //    connect = context.DbConnection();
-        //    connect.Open();
-        //    string Query = "SELECT * From Itemlists Where DatalistId = " + id;
+        public IEnumerable<ItemModel> GetAll(int id) //--------------------------------> Get All Itemm By Id
+        {
+            var listFile = new List<ItemModel>();
+            connect = context.DbConnection();
+            connect.Open();
+            string Query = "SELECT * From Itemlists Where DatalistId = " + id;
 
-        //    SQLiteCommand cmd = new SQLiteCommand(Query, connect);
-        //    SQLiteDataReader rd = cmd.ExecuteReader();
+            SQLiteCommand cmd = new SQLiteCommand(Query, connect);
+            SQLiteDataReader rd = cmd.ExecuteReader();
 
-        //    while (rd.Read())
-        //    {
+            while (rd.Read())
+            {
 
-        //        listFile.Add(new Itemlist()
-        //        {
-        //            ItemlistId = rd.GetInt32(0),
-        //            Name = rd.GetString(1),
-        //            Detailed = rd.GetString(2),
-        //            Status = rd.GetString(3)
-        //            // etc... (0, 1 refer to the column index)
-        //        });
-        //    }
-        //    connect.Close();
-        //    return listFile;
-        //    //throw new NotImplementedException();
-        //}
+                listFile.Add(new ItemModel()
+                {
+                    ItemModelId = rd.GetInt32(0),
+                    Name = rd.GetString(1),
+                    Detailed = rd.GetString(2),
+                    Status = rd.GetString(3)
+                    // etc... (0, 1 refer to the column index)
+                });
+            }
+            connect.Close();
+            return listFile;
+            //throw new NotImplementedException();
+        }
         public string Update(ItemModel data) //------------------------------>> Update
         {
             int id = data.ItemModelId;

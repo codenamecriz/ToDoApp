@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using ToDoApp_v1._2.Database;
-using ToDoApp_v1._2.Model;
-using ToDoApp_v1._2.Repository;
 
 namespace TodoAppMVVM.Services
 {

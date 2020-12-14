@@ -16,5 +16,6 @@ namespace TodoAppMVVM.SQLite
             return sqliteCon;
 
         }
+
     }
 }

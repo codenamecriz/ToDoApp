@@ -133,6 +133,7 @@
     <Compile Include="Services\TodoService.cs" />
     <Compile Include="Services\UnitOfWork.cs" />
     <Compile Include="SQLite\BuildConnection.cs" />
+    <Compile Include="SQLite\DBContext.cs" />
     <Compile Include="SQLite\IBuildConnection.cs" />
     <Compile Include="ViewModels\CreateItemViewModel.cs" />
     <Compile Include="ViewModels\CreateTodoViewModel.cs" />

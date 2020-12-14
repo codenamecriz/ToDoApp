@@ -7,7 +7,7 @@ namespace TodoAppMVVM.Repository
 {
     public interface IItemRepository
     {
-        //IEnumerable<ItemModel> GetAll(int id);
+        IEnumerable<ItemModel> GetAll(int id);
         string Add(ItemModel data);
         string Update(ItemModel data);
         void Delete(int id);

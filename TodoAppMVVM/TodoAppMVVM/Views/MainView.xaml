@@ -1,0 +1,173 @@
+﻿<Window x:Class="TodoAppMVVM.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TodoAppMVVM.Views"
+        mc:Ignorable="d"
+        Title="MainView" Height="450" Width="800">
+    <Border Padding="20">
+        <Grid x:Name="GridHolder">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions >
+                <RowDefinition Height="30" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+                <!--List Data Gridview-->
+            </Grid.RowDefinitions>
+            <Label Content="- X" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" FontSize="13" />
+            <!--Create List Button-->
+            <!--<Button x:Name="btn_CreateList" Content="Create New" Grid.Row="1" Grid.Column="0" Width="auto" Click="OpenListform" Cursor="Hand"/>-->
+            <Button x:Name="Btn_CreateList" Grid.Row="1" Content="Create List"  Cursor ="Hand"   >
+                <!-- Click="OpenListform" -->
+                
+            </Button>
+            <!--Create Item Button-->
+            <!--<Button x:Name="btn_CreateItem" Content="Create Item" Grid.Row="1" Grid.Column="1" Width="auto" Click="AddItemform"/>-->
+            <Button Visibility="Hidden" x:Name="btn_CreateItem" Content="Create Item" Grid.Row="1" Cursor="Hand"   >
+                <!--Click="AddItemform"-->
+                
+            </Button>
+            <!--Back to List View Button-->
+            <Button x:Name="btn_BacktoListView" Width="auto" Visibility="Hidden" Content="Back" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="1" Cursor="Hand" Background="{x:Null}" BorderBrush="{x:Null}"  >
+                <!--Click="BacktoListView"-->
+                
+            </Button>
+
+
+            <!--Data List Grid View-->
+            <DataGrid RowHeight="30" VerticalGridLinesBrush="Azure" x:Name="listDataGrid"
+                      AutoGenerateColumns="False" EnableRowVirtualization="True" 
+                      RowBackground="LightYellow" AlternatingRowBackground="LightBlue"
+                      CanUserAddRows="False" IsReadOnly="True" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,5,0,5"
+                      ColumnWidth="*" IsSynchronizedWithCurrentItem="True"  FontSize="20" BorderBrush="{x:Null}" >
+
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Visibility="Hidden" Width="35" Header="Id" Binding="{Binding TodoId}"/>
+                    <DataGridTextColumn Width="150" Header="Name" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Width="*" Header="Description" Binding="{Binding Description}"/>
+
+                    <DataGridTemplateColumn Width="55" Header="">
+                        <!--View-->
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <!--<Button Content="View" Click="View_ListData" />-->
+                                <Button Width="auto" Height="25"  Cursor="Hand" Background="{x:Null}" BorderBrush="{x:Null}"  Content="View" />
+                                <!--Click="View_ListData"-->
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Width="50" Header="">
+                        <!-- Update -->
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <!--<Button Content="Edit" Click="SelectListToEdit" />-->
+                                <Button Width="auto" Height="25"  Cursor="Hand" Background="{x:Null}" BorderBrush="{x:Null}" Content="Edit" />
+                                <!--Click="SelectListToEdit"-->
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Width="50" Header="">
+                        <!-- DeLETE -->
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <!--<Button Content="Delete" Click="DeleteList"/>-->
+                                <Button Width="auto" Height="25"  Cursor="Hand" Background="{x:Null}" BorderBrush="{x:Null}"  >
+                                    <!--Click="DeleteList"-->
+                                    <Button.Content>
+                                        <StackPanel Orientation="Horizontal" >
+                                            <!--<Image Source="Img/delete.png" Width="auto" Height="auto" Stretch="Fill" />-->
+
+                                        </StackPanel>
+                                    </Button.Content>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+
+
+                </DataGrid.Columns>
+            </DataGrid>
+            <!--Item Grid View-->
+            <DataGrid x:Name="itemsDataGrid" AutoGenerateColumns="False" Visibility="Hidden"
+                  EnableRowVirtualization="True" 
+                   RowDetailsVisibilityMode="VisibleWhenSelected" 
+                      IsReadOnly="True" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,5,0,0"
+                      ColumnWidth="*" IsSynchronizedWithCurrentItem="True" >
+
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Visibility="Hidden" Width="35" Header="Id" Binding="{Binding ItemlistId}"/>
+                    <DataGridTextColumn Width="150" Header="Name" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Width="*" Header="Detail" Binding="{Binding Detailed}"/>
+                    <DataGridTextColumn Width="70" Header="Status" Binding="{Binding Status}"/>
+
+
+                    <DataGridTemplateColumn Width="50" Header="">
+                        <!-- View Item-->
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <!--<Button Content="View" Click="View_ItemData" />-->
+                                <Button Width="auto" Height="30"  Cursor="Hand" Background="{x:Null}" BorderBrush="{x:Null}"  >
+                                    <!--Click="View_ItemData"-->
+                                    <Button.Content>
+                                        <StackPanel Orientation="Horizontal" >
+                                            <!--<Image Source="Img/view.png" Width="auto" Height="auto" Stretch="Fill" />-->
+
+                                        </StackPanel>
+                                    </Button.Content>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Width="50" Header="">
+                        <!--Update  Item-->
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <!--<Button Content="Edit" Click="SelectItemToEdit" />-->
+                                <Button Width="auto" Height="30"  Cursor="Hand" Background="{x:Null}" BorderBrush="{x:Null}"  >
+                                    <!--Click="SelectItemToEdit"-->
+                                    <Button.Content>
+                                        <StackPanel Orientation="Horizontal" >
+                                            <!--<Image Source="Img/pencil.png" Width="auto" Height="auto" Stretch="Fill" />-->
+
+                                        </StackPanel>
+                                    </Button.Content>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Width="50" Header="">
+                        <!--Delete  Item-->
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <!--<Button Content="Delete" Click="DeleteItem"/>-->
+                                <Button Width="auto" Height="30" Cursor="Hand" Background="{x:Null}" BorderBrush="{x:Null}"  >
+                                    <!--Click="DeleteItem"-->
+                                    <Button.Content>
+                                        <StackPanel Orientation="Horizontal" >
+                                            <!--<Image Source="Img/delete.png" Width="auto" Height="auto" Stretch="Fill" />-->
+
+                                        </StackPanel>
+                                    </Button.Content>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Border>
+</Window>

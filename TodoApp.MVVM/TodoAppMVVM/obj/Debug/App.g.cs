@@ -52,7 +52,7 @@ namespace TodoAppMVVM {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TodoAppMVVM;component/app.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TodoApp.MVVM;component/app.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\App.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

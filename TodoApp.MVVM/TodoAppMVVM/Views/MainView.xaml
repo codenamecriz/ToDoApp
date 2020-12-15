@@ -18,7 +18,7 @@
                 <RowDefinition Height="*" />
                 <!--List Data Gridview-->
             </Grid.RowDefinitions>
-            <Label Content="- X" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" FontSize="13" />
+            <Label Content="- X" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" FontSize="13" x:Name="Labelmsg" />
             <!--Create List Button-->
             <!--<Button x:Name="btn_CreateList" Content="Create New" Grid.Row="1" Grid.Column="0" Width="auto" Click="OpenListform" Cursor="Hand"/>-->
             <Button x:Name="Btn_CreateList" Grid.Row="1" Content="Create List"  Cursor ="Hand"   >
@@ -56,7 +56,7 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <!--<Button Content="View" Click="View_ListData" />-->
-                                <Button Width="auto" Height="25"  Cursor="Hand" Background="{x:Null}" BorderBrush="{x:Null}"  Content="View" />
+                                <Button x:Name="Btn_ViewItem" Width="auto" Height="25"  Cursor="Hand" Background="{x:Null}" BorderBrush="{x:Null}"  Content="View" />
                                 <!--Click="View_ListData"-->
 
                             </DataTemplate>
@@ -68,7 +68,7 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <!--<Button Content="Edit" Click="SelectListToEdit" />-->
-                                <Button Width="auto" Height="25"  Cursor="Hand" Background="{x:Null}" BorderBrush="{x:Null}" Content="Edit" />
+                                <Button x:Name="Btn_EditTodo" Width="auto" Height="25"  Cursor="Hand" Background="{x:Null}" BorderBrush="{x:Null}" Content="Edit" />
                                 <!--Click="SelectListToEdit"-->
 
                             </DataTemplate>
@@ -80,15 +80,15 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <!--<Button Content="Delete" Click="DeleteList"/>-->
-                                <Button Width="auto" Height="25"  Cursor="Hand" Background="{x:Null}" BorderBrush="{x:Null}"  >
-                                    <!--Click="DeleteList"-->
-                                    <Button.Content>
+                                <Button x:Name="Btn_DelTodo" Width="auto" Height="25"  Cursor="Hand" Background="{x:Null}" BorderBrush="{x:Null}" Content="D" />
+                                <!--Click="DeleteList"-->
+                                    <!--<Button.Content>
                                         <StackPanel Orientation="Horizontal" >
-                                            <!--<Image Source="Img/delete.png" Width="auto" Height="auto" Stretch="Fill" />-->
+                                            --><!--<Image Source="Img/delete.png" Width="auto" Height="auto" Stretch="Fill" />--><!--
 
                                         </StackPanel>
-                                    </Button.Content>
-                                </Button>
+                                    </Button.Content>-->
+                                <!--</Button>-->
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>

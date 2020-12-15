@@ -1,11 +1,11 @@
-﻿TodoAppMVVM
+﻿TodoApp.MVVM
 
 
 winexe
 C#
 .cs
 D:\PPS SE\Training Projects\TodoAppMVVM\TodoAppMVVM\obj\Debug\
-TodoAppMVVM
+TodoApp.MVVM
 none
 false
 DEBUG;TRACE
@@ -16,5 +16,5 @@ D:\PPS SE\Training Projects\TodoAppMVVM\TodoAppMVVM\App.xaml
 1361727452237
 Views\CreateItemView.xaml;Views\CreateTodoView.xaml;Views\MainView.xaml;Views\MessageView.xaml;
 
-True
+False
 

@@ -17,7 +17,6 @@ namespace TodoAppMVVM.Queries
         }
         public IEnumerable<TodoModel> GetAll()
         {
-            
             return unitOfWork.ListServices.LoadList();
         }
     }

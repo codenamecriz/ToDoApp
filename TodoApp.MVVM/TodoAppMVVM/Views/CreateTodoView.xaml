@@ -26,7 +26,7 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
-                    <TextBox Visibility="Hidden" x:Name="TodoId" Grid.Row="0" Grid.Column="1" Text="{Binding TodoId}"/>
+                    <TextBox Visibility="Hidden" x:Name="TodoId" Grid.Row="0" Grid.Column="1" Text="{Binding Path=TodoId, Mode=OneWay}"/>
                     <Label Grid.Row="0" Grid.Column="0" Content="Name:"/>
                     <TextBox x:Name="ListName" Grid.Row="0" Grid.Column="1" Text="{Binding Name}"/>
 

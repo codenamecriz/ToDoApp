@@ -100,7 +100,7 @@ namespace TodoAppMVVM.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TodoAppMVVM;component/views/createitemview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TodoApp.MVVM;component/views/createitemview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Views\CreateItemView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

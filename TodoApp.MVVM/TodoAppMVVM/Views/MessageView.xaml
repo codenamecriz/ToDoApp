@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:TodoAppMVVM.Views"
         mc:Ignorable="d"
         Title="MessageView" Height="200" Width="800">
-    <Grid>
-        <TextBlock Text="this is a message " x:Name="MsgForm" />
-    </Grid>
+
+    <Border Padding="20">
+        <Grid>
+            <TextBlock x:Name="YourMsg" Width="auto"></TextBlock>
+        </Grid>
+    </Border>
 </Window>

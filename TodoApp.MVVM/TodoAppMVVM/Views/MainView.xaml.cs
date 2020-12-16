@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TodoAppMVVM.ViewModels;
 
 namespace TodoAppMVVM.Views
 {
@@ -22,6 +23,7 @@ namespace TodoAppMVVM.Views
         public MainView()
         {
             InitializeComponent();
+            DataContext = new MainViewModel();
         }
     }
 }

@@ -8,16 +8,16 @@ using TodoAppMVVM.Services;
 
 namespace TodoAppMVVM.Queries
 {
-    public class GetAllTodoQuery
+    public class GetAllTodoQuery //: IGetAllTodoQuery
     {
-        private readonly IUnitOfWork unitOfWork;
-        public GetAllTodoQuery(IUnitOfWork _unitOfWork)
-        {
-            unitOfWork = _unitOfWork;
-        }
-        public IEnumerable<TodoModel> GetAll()
-        {
-            return unitOfWork.ListServices.LoadList();
-        }
+        //private readonly IUnitOfWork unitOfWork;
+        //public GetAllTodoQuery(IUnitOfWork _unitOfWork)
+        //{
+        //    unitOfWork = _unitOfWork;
+        //}
+        //public IEnumerable<TodoModel> GetAll()
+        //{
+        //    return unitOfWork.ListServices.LoadList();
+        //}
     }
 }

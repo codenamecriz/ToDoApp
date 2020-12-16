@@ -9,12 +9,14 @@ namespace TodoAppMVVM.Repository
 {
     public class ItemRepository : IItemRepository
     {
-        private readonly IBuildConnection context;
+        //private readonly IBuildConnection context;
         private SQLiteConnection connect;
-        public ItemRepository(IBuildConnection _context)
+        private readonly BuildConnection context;
+        public ItemRepository()//IBuildConnection _context)
         {
-            context = _context;
+            //context = _context;
             connect = new SQLiteConnection();
+            context = new BuildConnection();
         }
         public string Add(ItemModel data) //-------------------------> Insert Item
         {
@@ -40,7 +42,7 @@ namespace TodoAppMVVM.Repository
             connect = context.DbConnection();
             connect.Open();
             SQLiteCommand cmd = new SQLiteCommand(connect);
-            cmd.CommandText = "DELETE FROM Itemlists Where ItemlistId = @id ";
+            cmd.CommandText = "DELETE FROM Item Where ItemModelId = @id ";
 
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Prepare();
@@ -53,7 +55,7 @@ namespace TodoAppMVVM.Repository
             var listFile = new List<ItemModel>();
             connect = context.DbConnection();
             connect.Open();
-            string Query = "SELECT * From Itemlists Where DatalistId = " + id;
+            string Query = "SELECT * From Item Where TodoModelId = " + id;
 
             SQLiteCommand cmd = new SQLiteCommand(Query, connect);
             SQLiteDataReader rd = cmd.ExecuteReader();
@@ -84,7 +86,7 @@ namespace TodoAppMVVM.Repository
 
             connect.Open();
             SQLiteCommand cmd = new SQLiteCommand(connect);
-            cmd.CommandText = "UPDATE Itemlists SET Name = @name , Detailed = @des, Status = @status WHERE ItemlistId = " + id;
+            cmd.CommandText = "UPDATE Item SET Name = @name , Detailed = @des, Status = @status WHERE ItemModelId = " + id;
             cmd.Parameters.AddWithValue("@name", name);
             cmd.Parameters.AddWithValue("@des", des);
             cmd.Parameters.AddWithValue("@status", status);

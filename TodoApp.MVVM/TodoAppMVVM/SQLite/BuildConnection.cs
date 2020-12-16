@@ -11,7 +11,7 @@ namespace TodoAppMVVM.SQLite
     {
         public SQLiteConnection DbConnection() // Set SQLITE Connection
         {
-            string dbConnection = @"Data Source=datalist.db";
+            string dbConnection = @"Data Source=TodoDatabase.db";
             SQLiteConnection sqliteCon = new SQLiteConnection(dbConnection);
             return sqliteCon;
 

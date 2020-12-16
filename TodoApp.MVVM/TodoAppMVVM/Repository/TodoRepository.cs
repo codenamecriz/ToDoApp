@@ -9,41 +9,42 @@ namespace TodoAppMVVM.Repository
 {
     public class TodoRepository : ITodoRepository
     {
-        private readonly IBuildConnection context;
+        //private readonly IBuildConnection context;
         private SQLiteConnection connect;
-
-        public TodoRepository(IBuildConnection _context)
+        private readonly BuildConnection context;
+        public TodoRepository()//IBuildConnection _context)
         {
-            context = _context;
+            //context = _context;
             connect = new SQLiteConnection();
+            context = new BuildConnection();
         }
 
-        public IEnumerable<TodoModel> GetAllDatalist() // Get all Data
-        {
-            connect = context.DbConnection();
-            connect.Open();
-            //List<string> listFile = new List<string>();
-            var listFile = new List<TodoModel>();
+        //public IEnumerable<TodoModel> GetAllDatalist() // Get all Data
+        //{
+        //    connect = context.DbConnection();
+        //    connect.Open();
+        //    //List<string> listFile = new List<string>();
+        //    var listFile = new List<TodoModel>();
 
 
-            string Query = "Select * from Datalists";
-            SQLiteCommand cmd = new SQLiteCommand(Query, connect);
-            SQLiteDataReader rd = cmd.ExecuteReader();
+        //    string query = "Select * from Todo";
+        //    SQLiteCommand cmd = new SQLiteCommand(query, connect);
+        //    SQLiteDataReader rd = cmd.ExecuteReader();
 
-            while (rd.Read())
-            {
-                listFile.Add(new TodoModel()
-                {
-                    TodoModelId = rd.GetInt32(0),
-                    Name = rd.GetString(1),
-                    Description = rd.GetString(2)
-                });
+        //    while (rd.Read())
+        //    {
+        //        listFile.Add(new TodoModel()
+        //        {
+        //            TodoModelId = rd.GetInt32(0),
+        //            Name = rd.GetString(1),
+        //            Description = rd.GetString(2)
+        //        });
 
-            }
-            connect.Close();
-            return listFile;
-            //throw new NotImplementedException();
-        }
+        //    }
+        //    connect.Close();
+        //    return listFile;
+        //    //throw new NotImplementedException();
+        //}
 
 
         public string Add(TodoModel data) // Add to Datalist table
@@ -53,7 +54,7 @@ namespace TodoAppMVVM.Repository
 
             connect = context.DbConnection();
             connect.Open();
-            string Query = "INSERT INTO Datalists(Name, Description) VALUES('" + name + "', '" + description + "')";
+            string Query = "INSERT INTO Todo(Name, Description) VALUES('" + name + "', '" + description + "')";
 
             SQLiteCommand cmd = new SQLiteCommand(Query, connect);
             cmd.ExecuteNonQuery();
@@ -70,7 +71,7 @@ namespace TodoAppMVVM.Repository
             connect = context.DbConnection();
             connect.Open();
             SQLiteCommand cmd = new SQLiteCommand(connect);
-            cmd.CommandText = "UPDATE Datalists SET Name = @name , Description = @des WHERE DatalistId = " + id;
+            cmd.CommandText = "UPDATE Todo SET Name = @name , Description = @des WHERE DatalistId = " + id;
             cmd.Parameters.AddWithValue("@name", name);
             cmd.Parameters.AddWithValue("@des", des);
 
@@ -96,7 +97,7 @@ namespace TodoAppMVVM.Repository
             connect = context.DbConnection();
             connect.Open();
             SQLiteCommand cmd = new SQLiteCommand(connect);
-            cmd.CommandText = "DELETE FROM Datalists where DatalistId = @id ";
+            cmd.CommandText = "DELETE FROM Todo where DatalistId = @id ";
 
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Prepare();

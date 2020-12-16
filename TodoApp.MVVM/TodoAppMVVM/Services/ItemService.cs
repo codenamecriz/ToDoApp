@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TodoApp.MVVM.Repository;
 using TodoAppMVVM.Models;
 using TodoAppMVVM.Repository;
 
@@ -8,15 +9,17 @@ namespace TodoAppMVVM.Services
 {
     public class ItemService : IItemService
     {
-        private IItemRepository itemRepository;
+        //private IItemRepository itemRepository;
+        private ItemRepository itemRepository = new ItemRepository();
+        private readonly GetDataQueryRepository todoQueryRepository = new GetDataQueryRepository();
         private readonly List<ItemModel> newItem = new List<ItemModel>();
         private readonly List<ItemModel> updateItem = new List<ItemModel>();
         private readonly List<ItemModel> removeItem = new List<ItemModel>();
         private readonly List<ItemModel> ItemContainer = new List<ItemModel>();
         private List<string> result = new List<string>();
-        public ItemService(IItemRepository _itemRepository)
+        public ItemService()//IItemRepository _itemRepository)
         {
-            itemRepository = _itemRepository;
+            //itemRepository = _itemRepository;
         }
         struct Message
         {
@@ -27,7 +30,7 @@ namespace TodoAppMVVM.Services
         {
 
             //itemRepository = new ItemRepository();
-            ItemContainer.AddRange(itemRepository.GetAll(Id));
+            ItemContainer.AddRange(todoQueryRepository.GetAllItem(Id));
 
             return ItemContainer;
         }

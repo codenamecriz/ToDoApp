@@ -7,12 +7,14 @@ namespace TodoAppMVVM.Services
     public class UnitOfWork : IUnitOfWork
     {
 
-        private readonly ITodoService listServices;
-        private readonly IItemService itemServices;
-        public UnitOfWork(ITodoService _listServices, IItemService _itemServices)//IItemService _itemService, IListService _listService)
+        //private readonly ITodoService listServices;
+        //private readonly IItemService itemServices;
+        TodoService listServices;// = new TodoService();
+        ItemService itemServices; //= new ItemService();
+        public UnitOfWork()//ITodoService _listServices, IItemService _itemServices)//IItemService _itemService, IListService _listService)
         {
-            itemServices = _itemServices;
-            listServices = _listServices;
+            //itemServices = _itemServices;
+            //listServices = _listServices;
 
         }
         public string catchResult(List<string> actionResult) // ----> CatchResult Message
@@ -26,10 +28,10 @@ namespace TodoAppMVVM.Services
         {
             get
             {
-                //if (this.listServices == null)
-                //{
-                //    this.listServices = listServices;
-                //}
+                if (this.listServices == null)
+                {
+                    this.listServices = new TodoService();
+                }
                 return listServices;
             }
         }
@@ -39,10 +41,10 @@ namespace TodoAppMVVM.Services
         {
             get
             {
-                //if (this.itemServices == null)
-                //{
-                //    this.itemServices = itemServices;
-                //}
+                if (this.itemServices == null)
+                {
+                    this.itemServices = new ItemService();
+                }
                 return itemServices;
             }
         }

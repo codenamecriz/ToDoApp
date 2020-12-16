@@ -8,7 +8,7 @@ using TodoAppMVVM.Services;
 
 namespace TodoAppMVVM.Queries
 {
-    public class GetAllItemQuery
+    public class GetAllItemQuery : IGetAllItemQuery
     {
         private readonly IUnitOfWork unitOfWork;
         public GetAllItemQuery(IUnitOfWork _unitOfWork)

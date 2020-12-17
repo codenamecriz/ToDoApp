@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using Prism.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,10 +8,11 @@ using System.Threading.Tasks;
 using TodoAppMVVM.Models;
 using TodoAppMVVM.Services;
 using TodoAppMVVM.Views;
+using Action = System.Action;
 
 namespace TodoAppMVVM.ViewModels
 {
-    public class CreateTodoViewModel 
+    public class CreateTodoViewModel : ICloseWindows
     {
         private readonly UnitOfWork unitOfWork = new UnitOfWork();
         IWindowManager manager = new WindowManager();
@@ -35,31 +37,60 @@ namespace TodoAppMVVM.ViewModels
             //CreateTodoView todoClose = new CreateTodoView();
             //todoClose.Close();
         }
-        public void AddList()
+        public void SaveButton()
         {
-            //MessageViewModel msg = new MessageViewModel();
-            //msg.Message = ListName;
-
-            //manager.ShowWindow(msg);
-
-            var data = new TodoModel
+            
+            MessageViewModel msg = new MessageViewModel();
+            
+            if (ListName.Trim().Length != 0 && ListDescription.Trim().Length != 0)
             {
-                Name = Name,
-                Description = Description,
-            };
-            var result = unitOfWork.catchResult(unitOfWork.ListServices.RegisterNewList(data));
-            //MessageBox.Show(result);
+                if (Id != 0)
+                {
+                    var data = new TodoModel
+                    {
+                        TodoModelId = Id,
+                        Name = ListName,
+                        Description = ListDescription,
+                    };
+                    var result = unitOfWork.catchResult(unitOfWork.ListServices.UpdateList(data));
+                    msg.Message = result;
+                }
+                else
+                {
+                    var data = new TodoModel
+                    {
+                        Name = Name,
+                        Description = Description,
+                    };
+                    var result = unitOfWork.catchResult(unitOfWork.ListServices.RegisterNewList(data));
+                    msg.Message = result;
+
+                }
+                Close?.Invoke();
+                
+            }
+            else { msg.Message = "Please Fill up All TextBox!!"; }
+            manager.ShowWindow(msg);
         }
         //private string _msg = "this is a message ";
+        
         public string ListName
         {
-            get { return Name; }
+            get {
+                if (Name == null)
+                { Name = ""; }
+                return Name; 
+            }
             set { Name = value; }
         }
 
         public string ListDescription
         {
-            get { return Description; }
+            get {
+                if (Description == null)
+                { Description = ""; }
+                 return Description; 
+            }
             set { Description = value; }
         }
         public int TodoId
@@ -67,5 +98,17 @@ namespace TodoAppMVVM.ViewModels
             get { return Id; }
             set { Id = value; }
         }
+
+        private DelegateCommand _closeCommand;
+        public DelegateCommand CloseCommand => _closeCommand ?? (_closeCommand = new DelegateCommand(CloseWindow));
+        void CloseWindow()
+        {
+            Close?.Invoke();
+        }
+        public Action Close { get; set; }
+    }
+    interface ICloseWindows
+    {
+        Action Close { get; set; }
     }
 }

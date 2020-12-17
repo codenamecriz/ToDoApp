@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TodoAppMVVM.Views"
         mc:Ignorable="d"
-        Title="MessageView" Height="200" Width="800">
+        Title="MessageView" Height="200" Width="500">
 
     <Border Padding="20">
         <Grid>
-            <TextBlock x:Name="YourMsg" Width="auto"></TextBlock>
+            <TextBlock x:Name="YourMsg" Width="auto" FontSize="20" ></TextBlock>
         </Grid>
     </Border>
 </Window>

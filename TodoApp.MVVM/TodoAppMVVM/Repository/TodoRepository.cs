@@ -71,7 +71,7 @@ namespace TodoAppMVVM.Repository
             connect = context.DbConnection();
             connect.Open();
             SQLiteCommand cmd = new SQLiteCommand(connect);
-            cmd.CommandText = "UPDATE Todo SET Name = @name , Description = @des WHERE DatalistId = " + id;
+            cmd.CommandText = "UPDATE Todo SET Name = @name , Description = @des WHERE TodoModelId = " + id;
             cmd.Parameters.AddWithValue("@name", name);
             cmd.Parameters.AddWithValue("@des", des);
 
@@ -97,7 +97,7 @@ namespace TodoAppMVVM.Repository
             connect = context.DbConnection();
             connect.Open();
             SQLiteCommand cmd = new SQLiteCommand(connect);
-            cmd.CommandText = "DELETE FROM Todo where DatalistId = @id ";
+            cmd.CommandText = "DELETE FROM Todo where TodoModelId = @id ";
 
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Prepare();

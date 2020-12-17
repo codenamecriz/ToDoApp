@@ -4,8 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TodoAppMVVM.Views"
-        mc:Ignorable="d"
+        xmlns:local1="clr-namespace:TodoAppMVVM.ViewModels"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
         Title="CreateTodoView" Height="200" Width="350">
+    <Window.DataContext>
+        <local1:CreateTodoViewModel />
+    </Window.DataContext>
     <Grid>
         <Border Grid.Column="0" Margin="5" BorderThickness="1" BorderBrush="Black">
             <StackPanel  Margin="5">
@@ -50,8 +54,8 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="40" />
                         </Grid.RowDefinitions>
-                        <Button Grid.Column="0" Content="Save" Margin="5"  x:Name="AddList" />
-                        <Button Grid.Column="1" Content="Cancel" Margin="5" x:Name="Cancel"/>
+                        <Button Grid.Column="0" Content="Save" Margin="5"  x:Name="SaveButton"  />
+                        <Button Grid.Column="1" Content="Cancel" Margin="5" x:Name="Cancel" Command="{Binding CloseCommand}" />
                     </Grid>
                 </StackPanel>
             </StackPanel>

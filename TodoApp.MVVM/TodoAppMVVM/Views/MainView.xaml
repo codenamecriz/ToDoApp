@@ -7,7 +7,11 @@
         mc:Ignorable="d"
         Title="MainView" Height="450" Width="800"
         x:Name="_window"
+        d:DataContext="{d:DesignInstance Type=local:MainViewModel, IsDesignTimeCreatable=True}"
         >
+    <Window.Resources >
+        <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+    </Window.Resources>
     <Border Padding="20">
         <Grid x:Name="GridHolder">
             <Grid.ColumnDefinitions>
@@ -20,10 +24,17 @@
                 <RowDefinition Height="*" />
                 <!--List Data Gridview-->
             </Grid.RowDefinitions>
-            <Label Content="- X" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" FontSize="13" x:Name="Labelmsg" />
+            <Label Content="- X" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" FontSize="13" x:Name="Labelmsg" 
+                   Visibility="{Binding LblInvisibleTextVisibility, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                   />
             <!--Create List Button-->
             <!--<Button x:Name="btn_CreateList" Content="Create New" Grid.Row="1" Grid.Column="0" Width="auto" Click="OpenListform" Cursor="Hand"/>-->
-            <Button x:Name="Btn_CreateList" Grid.Row="1" Content="Create List"  Cursor ="Hand"    />
+            <Button x:Name="Btn_CreateList" Grid.Row="1" Content="Create List"  Cursor ="Hand" 
+                    Visibility="{Binding Btn_CreateListVisibility, Converter={StaticResource BoolToVisibilityConverter}}"
+                    
+                    />
+            <!--Visibility="{Binding Btn_CreateListVisibility, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"-->
+            <!--Command="{Binding BtnToggleLblVisibilityDelegateCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"-->
             <!-- Click="OpenListform" -->
 
 
@@ -46,7 +57,7 @@
                       RowBackground="LightYellow" AlternatingRowBackground="LightBlue"
                       CanUserAddRows="False" IsReadOnly="True" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,5,0,5"
                       ColumnWidth="*" IsSynchronizedWithCurrentItem="True"  FontSize="20" BorderBrush="{x:Null}"
-                      ItemsSource="{Binding TodoModel}"
+                      
                       >
 
 
@@ -72,7 +83,8 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <!--<Button Content="Edit" Click="SelectListToEdit" />-->
-                                <Button x:Name="Btn_EditTodo" Width="auto" Height="25"  Cursor="Hand" Background="{x:Null}" BorderBrush="{x:Null}" Content="Edit" />
+                                <Button x:Name="Btn_EditTodo" Width="auto" Height="25"  Cursor="Hand" Background="{x:Null}" BorderBrush="{x:Null}" Content="Edit"
+                                            Command="{Binding DataContext.EditCommand, ElementName=_window}" CommandParameter="{Binding}" />
                                 <!--Click="SelectListToEdit"-->
 
                             </DataTemplate>
@@ -84,7 +96,7 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <!--<Button Content="Delete" Click="DeleteList"/>-->
-                                <Button x:Name="Btn_DelTodo" Width="auto" Height="25"  Cursor="Hand"  Content="D" Command="{Binding DataContext.DeleteCommand, ElementName=_window}" CommandParameter="Binding" />
+                                <Button x:Name="Btn_DelTodo" Width="auto" Height="25"  Cursor="Hand"  Content="D" Command="{Binding DataContext.DeleteCommand, ElementName=_window}" CommandParameter="{Binding}" />
                                 <!--Click="DeleteList"-->
                                     <!--<Button.Content>
                                         <StackPanel Orientation="Horizontal" >

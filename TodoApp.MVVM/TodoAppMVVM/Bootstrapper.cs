@@ -41,6 +41,7 @@ namespace TodoAppMVVM
                .PerRequest<DBContext>();
             _container
                .PerRequest<SQLiteDataReader>();
+
             //_container
             //    .Singleton<CreateTodoViewModel>();
             //_container

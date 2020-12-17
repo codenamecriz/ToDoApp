@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TodoAppMVVM.ViewModels;
 
 namespace TodoAppMVVM.Views
 {
@@ -22,6 +23,17 @@ namespace TodoAppMVVM.Views
         public CreateTodoView()
         {
             InitializeComponent();
+            Loaded += CreateTodoView_Loaded;
+        }
+        private void CreateTodoView_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is ICloseWindows vm)
+            {
+                vm.Close += () =>
+               {
+                   this.Close();
+               };
+            }
         }
     }
 }

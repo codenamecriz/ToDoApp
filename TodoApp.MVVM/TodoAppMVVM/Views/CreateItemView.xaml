@@ -46,8 +46,8 @@
                     <!--<TextBox x:Name="ItemStatus" Grid.Row="2" Grid.Column="2" Text="{Binding Status}" Margin="0,5,0,0"/>-->
 
                     <!-- Add Item Button -->
-                    <Button Grid.Row="4" Grid.ColumnSpan="2" Width="100" Content="Save" Margin="5" 
-                            HorizontalAlignment="Center" VerticalAlignment="Center" x:Name = "AddItem"/>
+                    <Button x:Name="SaveButton" Grid.Row="4" Grid.ColumnSpan="2" Width="100" Content="Save" Margin="5" 
+                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     <!-- Cancel button Button -->
                     <Button Grid.Row="4" Grid.ColumnSpan="2" Width="100" Content="Cancel" Margin="5"
                             HorizontalAlignment="Right" VerticalAlignment="Center" x:Name = "Cancel"/>

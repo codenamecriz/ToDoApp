@@ -106,6 +106,12 @@ namespace TodoAppMVVM.ViewModels
             Btn_CreateItemVisibility = false;
             Btn_BacktoListViewVisibility = false;
         }
+        public void Btn_CreateItem()
+        {
+            CreateItemViewModel ItemWindow = new CreateItemViewModel();
+
+            manager.ShowDialog(ItemWindow);
+        }
         public void Btn_CreateList() // Open Windows to Add Item Todo Data
         {
 
@@ -192,6 +198,23 @@ namespace TodoAppMVVM.ViewModels
             manager.ShowDialog(TodoWindow);
 
             
+            GetList();
+        }
+        //========================================================== Edit ITem
+        private DelegateCommand<ItemModel> _editItemCommand;
+        public DelegateCommand<ItemModel> EditItemCommand =>
+                    _editItemCommand ?? (_editItemCommand = new DelegateCommand<ItemModel>(ExecuteEditItemCommand));
+        void ExecuteEditItemCommand(ItemModel parameter)
+        {
+
+            CreateItemViewModel ItemWindow = new CreateItemViewModel();
+
+            ItemWindow.Id = parameter.ItemModelId;
+            ItemWindow.Name = parameter.Name;
+            ItemWindow.Detailed = parameter.Detailed;
+            ItemWindow.Status = parameter.Status;
+            manager.ShowDialog(ItemWindow);
+
             GetList();
         }
         //========================================================== View Item Commnad

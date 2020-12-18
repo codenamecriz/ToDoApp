@@ -142,14 +142,9 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <!--<Button Content="View" Click="View_ItemData" />-->
-                                <Button Width="auto" Height="30"  Cursor="Hand" Background="{x:Null}" BorderBrush="{x:Null}"  >
-                                    <!--Click="View_ItemData"-->
-                                    <Button.Content>
-                                        <StackPanel Orientation="Horizontal" >
-                                            <!--<Image Source="Img/view.png" Width="auto" Height="auto" Stretch="Fill" />-->
-
-                                        </StackPanel>
-                                    </Button.Content>
+                                <Button Width="auto" Height="30"  Cursor="Hand" Background="{x:Null}" BorderBrush="{x:Null}" >
+                                   
+                                
                                 </Button>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
@@ -160,14 +155,10 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <!--<Button Content="Edit" Click="SelectItemToEdit" />-->
-                                <Button Width="auto" Height="30"  Cursor="Hand" Background="{x:Null}" BorderBrush="{x:Null}"  >
+                                <Button Width="auto" Height="30"  Cursor="Hand"  Content="Edit" 
+                                        Command="{Binding DataContext.EditItemCommand, ElementName=_window}" CommandParameter="{Binding}"  >
                                     <!--Click="SelectItemToEdit"-->
-                                    <Button.Content>
-                                        <StackPanel Orientation="Horizontal" >
-                                            <!--<Image Source="Img/pencil.png" Width="auto" Height="auto" Stretch="Fill" />-->
-
-                                        </StackPanel>
-                                    </Button.Content>
+                                    
                                 </Button>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
@@ -178,14 +169,9 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <!--<Button Content="Delete" Click="DeleteItem"/>-->
-                                <Button Width="auto" Height="30" Cursor="Hand" Background="{x:Null}" BorderBrush="{x:Null}"  >
+                                <Button Width="auto" Height="30" Cursor="Hand" Content="Del"  >
                                     <!--Click="DeleteItem"-->
-                                    <Button.Content>
-                                        <StackPanel Orientation="Horizontal" >
-                                            <!--<Image Source="Img/delete.png" Width="auto" Height="auto" Stretch="Fill" />-->
-
-                                        </StackPanel>
-                                    </Button.Content>
+                                   
                                 </Button>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>

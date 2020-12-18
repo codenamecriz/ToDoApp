@@ -131,6 +131,30 @@ namespace TodoApp.MVVM.EventCommands
             }
             
         }
+        //=-----------------------------------> Hide/Show Button Create Item
+        private bool ItemVisibility;
+        public bool Btn_CreateItemVisibility
+        {
+            get { return ItemVisibility; }
+            set
+            {
+                ItemVisibility = value;
+                OnPropertyChanged("Btn_CreateItemVisibility");
+            }
+
+        }
+        private bool backToListVisibility;
+        public bool Btn_BacktoListViewVisibility
+        {
+            get { return backToListVisibility; }
+            set
+            {
+                backToListVisibility = value;
+                OnPropertyChanged("Btn_BacktoListViewVisibility");
+            }
+
+        }
+        
 
         //  ------------------------------------> Hide List/Todo DataGridview
 
@@ -157,6 +181,8 @@ namespace TodoApp.MVVM.EventCommands
             }
 
         }
+
+        
         //private ObservableCollection<ItemModel> _itemModel;
 
         //public ObservableCollection<ItemModel> Lecturers

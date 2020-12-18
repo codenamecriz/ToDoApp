@@ -97,6 +97,15 @@ namespace TodoAppMVVM.ViewModels
             // bind to the source
 
         }
+        public void btn_BacktoListView()
+        {
+            ListDataGridViewVisibility = true; // ListGridView
+            ItemDataGridViewVisibility = false; // ItemGridView
+
+            Btn_CreateListVisibility = true; 
+            Btn_CreateItemVisibility = false;
+            Btn_BacktoListViewVisibility = false;
+        }
         public void Btn_CreateList() // Open Windows to Add Item Todo Data
         {
 
@@ -120,6 +129,7 @@ namespace TodoAppMVVM.ViewModels
             CreateTodoViewModel TodoWindow = new CreateTodoViewModel();
 
             manager.ShowDialog(TodoWindow);
+            
             //--------
             GetList();
             //manager.ShowWindow(new CreateTodoViewModel(), null, null);
@@ -203,11 +213,13 @@ namespace TodoAppMVVM.ViewModels
             //{
             //    MessageBox.Show(a.ItemModelId + "");
             //}
-
+            
             ItemsDataGrid = new BindableCollection<ItemModel>(unitofWork.ItemServices.LoadItem(parameter.TodoModelId));
             ListDataGridViewVisibility = false;
             ItemDataGridViewVisibility = true;
             Btn_CreateListVisibility = false;
+            Btn_CreateItemVisibility = true;
+            Btn_BacktoListViewVisibility = true;
             //MessageBox.Show(itemsDataGrid..ToString());
 
         }

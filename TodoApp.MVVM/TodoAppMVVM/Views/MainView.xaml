@@ -41,13 +41,17 @@
 
             <!--Create Item Button-->
             <!--<Button x:Name="btn_CreateItem" Content="Create Item" Grid.Row="1" Grid.Column="1" Width="auto" Click="AddItemform"/>-->
-            <Button Visibility="Hidden" x:Name="btn_CreateItem" Content="Create Item" Grid.Row="1" Cursor="Hand" >
+            <Button  x:Name="Btn_CreateItem" Content="Create Item" Grid.Row="1" Cursor="Hand" 
+                     Visibility="{Binding Btn_CreateItemVisibility, Converter={StaticResource BoolToVisibilityConverter}}"
+                     >
                      <!--Visibility="{Binding Btn_CreateItemVisibility, Converter={StaticResource BoolToVisibilityConverter}}" >-->
                 <!--Click="AddItemform"-->
                 
             </Button>
             <!--Back to List View Button-->
-            <Button x:Name="btn_BacktoListView" Width="auto" Visibility="Hidden" Content="Back" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="1" Cursor="Hand"   >
+            <Button x:Name="btn_BacktoListView" Width="auto" Content="Back" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="1" Cursor="Hand"  
+                    Visibility="{Binding Btn_BacktoListViewVisibility, Converter={StaticResource BoolToVisibilityConverter}}"
+                    >
                 <!--Click="BacktoListView"-->
                 
             </Button>

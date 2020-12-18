@@ -141,6 +141,7 @@
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Commands\ItemCommand.cs" />
     <Compile Include="Commands\TodoCommand.cs" />
+    <Compile Include="EventCommands\IVisibilityCommand.cs" />
     <Compile Include="EventCommands\VisibilityCommand.cs" />
     <Compile Include="Models\ItemModel.cs" />
     <Compile Include="Models\TodoModel.cs" />

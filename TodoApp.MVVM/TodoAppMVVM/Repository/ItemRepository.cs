@@ -24,7 +24,7 @@ namespace TodoAppMVVM.Repository
             //string Query = "INSERT INTO Itemlists(Name, Detailed,Status,DatalistId) VALUES('" + datas[0] + "', '" + datas[1] + "',)";
             connect.Open();
             SQLiteCommand cmd = new SQLiteCommand(connect);
-            cmd.CommandText = "INSERT INTO Itemlists(Name, Detailed,Status,DatalistId) VALUES(@name,@detailed,@status,@datalistId)";
+            cmd.CommandText = "INSERT INTO Item(Name, Detailed,Status,TodoModelId) VALUES(@name,@detailed,@status,@datalistId)";
             cmd.Parameters.AddWithValue("@name", data.Name);
             cmd.Parameters.AddWithValue("@detailed", data.Detailed);
             cmd.Parameters.AddWithValue("@status", data.Status);

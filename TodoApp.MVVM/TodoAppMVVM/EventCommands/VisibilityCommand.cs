@@ -1,15 +1,18 @@
-﻿using System;
+﻿using Prism.Commands;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TodoAppMVVM.Models;
 using TodoAppMVVM.ViewModels;
 
 namespace TodoApp.MVVM.EventCommands
 {
-    public class VisibilityCommand : INotifyPropertyChanged
+    public class VisibilityCommand :  IVisibilityCommand
     {
         #region INotifyPropertyChanged Members
 
@@ -17,7 +20,7 @@ namespace TodoApp.MVVM.EventCommands
 
         #endregion
 
-        protected void OnPropertyChanged(string propertyName)
+        public void OnPropertyChanged(string propertyName)
         {
             VerifyPropertyName(propertyName);
             PropertyChangedEventHandler handler = PropertyChanged;
@@ -32,6 +35,18 @@ namespace TodoApp.MVVM.EventCommands
         {
             if (TypeDescriptor.GetProperties(this)[propertyName] == null)
                 throw new ArgumentNullException(GetType().Name + " does not contain property: " + propertyName);
+        }
+
+        public ObservableCollection<ItemModel> _todoModel;
+        public ObservableCollection<ItemModel> ItemsDataGrid
+        {
+            get { return _todoModel; }
+            set
+            {
+                if (_todoModel == value) return;
+                _todoModel = value;
+                OnPropertyChanged(nameof(ItemsDataGrid));
+            }
         }
         //#region Variables
         //public Visibility LblInvisibleTextVisibility
@@ -95,5 +110,64 @@ namespace TodoApp.MVVM.EventCommands
         //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         //}
         //#endregion
+        private DelegateCommand _closeCommand;
+        public DelegateCommand CloseCommand => _closeCommand ?? (_closeCommand = new DelegateCommand(CloseWindow));
+        void CloseWindow()
+        {
+            Close?.Invoke();
+        }
+        public Action Close { get; set; }
+        //-------------=================================== Visibility
+        // -->>Link for Tutorial Visibility Property https://www.technical-recipes.com/2016/binding-the-visibility-of-wpf-elements-to-a-property/
+
+        private bool VisibilityProp1;
+        public bool Btn_CreateListVisibility
+        {
+            get { return VisibilityProp1; }
+             set
+            {
+                VisibilityProp1 =  value;
+                OnPropertyChanged("Btn_CreateListVisibility");
+            }
+            
+        }
+
+        //  ------------------------------------> Hide List/Todo DataGridview
+
+        private bool VisibilityProp2;
+        public bool ListDataGridViewVisibility
+        {
+            get { return VisibilityProp2; }
+            set
+            {
+                VisibilityProp2 = value;
+                OnPropertyChanged("ListDataGridViewVisibility");
+            }
+         
+        }
+        //  ------------------------------------> Hide Item DataGridview
+        private bool VisibilityProp3;
+        public bool ItemDataGridViewVisibility
+        {
+            get { return VisibilityProp3; }
+            set
+            {
+                VisibilityProp3 = value;
+                OnPropertyChanged("ItemDataGridViewVisibility");
+            }
+
+        }
+        //private ObservableCollection<ItemModel> _itemModel;
+
+        //public ObservableCollection<ItemModel> Lecturers
+        //{
+        //    get { return _itemModel; }
+        //    set
+        //    {
+        //        _itemModel = value;
+        //        this.OnPropertyChanged("Lecturers");
+        //    }
+        //}
     }
+    
 }

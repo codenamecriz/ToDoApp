@@ -51,7 +51,7 @@ namespace TodoApp.MVVM.Repository
             var listFile = new List<ItemModel>();
             connect = context.DbConnection();
             connect.Open();
-            string Query = "SELECT * From Item Where ItemModelId = " + id;
+            string Query = "SELECT * From Item Where TodoModelId = " + id;
 
             SQLiteCommand cmd = new SQLiteCommand(Query, connect);
             SQLiteDataReader rd = cmd.ExecuteReader();

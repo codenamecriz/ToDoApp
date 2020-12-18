@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TodoApp.MVVM.EventCommands;
 using TodoAppMVVM.Models;
 using TodoAppMVVM.Services;
 using TodoAppMVVM.Views;
@@ -12,7 +13,7 @@ using Action = System.Action;
 
 namespace TodoAppMVVM.ViewModels
 {
-    public class CreateTodoViewModel : ICloseWindows
+    public class CreateTodoViewModel : VisibilityCommand
     {
         private readonly UnitOfWork unitOfWork = new UnitOfWork();
         IWindowManager manager = new WindowManager();
@@ -39,9 +40,9 @@ namespace TodoAppMVVM.ViewModels
         }
         public void SaveButton()
         {
-            
+
             MessageViewModel msg = new MessageViewModel();
-            
+
             if (ListName.Trim().Length != 0 && ListDescription.Trim().Length != 0)
             {
                 if (Id != 0)
@@ -66,30 +67,32 @@ namespace TodoAppMVVM.ViewModels
                     msg.Message = result;
 
                 }
-                Close?.Invoke();
-                
+                Close?.Invoke();  // Close windows
+
             }
             else { msg.Message = "Please Fill up All TextBox!!"; }
             manager.ShowWindow(msg);
         }
         //private string _msg = "this is a message ";
-        
+
         public string ListName
         {
-            get {
+            get
+            {
                 if (Name == null)
                 { Name = ""; }
-                return Name; 
+                return Name;
             }
             set { Name = value; }
         }
 
         public string ListDescription
         {
-            get {
+            get
+            {
                 if (Description == null)
                 { Description = ""; }
-                 return Description; 
+                return Description;
             }
             set { Description = value; }
         }
@@ -99,16 +102,5 @@ namespace TodoAppMVVM.ViewModels
             set { Id = value; }
         }
 
-        private DelegateCommand _closeCommand;
-        public DelegateCommand CloseCommand => _closeCommand ?? (_closeCommand = new DelegateCommand(CloseWindow));
-        void CloseWindow()
-        {
-            Close?.Invoke();
-        }
-        public Action Close { get; set; }
-    }
-    interface ICloseWindows
-    {
-        Action Close { get; set; }
     }
 }

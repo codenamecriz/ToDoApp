@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TodoApp.MVVM.EventCommands;
 using TodoAppMVVM.ViewModels;
 
 namespace TodoAppMVVM.Views
@@ -27,7 +28,7 @@ namespace TodoAppMVVM.Views
         }
         private void CreateTodoView_Loaded(object sender, RoutedEventArgs e)
         {
-            if (DataContext is ICloseWindows vm)
+            if (DataContext is IVisibilityCommand vm)
             {
                 vm.Close += () =>
                {

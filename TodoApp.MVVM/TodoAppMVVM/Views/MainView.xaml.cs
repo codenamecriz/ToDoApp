@@ -25,5 +25,6 @@ namespace TodoAppMVVM.Views
             InitializeComponent();
             DataContext = new MainViewModel();
         }
+        
     }
 }

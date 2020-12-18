@@ -4,10 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TodoAppMVVM.Views"
+        xmlns:local2="clr-namespace:TodoAppMVVM.ViewModels"
         mc:Ignorable="d"
         Title="MainView" Height="450" Width="800"
         x:Name="_window"
-        d:DataContext="{d:DesignInstance Type=local:MainViewModel, IsDesignTimeCreatable=True}"
+        d:DataContext="{d:DesignInstance Type=local2:CreateTodoViewModel, IsDesignTimeCreatable=True}"
         >
     <Window.Resources >
         <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter" />
@@ -25,8 +26,8 @@
                 <!--List Data Gridview-->
             </Grid.RowDefinitions>
             <Label Content="- X" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" FontSize="13" x:Name="Labelmsg" 
-                   Visibility="{Binding LblInvisibleTextVisibility, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                   />
+                    />
+            <!--Visibility="{Binding LblInvisibleTextVisibility, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"-->
             <!--Create List Button-->
             <!--<Button x:Name="btn_CreateList" Content="Create New" Grid.Row="1" Grid.Column="0" Width="auto" Click="OpenListform" Cursor="Hand"/>-->
             <Button x:Name="Btn_CreateList" Grid.Row="1" Content="Create List"  Cursor ="Hand" 
@@ -40,12 +41,13 @@
 
             <!--Create Item Button-->
             <!--<Button x:Name="btn_CreateItem" Content="Create Item" Grid.Row="1" Grid.Column="1" Width="auto" Click="AddItemform"/>-->
-            <Button Visibility="Hidden" x:Name="btn_CreateItem" Content="Create Item" Grid.Row="1" Cursor="Hand"   >
+            <Button Visibility="Hidden" x:Name="btn_CreateItem" Content="Create Item" Grid.Row="1" Cursor="Hand" >
+                     <!--Visibility="{Binding Btn_CreateItemVisibility, Converter={StaticResource BoolToVisibilityConverter}}" >-->
                 <!--Click="AddItemform"-->
                 
             </Button>
             <!--Back to List View Button-->
-            <Button x:Name="btn_BacktoListView" Width="auto" Visibility="Hidden" Content="Back" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="1" Cursor="Hand" Background="{x:Null}" BorderBrush="{x:Null}"  >
+            <Button x:Name="btn_BacktoListView" Width="auto" Visibility="Hidden" Content="Back" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="1" Cursor="Hand"   >
                 <!--Click="BacktoListView"-->
                 
             </Button>
@@ -57,12 +59,12 @@
                       RowBackground="LightYellow" AlternatingRowBackground="LightBlue"
                       CanUserAddRows="False" IsReadOnly="True" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,5,0,5"
                       ColumnWidth="*" IsSynchronizedWithCurrentItem="True"  FontSize="20" BorderBrush="{x:Null}"
-                      
+                      Visibility="{Binding ListDataGridViewVisibility, Converter={StaticResource BoolToVisibilityConverter}}"
                       >
 
 
                 <DataGrid.Columns>
-                    <DataGridTextColumn Visibility="Hidden" Width="35" Header="Id" Binding="{Binding TodoId}"/>
+                    <DataGridTextColumn Visibility="Hidden" Width="35" Header="Id" Binding="{Binding TodoModelId}"/>
                     <DataGridTextColumn Width="150" Header="Name" Binding="{Binding Name}"/>
                     <DataGridTextColumn Width="*" Header="Description" Binding="{Binding Description}"/>
                     
@@ -71,7 +73,8 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <!--<Button Content="View" Click="View_ListData" />-->
-                                <Button x:Name="Btn_ViewItem" Width="auto" Height="25"  Cursor="Hand" Background="{x:Null}" BorderBrush="{x:Null}"  Content="View" />
+                                <Button x:Name="Btn_ViewItem" Width="auto" Height="25"  Cursor="Hand" Background="{x:Null}" BorderBrush="{x:Null}"  Content="View" 
+                                        Command="{Binding DataContext.ViewCommand, ElementName=_window}" CommandParameter="{Binding}" />
                                 <!--Click="View_ListData"-->
 
                             </DataTemplate>
@@ -113,16 +116,18 @@
 
                 </DataGrid.Columns>
             </DataGrid>
-            <!--Item Grid View-->
-            <DataGrid x:Name="itemsDataGrid" AutoGenerateColumns="False" Visibility="Hidden"
+            <!--  ===========================================================================================>>  Item DataGrid View-->
+            <DataGrid x:Name="ItemsDataGrid" AutoGenerateColumns="False"
                   EnableRowVirtualization="True" 
                    RowDetailsVisibilityMode="VisibleWhenSelected" 
                       IsReadOnly="True" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,5,0,0"
-                      ColumnWidth="*" IsSynchronizedWithCurrentItem="True" >
+                      ColumnWidth="*" IsSynchronizedWithCurrentItem="True" 
+                      
+                      Visibility="{Binding ItemDataGridViewVisibility, Converter={StaticResource BoolToVisibilityConverter}}">
 
 
                 <DataGrid.Columns>
-                    <DataGridTextColumn Visibility="Hidden" Width="35" Header="Id" Binding="{Binding ItemlistId}"/>
+                    <DataGridTextColumn Visibility="Hidden" Width="35" Header="Id" Binding="{Binding ItemModelId}"/>
                     <DataGridTextColumn Width="150" Header="Name" Binding="{Binding Name}"/>
                     <DataGridTextColumn Width="*" Header="Detail" Binding="{Binding Detailed}"/>
                     <DataGridTextColumn Width="70" Header="Status" Binding="{Binding Status}"/>

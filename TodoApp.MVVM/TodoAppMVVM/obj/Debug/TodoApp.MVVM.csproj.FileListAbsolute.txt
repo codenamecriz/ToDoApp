@@ -185,3 +185,7 @@ D:\PPS SE\Training Projects\TodoApp.MVVM\TodoApp.MVVM\TodoAppMVVM\bin\Debug\pt-B
 D:\PPS SE\Training Projects\TodoApp.MVVM\TodoApp.MVVM\TodoAppMVVM\bin\Debug\pt-PT\Hangfire.Core.resources.dll
 D:\PPS SE\Training Projects\TodoApp.MVVM\TodoApp.MVVM\TodoAppMVVM\bin\Debug\zh\Hangfire.Core.resources.dll
 D:\PPS SE\Training Projects\TodoApp.MVVM\TodoApp.MVVM\TodoAppMVVM\bin\Debug\zh-TW\Hangfire.Core.resources.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\TodoApp.MVVM\TodoAppMVVM\bin\Debug\Ninject.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\TodoApp.MVVM\TodoAppMVVM\bin\Debug\Ninject.xml
+D:\PPS SE\Training Projects\TodoApp.MVVM\TodoApp.MVVM\TodoAppMVVM\obj\Debug\MainWindow.g.cs
+D:\PPS SE\Training Projects\TodoApp.MVVM\TodoApp.MVVM\TodoAppMVVM\obj\Debug\MainWindow.baml

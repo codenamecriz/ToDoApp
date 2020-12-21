@@ -17,215 +17,272 @@ using Hangfire.Annotations;
 using System.Runtime.CompilerServices;
 using TodoApp.MVVM.EventCommands;
 using System.Collections.ObjectModel;
+using TodoApp.MVVM.Models;
+using TodoApp.MVVM.IViewModels;
+using Ninject;
+using System.Windows.Input;
+using TodoApp.MVVM.Commands;
+using TodoApp.MVVM.Services;
+using TodoApp.MVVM;
 
 namespace TodoAppMVVM.ViewModels
 {
-    public class MainViewModel : VisibilityCommand//:  INotifyPropertyChanged
+    public class MainViewModel : VisibilityCommand , IMainViewModel//:  INotifyPropertyChanged
     {
+        private readonly IBuildConnection _dbConnect;
 
-       
-        public MainViewModel()
+        private readonly IUnitOfWork unitofWork;
+        
+        private readonly DBContext createDb;
+        //private readonly IWindowManager manager;//= new WindowManager();
+        private readonly NinjectConfiguration DI;
+        public MainViewModel(IUnitOfWork _unitofWork, IBuildConnection dbConnect)
         {
+            
             if (File.Exists("TodoDatabase.db"))
-            { }
+            {  }
             else
             {
                 createDb.CreateDb();
             }
             //ItemQuery = _ItemQuery;
             //TodoQuery = _TodoQuery;
-            //unitofWork = _unitofWork;
+            
+            unitofWork = _unitofWork;
+            createDb = new DBContext();
+            DI = new NinjectConfiguration();
             //_dbConnect = dbConnect;
-            unitofWork = new UnitOfWork();
-            _dbConnect = new BuildConnection();
+            //unitofWork = new UnitOfWork();
+            _dbConnect = dbConnect;
             //DbConnect db = new DbConnect();
             Btn_CreateListVisibility = true;
             ListDataGridViewVisibility = true;
             ItemDataGridViewVisibility = false;
-            
-            GetList();
-            
+
+            Show();
+            //LoadData();
+
         }
-        
-        //========================================================================================================
-        IWindowManager manager = new WindowManager();
-        //private IObservableCollection<TodoModel> todoModel ;
-        public BindableCollection<TodoModel> listDataGrid { get; set; }
-        //public BindableCollection<ItemModel> ItemsDataGrid { get; set; }
-
-        //private readonly IBuildConnection _dbConnect;
-
-        //private readonly IUnitOfWork unitofWork;
-
-        private readonly BuildConnection _dbConnect;
-
-        private readonly UnitOfWork unitofWork;
-
-        private readonly DBContext createDb = new DBContext();
-        //public MainViewModel()//IBuildConnection dbConnect, IUnitOfWork _unitofWork)//IGetAllTodoQuery _TodoQuery, IGetAllItemQuery _ItemQuery
-        //{
-        //    if (File.Exists("TodoDatabase.db"))
-        //    { }
-        //    else
-        //    {
-        //        createDb.CreateDb();
-        //    }
-        //    //ItemQuery = _ItemQuery;
-        //    //TodoQuery = _TodoQuery;
-        //    //unitofWork = _unitofWork;
-        //    //_dbConnect = dbConnect;
-        //    unitofWork = new UnitOfWork();
-        //    _dbConnect = new BuildConnection();
-        //    //DbConnect db = new DbConnect();
-        //    GetList();
-            
-        //}
-        private void GetList()
+        private void Show()
         {
-
-            //var container = App.Configure();
-            //var _listDbContext = container.Resolve<IDetalistRepository>();
-            //var _itemDbContext = container.Resolve<IItemRepository>();
-   
-            
-            listDataGrid = new BindableCollection<TodoModel>(unitofWork.ListServices.LoadList());
-            //itemsDataGrid = new BindableCollection<ItemModel>(unitofWork.ItemServices.LoadItem(1));
-
-            //itemsDataGrid.ItemsSource = _itemDbContext.GetAll(ListDataId);
-            listDataGrid.Refresh();
-            
-            // bind to the source
-
+            TodoListGrid = new ObservableCollection<TodoListDTO>(unitofWork.QeuriesServices.GetAll());
+            ItemsGrid = new ObservableCollection<ItemDTO>(unitofWork.QeuriesServices.GetItemById(ListId));
+         
         }
-        public void btn_BacktoListView()
+      
+        
+        private int ListId; 
+
+        //public void Btn_CreateItem()
+        //{
+        //    CreateItemViewModel ItemWindow = new CreateItemViewModel();
+        //    ItemWindow.TodoId = ListId;
+        //    manager.ShowDialog(ItemWindow);
+        //    Show();
+        //}
+
+        private ICommand _createItemCommand;
+
+        public ICommand CreateItemCommand
+        {
+            get
+            {
+                if (_createItemCommand == null)
+                {
+                    _createItemCommand = new RelayCommand(() =>
+                    {
+                       
+                        var appVM = DI.Configure().Get<CreateItemViewModel>();
+                        appVM.TodoId = ListId;
+                        CreateItemView todoview = new CreateItemView();
+                        todoview.DataContext = appVM;
+                        todoview.ShowDialog();
+                        Show();
+                    });
+                }
+
+                return _createItemCommand;
+            }
+        }
+
+
+        private ICommand _createTodoCommand;
+
+        public ICommand CreateTodoCommand
+        {
+            get
+            {
+                if (_createTodoCommand == null)
+                {
+                    _createTodoCommand = new RelayCommand(() =>
+                    {
+                       
+                       
+                        var appVM = DI.Configure().Get<CreateTodoViewModel>();
+                        CreateTodoView todoview = new CreateTodoView();
+                        todoview.DataContext = appVM;
+                        todoview.ShowDialog();
+                        //manager.ShowDialog(todoview);
+                        Show();
+                        
+                    });
+                }
+                
+                return _createTodoCommand;
+            }
+        }
+
+        //public void Btn_CreateList() // Open Windows to Add Item Todo Data
+        //{
+
+
+        //    //CreateTodoViewModel TodoWindow = new CreateTodoViewModel();
+
+        //    //manager.ShowDialog(TodoWindow);
+
+        //    IKernel kernel = new StandardKernel();
+        //    var appVM = kernel.Get<CreateTodoViewModel>();
+
+        //    CreateTodoView todoview = new CreateTodoView();
+        //    todoview.DataContext = appVM;
+        //    todoview.ShowDialog();
+        //    //CreateTodoView.DataContext = appVM;
+        //    //CreateTodoView.Show();
+        //    Show(); // show all data from database
+        //}
+
+
+        //public void btn_BacktoListView()
+        //{
+        //    ListDataGridViewVisibility = true; // ListGridView
+        //    ItemDataGridViewVisibility = false; // ItemGridView
+
+        //    Btn_CreateListVisibility = true;
+        //    Btn_CreateItemVisibility = false;
+        //    Btn_BacktoListViewVisibility = false;
+        //}
+        //=========================================================back to list view
+        private DelegateCommand _backViewListCommand;
+        public DelegateCommand BackViewListCommand =>
+                    _backViewListCommand ?? (_backViewListCommand = new DelegateCommand(ExecuteBackViewListCommand));
+        void ExecuteBackViewListCommand()
         {
             ListDataGridViewVisibility = true; // ListGridView
             ItemDataGridViewVisibility = false; // ItemGridView
 
-            Btn_CreateListVisibility = true; 
+            Btn_CreateListVisibility = true;
             Btn_CreateItemVisibility = false;
             Btn_BacktoListViewVisibility = false;
         }
-        public void Btn_CreateItem()
-        {
-            CreateItemViewModel ItemWindow = new CreateItemViewModel();
-
-            manager.ShowDialog(ItemWindow);
-        }
-        public void Btn_CreateList() // Open Windows to Add Item Todo Data
-        {
-
-            //CreateTodoView viewCtodo = new CreateTodoView();
-            //viewCtodo.ShowDialog();
-            //DisplayRootViewFor<CreateTodoViewModel>();
-
-            //Bootstrapper _container = new Bootstrapper();
-
-            //var TodoWindow = _container.GetInstance(CreateTodoViewModel, CreateTodoViewModel);
-            //var updateDataList = new TodoModel
-            //{
-            //    TodoModelId = 1,
-            //    Name = "passname",
-            //    Description = ""
-            //};
-            //----------
-            //DisplayRootViewFor<MainViewModel>();
-            //Btn_CreateListVisibility = Visibility.Hidden; //show it
-           
-            CreateTodoViewModel TodoWindow = new CreateTodoViewModel();
-
-            manager.ShowDialog(TodoWindow);
-            
-            //--------
-            GetList();
-            //manager.ShowWindow(new CreateTodoViewModel(), null, null);
-
-            //MessageView viewCtodo = new MessageView();
-            //viewCtodo.ShowDialog();
-
-        }
-       
-        //private string msg = "this is message";
-        //public string Labelmsg
-        //{
-        //    get { return msg; }
-        //    set { msg = value; }
-        //}
-        
-        public void Btn_ViewItem()
-        {
-
-            CreateTodoViewModel TodoWindow = new CreateTodoViewModel();
-
-            manager.ShowDialog(TodoWindow);
-            //Btn_CreateList.Visibility = Visibility.Hidden;
-            //btn_CreateItem.Visibility = Visibility.Visible;
-            //btn_BacktoListView.Visibility = Visibility.Visible;
-
-            //listDataGrid.Visibility = Visibility.Hidden;
-            //itemsDataGrid.Visibility = Visibility.Visible;
-        }
-
-        //============================================================ delete Button
-        private DelegateCommand<TodoModel> _deleteCommand;
-        public DelegateCommand<TodoModel> DeleteCommand =>
-                    _deleteCommand ?? (_deleteCommand = new DelegateCommand<TodoModel> (ExecuteDeleteCommand));
-        void ExecuteDeleteCommand(TodoModel parameter)
+        //============================================================ Delete Todo Button 
+        private DelegateCommand<TodoListDTO> _deleteCommand;
+        public DelegateCommand<TodoListDTO> DeleteCommand =>
+                    _deleteCommand ?? (_deleteCommand = new DelegateCommand<TodoListDTO> (ExecuteDeleteCommand));
+        void ExecuteDeleteCommand(TodoListDTO parameter)
         {
             //MessageViewModel msg = new MessageViewModel();
             //msg.Message = parameter.TodoModelId.ToString();
 
             //manager.ShowWindow(msg);
-            var result = unitofWork.catchResult(unitofWork.ListServices.RemoveList(parameter));
+            //var todoParameter = new List<TodoModel>();
+            var todoParameter = new TodoModel
+            {
+                TodoModelId = parameter.TodoId,
+                Name = parameter.Name,
+                Description = parameter.Description
+            };
+            var result = unitofWork.catchResult(unitofWork.ListServices.RemoveList(todoParameter));
             MessageBox.Show(result);
-            GetList();
+            //ListDataGrid.Remove(parameter);
+            Show();
             //parameter.TodoModelId
             //https://www.youtube.com/watch?v=IRE2PAD1kIM
         }
-        //========================================================== Edit Commnad
-        private DelegateCommand<TodoModel> _editCommand;
-        public DelegateCommand<TodoModel> EditCommand =>
-                    _editCommand ?? (_editCommand = new DelegateCommand<TodoModel>(ExecuteEditCommand));
-        void ExecuteEditCommand(TodoModel parameter)
+        //============================================================ Delete ITEM Button DeleteItemCommand
+        private DelegateCommand<ItemDTO> _deleteItemCommand;
+        public DelegateCommand<ItemDTO> DeleteItemCommand =>
+                    _deleteItemCommand ?? (_deleteItemCommand = new DelegateCommand<ItemDTO>(ExecuteDeleteItemCommand));
+        void ExecuteDeleteItemCommand(ItemDTO parameter)
         {
-         
-            CreateTodoViewModel TodoWindow = new CreateTodoViewModel();
-            
-            TodoWindow.Id = parameter.TodoModelId;
-            TodoWindow.Name = parameter.Name;
-            TodoWindow.Description = parameter.Description;
+            var itemParameter = new ItemModel { 
+                    ItemModelId = parameter.ItemId,
+                    Name = parameter.Name,
+                    Detailed = parameter.Detailed,
+                    Status = parameter.Status,
+                   
+            };
+            var result = unitofWork.catchResult(unitofWork.ItemServices.RemoveItem(itemParameter));
+            MessageBox.Show(result);
+            //ItemsDataGrid.Remove(parameter);
+            Show();
+        }
+        //========================================================== Edit Commnad 
+        private DelegateCommand<TodoListDTO> _editCommand;
+        public DelegateCommand<TodoListDTO> EditCommand =>
+                    _editCommand ?? (_editCommand = new DelegateCommand<TodoListDTO>(ExecuteEditCommand));
+        void ExecuteEditCommand(TodoListDTO parameter)
+        {
 
-            manager.ShowDialog(TodoWindow);
+            var appVM = DI.Configure().Get<CreateTodoViewModel>();
+            CreateTodoView todoview = new CreateTodoView();
+            appVM.Id = parameter.TodoId;
+            appVM.Name = parameter.Name;
+            appVM.Description = parameter.Description;
+            todoview.DataContext = appVM;
+            todoview.ShowDialog();
 
-            
-            GetList();
+            //IKernel kernel = new StandardKernel();
+            //var appVM = kernel.Get<CreateTodoViewModel>();
+
+            //CreateTodoView todoview = new CreateTodoView();
+            //appVM.Id = parameter.TodoId;
+            //appVM.Name = parameter.Name;
+            //appVM.Description = parameter.Description;
+            //todoview.DataContext = appVM;
+
+            //todoview.ShowDialog();
+
+            Show();
         }
         //========================================================== Edit ITem
-        private DelegateCommand<ItemModel> _editItemCommand;
-        public DelegateCommand<ItemModel> EditItemCommand =>
-                    _editItemCommand ?? (_editItemCommand = new DelegateCommand<ItemModel>(ExecuteEditItemCommand));
-        void ExecuteEditItemCommand(ItemModel parameter)
+        private DelegateCommand<ItemDTO> _editItemCommand;
+        public DelegateCommand<ItemDTO> EditItemCommand =>
+                    _editItemCommand ?? (_editItemCommand = new DelegateCommand<ItemDTO>(ExecuteEditItemCommand));
+        void ExecuteEditItemCommand(ItemDTO parameter)
         {
 
-            CreateItemViewModel ItemWindow = new CreateItemViewModel();
+            var appVM = DI.Configure().Get<CreateItemViewModel>();
+            CreateItemView itemoview = new CreateItemView();
+            appVM.Id = parameter.ItemId;
+            appVM.Name = parameter.Name;
+            appVM.Detailed = parameter.Detailed;
+            appVM.Status = parameter.Status;
+            itemoview.DataContext = appVM;
+            itemoview.ShowDialog();
 
-            ItemWindow.Id = parameter.ItemModelId;
-            ItemWindow.Name = parameter.Name;
-            ItemWindow.Detailed = parameter.Detailed;
-            ItemWindow.Status = parameter.Status;
-            manager.ShowDialog(ItemWindow);
+            //IKernel kernel = new StandardKernel();
+            //var appVM = kernel.Get<CreateItemViewModel>();
 
-            GetList();
+            //CreateItemView todoview = new CreateItemView();
+            //appVM.Id = parameter.ItemId;
+            //appVM.Name = parameter.Name;
+            //appVM.Detailed = parameter.Detailed;
+            //appVM.Status = parameter.Status;
+            //todoview.DataContext = appVM;
+
+            //todoview.ShowDialog();
+
+            Show();
         }
         //========================================================== View Item Commnad
-        private DelegateCommand<TodoModel> _viewCommand;
-        public DelegateCommand<TodoModel> ViewCommand =>
-                    _viewCommand ?? (_viewCommand = new DelegateCommand<TodoModel>(ExecuteViewCommand));
+        private DelegateCommand<TodoListDTO> _viewCommand;
+        public DelegateCommand<TodoListDTO> ViewCommand =>
+                    _viewCommand ?? (_viewCommand = new DelegateCommand<TodoListDTO>(ExecuteViewCommand));
          
-        void ExecuteViewCommand(TodoModel parameter)
+        void ExecuteViewCommand(TodoListDTO parameter)
         {
 
-
+            ListId = parameter.TodoId;
             //MessageViewModel msg = new MessageViewModel();
             //msg.Message = parameter.TodoModelId.ToString();
 
@@ -236,8 +293,8 @@ namespace TodoAppMVVM.ViewModels
             //{
             //    MessageBox.Show(a.ItemModelId + "");
             //}
-            
-            ItemsDataGrid = new BindableCollection<ItemModel>(unitofWork.ItemServices.LoadItem(parameter.TodoModelId));
+
+            Show();
             ListDataGridViewVisibility = false;
             ItemDataGridViewVisibility = true;
             Btn_CreateListVisibility = false;

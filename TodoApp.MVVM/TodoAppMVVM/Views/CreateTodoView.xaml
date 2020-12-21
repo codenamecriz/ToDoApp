@@ -6,10 +6,12 @@
         xmlns:local="clr-namespace:TodoAppMVVM.Views"
         xmlns:local1="clr-namespace:TodoAppMVVM.ViewModels"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
-        Title="CreateTodoView" Height="200" Width="350">
-    <Window.DataContext>
+        Title="CreateTodoView" Height="200" Width="350"
+     
+        >
+    <!--<Window.DataContext>
         <local1:CreateTodoViewModel />
-    </Window.DataContext>
+    </Window.DataContext>-->
     <Grid>
         <Border Grid.Column="0" Margin="5" BorderThickness="1" BorderBrush="Black">
             <StackPanel  Margin="5">
@@ -54,7 +56,7 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="40" />
                         </Grid.RowDefinitions>
-                        <Button Grid.Column="0" Content="Save" Margin="5"  x:Name="SaveButton"  />
+                        <Button Grid.Column="0" Content="Save" Margin="5"  x:Name="SaveButton" Command="{Binding CreateTodoCommand}" />
                         <Button Grid.Column="1" Content="Cancel" Margin="5" x:Name="Cancel" Command="{Binding CloseCommand}" />
                     </Grid>
                 </StackPanel>

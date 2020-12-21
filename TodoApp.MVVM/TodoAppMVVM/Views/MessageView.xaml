@@ -9,7 +9,7 @@
 
     <Border Padding="20">
         <Grid>
-            <TextBlock x:Name="YourMsg" Width="auto" FontSize="20" ></TextBlock>
+            <TextBlock x:Name="YourMsg" Width="auto" FontSize="20" Text="{Binding YourMsg}" ></TextBlock>
         </Grid>
     </Border>
 </Window>

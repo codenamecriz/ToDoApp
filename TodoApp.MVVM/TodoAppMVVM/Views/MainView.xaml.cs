@@ -23,8 +23,15 @@ namespace TodoAppMVVM.Views
         public MainView()
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
+            //DataContext = new MainViewModel();
+
+            
+
         }
+        //public void ListGrid()
+        //{
+        //    ListDataGrid.ItemsSource = 
+        //}
         
     }
 }

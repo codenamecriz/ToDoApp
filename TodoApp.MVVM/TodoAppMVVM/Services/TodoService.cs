@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using TodoApp.MVVM.Models;
 using TodoApp.MVVM.Repository;
 using TodoAppMVVM.Models;
 using TodoAppMVVM.Repository;
@@ -11,15 +13,17 @@ namespace TodoAppMVVM.Services  // ListServices
     {
         //private readonly ITodoRepository todoRepository;
         //private readonly IGetDataQueryRepository todoQueryRepository;
-        private readonly TodoRepository todoRepository = new TodoRepository();
-        private readonly GetDataQueryRepository todoQueryRepository = new GetDataQueryRepository();
+        private readonly ITodoRepository todoRepository;
+        private readonly IGetDataQueryRepository todoQueryRepository;
         private readonly List<TodoModel> newList = new List<TodoModel>();
         private readonly List<TodoModel> updateList = new List<TodoModel>();
         private readonly List<TodoModel> removeList = new List<TodoModel>();
         private readonly List<TodoModel> ListContainer = new List<TodoModel>();
         private List<string> result = new List<string>();
-        public TodoService()//ITodoRepository _listRepository, IGetDataQueryRepository _todoQueryRepository)
+        public TodoService(ITodoRepository _todoRepository, IGetDataQueryRepository _todoQueryRepository)//ITodoRepository _listRepository, IGetDataQueryRepository _todoQueryRepository)
         {
+            todoRepository = _todoRepository;
+            todoQueryRepository = _todoQueryRepository;
             //todoRepository = _listRepository;
             //todoQueryRepository = _todoQueryRepository;
         }
@@ -39,7 +43,7 @@ namespace TodoAppMVVM.Services  // ListServices
 
             //listRepository = new TodoModelRepository();
             ListContainer.AddRange(todoQueryRepository.GetAllDatalist());
-
+           
             return ListContainer;
         }
 

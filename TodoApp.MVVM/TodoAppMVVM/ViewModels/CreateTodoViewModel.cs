@@ -1,11 +1,15 @@
 ﻿using Caliburn.Micro;
+using Ninject;
 using Prism.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using TodoApp.MVVM.Commands;
 using TodoApp.MVVM.EventCommands;
+using TodoApp.MVVM.IViewModels;
 using TodoAppMVVM.Models;
 using TodoAppMVVM.Services;
 using TodoAppMVVM.Views;
@@ -13,66 +17,119 @@ using Action = System.Action;
 
 namespace TodoAppMVVM.ViewModels
 {
-    public class CreateTodoViewModel : VisibilityCommand
+    public class CreateTodoViewModel : VisibilityCommand, ICreateTodoViewModel
     {
-        private readonly UnitOfWork unitOfWork = new UnitOfWork();
-        IWindowManager manager = new WindowManager();
+        private readonly IUnitOfWork unitOfWork;// = new UnitOfWork();
+        IWindowManager manager;
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-
-        public CreateTodoViewModel()//IUnitOfWork _unitOfWork)
+        IKernel kernel;
+        public CreateTodoViewModel(IUnitOfWork _unitOfWork)//IUnitOfWork _unitOfWork)
         {
-            //unitOfWork = _unitOfWork;
+            unitOfWork = _unitOfWork;
             //unitOfWork = new UnitOfWork();
+            kernel = new StandardKernel();
+            manager = new WindowManager();
         }
 
 
 
-        public void Cancel()
+
+        private ICommand _createTodoCommand;
+
+        public ICommand CreateTodoCommand
         {
-
-            //IWindowManager manager = new WindowManager();
-            //manager.ShowWindow(new CreateTodoViewModel(), null, null);
-
-            //CreateTodoView todoClose = new CreateTodoView();
-            //todoClose.Close();
-        }
-        public void SaveButton()
-        {
-
-            MessageViewModel msg = new MessageViewModel();
-
-            if (ListName.Trim().Length != 0 && ListDescription.Trim().Length != 0)
+            get
             {
-                if (Id != 0)
+                if (_createTodoCommand == null)
                 {
-                    var data = new TodoModel
+                    _createTodoCommand = new RelayCommand(() =>
                     {
-                        TodoModelId = Id,
-                        Name = ListName,
-                        Description = ListDescription,
-                    };
-                    var result = unitOfWork.catchResult(unitOfWork.ListServices.UpdateList(data));
-                    msg.Message = result;
-                }
-                else
-                {
-                    var data = new TodoModel
-                    {
-                        Name = Name,
-                        Description = Description,
-                    };
-                    var result = unitOfWork.catchResult(unitOfWork.ListServices.RegisterNewList(data));
-                    msg.Message = result;
+                        //MessageViewModel msg = new MessageViewModel();
+                        var _message = "";
+                        if (ListName.Trim().Length != 0 && ListDescription.Trim().Length != 0)
+                        {
+                            if (Id != 0)
+                            {
+                                var data = new TodoModel
+                                {
+                                    TodoModelId = Id,
+                                    Name = ListName,
+                                    Description = ListDescription,
+                                };
+                                var result = unitOfWork.catchResult(unitOfWork.ListServices.UpdateList(data));
+                                //msg.Message = result;
+                                _message = result;
 
-                }
-                Close?.Invoke();  // Close windows
+                            }
+                            else
+                            {
+                                var data = new TodoModel
+                                {
+                                    Name = Name,
+                                    Description = Description,
+                                };
+                                var result = unitOfWork.catchResult(unitOfWork.ListServices.RegisterNewList(data));
+                                //msg.Message = result;
+                                _message = result;
 
+                            }
+                            Close?.Invoke();  // Close windows
+
+                        }
+                        else { _message = "Please Fill up All TextBox!!"; }
+                        var appVM = kernel.Get<MessageViewModel>();
+                        appVM.Message = _message;
+                        MessageView todoview = new MessageView();
+
+                        todoview.DataContext = appVM;
+                        Console.WriteLine(appVM.Message);
+                        todoview.ShowDialog();
+                        //manager.ShowWindow(msg);
+
+                    });
+                }
+
+                return _createTodoCommand;
             }
-            else { msg.Message = "Please Fill up All TextBox!!"; }
-            manager.ShowWindow(msg);
         }
+        //public void SaveButton()
+        //{
+
+        //    MessageViewModel msg = new MessageViewModel();
+
+        //    if (ListName.Trim().Length != 0 && ListDescription.Trim().Length != 0)
+        //    {
+        //        if (Id != 0)
+        //        {
+        //            var data = new TodoModel
+        //            {
+        //                TodoModelId = Id,
+        //                Name = ListName,
+        //                Description = ListDescription,
+        //            };
+        //            var result = unitOfWork.catchResult(unitOfWork.ListServices.UpdateList(data));
+        //            msg.Message = result;
+
+        //        }
+        //        else
+        //        {
+        //            var data = new TodoModel
+        //            {
+        //                Name = Name,
+        //                Description = Description,
+        //            };
+        //            var result = unitOfWork.catchResult(unitOfWork.ListServices.RegisterNewList(data));
+        //            msg.Message = result;
+
+        //        }
+        //        Close?.Invoke();  // Close windows
+
+        //    }
+        //    else { msg.Message = "Please Fill up All TextBox!!"; }
+        //    manager.ShowWindow(msg);
+        //}
         //private string _msg = "this is a message ";
 
         public string ListName

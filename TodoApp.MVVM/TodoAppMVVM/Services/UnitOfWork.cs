@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TodoApp.MVVM.Services;
 
 namespace TodoAppMVVM.Services
 {
@@ -9,10 +10,14 @@ namespace TodoAppMVVM.Services
 
         //private readonly ITodoService listServices;
         //private readonly IItemService itemServices;
-        TodoService listServices;// = new TodoService();
-        ItemService itemServices; //= new ItemService();
-        public UnitOfWork()//ITodoService _listServices, IItemService _itemServices)//IItemService _itemService, IListService _listService)
+        ITodoService listServices;// = new TodoService();
+        IItemService itemServices; //= new ItemService();
+        IQueryService todoListService;
+        public UnitOfWork(ITodoService _listServices, IItemService _itemServices, IQueryService _todoListService)//ITodoService _listServices, IItemService _itemServices)//IItemService _itemService, IListService _listService)
         {
+            listServices = _listServices;
+            itemServices = _itemServices;
+            todoListService = _todoListService;
             //itemServices = _itemServices;
             //listServices = _listServices;
 
@@ -24,31 +29,42 @@ namespace TodoAppMVVM.Services
 
             return actionResult[0];
         }
-        public ITodoService ListServices // -------> Singleton
+        public ITodoService ListServices // -------> 
         {
             get
             {
-                if (this.listServices == null)
-                {
-                    this.listServices = new TodoService();
-                }
+                //if (this.listServices == null)
+                //{
+                //    this.listServices = new TodoService();
+                //}
                 return listServices;
             }
         }
 
 
-        public IItemService ItemServices // -------> Singleton
+        public IItemService ItemServices // -------> 
         {
             get
             {
-                if (this.itemServices == null)
-                {
-                    this.itemServices = new ItemService();
-                }
+                //if (this.itemServices == null)
+                //{
+                //    this.itemServices = new ItemService();
+                //}
                 return itemServices;
             }
         }
-
+        
+        public IQueryService QeuriesServices // -------> 
+        {
+            get
+            {
+                //if (this.todoListService == null)
+                //{
+                //    this.todoListService = new QueryService();
+                //}
+                return todoListService;
+            }
+        }
 
     }
 }

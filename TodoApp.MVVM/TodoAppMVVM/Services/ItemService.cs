@@ -10,15 +10,17 @@ namespace TodoAppMVVM.Services
     public class ItemService : IItemService
     {
         //private IItemRepository itemRepository;
-        private ItemRepository itemRepository = new ItemRepository();
-        private readonly GetDataQueryRepository todoQueryRepository = new GetDataQueryRepository();
+        private readonly IItemRepository itemRepository ;
+        private readonly IGetDataQueryRepository todoQueryRepository ;
         private readonly List<ItemModel> newItem = new List<ItemModel>();
         private readonly List<ItemModel> updateItem = new List<ItemModel>();
         private readonly List<ItemModel> removeItem = new List<ItemModel>();
         private readonly List<ItemModel> ItemContainer = new List<ItemModel>();
         private List<string> result = new List<string>();
-        public ItemService()//IItemRepository _itemRepository)
+        public ItemService(IItemRepository _itemRepository, IGetDataQueryRepository _todoQueryRepository)
         {
+            todoQueryRepository = _todoQueryRepository;
+            itemRepository = _itemRepository;
             //itemRepository = _itemRepository;
         }
         struct Message
@@ -38,6 +40,7 @@ namespace TodoAppMVVM.Services
         {
             Message Msg;
             LoadItem(data.TodoModelId);
+           
             if (data.ItemModelId == 0 && !ItemContainer.Contains(data))
             {
                 newItem.Add(data);
@@ -59,6 +62,8 @@ namespace TodoAppMVVM.Services
         {
             Message Msg;
             LoadItem(data.TodoModelId);
+            Console.WriteLine(!ItemContainer.Contains(data));
+            Console.WriteLine((data.ItemModelId));
             if (data.ItemModelId != 0 && !ItemContainer.Contains(data))
             {
                 updateItem.Add(data);

@@ -12,13 +12,13 @@ namespace TodoApp.MVVM.Repository
     public class GetDataQueryRepository : IGetDataQueryRepository
     {
         //private readonly IBuildConnection context;
-        private readonly BuildConnection context;
+        private readonly IBuildConnection context;
         private SQLiteConnection connect;
-        public GetDataQueryRepository()//IBuildConnection _context)
+        public GetDataQueryRepository(IBuildConnection _context)//IBuildConnection _context)
         {
             //context = _context;
             connect = new SQLiteConnection();
-            context = new BuildConnection();
+            context = _context;
         }
         public IEnumerable<TodoModel> GetAllDatalist() // Get all Data
         {

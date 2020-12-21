@@ -11,12 +11,12 @@ namespace TodoAppMVVM.Repository
     {
         //private readonly IBuildConnection context;
         private SQLiteConnection connect;
-        private readonly BuildConnection context;
-        public ItemRepository()//IBuildConnection _context)
+        private readonly IBuildConnection context;
+        public ItemRepository(IBuildConnection _context)//IBuildConnection _context)
         {
             //context = _context;
             connect = new SQLiteConnection();
-            context = new BuildConnection();
+            context = _context;
         }
         public string Add(ItemModel data) //-------------------------> Insert Item
         {
@@ -50,32 +50,32 @@ namespace TodoAppMVVM.Repository
             connect.Close();
         }
 
-        public IEnumerable<ItemModel> GetAll(int id) //--------------------------------> Get All Itemm By Id
-        {
-            var listFile = new List<ItemModel>();
-            connect = context.DbConnection();
-            connect.Open();
-            string Query = "SELECT * From Item Where TodoModelId = " + id;
+        //public IEnumerable<ItemModel> GetAll(int id) //--------------------------------> Get All Itemm By Id
+        //{
+        //    var listFile = new List<ItemModel>();
+        //    connect = context.DbConnection();
+        //    connect.Open();
+        //    string Query = "SELECT * From Item Where TodoModelId = " + id;
 
-            SQLiteCommand cmd = new SQLiteCommand(Query, connect);
-            SQLiteDataReader rd = cmd.ExecuteReader();
+        //    SQLiteCommand cmd = new SQLiteCommand(Query, connect);
+        //    SQLiteDataReader rd = cmd.ExecuteReader();
 
-            while (rd.Read())
-            {
+        //    while (rd.Read())
+        //    {
 
-                listFile.Add(new ItemModel()
-                {
-                    ItemModelId = rd.GetInt32(0),
-                    Name = rd.GetString(1),
-                    Detailed = rd.GetString(2),
-                    Status = rd.GetString(3)
-                    // etc... (0, 1 refer to the column index)
-                });
-            }
-            connect.Close();
-            return listFile;
-            //throw new NotImplementedException();
-        }
+        //        listFile.Add(new ItemModel()
+        //        {
+        //            ItemModelId = rd.GetInt32(0),
+        //            Name = rd.GetString(1),
+        //            Detailed = rd.GetString(2),
+        //            Status = rd.GetString(3)
+        //            // etc... (0, 1 refer to the column index)
+        //        });
+        //    }
+        //    connect.Close();
+        //    return listFile;
+        //    //throw new NotImplementedException();
+        //}
         public string Update(ItemModel data) //------------------------------>> Update
         {
             int id = data.ItemModelId;

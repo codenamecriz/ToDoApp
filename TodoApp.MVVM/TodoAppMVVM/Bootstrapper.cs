@@ -5,7 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using Autofac;
 using Caliburn.Micro;
+using TodoApp.MVVM.IViewModels;
 using TodoApp.MVVM.Repository;
 using TodoAppMVVM.Queries;
 using TodoAppMVVM.Repository;
@@ -18,6 +20,17 @@ namespace TodoAppMVVM
 {
     public class Bootstrapper : BootstrapperBase
     {
+        //private const string ModuleFilePrefix = "CaliburnAndAutofac";
+        //private IContainer _container;
+
+        //protected override void BuildUp(object instance)
+        //{
+        //    _container.InjectProperties(instance);
+        //}
+
+
+
+
         private SimpleContainer _container = new SimpleContainer();
 
         public Bootstrapper()
@@ -65,8 +78,10 @@ namespace TodoAppMVVM
                .PerRequest<IItemRepository, ItemRepository>();
             _container
                .PerRequest<IBuildConnection, BuildConnection>();
+            _container
+               .PerRequest<IMainViewModel, MainViewModel>();
 
-           
+
 
 
 
@@ -96,3 +111,5 @@ namespace TodoAppMVVM
         }
     }
 }
+
+//https://www.youtube.com/watch?v=8E000zu8UhQ

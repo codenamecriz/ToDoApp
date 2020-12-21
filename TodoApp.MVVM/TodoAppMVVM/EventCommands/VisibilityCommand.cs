@@ -7,7 +7,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TodoApp.MVVM.Models;
 using TodoAppMVVM.Models;
+using TodoAppMVVM.Services;
 using TodoAppMVVM.ViewModels;
 
 namespace TodoApp.MVVM.EventCommands
@@ -34,20 +36,112 @@ namespace TodoApp.MVVM.EventCommands
         private void VerifyPropertyName(string propertyName)
         {
             if (TypeDescriptor.GetProperties(this)[propertyName] == null)
-                throw new ArgumentNullException(GetType().Name + " does not contain property: " + propertyName);
+                throw new ArgumentNullException(GetType().Name + " Does not contain property: " + propertyName);
+        }
+        //=================================================== Item DataGrid View
+        //private ObservableCollection<ItemModel> _itemModel;
+        //public ObservableCollection<ItemModel> ItemsDataGrid
+        //{
+            
+        //    get { return _itemModel; }
+        //    set
+        //    {
+        //        if (_itemModel == value) return;
+                
+        //        _itemModel = value;
+                
+        //        OnPropertyChanged(nameof(ItemsDataGrid));
+        //    }
+        //}
+        //================================================== List DataGridView
+        //private ObservableCollection<TodoModel> _oldListDataGrid ;
+        //public ObservableCollection<TodoModel> _listDataGrid;
+
+        //public ObservableCollection<TodoModel> ListDataGrid
+        //{
+
+        //    get {
+
+        //        //Console.WriteLine(_listDataGrid.Count); 
+        //        return _listDataGrid; 
+
+        //    }
+        //    set
+        //    {
+               
+        //        if (_listDataGrid != value)
+        //        {
+        //            //Refresh = new ObservableCollection<TodoModel>();
+        //            //ListDataGrid.Remove(_oldListDataGrid);
+                   
+        //            _listDataGrid = value;
+        //            //if (_oldListDataGrid != null)
+        //            //{ _listDataGrid.Clear(); }
+        //            //_oldListDataGrid = _listDataGrid;
+        //            //_oldListDataGrid = _listDataGrid;
+
+        //            OnPropertyChanged(nameof(ListDataGrid));
+                    
+
+        //        }
+        //        else { return; }
+        //    }
+        //}
+        //public  void ClearTodoDatagrid()
+        //{
+
+        //    if (_listDataGrid != null)
+        //    {
+        //        Console.WriteLine(_listDataGrid.Count);
+        //        Console.WriteLine(ListDataGrid.Count);
+        //        ListDataGrid.Clear();
+        //        _listDataGrid.Clear();
+
+        //    }
+        //}
+
+        //----------------------------------------------------------> Get All List from database
+        private ObservableCollection<TodoListDTO> todoListGrid;
+        public ObservableCollection<TodoListDTO> TodoListGrid
+        {
+            get { return todoListGrid; }
+            set { todoListGrid = value; OnPropertyChanged("TodoListGrid"); }
+        }
+        //----------------------------------------------------------> Get All Item from database
+        private ObservableCollection<ItemDTO> itemsGrid;
+        public ObservableCollection<ItemDTO> ItemsGrid
+        {
+            get { return itemsGrid; }
+            set { itemsGrid = value; OnPropertyChanged("ItemsGrid"); }
         }
 
-        public ObservableCollection<ItemModel> _todoModel;
-        public ObservableCollection<ItemModel> ItemsDataGrid
-        {
-            get { return _todoModel; }
-            set
-            {
-                if (_todoModel == value) return;
-                _todoModel = value;
-                OnPropertyChanged(nameof(ItemsDataGrid));
-            }
-        }
+        //private ObservableCollection<TodoModel> _refresh;
+        //public ObservableCollection<TodoModel> Refresh
+        //{
+        //    get { return null; }
+        //    set
+        //    {
+        //        _refresh = null;
+        //        OnPropertyChanged(nameof(ListDataGrid));
+        //    }
+        //}
+        //================================================== List DataGridView
+        //private ObservableCollection<TodoModel> _todosModel;
+        //public ObservableCollection<TodoModel> TodoDatagrid
+        //{
+
+        //    get { return _todosModel; }
+        //    set
+        //    {
+
+        //        if (_todosModel != value) 
+        //        {
+        //            _todosModel = value;
+        //            OnPropertyChanged(nameof(TodoDatagrid));
+        //        }
+        //    }
+        //}
+
         //#region Variables
         //public Visibility LblInvisibleTextVisibility
         //{
@@ -110,6 +204,7 @@ namespace TodoApp.MVVM.EventCommands
         //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         //}
         //#endregion
+        //============================================== Close Windows
         private DelegateCommand _closeCommand;
         public DelegateCommand CloseCommand => _closeCommand ?? (_closeCommand = new DelegateCommand(CloseWindow));
         void CloseWindow()
@@ -155,28 +250,27 @@ namespace TodoApp.MVVM.EventCommands
 
         }
         
-
         //  ------------------------------------> Hide List/Todo DataGridview
 
-        private bool VisibilityProp2;
+        private bool listDataGridViewVisibility;
         public bool ListDataGridViewVisibility
         {
-            get { return VisibilityProp2; }
+            get { return listDataGridViewVisibility; }
             set
             {
-                VisibilityProp2 = value;
+                listDataGridViewVisibility = value;
                 OnPropertyChanged("ListDataGridViewVisibility");
             }
          
         }
         //  ------------------------------------> Hide Item DataGridview
-        private bool VisibilityProp3;
+        private bool itemDataGridViewVisibility;
         public bool ItemDataGridViewVisibility
         {
-            get { return VisibilityProp3; }
+            get { return itemDataGridViewVisibility; }
             set
             {
-                VisibilityProp3 = value;
+                itemDataGridViewVisibility = value;
                 OnPropertyChanged("ItemDataGridViewVisibility");
             }
 

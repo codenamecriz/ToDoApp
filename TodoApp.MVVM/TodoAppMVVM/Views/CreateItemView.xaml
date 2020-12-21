@@ -4,8 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TodoAppMVVM.Views"
+         xmlns:local1="clr-namespace:TodoAppMVVM.ViewModels"
         mc:Ignorable="d"
         Title="CreateItemView" Height="200" Width="350">
+    <!--<Window.DataContext>
+        <local1:CreateItemViewModel />
+    </Window.DataContext>-->
     <Grid>
         <Border Grid.Column="0" Margin="5" BorderThickness="1" BorderBrush="Black">
             <StackPanel  Margin="5">
@@ -32,13 +36,13 @@
 
 
                     <Label Grid.Row="0" Grid.Column="0" Content="Name:"/>
-                    <TextBox x:Name="ItemName" Grid.Row="0" Grid.Column="1" />
+                    <TextBox x:Name="ItemName" Grid.Row="0" Grid.Column="1" Text="{Binding ItemName}" />
 
                     <Label Grid.Row="1" Grid.Column="0" Content="Detailed:"/>
-                    <TextBox x:Name="ItemDetailed" Grid.Row="1" Grid.Column="2"  Margin="0,5,0,0"/>
+                    <TextBox x:Name="ItemDetailed" Grid.Row="1" Grid.Column="2"  Margin="0,5,0,0" Text="{Binding ItemDetailed}" />
 
                     <Label Grid.Row="2" Grid.Column="0" Content="Status:"/>
-                    <ComboBox x:Name="cbox_status" Grid.Row="2" Grid.Column="1" SelectedIndex="0" HorizontalContentAlignment="Center">
+                    <ComboBox x:Name="cbox_status" Grid.Row="2" Grid.Column="1" SelectedIndex="0" HorizontalContentAlignment="Center"  Text="{Binding SelectStatus}" >
                         <ComboBoxItem>Pending</ComboBoxItem>
                         <ComboBoxItem>Done</ComboBoxItem>
 
@@ -47,9 +51,11 @@
 
                     <!-- Add Item Button -->
                     <Button x:Name="SaveButton" Grid.Row="4" Grid.ColumnSpan="2" Width="100" Content="Save" Margin="5" 
+                            Command="{Binding CreateItemCommand}"
                             HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     <!-- Cancel button Button -->
                     <Button Grid.Row="4" Grid.ColumnSpan="2" Width="100" Content="Cancel" Margin="5"
+                            Command="{Binding CloseCommand}"
                             HorizontalAlignment="Right" VerticalAlignment="Center" x:Name = "Cancel"/>
                 </Grid>
 

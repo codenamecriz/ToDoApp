@@ -9,7 +9,17 @@
 
     <Border Padding="20">
         <Grid>
-            <TextBlock x:Name="YourMsg" Width="auto" FontSize="20" Text="{Binding YourMsg}" ></TextBlock>
+            
+                <Grid.ColumnDefinitions>
+                    
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="90" />
+                     <RowDefinition Height="30" />
+                 </Grid.RowDefinitions >
+                    <TextBlock x:Name="YourMsg" Grid.Row="0" Width="auto" FontSize="20" Text="{Binding YourMsg}" TextAlignment="Center" ></TextBlock>
+            <Button  x:Name = "Cancel" Grid.Row="1" Width="100" FontSize="20" Content="Close"  Command="{Binding CloseCommand}" VerticalAlignment="Center" Cursor="Hand"/>
         </Grid>
     </Border>
 </Window>

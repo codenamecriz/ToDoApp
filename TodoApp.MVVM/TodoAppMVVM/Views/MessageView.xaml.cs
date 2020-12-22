@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TodoApp.MVVM.EventCommands;
 
 namespace TodoAppMVVM.Views
 {
@@ -22,6 +23,17 @@ namespace TodoAppMVVM.Views
         public MessageView()
         {
             InitializeComponent();
+            Loaded += Message_Loaded;
+        }
+        private void Message_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is IVisibilityCommand vm)
+            {
+                vm.Close += () =>
+                {
+                    this.Close();
+                };
+            }
         }
     }
 }

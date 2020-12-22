@@ -35,7 +35,7 @@ namespace TodoAppMVVM
             var appVM = kernel.Get<MainViewModel>();
 
             MainWindow = new MainView();
-            MainWindow.DataContext = appVM;
+            MainWindow.DataContext = appVM;//{DesignInstance Type=local2:CreateTodoViewModel, IsDesignTimeCreatable=True};//
             MainWindow.Show();
 
             //--------------------------------------OPTION 1--------------------------------------

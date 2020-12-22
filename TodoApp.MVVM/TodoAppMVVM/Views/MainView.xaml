@@ -10,9 +10,9 @@
         mc:Ignorable="d"
         Title="MainView" Height="450" Width="800"
         x:Name="_window"
-        d:DataContext="{d:DesignInstance Type=local2:CreateTodoViewModel, IsDesignTimeCreatable=True}"
+        
         >
-    
+    <!--d:DataContext="{d:DesignInstance Type=local2:CreateTodoViewModel, IsDesignTimeCreatable=True}"-->
     <Window.Resources >
         <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter" />
     

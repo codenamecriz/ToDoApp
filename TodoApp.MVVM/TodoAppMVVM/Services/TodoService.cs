@@ -86,7 +86,7 @@ namespace TodoAppMVVM.Services  // ListServices
             if (data.TodoModelId != 0 && !ListContainer.Contains(data))
             {
                 updateList.Add(data);
-                Msg.msgs = "List Ssuccessfully Updatedss!!!";
+                Msg.msgs = "List Ssuccessfully Updated!!!";
             }
             else
             {

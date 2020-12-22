@@ -9,7 +9,7 @@ using TodoAppMVVM.Models;
 
 namespace TodoAppMVVM.SQLite
 {
-    public class DBContext
+    public class DBContext : IDBContext
     {
         //public DbSet<ItemModel> Itemlists { get; set; }
         //public DbSet<TodoModel> Datalists { get; set; }
@@ -39,13 +39,13 @@ namespace TodoAppMVVM.SQLite
                 m_dbConnection.Open();
 
                 string TodoTable = "CREATE TABLE `Todo` (`TodoModelId`   INTEGER NOT NULL UNIQUE,`Name`  varchar(40),`Description`   TEXT,"
-	                    + "PRIMARY KEY(`TodoModelId` AUTOINCREMENT))";
+                        + "PRIMARY KEY(`TodoModelId` AUTOINCREMENT))";
                 SQLiteCommand command = new SQLiteCommand(TodoTable, m_dbConnection);
                 command.ExecuteNonQuery();
 
                 string ItemTable = "CREATE TABLE `Item` ( `ItemModelId`   INTEGER NOT NULL UNIQUE,`Name`  TEXT,`Detailed`  TEXT,`Status`    TEXT,"
-	                       + "`TodoModelId`   INTEGER, PRIMARY KEY(`ItemModelId` AUTOINCREMENT)) ";
-                 command = new SQLiteCommand(ItemTable, m_dbConnection);
+                           + "`TodoModelId`   INTEGER, PRIMARY KEY(`ItemModelId` AUTOINCREMENT)) ";
+                command = new SQLiteCommand(ItemTable, m_dbConnection);
                 command.ExecuteNonQuery();
             }
             catch { }

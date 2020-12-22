@@ -178,6 +178,7 @@
     <Compile Include="SQLite\BuildConnection.cs" />
     <Compile Include="SQLite\DBContext.cs" />
     <Compile Include="SQLite\IBuildConnection.cs" />
+    <Compile Include="SQLite\IDBContext.cs" />
     <Compile Include="ViewModels\CreateItemViewModel.cs" />
     <Compile Include="ViewModels\CreateTodoViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />

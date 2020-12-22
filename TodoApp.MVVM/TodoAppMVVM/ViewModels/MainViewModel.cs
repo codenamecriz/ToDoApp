@@ -36,9 +36,9 @@ namespace TodoAppMVVM.ViewModels
         private readonly DBContext createDb;
         //private readonly IWindowManager manager;//= new WindowManager();
         private readonly NinjectConfiguration DI;
-        public MainViewModel(IUnitOfWork _unitofWork, IBuildConnection dbConnect)
+        public MainViewModel(IUnitOfWork _unitofWork, IBuildConnection dbConnect)//IDBContext createDb
         {
-            
+            createDb = new DBContext();
             if (File.Exists("TodoDatabase.db"))
             {  }
             else
@@ -49,7 +49,7 @@ namespace TodoAppMVVM.ViewModels
             //TodoQuery = _TodoQuery;
             
             unitofWork = _unitofWork;
-            createDb = new DBContext();
+           
             DI = new NinjectConfiguration();
             //_dbConnect = dbConnect;
             //unitofWork = new UnitOfWork();
@@ -83,7 +83,7 @@ namespace TodoAppMVVM.ViewModels
 
         private ICommand _createItemCommand;
 
-        public ICommand CreateItemCommand
+        public ICommand CreateItemCommand // sample declare a button using ICommand
         {
             get
             {
@@ -161,7 +161,7 @@ namespace TodoAppMVVM.ViewModels
         //    Btn_CreateItemVisibility = false;
         //    Btn_BacktoListViewVisibility = false;
         //}
-        //=========================================================back to list view
+        //========================================================= back to LIST View  (Deaclearing a Button using DeleGateCommand)
         private DelegateCommand _backViewListCommand;
         public DelegateCommand BackViewListCommand =>
                     _backViewListCommand ?? (_backViewListCommand = new DelegateCommand(ExecuteBackViewListCommand));

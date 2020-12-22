@@ -37,6 +37,7 @@ namespace TodoApp.MVVM
             kernel.Bind<IGetDataQueryRepository>().To<GetDataQueryRepository>();
             kernel.Bind<IItemRepository>().To<ItemRepository>();
             kernel.Bind<ITodoRepository>().To<TodoRepository>();
+            //kernel.Bind<IDBContext>().To<DBContext>();
 
             return kernel;
         }

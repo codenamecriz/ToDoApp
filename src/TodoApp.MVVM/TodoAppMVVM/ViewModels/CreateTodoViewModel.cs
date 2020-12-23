@@ -26,18 +26,17 @@ namespace TodoAppMVVM.ViewModels
         public string Name { get; set; }
         public string Description { get; set; }
         //IKernel kernel;
-        private readonly INinjectConfiguration DI;
-        public CreateTodoViewModel(IUnitOfWork _unitOfWork, INinjectConfiguration _DI)//, IKernel _kernel)//IUnitOfWork _unitOfWork)
+        //private readonly INinjectConfiguration ninjectConfiguration;
+        private readonly IMessageViewModel messageViewModel;
+        public CreateTodoViewModel(IUnitOfWork _unitOfWork,  IMessageViewModel _messageViewModel)//INinjectConfiguration _DI,//, IKernel _kernel)//IUnitOfWork _unitOfWork)
         {
+            messageViewModel = _messageViewModel;
             unitOfWork = _unitOfWork;
-            DI = _DI;
+            //ninjectConfiguration = _DI;
             //unitOfWork = new UnitOfWork();
             //kernel = _kernel;//new StandardKernel();
 
         }
-
-
-
 
         private ICommand _createTodoCommand;
 
@@ -82,13 +81,14 @@ namespace TodoAppMVVM.ViewModels
 
                         }
                         else { _message = "Please Fill up All TextBox!!"; }
-                        var appVM = DI.Configure().Get<MessageViewModel>();
-                 
-                        appVM.Message = _message;
+                        //var appVM = ninjectConfiguration.Configure().Get<MessageViewModel>();
+
+                        //appVM.Message = _message;
+                        messageViewModel.Message = _message;
                         MessageView todoview = new MessageView();
 
-                        todoview.DataContext = appVM;
-                        Console.WriteLine(appVM.Message);
+                        todoview.DataContext = messageViewModel;//appVM;
+                        //Console.WriteLine(appVM.Message);
                         todoview.ShowDialog();
                         //manager.ShowWindow(msg);
 

@@ -11,16 +11,16 @@ namespace TodoAppMVVM.Repository
     {
         //private readonly IBuildConnection context;
         private SQLiteConnection connect;
-        private readonly IBuildConnection context;
-        public ItemRepository(IBuildConnection _context)//IBuildConnection _context)
+        private readonly IBuildConnection buildConnection;
+        public ItemRepository(IBuildConnection _buildConnection)//IBuildConnection _context)
         {
             //context = _context;
             connect = new SQLiteConnection();
-            context = _context;
+            buildConnection = _buildConnection;
         }
         public string Add(Item data) //-------------------------> Insert Item
         {
-            connect = context.DbConnection();
+            connect = buildConnection.DbConnection();
             //string Query = "INSERT INTO Itemlists(Name, Detailed,Status,DatalistId) VALUES('" + datas[0] + "', '" + datas[1] + "',)";
             connect.Open();
             SQLiteCommand cmd = new SQLiteCommand(connect);
@@ -39,7 +39,7 @@ namespace TodoAppMVVM.Repository
         //============================================================ Delete
         public void RemoveItem(int id)
         {
-            connect = context.DbConnection();
+            connect = buildConnection.DbConnection();
             connect.Open();
             SQLiteCommand cmd = new SQLiteCommand(connect);
             cmd.CommandText = "DELETE FROM Item Where ItemModelId = @id ";
@@ -53,7 +53,7 @@ namespace TodoAppMVVM.Repository
         public IEnumerable<Item> GetItemById(int id) //--------------------------------> Get All Itemm By Id
         {
             var listFile = new List<Item>();
-            connect = context.DbConnection();
+            connect = buildConnection.DbConnection();
             connect.Open();
             string Query = "SELECT * From Item Where TodoModelId = " + id;
 
@@ -82,7 +82,7 @@ namespace TodoAppMVVM.Repository
             string name = data.Name;
             string des = data.Detailed;
             string status = data.Status;
-            connect = context.DbConnection();
+            connect = buildConnection.DbConnection();
 
             connect.Open();
             SQLiteCommand cmd = new SQLiteCommand(connect);

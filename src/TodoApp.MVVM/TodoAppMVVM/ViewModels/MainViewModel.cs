@@ -29,27 +29,36 @@ namespace TodoAppMVVM.ViewModels
 {
     public class MainViewModel : VisibilityCommand , IMainViewModel//:  INotifyPropertyChanged
     {
-        private readonly IBuildConnection _dbConnect;
+        //private readonly IBuildConnection buildConnection;
 
         private readonly IUnitOfWork unitofWork;
         
-        private readonly IDBContext createDb;
+        private readonly IDBContext dbContext;
+        private readonly ICreateItemViewModel createItemViewModel;
+        private readonly ICreateTodoViewModel createTodoViewModel;
         //private readonly IWindowManager manager;//= new WindowManager();
-        private readonly INinjectConfiguration DI;
-        public MainViewModel(IUnitOfWork _unitofWork, IBuildConnection dbConnect, IDBContext _createDb, INinjectConfiguration _DI)//IDBContext createDb
+        //private readonly INinjectConfiguration ninjectConfiguration;
+        public MainViewModel(IUnitOfWork _unitofWork,
+            IDBContext _dbContext, 
+            //INinjectConfiguration _DI, 
+            ICreateItemViewModel _createItemViewModel,
+            ICreateTodoViewModel _createTodoViewModel)//IDBContext createDb
         {
-            createDb = _createDb;
+            dbContext = _dbContext;
             if (File.Exists("TodoDatabase.db"))
             {  }
             else
             {
-                createDb.CreateDb();
+                dbContext.CreateDb();
             }
-            unitofWork = _unitofWork;
 
-            DI = _DI;//new NinjectConfiguration();
+            createItemViewModel = _createItemViewModel;
+            createTodoViewModel = _createTodoViewModel;
+            unitofWork = _unitofWork;
+            //buildConnection = _buildConnection ;
+            //ninjectConfiguration = _DI;//new NinjectConfiguration();
      
-            _dbConnect = dbConnect;
+            
             
             Btn_CreateListVisibility = true;
             ListDataGridViewVisibility = true;
@@ -87,11 +96,13 @@ namespace TodoAppMVVM.ViewModels
                     _createItemCommand = new RelayCommand(() =>
                     {
                        
-                        var appVM = DI.Configure().Get<CreateItemViewModel>();
-                       
-                        appVM.TodoId = ListId;
+                        //var appVM = ninjectConfiguration.Configure().Get<CreateItemViewModel>();
+                        createItemViewModel.TodoId = ListId;
+                        createItemViewModel.Name = "";
+                        createItemViewModel.Detailed = "";
+                        //appVM.TodoId = ListId;
                         CreateItemView todoview = new CreateItemView();
-                        todoview.DataContext = appVM;
+                        todoview.DataContext = createItemViewModel;//appVM;
                         todoview.ShowDialog();
                         Show();
                     });
@@ -111,9 +122,13 @@ namespace TodoAppMVVM.ViewModels
                 {
                     _createTodoCommand = new RelayCommand(() =>
                     {
-                        var appVM = DI.Configure().Get<CreateTodoViewModel>();
+                        //var appVM = ninjectConfiguration.Configure().Get<CreateTodoViewModel>();
+                        
                         CreateTodoView todoview = new CreateTodoView();
-                        todoview.DataContext = appVM;
+                        createTodoViewModel.Id = 0;
+                        createTodoViewModel.Name = "";
+                        createTodoViewModel.Description = "";
+                        todoview.DataContext = createTodoViewModel;//appVM;
                         todoview.ShowDialog();
                         //manager.ShowDialog(todoview);
                         Show();
@@ -187,12 +202,16 @@ namespace TodoAppMVVM.ViewModels
         void ExecuteEditCommand(TodoListDTO parameter)
         {
 
-            var appVM = DI.Configure().Get<CreateTodoViewModel>();
+            //var appVM = ninjectConfiguration.Configure().Get<CreateTodoViewModel>();
+            createTodoViewModel.Id = parameter.Id;
+            createTodoViewModel.Name = parameter.Name;
+            createTodoViewModel.Description = parameter.Description;
+
             CreateTodoView todoview = new CreateTodoView();
-            appVM.Id = parameter.Id;
-            appVM.Name = parameter.Name;
-            appVM.Description = parameter.Description;
-            todoview.DataContext = appVM;
+            //appVM.Id = parameter.Id;
+            //appVM.Name = parameter.Name;
+            //appVM.Description = parameter.Description;
+            todoview.DataContext = createTodoViewModel;//appVM;
             todoview.ShowDialog();
 
             //IKernel kernel = new StandardKernel();
@@ -215,13 +234,18 @@ namespace TodoAppMVVM.ViewModels
         void ExecuteEditItemCommand(ItemDTO parameter)
         {
 
-            var appVM = DI.Configure().Get<CreateItemViewModel>();
+            //var appVM = ninjectConfiguration.Configure().Get<CreateItemViewModel>();
+            createItemViewModel.Id = parameter.Id;
+            createItemViewModel.Name = parameter.Name;
+            createItemViewModel.Detailed = parameter.Detailed;
+            createItemViewModel.Status = parameter.Status;
+
             CreateItemView itemoview = new CreateItemView();
-            appVM.Id = parameter.Id;
-            appVM.Name = parameter.Name;
-            appVM.Detailed = parameter.Detailed;
-            appVM.Status = parameter.Status;
-            itemoview.DataContext = appVM;
+            //appVM.Id = parameter.Id;
+            //appVM.Name = parameter.Name;
+            //appVM.Detailed = parameter.Detailed;
+            //appVM.Status = parameter.Status;
+            itemoview.DataContext = createItemViewModel;//appVM;
             itemoview.ShowDialog();
 
             //IKernel kernel = new StandardKernel();

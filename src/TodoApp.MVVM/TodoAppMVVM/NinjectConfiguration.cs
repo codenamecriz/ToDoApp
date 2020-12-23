@@ -27,7 +27,7 @@ namespace TodoApp.MVVM
             kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
             kernel.Bind<IBuildConnection>().To<BuildConnection>();
             kernel.Bind<IWindowManager>().To<WindowManager>();
-            //kernel.Bind<ICreateTodoViewModel>().To<CreateTodoViewModel>();
+            kernel.Bind<ICreateTodoViewModel>().To<CreateTodoViewModel>();
             kernel.Bind<ICreateItemViewModel>().To<CreateItemViewModel>();
             kernel.Bind<IMessageViewModel>().To<MessageViewModel>();
             kernel.Bind<IQueryService>().To<QueryService>();
@@ -39,6 +39,7 @@ namespace TodoApp.MVVM
             kernel.Bind<IKernel>().To<StandardKernel>();
             kernel.Bind<IDBContext>().To<DBContext>();
             kernel.Bind<INinjectConfiguration>().To<NinjectConfiguration>();
+
 
             return kernel;
         }

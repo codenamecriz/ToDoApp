@@ -8,10 +8,7 @@ namespace TodoApp.MVVM.IViewModels
 {
     public interface IMessageViewModel
     {
-        //public string YourMsg
-        //{
-        //    get; set;
-        //    //public string Message { get; set; }
-        //}
+        string Message { get; set; }
+        string YourMsg { get; set; }
     }
 }

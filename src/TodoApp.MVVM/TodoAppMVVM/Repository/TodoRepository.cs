@@ -11,17 +11,17 @@ namespace TodoAppMVVM.Repository
     {
         //private readonly IBuildConnection context;
         private SQLiteConnection connect;
-        private readonly IBuildConnection context;
-        public TodoRepository(IBuildConnection _context)//IBuildConnection _context)
+        private readonly IBuildConnection buildConnection;
+        public TodoRepository(IBuildConnection _buildConnection)//IBuildConnection _context)
         {
             //context = _context;
             connect = new SQLiteConnection();
-            context = _context;
+            buildConnection = _buildConnection;
         }
 
         public IEnumerable<Todo> GetAllDatalist() // Get all Data
         {
-            connect = context.DbConnection();
+            connect = buildConnection.DbConnection();
             connect.Open();
             //List<string> listFile = new List<string>();
             var listFile = new List<Todo>();
@@ -52,7 +52,7 @@ namespace TodoAppMVVM.Repository
             var name = data.Name;
             var description = data.Description;
 
-            connect = context.DbConnection();
+            connect = buildConnection.DbConnection();
             connect.Open();
             string Query = "INSERT INTO Todo(Name, Description) VALUES('" + name + "', '" + description + "')";
 
@@ -68,7 +68,7 @@ namespace TodoAppMVVM.Repository
             int id = data.Id;
             string name = data.Name;
             string des = data.Description;
-            connect = context.DbConnection();
+            connect = buildConnection.DbConnection();
             connect.Open();
             SQLiteCommand cmd = new SQLiteCommand(connect);
             cmd.CommandText = "UPDATE Todo SET Name = @name , Description = @des WHERE TodoModelId = " + id;
@@ -94,7 +94,7 @@ namespace TodoAppMVVM.Repository
             //    idName = "ItemlistId";
             //}
             //else { idName = "DatalistId"; }
-            connect = context.DbConnection();
+            connect = buildConnection.DbConnection();
             connect.Open();
             SQLiteCommand cmd = new SQLiteCommand(connect);
             cmd.CommandText = "DELETE FROM Todo where TodoModelId = @id ";

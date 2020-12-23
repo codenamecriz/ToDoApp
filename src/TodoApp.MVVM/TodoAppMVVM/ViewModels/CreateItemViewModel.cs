@@ -17,26 +17,20 @@ using TodoAppMVVM.Views;
 namespace TodoAppMVVM.ViewModels
 {
     public class CreateItemViewModel : VisibilityCommand, ICreateItemViewModel //VisibilityCommand
-
     {
-        //IWindowManager manager = new WindowManager();
-        //IKernel kernel;
+        
         public int Id { get; set; }
         public string Name { get; set; }
         public string Detailed { get; set; }
         public string Status { get; set; }
         public int TodoId { get; set; }
         private readonly IUnitOfWork unitOfWork;
-        //private readonly INinjectConfiguration ninjectConfiguration;
         private readonly IMessageViewModel messageViewModel;
         public CreateItemViewModel(IUnitOfWork _unitOfWork, IMessageViewModel _messageViewModel)//, INinjectConfiguration _DI
         {
-            //kernel = _kernel;
-            //kernel = new StandardKernel();
+          
             unitOfWork = _unitOfWork;
             messageViewModel = _messageViewModel;
-            //ninjectConfiguration = _DI;
-
         }
         private ICommand _createItemCommand;
 
@@ -73,7 +67,7 @@ namespace TodoAppMVVM.ViewModels
                                     Status = SelectStatus,
                                     TodoId = TodoId
                                 };
-                                Console.WriteLine(data.TodoId+"<------");
+                                //Console.WriteLine(data.TodoId+"<------");
                                 var result = unitOfWork.catchResult(unitOfWork.ItemServices.Add(data));
                                 _message = result;
 
@@ -84,13 +78,12 @@ namespace TodoAppMVVM.ViewModels
 
                         }
                         else { _message = "Please Fill up All TextBox!!"; }
-                        //var appVM = kernel.Get<MessageViewModel>();
+            
                         messageViewModel.Message = _message;
                         MessageView todoview = new MessageView();
                         todoview.DataContext = messageViewModel;//appVM;
                         //Console.WriteLine(appVM.Message);
                         todoview.ShowDialog();
-                        //manager.ShowWindow(msg);
 
                     });
                 }
@@ -98,56 +91,7 @@ namespace TodoAppMVVM.ViewModels
                 return _createItemCommand;
             }
         }
-        //}
-        //public void SaveButton()
-        //{
-
-
-        //    MessageViewModel msg = new MessageViewModel();
-
-        //    if (ItemName.Trim().Length != 0 && ItemDetailed.Trim().Length != 0)
-        //    {
-        //        if (Id != 0)
-        //        {
-        //            var data = new ItemModel
-        //            {
-        //                ItemModelId = Id,
-        //                Name = ItemName,
-        //                Detailed = ItemDetailed,
-        //                Status = SelectStatus
-        //            };
-        //            Console.WriteLine(data.ItemModelId + "-" + data.Name + "-" + data.Detailed + "-" + data.Status);
-        //            var result = unitOfWork.catchResult(unitOfWork.ItemServices.UpdateItem(data));
-        //            msg.Message = result;
-        //        }
-        //        else
-        //        {
-        //            var data = new ItemModel
-        //            {
-
-        //                Name = ItemName,
-        //                Detailed = Detailed,
-        //                Status = SelectStatus,
-        //                TodoModelId = TodoId
-        //            };
-        //            var result = unitOfWork.catchResult(unitOfWork.ItemServices.RegisterNewItem(data));
-        //            msg.Message = result;
-
-        //        }
-        //        Close?.Invoke();  // Close windows
-
-        //    }
-        //    else { msg.Message = "Please Fill up All TextBox!!"; }
-        //    manager.ShowWindow(msg);
-        //}
-        //public int ItemId
-        //{
-        //    get
-        //    {
-        //        return Id;
-        //    }
-        //    set { Id = value; }
-        //}
+        
         public string ItemName
         {
             get

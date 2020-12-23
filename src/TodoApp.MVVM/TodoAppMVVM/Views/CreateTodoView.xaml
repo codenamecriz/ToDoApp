@@ -15,7 +15,7 @@
     <Grid>
         <Border Grid.Column="0" Margin="5" BorderThickness="1" BorderBrush="Black">
             <StackPanel  Margin="5">
-                <Label Content="Data List Form" FontWeight="Bold"
+                <Label Content="Todo Form" FontWeight="Bold"
                        HorizontalAlignment="Center" 
                        VerticalAlignment="Center" Margin="5"/>
 

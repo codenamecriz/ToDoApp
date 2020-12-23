@@ -143,6 +143,7 @@
     </Compile>
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="EventCommands\ButtonClickCommand.cs" />
     <Compile Include="EventCommands\IVisibilityCommand.cs" />
     <Compile Include="EventCommands\VisibilityCommand.cs" />
     <Compile Include="INinjectConfiguration.cs" />
@@ -153,10 +154,10 @@
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\ItemDTO.cs" />
-    <Compile Include="Models\Item.cs" />
-    <Compile Include="Models\TodoListDTO.cs" />
-    <Compile Include="Models\Todo.cs" />
+    <Compile Include="Models\DTO\ItemDTO.cs" />
+    <Compile Include="Models\Entities\Item.cs" />
+    <Compile Include="Models\DTO\TodoListDTO.cs" />
+    <Compile Include="Models\Entities\Todo.cs" />
     <Compile Include="NinjectConfiguration.cs" />
     <Compile Include="Queries\GetAllItemQuery.cs" />
     <Compile Include="Queries\GetAllTodoQuery.cs" />
@@ -164,17 +165,17 @@
     <Compile Include="Queries\IGetAllTodoQuery.cs" />
     <Compile Include="Repository\GetDataQueryRepository.cs" />
     <Compile Include="Repository\IGetDataQueryRepository.cs" />
-    <Compile Include="Repository\TodoRepository.cs" />
-    <Compile Include="Repository\ITodoRepository.cs" />
-    <Compile Include="Repository\IItemRepository.cs" />
-    <Compile Include="Repository\ItemRepository.cs" />
-    <Compile Include="Services\IItemService.cs" />
-    <Compile Include="Services\IQueryService.cs" />
-    <Compile Include="Services\ITodoService.cs" />
-    <Compile Include="Services\ItemService.cs" />
+    <Compile Include="Repository\TodoRepository\TodoRepository.cs" />
+    <Compile Include="Repository\TodoRepository\ITodoRepository.cs" />
+    <Compile Include="Repository\ItemRepository\IItemRepository.cs" />
+    <Compile Include="Repository\ItemRepository\ItemRepository.cs" />
+    <Compile Include="Services\ItemCommand\IItemService.cs" />
+    <Compile Include="Services\Queries\IQueryService.cs" />
+    <Compile Include="Services\TodoCommand\ITodoService.cs" />
+    <Compile Include="Services\ItemCommand\ItemService.cs" />
     <Compile Include="Services\IUnitOfWork.cs" />
-    <Compile Include="Services\QueryService.cs" />
-    <Compile Include="Services\TodoService.cs" />
+    <Compile Include="Services\Queries\QueryService.cs" />
+    <Compile Include="Services\TodoCommand\TodoService.cs" />
     <Compile Include="Services\UnitOfWork.cs" />
     <Compile Include="SQLite\BuildConnection.cs" />
     <Compile Include="SQLite\DBContext.cs" />

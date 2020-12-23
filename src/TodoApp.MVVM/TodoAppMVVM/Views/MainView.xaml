@@ -9,7 +9,7 @@
         
         mc:Ignorable="d"
         Title="MainView" Height="450" Width="800"
-        x:Name="_window"
+        x:Name="_window" WindowStartupLocation="CenterScreen"
         
         >
     <!--d:DataContext="{d:DesignInstance Type=local2:CreateTodoViewModel, IsDesignTimeCreatable=True}"-->
@@ -56,7 +56,7 @@
                 
             </Button>
             <!--Back to List View Button-->
-            <Button x:Name="btn_BacktoListView" Width="auto" Content="Back" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="1" Cursor="Hand"  
+            <Button x:Name="btn_BacktoListView" Width="70" Content="Back" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="1" Cursor="Hand"  
                     Command="{Binding BackViewListCommand}"
                     Visibility="{Binding Btn_BacktoListViewVisibility, Converter={StaticResource BoolToVisibilityConverter}}"
                     >
@@ -108,12 +108,12 @@
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
 
-                    <DataGridTemplateColumn Width="50" Header="">
+                    <DataGridTemplateColumn Width="70" Header="">
                         <!-- DeLETE -->
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <!--<Button Content="Delete" Click="DeleteList"/>-->
-                                <Button x:Name="Btn_DelTodo" Width="auto" Height="25"  Cursor="Hand"  Content="D" 
+                                <Button x:Name="Btn_DelTodo" Width="auto" Height="25"  Cursor="Hand"  Content="Delete"   Background="{x:Null}" BorderBrush="{x:Null}"
                                         Command="{Binding DataContext.DeleteCommand, ElementName=_window}" CommandParameter="{Binding}" />
                                 <!--Click="DeleteList"-->
                                     <!--<Button.Content>
@@ -180,7 +180,7 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <!--<Button Content="Delete" Click="DeleteItem"/>-->
-                                <Button Width="auto" Height="30" Cursor="Hand" Content="Del" 
+                                <Button Width="auto" Height="30" Cursor="Hand" Content="Delete" 
                                         Command="{Binding DataContext.DeleteItemCommand, ElementName=_window}" CommandParameter="{Binding}" >
                                     <!--Click="DeleteItem"-->
                                    

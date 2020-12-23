@@ -25,17 +25,11 @@ namespace TodoAppMVVM.ViewModels
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        //IKernel kernel;
-        //private readonly INinjectConfiguration ninjectConfiguration;
         private readonly IMessageViewModel messageViewModel;
-        public CreateTodoViewModel(IUnitOfWork _unitOfWork,  IMessageViewModel _messageViewModel)//INinjectConfiguration _DI,//, IKernel _kernel)//IUnitOfWork _unitOfWork)
+        public CreateTodoViewModel(IUnitOfWork _unitOfWork,  IMessageViewModel _messageViewModel)
         {
             messageViewModel = _messageViewModel;
             unitOfWork = _unitOfWork;
-            //ninjectConfiguration = _DI;
-            //unitOfWork = new UnitOfWork();
-            //kernel = _kernel;//new StandardKernel();
-
         }
 
         private ICommand _createTodoCommand;
@@ -48,7 +42,6 @@ namespace TodoAppMVVM.ViewModels
                 {
                     _createTodoCommand = new RelayCommand(() =>
                     {
-                        //MessageViewModel msg = new MessageViewModel();
                         var _message = "";
                         if (ListName.Trim().Length != 0 && ListDescription.Trim().Length != 0)
                         {
@@ -61,7 +54,6 @@ namespace TodoAppMVVM.ViewModels
                                     Description = ListDescription,
                                 };
                                 var result = unitOfWork.catchResult(unitOfWork.TodoServices.Update(data));
-                                //msg.Message = result;
                                 _message = result;
 
                             }
@@ -73,7 +65,6 @@ namespace TodoAppMVVM.ViewModels
                                     Description = Description,
                                 };
                                 var result = unitOfWork.catchResult(unitOfWork.TodoServices.Add(data));
-                                //msg.Message = result;
                                 _message = result;
 
                             }
@@ -81,16 +72,12 @@ namespace TodoAppMVVM.ViewModels
 
                         }
                         else { _message = "Please Fill up All TextBox!!"; }
-                        //var appVM = ninjectConfiguration.Configure().Get<MessageViewModel>();
-
-                        //appVM.Message = _message;
                         messageViewModel.Message = _message;
                         MessageView todoview = new MessageView();
 
                         todoview.DataContext = messageViewModel;//appVM;
                         //Console.WriteLine(appVM.Message);
                         todoview.ShowDialog();
-                        //manager.ShowWindow(msg);
 
                     });
                 }
@@ -98,43 +85,7 @@ namespace TodoAppMVVM.ViewModels
                 return _createTodoCommand;
             }
         }
-        //public void SaveButton()
-        //{
-
-        //    MessageViewModel msg = new MessageViewModel();
-
-        //    if (ListName.Trim().Length != 0 && ListDescription.Trim().Length != 0)
-        //    {
-        //        if (Id != 0)
-        //        {
-        //            var data = new TodoModel
-        //            {
-        //                TodoModelId = Id,
-        //                Name = ListName,
-        //                Description = ListDescription,
-        //            };
-        //            var result = unitOfWork.catchResult(unitOfWork.ListServices.UpdateList(data));
-        //            msg.Message = result;
-
-        //        }
-        //        else
-        //        {
-        //            var data = new TodoModel
-        //            {
-        //                Name = Name,
-        //                Description = Description,
-        //            };
-        //            var result = unitOfWork.catchResult(unitOfWork.ListServices.RegisterNewList(data));
-        //            msg.Message = result;
-
-        //        }
-        //        Close?.Invoke();  // Close windows
-
-        //    }
-        //    else { msg.Message = "Please Fill up All TextBox!!"; }
-        //    manager.ShowWindow(msg);
-        //}
-        //private string _msg = "this is a message ";
+        
 
         public string ListName
         {

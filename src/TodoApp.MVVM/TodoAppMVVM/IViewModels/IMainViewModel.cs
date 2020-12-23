@@ -11,11 +11,11 @@ namespace TodoApp.MVVM.IViewModels
 {
     public interface IMainViewModel 
     {
-        DelegateCommand<TodoListDTO> DeleteCommand { get; }
-        DelegateCommand<ItemDTO> DeleteItemCommand { get; }
-        DelegateCommand<TodoListDTO> EditCommand { get; }
-        DelegateCommand<ItemDTO> EditItemCommand { get; }
-        DelegateCommand<TodoListDTO> ViewCommand { get; }
+        //DelegateCommand<TodoListDTO> DeleteCommand { get; }
+        //DelegateCommand<ItemDTO> DeleteItemCommand { get; }
+        //DelegateCommand<TodoListDTO> EditCommand { get; }
+        //DelegateCommand<ItemDTO> EditItemCommand { get; }
+        //DelegateCommand<TodoListDTO> ViewCommand { get; }
 
         //void btn_BacktoListView();
         //void Btn_CreateItem();

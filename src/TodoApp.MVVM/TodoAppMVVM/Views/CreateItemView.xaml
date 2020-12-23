@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TodoAppMVVM.Views"
          xmlns:local1="clr-namespace:TodoAppMVVM.ViewModels"
         mc:Ignorable="d"
-        Title="CreateItemView" Height="200" Width="350">
+        Title="CreateItemView" Height="200" Width="350" WindowStartupLocation="CenterScreen">
     <!--<Window.DataContext>
         <local1:CreateItemViewModel />
     </Window.DataContext>-->

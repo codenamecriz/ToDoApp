@@ -14,7 +14,7 @@ using TodoAppMVVM.ViewModels;
 
 namespace TodoApp.MVVM.EventCommands
 {
-    public class VisibilityCommand :  IVisibilityCommand
+    public class VisibilityCommand : ButtonClickCommand,  IVisibilityCommand
     {
         #region INotifyPropertyChanged Members
 
@@ -38,68 +38,8 @@ namespace TodoApp.MVVM.EventCommands
             if (TypeDescriptor.GetProperties(this)[propertyName] == null)
                 throw new ArgumentNullException(GetType().Name + " Does not contain property: " + propertyName);
         }
-        //=================================================== Item DataGrid View
-        //private ObservableCollection<ItemModel> _itemModel;
-        //public ObservableCollection<ItemModel> ItemsDataGrid
-        //{
-            
-        //    get { return _itemModel; }
-        //    set
-        //    {
-        //        if (_itemModel == value) return;
-                
-        //        _itemModel = value;
-                
-        //        OnPropertyChanged(nameof(ItemsDataGrid));
-        //    }
-        //}
-        //================================================== List DataGridView
-        //private ObservableCollection<TodoModel> _oldListDataGrid ;
-        //public ObservableCollection<TodoModel> _listDataGrid;
 
-        //public ObservableCollection<TodoModel> ListDataGrid
-        //{
-
-        //    get {
-
-        //        //Console.WriteLine(_listDataGrid.Count); 
-        //        return _listDataGrid; 
-
-        //    }
-        //    set
-        //    {
-               
-        //        if (_listDataGrid != value)
-        //        {
-        //            //Refresh = new ObservableCollection<TodoModel>();
-        //            //ListDataGrid.Remove(_oldListDataGrid);
-                   
-        //            _listDataGrid = value;
-        //            //if (_oldListDataGrid != null)
-        //            //{ _listDataGrid.Clear(); }
-        //            //_oldListDataGrid = _listDataGrid;
-        //            //_oldListDataGrid = _listDataGrid;
-
-        //            OnPropertyChanged(nameof(ListDataGrid));
-                    
-
-        //        }
-        //        else { return; }
-        //    }
-        //}
-        //public  void ClearTodoDatagrid()
-        //{
-
-        //    if (_listDataGrid != null)
-        //    {
-        //        Console.WriteLine(_listDataGrid.Count);
-        //        Console.WriteLine(ListDataGrid.Count);
-        //        ListDataGrid.Clear();
-        //        _listDataGrid.Clear();
-
-        //    }
-        //}
-
+       
         //----------------------------------------------------------> Get All List from database
         private ObservableCollection<TodoListDTO> todoListGrid;
         public ObservableCollection<TodoListDTO> TodoListGrid
@@ -116,14 +56,8 @@ namespace TodoApp.MVVM.EventCommands
         }
 
         
-        //============================================== Close Windows
-        private DelegateCommand _closeCommand;
-        public DelegateCommand CloseCommand => _closeCommand ?? (_closeCommand = new DelegateCommand(CloseWindow));
-        void CloseWindow()
-        {
-            Close?.Invoke();
-        }
-        public Action Close { get; set; }
+       
+
         //-------------=================================== Visibility
         // -->>Link for Tutorial Visibility Property https://www.technical-recipes.com/2016/binding-the-visibility-of-wpf-elements-to-a-property/
 

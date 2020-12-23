@@ -5,10 +5,10 @@ namespace TodoAppMVVM.Services
 {
     public interface IItemService
     {
-        IEnumerable<ItemModel> LoadItem(int Id);
-        List<string> RegisterNewItem(ItemModel data);
-        List<string> RemoveItem(ItemModel data);
-        List<string> UpdateItem(ItemModel data);
+        //IEnumerable<Item> LoadItem(int Id);
+        List<string> Add(Item data);
+        List<string> RemoveItem(Item data);
+        List<string> Update(Item data);
         void Save();
     }
 }

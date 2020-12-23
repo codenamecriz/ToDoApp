@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace TodoAppMVVM.Models
 {
-    public class TodoModel
+    public class Todo
     {
-        public int TodoModelId { get; set; } 
+        public int Id { get; set; } 
         public string Name { get; set; }
 
         public string Description { get; set; }
 
-        public virtual ICollection<ItemModel> TodoItemModels { get; private set; } = new ObservableCollection<ItemModel>();
+        public virtual ICollection<Item> TodoItemModels { get; private set; } = new ObservableCollection<Item>();
     }
 }

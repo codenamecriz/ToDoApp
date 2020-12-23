@@ -30,7 +30,7 @@
                 <RowDefinition Height="*" />
                 <!--List Data Gridview-->
             </Grid.RowDefinitions>
-            <Label Content="- X" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" FontSize="13" x:Name="Labelmsg" 
+            <Label Content="- X" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" FontSize="13" Visibility="Hidden" x:Name="Labelmsg" 
                     />
             <!--Visibility="{Binding LblInvisibleTextVisibility, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"-->
             <!--Create List Button-->

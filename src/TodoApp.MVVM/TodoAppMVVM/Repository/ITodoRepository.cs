@@ -8,9 +8,9 @@ namespace TodoAppMVVM.Repository
     public interface ITodoRepository
     {
 
-        //IEnumerable<TodoModel> GetAllDatalist();
-        string Add(TodoModel datalist);
-        string Update(TodoModel data);
-        void Delete(int id);
+        IEnumerable<Todo> GetAllDatalist();
+        string Add(Todo datalist);
+        string Update(Todo data);
+        void RemoveList(int id);
     }
 }

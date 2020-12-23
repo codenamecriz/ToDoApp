@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TodoApp.MVVM.Repository;
 using TodoAppMVVM.Models;
 using TodoAppMVVM.Repository;
 
@@ -11,15 +10,15 @@ namespace TodoAppMVVM.Services
     {
         //private IItemRepository itemRepository;
         private readonly IItemRepository itemRepository ;
-        private readonly IGetDataQueryRepository todoQueryRepository ;
-        private readonly List<ItemModel> newItem = new List<ItemModel>();
-        private readonly List<ItemModel> updateItem = new List<ItemModel>();
-        private readonly List<ItemModel> removeItem = new List<ItemModel>();
-        private readonly List<ItemModel> ItemContainer = new List<ItemModel>();
+        //private readonly IGetDataQueryRepository todoQueryRepository ;
+        private readonly List<Item> newItem = new List<Item>();
+        private readonly List<Item> updateItem = new List<Item>();
+        private readonly List<Item> removeItem = new List<Item>();
+        private readonly List<Item> ItemContainer = new List<Item>();
         private List<string> result = new List<string>();
-        public ItemService(IItemRepository _itemRepository, IGetDataQueryRepository _todoQueryRepository)
+        public ItemService(IItemRepository _itemRepository)//, IGetDataQueryRepository _todoQueryRepository)
         {
-            todoQueryRepository = _todoQueryRepository;
+            //todoQueryRepository = _todoQueryRepository;
             itemRepository = _itemRepository;
             //itemRepository = _itemRepository;
         }
@@ -27,21 +26,23 @@ namespace TodoAppMVVM.Services
         {
             public string msgs;
             public string validate;
-        }
-        public IEnumerable<ItemModel> LoadItem(int Id) // ------> Load all Item to Container
-        {
 
-            //itemRepository = new ItemRepository();
-            ItemContainer.AddRange(todoQueryRepository.GetAllItem(Id));
-
-            return ItemContainer;
         }
-        public List<string> RegisterNewItem(ItemModel data) // -----------------> Insert new item
+        //public IEnumerable<Item> LoadItem(int Id) // ------> Load all Item to Container
+        //{
+
+        //    //itemRepository = new ItemRepository();
+            
+
+        //    return ItemContainer;
+        //}
+        public List<string> Add(Item data) // -----------------> Insert new item
         {
             Message Msg;
-            LoadItem(data.TodoModelId);
-           
-            if (data.ItemModelId == 0 && !ItemContainer.Contains(data))
+            //LoadItem(data.TodoId);
+            ItemContainer.AddRange(itemRepository.GetItemById(data.TodoId));
+            Console.WriteLine("------>"+data.Id);
+            if (data.Id == 0 && !ItemContainer.Contains(data))
             {
                 newItem.Add(data);
 
@@ -58,13 +59,13 @@ namespace TodoAppMVVM.Services
             return result;
 
         }
-        public List<string> UpdateItem(ItemModel data) //--------------------------> Update new Item
+        public List<string> Update(Item data) //--------------------------> Update new Item
         {
             Message Msg;
-            LoadItem(data.TodoModelId);
-            Console.WriteLine(!ItemContainer.Contains(data));
-            Console.WriteLine((data.ItemModelId));
-            if (data.ItemModelId != 0 && !ItemContainer.Contains(data))
+            ItemContainer.AddRange(itemRepository.GetItemById(data.TodoId));
+            //Console.WriteLine(!ItemContainer.Contains(data));
+            //Console.WriteLine((data.ItemModelId));
+            if (data.Id != 0 && !ItemContainer.Contains(data))
             {
                 updateItem.Add(data);
                 Msg.msgs = "Item Successfully Updated!!";
@@ -80,11 +81,11 @@ namespace TodoAppMVVM.Services
             return result;
 
         }
-        public List<string> RemoveItem(ItemModel data) //------------------------------------- >> Remove Item
+        public List<string> RemoveItem(Item data) //------------------------------------- >> Remove Item
         {
             Message Msg;
-            LoadItem(data.TodoModelId);
-            if (data.ItemModelId != 0 )
+            ItemContainer.AddRange(itemRepository.GetItemById(data.TodoId));
+            if (data.Id != 0 )
             {
                 removeItem.Add(data);
                 Msg.msgs = "Your Request Has Been Successfull. Item has been Remove.!";
@@ -106,23 +107,23 @@ namespace TodoAppMVVM.Services
             //--- Save Item
             if (newItem != null)
             {
-                foreach (ItemModel item in newItem)
+                foreach (Item item in newItem)
                 {
                     itemRepository.Add(item);
                 }
             }
             if (updateItem != null)
             {
-                foreach (ItemModel update in updateItem)
+                foreach (Item update in updateItem)
                 {
                     itemRepository.Update(update);
                 }
             }
             if (removeItem != null)
             {
-                foreach (ItemModel remove in removeItem)
+                foreach (Item remove in removeItem)
                 {
-                    itemRepository.Delete(remove.ItemModelId);
+                    itemRepository.RemoveItem(remove.Id);
                 }
             }
 

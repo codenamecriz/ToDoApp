@@ -6,7 +6,7 @@ namespace TodoAppMVVM.Services
     public interface IUnitOfWork
     {
         IItemService ItemServices { get; }
-        ITodoService ListServices { get; }
+        ITodoService TodoServices { get; }
 
         IQueryService QeuriesServices { get; }
 

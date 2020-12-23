@@ -145,6 +145,7 @@
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="EventCommands\IVisibilityCommand.cs" />
     <Compile Include="EventCommands\VisibilityCommand.cs" />
+    <Compile Include="INinjectConfiguration.cs" />
     <Compile Include="IViewModels\ICreateItemViewModel.cs" />
     <Compile Include="IViewModels\ICreateTodoViewModel.cs" />
     <Compile Include="IViewModels\IMainViewModel.cs" />
@@ -153,9 +154,9 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\ItemDTO.cs" />
-    <Compile Include="Models\ItemModel.cs" />
+    <Compile Include="Models\Item.cs" />
     <Compile Include="Models\TodoListDTO.cs" />
-    <Compile Include="Models\TodoModel.cs" />
+    <Compile Include="Models\Todo.cs" />
     <Compile Include="NinjectConfiguration.cs" />
     <Compile Include="Queries\GetAllItemQuery.cs" />
     <Compile Include="Queries\GetAllTodoQuery.cs" />

@@ -5,6 +5,6 @@ namespace TodoAppMVVM.Queries
 {
     public interface IGetAllItemQuery
     {
-        IEnumerable<ItemModel> GetAllById(int id);
+        IEnumerable<Item> GetAllById(int id);
     }
 }

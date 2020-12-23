@@ -33,28 +33,24 @@ namespace TodoAppMVVM.ViewModels
 
         private readonly IUnitOfWork unitofWork;
         
-        private readonly DBContext createDb;
+        private readonly IDBContext createDb;
         //private readonly IWindowManager manager;//= new WindowManager();
-        private readonly NinjectConfiguration DI;
-        public MainViewModel(IUnitOfWork _unitofWork, IBuildConnection dbConnect)//IDBContext createDb
+        private readonly INinjectConfiguration DI;
+        public MainViewModel(IUnitOfWork _unitofWork, IBuildConnection dbConnect, IDBContext _createDb, INinjectConfiguration _DI)//IDBContext createDb
         {
-            createDb = new DBContext();
+            createDb = _createDb;
             if (File.Exists("TodoDatabase.db"))
             {  }
             else
             {
                 createDb.CreateDb();
             }
-            //ItemQuery = _ItemQuery;
-            //TodoQuery = _TodoQuery;
-            
             unitofWork = _unitofWork;
-           
-            DI = new NinjectConfiguration();
-            //_dbConnect = dbConnect;
-            //unitofWork = new UnitOfWork();
+
+            DI = _DI;//new NinjectConfiguration();
+     
             _dbConnect = dbConnect;
-            //DbConnect db = new DbConnect();
+            
             Btn_CreateListVisibility = true;
             ListDataGridViewVisibility = true;
             ItemDataGridViewVisibility = false;
@@ -70,7 +66,6 @@ namespace TodoAppMVVM.ViewModels
          
         }
       
-        
         private int ListId; 
 
         //public void Btn_CreateItem()
@@ -83,7 +78,7 @@ namespace TodoAppMVVM.ViewModels
 
         private ICommand _createItemCommand;
 
-        public ICommand CreateItemCommand // sample declare a button using ICommand
+        public ICommand CreateItemCommand // sample declare a button using ICommand 
         {
             get
             {
@@ -93,6 +88,7 @@ namespace TodoAppMVVM.ViewModels
                     {
                        
                         var appVM = DI.Configure().Get<CreateItemViewModel>();
+                       
                         appVM.TodoId = ListId;
                         CreateItemView todoview = new CreateItemView();
                         todoview.DataContext = appVM;
@@ -105,7 +101,6 @@ namespace TodoAppMVVM.ViewModels
             }
         }
 
-
         private ICommand _createTodoCommand;
 
         public ICommand CreateTodoCommand
@@ -116,8 +111,6 @@ namespace TodoAppMVVM.ViewModels
                 {
                     _createTodoCommand = new RelayCommand(() =>
                     {
-                       
-                       
                         var appVM = DI.Configure().Get<CreateTodoViewModel>();
                         CreateTodoView todoview = new CreateTodoView();
                         todoview.DataContext = appVM;
@@ -132,35 +125,6 @@ namespace TodoAppMVVM.ViewModels
             }
         }
 
-        //public void Btn_CreateList() // Open Windows to Add Item Todo Data
-        //{
-
-
-        //    //CreateTodoViewModel TodoWindow = new CreateTodoViewModel();
-
-        //    //manager.ShowDialog(TodoWindow);
-
-        //    IKernel kernel = new StandardKernel();
-        //    var appVM = kernel.Get<CreateTodoViewModel>();
-
-        //    CreateTodoView todoview = new CreateTodoView();
-        //    todoview.DataContext = appVM;
-        //    todoview.ShowDialog();
-        //    //CreateTodoView.DataContext = appVM;
-        //    //CreateTodoView.Show();
-        //    Show(); // show all data from database
-        //}
-
-
-        //public void btn_BacktoListView()
-        //{
-        //    ListDataGridViewVisibility = true; // ListGridView
-        //    ItemDataGridViewVisibility = false; // ItemGridView
-
-        //    Btn_CreateListVisibility = true;
-        //    Btn_CreateItemVisibility = false;
-        //    Btn_BacktoListViewVisibility = false;
-        //}
         //========================================================= back to LIST View  (Deaclearing a Button using DeleGateCommand)
         private DelegateCommand _backViewListCommand;
         public DelegateCommand BackViewListCommand =>
@@ -185,13 +149,13 @@ namespace TodoAppMVVM.ViewModels
 
             //manager.ShowWindow(msg);
             //var todoParameter = new List<TodoModel>();
-            var todoParameter = new TodoModel
+            var todoParameter = new Todo
             {
-                TodoModelId = parameter.TodoId,
+                Id = parameter.Id,
                 Name = parameter.Name,
                 Description = parameter.Description
             };
-            var result = unitofWork.catchResult(unitofWork.ListServices.RemoveList(todoParameter));
+            var result = unitofWork.catchResult(unitofWork.TodoServices.RemoveList(todoParameter));
             MessageBox.Show(result);
             //ListDataGrid.Remove(parameter);
             Show();
@@ -204,8 +168,8 @@ namespace TodoAppMVVM.ViewModels
                     _deleteItemCommand ?? (_deleteItemCommand = new DelegateCommand<ItemDTO>(ExecuteDeleteItemCommand));
         void ExecuteDeleteItemCommand(ItemDTO parameter)
         {
-            var itemParameter = new ItemModel { 
-                    ItemModelId = parameter.ItemId,
+            var itemParameter = new Item {
+                    Id = parameter.Id,
                     Name = parameter.Name,
                     Detailed = parameter.Detailed,
                     Status = parameter.Status,
@@ -225,7 +189,7 @@ namespace TodoAppMVVM.ViewModels
 
             var appVM = DI.Configure().Get<CreateTodoViewModel>();
             CreateTodoView todoview = new CreateTodoView();
-            appVM.Id = parameter.TodoId;
+            appVM.Id = parameter.Id;
             appVM.Name = parameter.Name;
             appVM.Description = parameter.Description;
             todoview.DataContext = appVM;
@@ -253,7 +217,7 @@ namespace TodoAppMVVM.ViewModels
 
             var appVM = DI.Configure().Get<CreateItemViewModel>();
             CreateItemView itemoview = new CreateItemView();
-            appVM.Id = parameter.ItemId;
+            appVM.Id = parameter.Id;
             appVM.Name = parameter.Name;
             appVM.Detailed = parameter.Detailed;
             appVM.Status = parameter.Status;
@@ -281,8 +245,8 @@ namespace TodoAppMVVM.ViewModels
          
         void ExecuteViewCommand(TodoListDTO parameter)
         {
-
-            ListId = parameter.TodoId;
+           
+            ListId = parameter.Id;
             //MessageViewModel msg = new MessageViewModel();
             //msg.Message = parameter.TodoModelId.ToString();
 

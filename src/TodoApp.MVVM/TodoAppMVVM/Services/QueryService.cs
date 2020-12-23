@@ -4,16 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TodoApp.MVVM.Models;
-using TodoApp.MVVM.Repository;
+using TodoAppMVVM.Repository;
 
 namespace TodoApp.MVVM.Services
 {
     public class QueryService : IQueryService
     {
-        private readonly IGetDataQueryRepository Query;
-        public QueryService(IGetDataQueryRepository query)
+        private readonly ITodoRepository todoRepository;
+        private readonly IItemRepository itemRepository;
+        public QueryService(ITodoRepository _todoRepository, IItemRepository _itemRepository)
         {
-            Query = query;
+            todoRepository = _todoRepository;
+            itemRepository = _itemRepository;
         }
         public List<TodoListDTO> GetAll()
         {
@@ -22,10 +24,10 @@ namespace TodoApp.MVVM.Services
             {
                 //var ObjQuery = from obj in ObjContext.Employees
                 //               select obj;
-                var query = Query.GetAllDatalist();
+                var query = todoRepository.GetAllDatalist();
                 foreach (var list in query)
                 {
-                    ObjTodoList.Add(new TodoListDTO { TodoId = list.TodoModelId, Name = list.Name, Description = list.Description });
+                    ObjTodoList.Add(new TodoListDTO { Id = list.Id, Name = list.Name, Description = list.Description });
                 }
             }
             catch (Exception ex)
@@ -41,12 +43,12 @@ namespace TodoApp.MVVM.Services
             {
                 //var ObjQuery = from obj in ObjContext.Employees
                 //               select obj;
-                var query = Query.GetAllItem(id);
+                var query = itemRepository.GetItemById(id);
                 foreach (var list in query)
                 {
                     ObjItems.Add(new ItemDTO
                     {
-                        ItemId = list.ItemModelId,
+                        Id = list.Id,
                         Name = list.Name,
                         Detailed = list.Detailed,
                         Status = list.Status,

@@ -7,10 +7,10 @@ namespace TodoAppMVVM.Services
     public interface ITodoService
     {
         //List<string> catchResult(List<string> actionResult);
-        IEnumerable<TodoModel> LoadList();
-        List<string> RegisterNewList(TodoModel data);
-        List<string> RemoveList(TodoModel data);
-        List<string> UpdateList(TodoModel data);
+        //IEnumerable<Todo> LoadList();
+        List<string> Add(Todo data);
+        List<string> RemoveList(Todo data);
+        List<string> Update(Todo data);
         void Save();
     }
 }

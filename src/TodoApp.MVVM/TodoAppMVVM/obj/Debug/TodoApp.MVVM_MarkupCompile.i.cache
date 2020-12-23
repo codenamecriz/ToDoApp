@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\PPS SE\Training Projects\TodoApp.MVVM\TodoApp.MVVM\TodoAppMVVM\obj\Debug\
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.MVVM\TodoAppMVVM\obj\Debug\
 TodoApp.MVVM
 none
 false
 DEBUG;TRACE
-D:\PPS SE\Training Projects\TodoApp.MVVM\TodoApp.MVVM\TodoAppMVVM\App.xaml
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.MVVM\TodoAppMVVM\App.xaml
 5865539099
 
-491167602565
-146-355122530
+50-913743614
+1462126681089
 MainWindow.xaml;Views\CreateItemView.xaml;Views\CreateTodoView.xaml;Views\MainView.xaml;Views\MessageView.xaml;
 
-True
+False
 

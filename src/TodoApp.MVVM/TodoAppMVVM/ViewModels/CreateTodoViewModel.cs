@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using TodoApp.MVVM;
 using TodoApp.MVVM.Commands;
 using TodoApp.MVVM.EventCommands;
 using TodoApp.MVVM.IViewModels;
@@ -20,17 +21,19 @@ namespace TodoAppMVVM.ViewModels
     public class CreateTodoViewModel : VisibilityCommand, ICreateTodoViewModel
     {
         private readonly IUnitOfWork unitOfWork;// = new UnitOfWork();
-        IWindowManager manager;
+    
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        IKernel kernel;
-        public CreateTodoViewModel(IUnitOfWork _unitOfWork)//IUnitOfWork _unitOfWork)
+        //IKernel kernel;
+        private readonly INinjectConfiguration DI;
+        public CreateTodoViewModel(IUnitOfWork _unitOfWork, INinjectConfiguration _DI)//, IKernel _kernel)//IUnitOfWork _unitOfWork)
         {
             unitOfWork = _unitOfWork;
+            DI = _DI;
             //unitOfWork = new UnitOfWork();
-            kernel = new StandardKernel();
-            manager = new WindowManager();
+            //kernel = _kernel;//new StandardKernel();
+
         }
 
 
@@ -52,25 +55,25 @@ namespace TodoAppMVVM.ViewModels
                         {
                             if (Id != 0)
                             {
-                                var data = new TodoModel
+                                var data = new Todo
                                 {
-                                    TodoModelId = Id,
+                                    Id = Id,
                                     Name = ListName,
                                     Description = ListDescription,
                                 };
-                                var result = unitOfWork.catchResult(unitOfWork.ListServices.UpdateList(data));
+                                var result = unitOfWork.catchResult(unitOfWork.TodoServices.Update(data));
                                 //msg.Message = result;
                                 _message = result;
 
                             }
                             else
                             {
-                                var data = new TodoModel
+                                var data = new Todo
                                 {
                                     Name = Name,
                                     Description = Description,
                                 };
-                                var result = unitOfWork.catchResult(unitOfWork.ListServices.RegisterNewList(data));
+                                var result = unitOfWork.catchResult(unitOfWork.TodoServices.Add(data));
                                 //msg.Message = result;
                                 _message = result;
 
@@ -79,7 +82,8 @@ namespace TodoAppMVVM.ViewModels
 
                         }
                         else { _message = "Please Fill up All TextBox!!"; }
-                        var appVM = kernel.Get<MessageViewModel>();
+                        var appVM = DI.Configure().Get<MessageViewModel>();
+                 
                         appVM.Message = _message;
                         MessageView todoview = new MessageView();
 

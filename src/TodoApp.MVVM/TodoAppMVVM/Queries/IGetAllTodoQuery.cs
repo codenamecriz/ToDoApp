@@ -5,6 +5,6 @@ namespace TodoAppMVVM.Queries
 {
     public interface IGetAllTodoQuery
     {
-        IEnumerable<TodoModel> GetAll();
+        IEnumerable<Todo> GetAll();
     }
 }

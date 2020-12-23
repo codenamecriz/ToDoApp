@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Jj4Qe7esGyAvj91k24Np6j2ys6CBusLrKRPLSJLAjxrr8WdqhQ3yf6A4/K/P8VwSCnFNOR4OVB63uQsv++YwkQ==",
+  "dgSpecHash": "h+8j/rTEv6BGp5y4Z+NLHP+Qout7UOueQ+si6NsEUsXgp3wZqeQgtuFcoYkhzNd+QycGS8msqSh8UtcLGAfCoA==",
   "success": true,
-  "projectFilePath": "D:\\PPS Software Engineering\\Practice\\Sys Development Exercise\\ToDoApp\\src\\TodoApp.API\\TodoApp.API\\TodoApp.API.csproj",
+  "projectFilePath": "D:\\PPS SE\\Training Projects\\TodoApp.MVVM\\src\\TodoApp.API\\TodoApp.API\\TodoApp.API.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

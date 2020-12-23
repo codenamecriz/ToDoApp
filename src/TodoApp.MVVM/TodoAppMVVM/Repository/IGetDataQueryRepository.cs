@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using TodoAppMVVM.Models;
+﻿//using System.Collections.Generic;
+//using TodoAppMVVM.Models;
 
-namespace TodoApp.MVVM.Repository
-{
-    public interface IGetDataQueryRepository
-    {
-        IEnumerable<ItemModel> GetAllItem(int id);
-        IEnumerable<TodoModel> GetAllDatalist();
-    }
-}
+//namespace TodoApp.MVVM.Repository
+//{
+//    public interface IGetDataQueryRepository
+//    {
+//        IEnumerable<Item> GetAllItem(int id);
+//        IEnumerable<Todo> GetAllDatalist();
+//    }
+//}

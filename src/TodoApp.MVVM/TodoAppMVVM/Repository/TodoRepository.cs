@@ -19,35 +19,35 @@ namespace TodoAppMVVM.Repository
             context = _context;
         }
 
-        //public IEnumerable<TodoModel> GetAllDatalist() // Get all Data
-        //{
-        //    connect = context.DbConnection();
-        //    connect.Open();
-        //    //List<string> listFile = new List<string>();
-        //    var listFile = new List<TodoModel>();
+        public IEnumerable<Todo> GetAllDatalist() // Get all Data
+        {
+            connect = context.DbConnection();
+            connect.Open();
+            //List<string> listFile = new List<string>();
+            var listFile = new List<Todo>();
 
 
-        //    string query = "Select * from Todo";
-        //    SQLiteCommand cmd = new SQLiteCommand(query, connect);
-        //    SQLiteDataReader rd = cmd.ExecuteReader();
+            string query = "Select * from Todo";
+            SQLiteCommand cmd = new SQLiteCommand(query, connect);
+            SQLiteDataReader rd = cmd.ExecuteReader();
 
-        //    while (rd.Read())
-        //    {
-        //        listFile.Add(new TodoModel()
-        //        {
-        //            TodoModelId = rd.GetInt32(0),
-        //            Name = rd.GetString(1),
-        //            Description = rd.GetString(2)
-        //        });
+            while (rd.Read())
+            {
+                listFile.Add(new Todo()
+                {
+                    Id = rd.GetInt32(0),
+                    Name = rd.GetString(1),
+                    Description = rd.GetString(2)
+                });
 
-        //    }
-        //    connect.Close();
-        //    return listFile;
-        //    //throw new NotImplementedException();
-        //}
+            }
+            connect.Close();
+            return listFile;
+            //throw new NotImplementedException();
+        }
 
 
-        public string Add(TodoModel data) // Add to Datalist table
+        public string Add(Todo data) // Add to Datalist table
         {
             var name = data.Name;
             var description = data.Description;
@@ -63,9 +63,9 @@ namespace TodoAppMVVM.Repository
             //throw new NotImplementedException();
         }
 
-        public string Update(TodoModel data)  // --------------> Update
+        public string Update(Todo data)  // --------------> Update
         {
-            int id = data.TodoModelId;
+            int id = data.Id;
             string name = data.Name;
             string des = data.Description;
             connect = context.DbConnection();
@@ -83,7 +83,7 @@ namespace TodoAppMVVM.Repository
         }
        
 
-        public void Delete(int id) // -------------------> delete datalist
+        public void RemoveList(int id) // -------------------> delete datalist
         {
             //string[] datas = data.Split('&');
             //var id = datas[0];

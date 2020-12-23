@@ -10,14 +10,14 @@ namespace TodoAppMVVM.Services
 
         //private readonly ITodoService listServices;
         //private readonly IItemService itemServices;
-        ITodoService listServices;// = new TodoService();
+        ITodoService todoServices;// = new TodoService();
         IItemService itemServices; //= new ItemService();
-        IQueryService todoListService;
-        public UnitOfWork(ITodoService _listServices, IItemService _itemServices, IQueryService _todoListService)//ITodoService _listServices, IItemService _itemServices)//IItemService _itemService, IListService _listService)
+        IQueryService queryService;
+        public UnitOfWork(ITodoService _todoServices, IItemService _itemServices, IQueryService _queryService)//ITodoService _listServices, IItemService _itemServices)//IItemService _itemService, IListService _listService)
         {
-            listServices = _listServices;
+            todoServices = _todoServices;
             itemServices = _itemServices;
-            todoListService = _todoListService;
+            queryService = _queryService;
             //itemServices = _itemServices;
             //listServices = _listServices;
 
@@ -25,11 +25,11 @@ namespace TodoAppMVVM.Services
         public string catchResult(List<string> actionResult) // ----> CatchResult Message
         {
             if (actionResult[1] == "true")
-            { ListServices.Save(); ItemServices.Save(); } //-------> Saving Data
+            { TodoServices.Save(); ItemServices.Save(); } //-------> Saving Data
 
             return actionResult[0];
         }
-        public ITodoService ListServices // -------> 
+        public ITodoService TodoServices // -------> todo command
         {
             get
             {
@@ -37,12 +37,12 @@ namespace TodoAppMVVM.Services
                 //{
                 //    this.listServices = new TodoService();
                 //}
-                return listServices;
+                return todoServices;
             }
         }
 
 
-        public IItemService ItemServices // -------> 
+        public IItemService ItemServices // -------> item command
         {
             get
             {
@@ -54,7 +54,7 @@ namespace TodoAppMVVM.Services
             }
         }
         
-        public IQueryService QeuriesServices // -------> 
+        public IQueryService QeuriesServices // ------->  todo and item query
         {
             get
             {
@@ -62,7 +62,7 @@ namespace TodoAppMVVM.Services
                 //{
                 //    this.todoListService = new QueryService();
                 //}
-                return todoListService;
+                return queryService;
             }
         }
 

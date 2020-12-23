@@ -8,7 +8,6 @@ using System.Windows;
 using Autofac;
 using Caliburn.Micro;
 using TodoApp.MVVM.IViewModels;
-using TodoApp.MVVM.Repository;
 using TodoAppMVVM.Queries;
 using TodoAppMVVM.Repository;
 using TodoAppMVVM.Services;
@@ -62,10 +61,10 @@ namespace TodoAppMVVM
 
             //_container
             //    .PerRequest<IGetAllTodoQuery, GetAllTodoQuery>();
-            _container
-                .PerRequest<IGetDataQueryRepository, GetDataQueryRepository>();
-            _container
-               .PerRequest<IGetAllItemQuery, GetAllItemQuery>();
+            //_container
+            //    .PerRequest<IGetDataQueryRepository, GetDataQueryRepository>();
+            //_container
+            //   .PerRequest<IGetAllItemQuery, GetAllItemQuery>();
             _container
                .Singleton<IUnitOfWork, UnitOfWork>();
             _container

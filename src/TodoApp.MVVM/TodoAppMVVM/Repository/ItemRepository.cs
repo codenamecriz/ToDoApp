@@ -18,7 +18,7 @@ namespace TodoAppMVVM.Repository
             connect = new SQLiteConnection();
             context = _context;
         }
-        public string Add(ItemModel data) //-------------------------> Insert Item
+        public string Add(Item data) //-------------------------> Insert Item
         {
             connect = context.DbConnection();
             //string Query = "INSERT INTO Itemlists(Name, Detailed,Status,DatalistId) VALUES('" + datas[0] + "', '" + datas[1] + "',)";
@@ -28,7 +28,7 @@ namespace TodoAppMVVM.Repository
             cmd.Parameters.AddWithValue("@name", data.Name);
             cmd.Parameters.AddWithValue("@detailed", data.Detailed);
             cmd.Parameters.AddWithValue("@status", data.Status);
-            cmd.Parameters.AddWithValue("@datalistId", data.TodoModelId);
+            cmd.Parameters.AddWithValue("@datalistId", data.TodoId);
 
             cmd.Prepare();
             cmd.ExecuteNonQuery();
@@ -36,8 +36,8 @@ namespace TodoAppMVVM.Repository
             return "Done Save From DB SQLITE Query";
 
         }
-
-        public void Delete(int id)
+        //============================================================ Delete
+        public void RemoveItem(int id)
         {
             connect = context.DbConnection();
             connect.Open();
@@ -50,35 +50,35 @@ namespace TodoAppMVVM.Repository
             connect.Close();
         }
 
-        //public IEnumerable<ItemModel> GetAll(int id) //--------------------------------> Get All Itemm By Id
-        //{
-        //    var listFile = new List<ItemModel>();
-        //    connect = context.DbConnection();
-        //    connect.Open();
-        //    string Query = "SELECT * From Item Where TodoModelId = " + id;
-
-        //    SQLiteCommand cmd = new SQLiteCommand(Query, connect);
-        //    SQLiteDataReader rd = cmd.ExecuteReader();
-
-        //    while (rd.Read())
-        //    {
-
-        //        listFile.Add(new ItemModel()
-        //        {
-        //            ItemModelId = rd.GetInt32(0),
-        //            Name = rd.GetString(1),
-        //            Detailed = rd.GetString(2),
-        //            Status = rd.GetString(3)
-        //            // etc... (0, 1 refer to the column index)
-        //        });
-        //    }
-        //    connect.Close();
-        //    return listFile;
-        //    //throw new NotImplementedException();
-        //}
-        public string Update(ItemModel data) //------------------------------>> Update
+        public IEnumerable<Item> GetItemById(int id) //--------------------------------> Get All Itemm By Id
         {
-            int id = data.ItemModelId;
+            var listFile = new List<Item>();
+            connect = context.DbConnection();
+            connect.Open();
+            string Query = "SELECT * From Item Where TodoModelId = " + id;
+
+            SQLiteCommand cmd = new SQLiteCommand(Query, connect);
+            SQLiteDataReader rd = cmd.ExecuteReader();
+
+            while (rd.Read())
+            {
+
+                listFile.Add(new Item()
+                {
+                    Id = rd.GetInt32(0),
+                    Name = rd.GetString(1),
+                    Detailed = rd.GetString(2),
+                    Status = rd.GetString(3)
+                    // etc... (0, 1 refer to the column index)
+                });
+            }
+            connect.Close();
+            return listFile;
+            //throw new NotImplementedException();
+        }
+        public string Update(Item data) //------------------------------>> Update
+        {
+            int id = data.Id;
             string name = data.Name;
             string des = data.Detailed;
             string status = data.Status;

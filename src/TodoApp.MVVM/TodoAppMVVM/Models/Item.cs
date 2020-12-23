@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace TodoAppMVVM.Models
 {
-    public class ItemModel
+    public class Item
     {
-        public int ItemModelId { get; set; } 
+        public int Id { get; set; } 
         public string Name { get; set; }
 
         public string Detailed { get; set; }
         public string Status { get; set; }
-        public int TodoModelId { get; set; }
+        public int TodoId { get; set; }
 
 
-        public virtual TodoModel TodoModel { get; set; }
+        public virtual Todo TodoModel { get; set; }
     }
 }

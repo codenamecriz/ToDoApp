@@ -8,7 +8,6 @@ using System.Windows;
 using Autofac;
 using Caliburn.Micro;
 using TodoApp.MVVM.IViewModels;
-using TodoAppMVVM.Queries;
 using TodoAppMVVM.Repository;
 using TodoAppMVVM.Services;
 using TodoAppMVVM.SQLite;

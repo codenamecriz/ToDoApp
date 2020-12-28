@@ -7,7 +7,6 @@ using TodoAppMVVM.Views;
 using Caliburn.Micro;
 using TodoAppMVVM.SQLite;
 using TodoAppMVVM.Models;
-using TodoAppMVVM.Queries;
 using System.IO;
 using TodoAppMVVM.Services;
 using System.Windows;
@@ -96,7 +95,6 @@ namespace TodoAppMVVM.ViewModels
                         Show();
                     });
                 }
-
                 return _createItemCommand;
             }
         }
@@ -212,9 +210,6 @@ namespace TodoAppMVVM.ViewModels
             //MessageBox.Show(itemsDataGrid..ToString());
 
         }
-        
-       
-
     }
 
 }

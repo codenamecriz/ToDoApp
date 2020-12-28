@@ -159,10 +159,6 @@
     <Compile Include="Models\DTO\TodoListDTO.cs" />
     <Compile Include="Models\Entities\Todo.cs" />
     <Compile Include="NinjectConfiguration.cs" />
-    <Compile Include="Queries\GetAllItemQuery.cs" />
-    <Compile Include="Queries\GetAllTodoQuery.cs" />
-    <Compile Include="Queries\IGetAllItemQuery.cs" />
-    <Compile Include="Queries\IGetAllTodoQuery.cs" />
     <Compile Include="Repository\GetDataQueryRepository.cs" />
     <Compile Include="Repository\IGetDataQueryRepository.cs" />
     <Compile Include="Repository\TodoRepository\TodoRepository.cs" />

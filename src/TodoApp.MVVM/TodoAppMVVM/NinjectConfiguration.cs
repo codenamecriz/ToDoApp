@@ -14,7 +14,7 @@ using TodoAppMVVM.ViewModels;
 
 namespace TodoApp.MVVM
 {
-    public class NinjectConfiguration : INinjectConfiguration
+    public class NinjectConfiguration //: INinjectConfiguration
     {
 
         public NinjectConfiguration()
@@ -38,7 +38,7 @@ namespace TodoApp.MVVM
             kernel.Bind<ITodoRepository>().To<TodoRepository>();
             kernel.Bind<IKernel>().To<StandardKernel>();
             kernel.Bind<IDBContext>().To<DBContext>();
-            kernel.Bind<INinjectConfiguration>().To<NinjectConfiguration>();
+            //kernel.Bind<INinjectConfiguration>().To<NinjectConfiguration>();
 
 
             return kernel;

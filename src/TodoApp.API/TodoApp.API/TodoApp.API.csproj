@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Controllers\" />
+    <Folder Include="Repository\Item\" />
+    <Folder Include="Repository\Todo\" />
     <Folder Include="Views\" />
   </ItemGroup>
 

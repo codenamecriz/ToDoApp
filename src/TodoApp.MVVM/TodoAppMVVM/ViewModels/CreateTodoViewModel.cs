@@ -20,11 +20,13 @@ namespace TodoAppMVVM.ViewModels
 {
     public class CreateTodoViewModel : VisibilityCommand, ICreateTodoViewModel
     {
-        private readonly IUnitOfWork unitOfWork;// = new UnitOfWork();
+       
     
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+
+        private readonly IUnitOfWork unitOfWork;// = new UnitOfWork();
         private readonly IMessageViewModel messageViewModel;
         public CreateTodoViewModel(IUnitOfWork _unitOfWork,  IMessageViewModel _messageViewModel)
         {

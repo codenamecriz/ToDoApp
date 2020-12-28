@@ -25,7 +25,11 @@ namespace TodoAppMVVM.Services
         public string catchResult(List<string> actionResult) // ----> CatchResult Message
         {
             if (actionResult[1] == "true")
-            { TodoServices.Save(); ItemServices.Save(); } //-------> Saving Data
+            {
+                //-------> Saving Data
+                TodoServices.Save(); 
+                ItemServices.Save(); 
+            } 
 
             return actionResult[0];
         }

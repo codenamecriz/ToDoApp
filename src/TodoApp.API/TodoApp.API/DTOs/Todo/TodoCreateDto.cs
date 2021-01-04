@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TodoApp.API.DTOs
 {
-    public class TodoCommandDto
+    public class TodoCreateDto
     {
         [Required]
         [MaxLength(250)]

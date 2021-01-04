@@ -43,7 +43,7 @@ namespace TodoAppMVVM.ViewModels
                     _createItemCommand = new RelayCommand(() =>
                     {
                         var _message = "";
-                        if (ItemName.Trim().Length != 0 && ItemDetailed.Trim().Length != 0)
+                        if (ItemName.Trim().Length != 0 && ItemDetailed.Trim().Length != 0 && SelectStatus.Length != 0)
                         {
                             if (Id != 0)
                             {
@@ -117,6 +117,8 @@ namespace TodoAppMVVM.ViewModels
         {
             get
             {
+                if (Status == null)
+                { Status = ""; }
                 return Status;
             }
             set { Status = value; }

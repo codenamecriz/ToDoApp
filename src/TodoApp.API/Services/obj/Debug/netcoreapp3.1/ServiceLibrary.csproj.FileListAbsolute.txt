@@ -1,0 +1,9 @@
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Services\bin\Debug\netcoreapp3.1\ServiceLibrary.deps.json
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Services\bin\Debug\netcoreapp3.1\ServiceLibrary.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Services\bin\Debug\netcoreapp3.1\ServiceLibrary.pdb
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Services\obj\Debug\netcoreapp3.1\ServiceLibrary.csprojAssemblyReference.cache
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Services\obj\Debug\netcoreapp3.1\ServiceLibrary.AssemblyInfoInputs.cache
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Services\obj\Debug\netcoreapp3.1\ServiceLibrary.AssemblyInfo.cs
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Services\obj\Debug\netcoreapp3.1\ServiceLibrary.csproj.CoreCompileInputs.cache
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Services\obj\Debug\netcoreapp3.1\ServiceLibrary.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Services\obj\Debug\netcoreapp3.1\ServiceLibrary.pdb

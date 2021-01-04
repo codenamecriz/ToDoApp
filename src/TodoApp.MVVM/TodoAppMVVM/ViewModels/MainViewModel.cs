@@ -92,7 +92,7 @@ namespace TodoAppMVVM.ViewModels
                         CreateItemView todoview = new CreateItemView();
                         todoview.DataContext = createItemViewModel;//appVM;
                         todoview.ShowDialog();
-                        Show();
+                        Show(); // load data
                     });
                 }
                 return _createItemCommand;
@@ -194,6 +194,7 @@ namespace TodoAppMVVM.ViewModels
             CreateItemView itemoview = new CreateItemView();
             itemoview.DataContext = createItemViewModel;//appVM;
             itemoview.ShowDialog();
+            createItemViewModel.Id = 0;
 
             Show();
         }

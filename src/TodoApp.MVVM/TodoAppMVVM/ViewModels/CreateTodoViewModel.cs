@@ -25,11 +25,11 @@ namespace TodoAppMVVM.ViewModels
         public string Name { get; set; }
         public string Description { get; set; }
 
-        private readonly IUnitOfWork unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
       
-        public CreateTodoViewModel(IUnitOfWork _unitOfWork)
+        public CreateTodoViewModel(IUnitOfWork unitOfWork)
         {
-            unitOfWork = _unitOfWork;
+            _unitOfWork = unitOfWork;
         }
 
         #region Create/Update Button
@@ -41,7 +41,7 @@ namespace TodoAppMVVM.ViewModels
                 {
                     _createTodoButton = new RelayCommand(() =>
                     {
-                        var _message = "";
+                        var Message = "";
                         if (ListName.Trim().Length != 0 && ListDescription.Trim().Length != 0)
                         {
                             if (Id != 0)
@@ -52,8 +52,8 @@ namespace TodoAppMVVM.ViewModels
                                     Name = ListName,
                                     Description = ListDescription,
                                 };
-                                var result = unitOfWork.CatchResult(unitOfWork.TodoServices.Update(data));
-                                _message = result;
+                                var result = _unitOfWork.CatchResult(_unitOfWork.TodoServices.Update(data));
+                                Message = result;
 
                             }
                             else
@@ -63,16 +63,16 @@ namespace TodoAppMVVM.ViewModels
                                     Name = Name,
                                     Description = Description,
                                 };
-                                var result = unitOfWork.CatchResult(unitOfWork.TodoServices.Add(data));
-                                _message = result;
+                                var result = _unitOfWork.CatchResult(_unitOfWork.TodoServices.Add(data));
+                                Message = result;
 
                             }
                             Close?.Invoke();  // Close windows
 
                         }
-                        else { _message = "Please Fill up All TextBox!!"; }
+                        else { Message = "Please Fill up All TextBox!!"; }
                    
-                        MessageBox.Show(_message);
+                        MessageBox.Show(Message);
 
                     });
                 }

@@ -11,16 +11,16 @@ namespace TodoAppMVVM.Repository
     {
    
         private SQLiteConnection connect;
-        private readonly IBuildConnection buildConnection;
-        public ItemRepository(IBuildConnection _buildConnection)
+        private readonly IBuildConnection _buildConnection;
+        public ItemRepository(IBuildConnection buildConnection)
         {
             connect = new SQLiteConnection();
-            buildConnection = _buildConnection;
+            _buildConnection = buildConnection;
         }
         #region Create/Add in Database
         public string Add(Item data) 
         {
-            connect = buildConnection.DbConnection();
+            connect = _buildConnection.DbConnection();
     
             connect.Open();
             SQLiteCommand cmd = new SQLiteCommand(connect);
@@ -42,7 +42,7 @@ namespace TodoAppMVVM.Repository
 
         public void RemoveItem(int id)
         {
-            connect = buildConnection.DbConnection();
+            connect = _buildConnection.DbConnection();
             connect.Open();
             SQLiteCommand cmd = new SQLiteCommand(connect);
             cmd.CommandText = "DELETE FROM Item Where ItemModelId = @id ";
@@ -58,7 +58,7 @@ namespace TodoAppMVVM.Repository
         public IEnumerable<Item> GetItemById(int id) 
         {
             var listFile = new List<Item>();
-            connect = buildConnection.DbConnection();
+            connect = _buildConnection.DbConnection();
             connect.Open();
             string Query = "SELECT * From Item Where TodoModelId = " + id;
 
@@ -89,7 +89,7 @@ namespace TodoAppMVVM.Repository
             string name = data.Name;
             string des = data.Detailed;
             string status = data.Status;
-            connect = buildConnection.DbConnection();
+            connect = _buildConnection.DbConnection();
 
             connect.Open();
             SQLiteCommand cmd = new SQLiteCommand(connect);

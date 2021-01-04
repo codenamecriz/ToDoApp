@@ -26,10 +26,10 @@ namespace TodoAppMVVM.ViewModels
         public string Status { get; set; }
         public int TodoId { get; set; }
 
-        private readonly IUnitOfWork unitOfWork;
-        public CreateItemViewModel(IUnitOfWork _unitOfWork)
+        private readonly IUnitOfWork _unitOfWork;
+        public CreateItemViewModel(IUnitOfWork unitOfWork)
         {
-            unitOfWork = _unitOfWork;
+            _unitOfWork = unitOfWork;
         }
         #region Create/Update Button
         public ICommand CreateItemButton
@@ -40,7 +40,7 @@ namespace TodoAppMVVM.ViewModels
                 {
                     _createItemButton = new RelayCommand(() =>
                     {
-                        var _message = "";
+                        var Message = "";
                         if (ItemName.Trim().Length != 0 && ItemDetailed.Trim().Length != 0 && SelectStatus.Length != 0)
                         {
                             if (Id != 0)
@@ -53,8 +53,8 @@ namespace TodoAppMVVM.ViewModels
                                     Status = SelectStatus
                                 };
                                 Console.WriteLine(data.Id + "-" + data.Name + "-" + data.Detailed + "-" + data.Status);
-                                var result = unitOfWork.CatchResult(unitOfWork.ItemServices.Update(data));
-                                _message = result;
+                                var result = _unitOfWork.CatchResult(_unitOfWork.ItemServices.Update(data));
+                                Message = result;
                             }
                             else
                             {
@@ -65,16 +65,16 @@ namespace TodoAppMVVM.ViewModels
                                     Status = SelectStatus,
                                     TodoId = TodoId
                                 };
-                                var result = unitOfWork.CatchResult(unitOfWork.ItemServices.Add(data));
-                                _message = result;
+                                var result = _unitOfWork.CatchResult(_unitOfWork.ItemServices.Add(data));
+                                Message = result;
 
                             }
                             // Close windows
                             Close?.Invoke();  
                         }
-                        else { _message = "Please Fill up All TextBox!!"; }
+                        else { Message = "Please Fill up All TextBox!!"; }
 
-                        MessageBox.Show(_message);
+                        MessageBox.Show(Message);
                      
                     });
                 }

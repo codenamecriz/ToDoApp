@@ -8,16 +8,16 @@ namespace TodoAppMVVM.Services
 {
     public class ItemService : IItemService
     {
-        private readonly IItemRepository itemRepository ;
+        private readonly IItemRepository _itemRepository;
        
         private readonly List<Item> newItem = new List<Item>(),
                                  updateItem = new List<Item>(),
                                  removeItem = new List<Item>(),
                               ItemContainer = new List<Item>();
         private List<string> result = new List<string>();
-        public ItemService(IItemRepository _itemRepository)
+        public ItemService(IItemRepository itemRepository)
         {
-            itemRepository = _itemRepository;
+            _itemRepository = itemRepository;
             
         }
         struct Message
@@ -31,7 +31,7 @@ namespace TodoAppMVVM.Services
         {
             Message Msg;
             //LoadItem(data.TodoId);
-            ItemContainer.AddRange(itemRepository.GetItemById(data.TodoId));
+            ItemContainer.AddRange(_itemRepository.GetItemById(data.TodoId));
             Console.WriteLine("------>"+data.Id);
             if (data.Id == 0 && !ItemContainer.Contains(data))
             {
@@ -56,7 +56,7 @@ namespace TodoAppMVVM.Services
         public List<string> Update(Item data) //--------------------------> Update new Item
         {
             Message Msg;
-            ItemContainer.AddRange(itemRepository.GetItemById(data.TodoId));
+            ItemContainer.AddRange(_itemRepository.GetItemById(data.TodoId));
             //Console.WriteLine(!ItemContainer.Contains(data));
             //Console.WriteLine((data.ItemModelId));
             if (data.Id != 0 && !ItemContainer.Contains(data))
@@ -81,7 +81,7 @@ namespace TodoAppMVVM.Services
         public List<string> RemoveItem(Item data) 
         {
             Message Msg;
-            ItemContainer.AddRange(itemRepository.GetItemById(data.TodoId));
+            ItemContainer.AddRange(_itemRepository.GetItemById(data.TodoId));
             if (data.Id != 0 )
             {
                 removeItem.Add(data);
@@ -109,21 +109,21 @@ namespace TodoAppMVVM.Services
             {
                 foreach (Item item in newItem)
                 {
-                    itemRepository.Add(item);
+                    _itemRepository.Add(item);
                 }
             }
             if (updateItem != null)
             {
                 foreach (Item update in updateItem)
                 {
-                    itemRepository.Update(update);
+                    _itemRepository.Update(update);
                 }
             }
             if (removeItem != null)
             {
                 foreach (Item remove in removeItem)
                 {
-                    itemRepository.RemoveItem(remove.Id);
+                    _itemRepository.RemoveItem(remove.Id);
                 }
             }
 

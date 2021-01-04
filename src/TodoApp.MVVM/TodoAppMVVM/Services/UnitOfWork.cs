@@ -7,16 +7,16 @@ namespace TodoAppMVVM.Services
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly ITodoService todoServices;
-        private readonly IItemService itemServices;
-        private readonly IQueryService queryService;
-        public UnitOfWork(ITodoService _todoServices, 
-                        IItemService _itemServices, 
-                        IQueryService _queryService)
+        private readonly ITodoService _todoServices;
+        private readonly IItemService _itemServices;
+        private readonly IQueryService _queryService;
+        public UnitOfWork(ITodoService todoServices, 
+                        IItemService itemServices, 
+                        IQueryService queryService)
         {
-            todoServices = _todoServices;
-            itemServices = _itemServices;
-            queryService = _queryService;
+            _todoServices = todoServices;
+            _itemServices = itemServices;
+            _queryService = queryService;
         }
 
         #region Catch the Result of Services
@@ -42,7 +42,7 @@ namespace TodoAppMVVM.Services
                 {
                     this.listServices = new TodoService();
                 }*/
-                return todoServices;
+                return _todoServices;
             }
         }
         #endregion
@@ -56,7 +56,7 @@ namespace TodoAppMVVM.Services
                 {
                     this.itemServices = new ItemService();
                 }*/
-                return itemServices;
+                return _itemServices;
             }
         }
         #endregion
@@ -70,7 +70,7 @@ namespace TodoAppMVVM.Services
                 {
                     this.todoListService = new QueryService();
                 }*/
-                return queryService;
+                return _queryService;
             }
         }
         #endregion

@@ -28,28 +28,28 @@ namespace TodoAppMVVM.ViewModels
 {
     public class MainViewModel : VisibilityCommand, IMainViewModel
     {
-        private readonly IUnitOfWork unitofWork;
+        private readonly IUnitOfWork _unitofWork;
 
-        private readonly IDBContext dbContext;
-        private readonly ICreateItemViewModel createItemViewModel;
-        private readonly ICreateTodoViewModel createTodoViewModel;
+        private readonly IDBContext _dbContext;
+        private readonly ICreateItemViewModel _createItemViewModel;
+        private readonly ICreateTodoViewModel _createTodoViewModel;
         private int ListId;
-        public MainViewModel(IUnitOfWork _unitofWork,
-            IDBContext _dbContext, 
-            ICreateItemViewModel _createItemViewModel,
-            ICreateTodoViewModel _createTodoViewModel)
+        public MainViewModel(IUnitOfWork unitofWork,
+            IDBContext dbContext, 
+            ICreateItemViewModel createItemViewModel,
+            ICreateTodoViewModel createTodoViewModel)
         {
-            dbContext = _dbContext;
+            _dbContext = dbContext;
             if (File.Exists("TodoDatabase.db"))
             { }
             else
             {
-                dbContext.CreateDb();
+                _dbContext.CreateDb();
             }
 
-            createItemViewModel = _createItemViewModel;
-            createTodoViewModel = _createTodoViewModel;
-            unitofWork = _unitofWork;
+            _createItemViewModel = createItemViewModel;
+            _createTodoViewModel = createTodoViewModel;
+            _unitofWork = unitofWork;
             Btn_CreateListVisibility = true;
             ListDataGridViewVisibility = true;
             ItemDataGridViewVisibility = false;
@@ -71,8 +71,8 @@ namespace TodoAppMVVM.ViewModels
         #region Show() Load Data Collection
         private void Show()
         {
-            TodoListGrid = new ObservableCollection<TodoListDTO>(unitofWork.QeuriesServices.GetAll());
-            ItemsGrid = new ObservableCollection<ItemDTO>(unitofWork.QeuriesServices.GetItemById(ListId));
+            TodoListGrid = new ObservableCollection<TodoListDTO>(_unitofWork.QeuriesServices.GetAll());
+            ItemsGrid = new ObservableCollection<ItemDTO>(_unitofWork.QeuriesServices.GetItemById(ListId));
 
         }
         #endregion
@@ -89,11 +89,11 @@ namespace TodoAppMVVM.ViewModels
                 {
                     _createItemButton = new RelayCommand(() =>
                     {
-                        createItemViewModel.TodoId = ListId;
-                        createItemViewModel.Name = "";
-                        createItemViewModel.Detailed = "";
+                        _createItemViewModel.TodoId = ListId;
+                        _createItemViewModel.Name = "";
+                        _createItemViewModel.Detailed = "";
                         CreateItemView todoview = new CreateItemView();
-                        todoview.DataContext = createItemViewModel;
+                        todoview.DataContext = _createItemViewModel;
                         todoview.ShowDialog();
                         Show(); // load data
                     });
@@ -113,10 +113,10 @@ namespace TodoAppMVVM.ViewModels
                     _createTodoButton = new RelayCommand(() =>
                     {
                         CreateTodoView todoview = new CreateTodoView();
-                        createTodoViewModel.Id = 0;
-                        createTodoViewModel.Name = "";
-                        createTodoViewModel.Description = "";
-                        todoview.DataContext = createTodoViewModel;
+                        _createTodoViewModel.Id = 0;
+                        _createTodoViewModel.Name = "";
+                        _createTodoViewModel.Description = "";
+                        todoview.DataContext = _createTodoViewModel;
                         todoview.ShowDialog();
                         Show();
 
@@ -151,7 +151,7 @@ namespace TodoAppMVVM.ViewModels
                 Name = parameter.Name,
                 Description = parameter.Description
             };
-            var result = unitofWork.CatchResult(unitofWork.TodoServices.RemoveList(todoParameter));
+            var result = _unitofWork.CatchResult(_unitofWork.TodoServices.RemoveList(todoParameter));
             MessageBox.Show(result);
             Show();
             //https://www.youtube.com/watch?v=IRE2PAD1kIM
@@ -168,7 +168,7 @@ namespace TodoAppMVVM.ViewModels
                 Status = parameter.Status,
 
             };
-            var result = unitofWork.CatchResult(unitofWork.ItemServices.RemoveItem(itemParameter));
+            var result = _unitofWork.CatchResult(_unitofWork.ItemServices.RemoveItem(itemParameter));
             MessageBox.Show(result);
             Show();
         }
@@ -178,12 +178,12 @@ namespace TodoAppMVVM.ViewModels
         void ExecuteEditCommand(TodoListDTO parameter)
         {
 
-            createTodoViewModel.Id = parameter.Id;
-            createTodoViewModel.Name = parameter.Name;
-            createTodoViewModel.Description = parameter.Description;
+            _createTodoViewModel.Id = parameter.Id;
+            _createTodoViewModel.Name = parameter.Name;
+            _createTodoViewModel.Description = parameter.Description;
 
             CreateTodoView todoview = new CreateTodoView();
-            todoview.DataContext = createTodoViewModel;
+            todoview.DataContext = _createTodoViewModel;
             todoview.ShowDialog();
 
             Show();
@@ -194,15 +194,15 @@ namespace TodoAppMVVM.ViewModels
         void ExecuteEditItemCommand(ItemDTO parameter)
         {
 
-            createItemViewModel.Id = parameter.Id;
-            createItemViewModel.Name = parameter.Name;
-            createItemViewModel.Detailed = parameter.Detailed;
-            createItemViewModel.Status = parameter.Status;
+            _createItemViewModel.Id = parameter.Id;
+            _createItemViewModel.Name = parameter.Name;
+            _createItemViewModel.Detailed = parameter.Detailed;
+            _createItemViewModel.Status = parameter.Status;
 
             CreateItemView itemoview = new CreateItemView();
-            itemoview.DataContext = createItemViewModel;
+            itemoview.DataContext = _createItemViewModel;
             itemoview.ShowDialog();
-            createItemViewModel.Id = 0;
+            _createItemViewModel.Id = 0;
 
             Show();
         }

@@ -10,16 +10,16 @@ namespace TodoAppMVVM.Services  // ListServices
 {
     public class TodoService : ITodoService
     {
-        private readonly ITodoRepository todoRepository;
+        private readonly ITodoRepository _todoRepository;
         private readonly List<Todo> newList = new List<Todo>(),
                                     updateList = new List<Todo>(),
                                     removeList = new List<Todo>(),
                                     ListContainer = new List<Todo>();
 
         private List<string> result = new List<string>();
-        public TodoService(ITodoRepository _todoRepository)
+        public TodoService(ITodoRepository todoRepository)
         {
-            todoRepository = _todoRepository;
+            _todoRepository = todoRepository;
           
         }
         struct Message
@@ -31,7 +31,7 @@ namespace TodoAppMVVM.Services  // ListServices
         #region Service Add/Create Todo Data
         public List<string> Add(Todo data) //------------ Register New List
         {
-            ListContainer.AddRange(todoRepository.GetAllDatalist());//LoadList();
+            ListContainer.AddRange(_todoRepository.GetAllDatalist());//LoadList();
             Message Msg;
             Msg.validate = "true";
             var checkName = 0;
@@ -115,21 +115,21 @@ namespace TodoAppMVVM.Services  // ListServices
 
                 foreach (Todo newlist in newList)
                 {
-                    todoRepository.Add(newlist);
+                    _todoRepository.Add(newlist);
                 }
             }
             if (updateList != null)
             {
                 foreach (Todo update in updateList)
                 {
-                    todoRepository.Update(update);
+                    _todoRepository.Update(update);
                 }
             }
             if (removeList != null)
             {
                 foreach (Todo remove in removeList)
                 {
-                    todoRepository.RemoveList(remove.Id);
+                    _todoRepository.RemoveList(remove.Id);
                 }
             }
             //return newList;

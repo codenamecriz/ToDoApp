@@ -10,12 +10,12 @@ namespace TodoApp.MVVM.Services
 {
     public class QueryService : IQueryService
     {
-        private readonly ITodoRepository todoRepository;
-        private readonly IItemRepository itemRepository;
-        public QueryService(ITodoRepository _todoRepository, IItemRepository _itemRepository)
+        private readonly ITodoRepository _todoRepository;
+        private readonly IItemRepository _itemRepository;
+        public QueryService(ITodoRepository todoRepository, IItemRepository itemRepository)
         {
-            todoRepository = _todoRepository;
-            itemRepository = _itemRepository;
+            _todoRepository = todoRepository;
+            _itemRepository = itemRepository;
         }
         #region Service Get All Todo Data
         public List<TodoListDTO> GetAll()
@@ -25,7 +25,7 @@ namespace TodoApp.MVVM.Services
             {
                 //var ObjQuery = from obj in ObjContext.Employees
                 //               select obj;
-                var query = todoRepository.GetAllDatalist();
+                var query = _todoRepository.GetAllDatalist();
                 foreach (var list in query)
                 {
                     ObjTodoList.Add(new TodoListDTO { Id = list.Id, Name = list.Name, Description = list.Description });
@@ -47,7 +47,7 @@ namespace TodoApp.MVVM.Services
             {
                 //var ObjQuery = from obj in ObjContext.Employees
                 //               select obj;
-                var query = itemRepository.GetItemById(id);
+                var query = _itemRepository.GetItemById(id);
                 foreach (var list in query)
                 {
                     ObjItems.Add(new ItemDTO

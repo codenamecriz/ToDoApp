@@ -81,7 +81,7 @@ namespace TodoAppMVVM.ViewModels
 
         //button Using ICommand
         #region Create Item Button
-        public ICommand CreateItemButton // sample declare a button using ICommand 
+        public ICommand CreateItemButton 
         {
             get
             {
@@ -92,9 +92,8 @@ namespace TodoAppMVVM.ViewModels
                         createItemViewModel.TodoId = ListId;
                         createItemViewModel.Name = "";
                         createItemViewModel.Detailed = "";
-                        //appVM.TodoId = ListId;
                         CreateItemView todoview = new CreateItemView();
-                        todoview.DataContext = createItemViewModel;//appVM;
+                        todoview.DataContext = createItemViewModel;
                         todoview.ShowDialog();
                         Show(); // load data
                     });
@@ -117,7 +116,7 @@ namespace TodoAppMVVM.ViewModels
                         createTodoViewModel.Id = 0;
                         createTodoViewModel.Name = "";
                         createTodoViewModel.Description = "";
-                        todoview.DataContext = createTodoViewModel;//appVM;
+                        todoview.DataContext = createTodoViewModel;
                         todoview.ShowDialog();
                         Show();
 

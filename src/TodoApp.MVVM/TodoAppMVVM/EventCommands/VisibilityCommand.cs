@@ -23,8 +23,8 @@ namespace TodoApp.MVVM.EventCommands
 
         #endregion
 
-        public ICommand _createItemButton,
-                      _createTodoButton;
+        public ICommand createItemButton,
+                      createTodoButton;
 
         #region OnPropertyChange
         public void OnPropertyChanged(string propertyName)

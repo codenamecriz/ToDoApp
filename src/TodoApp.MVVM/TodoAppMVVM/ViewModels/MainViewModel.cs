@@ -85,9 +85,9 @@ namespace TodoAppMVVM.ViewModels
         {
             get
             {
-                if (_createItemButton == null)
+                if (createItemButton == null)
                 {
-                    _createItemButton = new RelayCommand(() =>
+                    createItemButton = new RelayCommand(() =>
                     {
                         _createItemViewModel.TodoId = ListId;
                         _createItemViewModel.Name = "";
@@ -98,7 +98,7 @@ namespace TodoAppMVVM.ViewModels
                         Show(); // load data
                     });
                 }
-                return _createItemButton;
+                return createItemButton;
             }
         }
         #endregion
@@ -108,9 +108,9 @@ namespace TodoAppMVVM.ViewModels
         {
             get
             {
-                if (_createTodoButton == null)
+                if (createTodoButton == null)
                 {
-                    _createTodoButton = new RelayCommand(() =>
+                    createTodoButton = new RelayCommand(() =>
                     {
                         CreateTodoView todoview = new CreateTodoView();
                         _createTodoViewModel.Id = 0;
@@ -122,7 +122,7 @@ namespace TodoAppMVVM.ViewModels
 
                     });
                 }
-                return _createTodoButton;
+                return createTodoButton;
             }
         }
         #endregion

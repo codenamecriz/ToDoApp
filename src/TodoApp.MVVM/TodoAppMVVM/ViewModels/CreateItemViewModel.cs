@@ -36,9 +36,9 @@ namespace TodoAppMVVM.ViewModels
         {
             get
             {
-                if (_createItemButton == null)
+                if (createItemButton == null)
                 {
-                    _createItemButton = new RelayCommand(() =>
+                    createItemButton = new RelayCommand(() =>
                     {
                         var Message = "";
                         if (ItemName.Trim().Length != 0 && ItemDetailed.Trim().Length != 0 && SelectStatus.Length != 0)
@@ -79,7 +79,7 @@ namespace TodoAppMVVM.ViewModels
                     });
                 }
 
-                return _createItemButton;
+                return createItemButton;
             }
         }
         #endregion

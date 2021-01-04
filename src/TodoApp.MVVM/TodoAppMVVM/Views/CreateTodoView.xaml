@@ -56,7 +56,7 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="40" />
                         </Grid.RowDefinitions>
-                        <Button Grid.Column="0" Content="Save" Margin="5"  x:Name="SaveButton" Command="{Binding CreateTodoCommand}" />
+                        <Button Grid.Column="0" Content="Save" Margin="5"  x:Name="SaveButton" Command="{Binding CreateTodoButton}" />
                         <Button Grid.Column="1" Content="Cancel" Margin="5" x:Name="Cancel" Command="{Binding CloseCommand}" />
                     </Grid>
                 </StackPanel>

@@ -36,7 +36,7 @@
             <!--Create List Button-->
             <!--<Button x:Name="btn_CreateList" Content="Create New" Grid.Row="1" Grid.Column="0" Width="auto" Click="OpenListform" Cursor="Hand"/>-->
             <Button x:Name="Btn_CreateList" Grid.Row="1" Content="Create List"  Cursor ="Hand" 
-                    Command="{Binding CreateTodoCommand}"
+                    Command="{Binding CreateTodoButton}"
                     Visibility="{Binding Btn_CreateListVisibility, Converter={StaticResource BoolToVisibilityConverter}}"
                     
                     />
@@ -48,7 +48,7 @@
             <!--Create Item Button-->
             <!--<Button x:Name="btn_CreateItem" Content="Create Item" Grid.Row="1" Grid.Column="1" Width="auto" Click="AddItemform"/>-->
             <Button  x:Name="Btn_CreateItem" Content="Create Item" Grid.Row="1" Cursor="Hand" 
-                      Command="{Binding CreateItemCommand}"
+                      Command="{Binding CreateItemButton}"
                      Visibility="{Binding Btn_CreateItemVisibility, Converter={StaticResource BoolToVisibilityConverter}}"
                      >
                      <!--Visibility="{Binding Btn_CreateItemVisibility, Converter={StaticResource BoolToVisibilityConverter}}" >-->

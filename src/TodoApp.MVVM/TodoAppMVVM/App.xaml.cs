@@ -35,50 +35,26 @@ namespace TodoAppMVVM
             var appVM = kernel.Get<MainViewModel>();
 
             MainWindow = new MainView();
-            MainWindow.DataContext = appVM;//{DesignInstance Type=local2:CreateTodoViewModel, IsDesignTimeCreatable=True};//
+            MainWindow.DataContext = appVM;
             MainWindow.Show();
 
-            //--------------------------------------OPTION 1--------------------------------------
-            //var dialogService = new DialogService();
-            //var dataService = new DataService(dialogService);
-            //var dataVM = new DataViewModel(dataService);
-            //var appVM = new AppViewModel(dataVM);
-            //
-            //MainWindow = new MainWindow();
-            //MainWindow.DataContext = appVM;
-            //MainWindow.Show();
-            //------------------------------------------------------------------------------------
+            /*--------------------------------------OPTION 1--------------------------------------
+            var dialogService = new DialogService();
+            var dataService = new DataService(dialogService);
+            var dataVM = new DataViewModel(dataService);
+            var appVM = new AppViewModel(dataVM);
 
-            //--------------------------------------OPTION 2--------------------------------------
-            //MainWindow = new MainWindow();
-            //MainWindow.DataContext = new AppViewModel(new DataViewModel(new DataService(new DialogService())));
-            //MainWindow.Show();
-            //------------------------------------------------------------------------------------
+            MainWindow = new MainWindow();
+            MainWindow.DataContext = appVM;
+            MainWindow.Show();
+            ------------------------------------------------------------------------------------
+
+            --------------------------------------OPTION 2--------------------------------------
+            MainWindow = new MainWindow();
+            MainWindow.DataContext = new AppViewModel(new DataViewModel(new DataService(new DialogService())));
+            MainWindow.Show();
+            ------------------------------------------------------------------------------------ */
         }
-        //public static IContainer Configure()
-        //{
-        //    var builder = new ContainerBuilder();
-
-        //    //builder.RegisterType<ItemController>().As<IItemController>();
-        //    //builder.RegisterType<ListController>().As<IListController>();
-        //    builder.RegisterType<MainViewModel>().As<IMainViewModel>();
-
-
-
-        //    return builder.Build();
-
-
-        //}
-        //private void OnStartup(object sender, StartupEventArgs e)
-        //{
-
-        //    var container = Configure();
-
-        //    using (var scope = container.BeginLifetimeScope())
-        //    {
-        //        var mainWindows = scope.Resolve<MainViewModel>();
-        //        mainWindows.Show();
-        //    }
-        //}
+       
     }
 }

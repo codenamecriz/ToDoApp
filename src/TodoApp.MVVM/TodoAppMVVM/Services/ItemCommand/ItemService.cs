@@ -8,19 +8,17 @@ namespace TodoAppMVVM.Services
 {
     public class ItemService : IItemService
     {
-        //private IItemRepository itemRepository;
         private readonly IItemRepository itemRepository ;
-        //private readonly IGetDataQueryRepository todoQueryRepository ;
-        private readonly List<Item> newItem = new List<Item>();
-        private readonly List<Item> updateItem = new List<Item>();
-        private readonly List<Item> removeItem = new List<Item>();
-        private readonly List<Item> ItemContainer = new List<Item>();
+       
+        private readonly List<Item> newItem = new List<Item>(),
+                                 updateItem = new List<Item>(),
+                                 removeItem = new List<Item>(),
+                              ItemContainer = new List<Item>();
         private List<string> result = new List<string>();
-        public ItemService(IItemRepository _itemRepository)//, IGetDataQueryRepository _todoQueryRepository)
+        public ItemService(IItemRepository _itemRepository)
         {
-            //todoQueryRepository = _todoQueryRepository;
             itemRepository = _itemRepository;
-            //itemRepository = _itemRepository;
+            
         }
         struct Message
         {
@@ -28,15 +26,8 @@ namespace TodoAppMVVM.Services
             public string validate;
 
         }
-        //public IEnumerable<Item> LoadItem(int Id) // ------> Load all Item to Container
-        //{
-
-        //    //itemRepository = new ItemRepository();
-            
-
-        //    return ItemContainer;
-        //}
-        public List<string> Add(Item data) // -----------------> Insert new item
+        #region Service Create/Add Item
+        public List<string> Add(Item data)
         {
             Message Msg;
             //LoadItem(data.TodoId);
@@ -59,6 +50,9 @@ namespace TodoAppMVVM.Services
             return result;
 
         }
+        #endregion
+        
+        #region Service Update/Edit
         public List<string> Update(Item data) //--------------------------> Update new Item
         {
             Message Msg;
@@ -81,7 +75,10 @@ namespace TodoAppMVVM.Services
             return result;
 
         }
-        public List<string> RemoveItem(Item data) //------------------------------------- >> Remove Item
+        #endregion
+
+        #region Service Remove/Delete
+        public List<string> RemoveItem(Item data) 
         {
             Message Msg;
             ItemContainer.AddRange(itemRepository.GetItemById(data.TodoId));
@@ -101,6 +98,9 @@ namespace TodoAppMVVM.Services
             return result;
 
         }
+        #endregion
+
+        #region Save
         public void Save()
         {
             
@@ -129,6 +129,9 @@ namespace TodoAppMVVM.Services
 
             Dispose();
         }
+        #endregion
+
+        #region Dispose
         public void Dispose()
         {
            
@@ -137,5 +140,6 @@ namespace TodoAppMVVM.Services
             removeItem.Clear();
             ItemContainer.Clear();
         }
+        #endregion
     }
 }

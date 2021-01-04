@@ -18,13 +18,12 @@ namespace TodoApp.MVVM.Models
         }
 
         private int id;
+        private string name, detailed, status;
         public int Id
         {
             get { return id; }
             set { id = value; OnPropertyChanged("Id"); }
         }
-
-        private string name;
 
         public string Name
         {
@@ -32,27 +31,24 @@ namespace TodoApp.MVVM.Models
             set { name = value; OnPropertyChanged("Name"); }
         }
 
-        private string detailed;
-
         public string Detailed
         {
             get { return detailed; }
             set { detailed = value; OnPropertyChanged("Detailed"); }
         }
 
-        private string status;
         public string Status
         {
             get { return status; }
             set { status = value; OnPropertyChanged("Status"); }
         }
 
-        //private string todoId;
-        //public string TodoId
-        //{
-        //    get { return todoId; }
-        //    set { todoId = value; OnPropertyChanged("TodoId"); }
-        //}
+        /* private string todoId;
+        public string TodoId
+        {
+            get { return todoId; }
+            set { todoId = value; OnPropertyChanged("TodoId"); }
+        }*/
 
     }
 }

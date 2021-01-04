@@ -146,7 +146,6 @@
     <Compile Include="EventCommands\ButtonClickCommand.cs" />
     <Compile Include="EventCommands\IVisibilityCommand.cs" />
     <Compile Include="EventCommands\VisibilityCommand.cs" />
-    <Compile Include="INinjectConfiguration.cs" />
     <Compile Include="IViewModels\ICreateItemViewModel.cs" />
     <Compile Include="IViewModels\ICreateTodoViewModel.cs" />
     <Compile Include="IViewModels\IMainViewModel.cs" />
@@ -159,8 +158,6 @@
     <Compile Include="Models\DTO\TodoListDTO.cs" />
     <Compile Include="Models\Entities\Todo.cs" />
     <Compile Include="NinjectConfiguration.cs" />
-    <Compile Include="Repository\GetDataQueryRepository.cs" />
-    <Compile Include="Repository\IGetDataQueryRepository.cs" />
     <Compile Include="Repository\TodoRepository\TodoRepository.cs" />
     <Compile Include="Repository\TodoRepository\ITodoRepository.cs" />
     <Compile Include="Repository\ItemRepository\IItemRepository.cs" />
@@ -180,7 +177,6 @@
     <Compile Include="ViewModels\CreateItemViewModel.cs" />
     <Compile Include="ViewModels\CreateTodoViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="ViewModels\MessageViewModel.cs" />
     <Compile Include="Views\CreateItemView.xaml.cs">
       <DependentUpon>CreateItemView.xaml</DependentUpon>
     </Compile>
@@ -189,9 +185,6 @@
     </Compile>
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\MessageView.xaml.cs">
-      <DependentUpon>MessageView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -236,10 +229,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\MessageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

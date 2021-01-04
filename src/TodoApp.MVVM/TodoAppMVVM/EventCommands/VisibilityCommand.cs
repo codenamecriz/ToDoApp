@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using TodoApp.MVVM.Models;
 using TodoAppMVVM.Models;
 using TodoAppMVVM.Services;
@@ -22,6 +23,10 @@ namespace TodoApp.MVVM.EventCommands
 
         #endregion
 
+        public ICommand _createItemButton,
+                      _createTodoButton;
+
+        #region OnPropertyChange
         public void OnPropertyChanged(string propertyName)
         {
             VerifyPropertyName(propertyName);
@@ -38,102 +43,95 @@ namespace TodoApp.MVVM.EventCommands
             if (TypeDescriptor.GetProperties(this)[propertyName] == null)
                 throw new ArgumentNullException(GetType().Name + " Does not contain property: " + propertyName);
         }
+        #endregion
 
-       
-        //----------------------------------------------------------> Get All List from database
+        #region Get All List From Database
+
         private ObservableCollection<TodoListDTO> todoListGrid;
         public ObservableCollection<TodoListDTO> TodoListGrid
         {
             get { return todoListGrid; }
             set { todoListGrid = value; OnPropertyChanged("TodoListGrid"); }
         }
-        //----------------------------------------------------------> Get All Item from database
+        #endregion
+
+        #region Get All Item from Database
+  
         private ObservableCollection<ItemDTO> itemsGrid;
         public ObservableCollection<ItemDTO> ItemsGrid
         {
             get { return itemsGrid; }
             set { itemsGrid = value; OnPropertyChanged("ItemsGrid"); }
         }
+        #endregion
 
-        
-       
+        private bool _btn_CreateListVisibility,
+                      _btn_CreateItemVisibility,
+                     _btn_BacktoListViewVisibility,
+                     _listDataGridViewVisibility,
+                     _itemDataGridViewVisibility;
 
-        //-------------=================================== Visibility
+        #region Visibility of Create List & Item Button
         // -->>Link for Tutorial Visibility Property https://www.technical-recipes.com/2016/binding-the-visibility-of-wpf-elements-to-a-property/
-
-        private bool VisibilityProp1;
         public bool Btn_CreateListVisibility
         {
-            get { return VisibilityProp1; }
+            get { return _btn_CreateListVisibility; }
              set
             {
-                VisibilityProp1 =  value;
+                _btn_CreateListVisibility =  value;
                 OnPropertyChanged("Btn_CreateListVisibility");
             }
             
         }
-        //=-----------------------------------> Hide/Show Button Create Item
-        private bool ItemVisibility;
+        // Hide/Show Button Create Item
         public bool Btn_CreateItemVisibility
         {
-            get { return ItemVisibility; }
+            get { return _btn_CreateItemVisibility; }
             set
             {
-                ItemVisibility = value;
+                _btn_CreateItemVisibility = value;
                 OnPropertyChanged("Btn_CreateItemVisibility");
             }
-
         }
-        private bool backToListVisibility;
+        #endregion
+
+        #region Visibility Back to Todo DataGrid
         public bool Btn_BacktoListViewVisibility
         {
-            get { return backToListVisibility; }
+            get { return _btn_BacktoListViewVisibility; }
             set
             {
-                backToListVisibility = value;
+                _btn_BacktoListViewVisibility = value;
                 OnPropertyChanged("Btn_BacktoListViewVisibility");
             }
-
         }
-        
-        //  ------------------------------------> Hide List/Todo DataGridview
+        #endregion
 
-        private bool listDataGridViewVisibility;
+        #region Visibility List/Item DataGridView
+
         public bool ListDataGridViewVisibility
         {
-            get { return listDataGridViewVisibility; }
+            get { return _listDataGridViewVisibility; }
             set
             {
-                listDataGridViewVisibility = value;
+                _listDataGridViewVisibility = value;
                 OnPropertyChanged("ListDataGridViewVisibility");
             }
          
         }
-        //  ------------------------------------> Hide Item DataGridview
-        private bool itemDataGridViewVisibility;
+        //  Hide Item DataGridview
         public bool ItemDataGridViewVisibility
         {
-            get { return itemDataGridViewVisibility; }
+            get { return _itemDataGridViewVisibility; }
             set
             {
-                itemDataGridViewVisibility = value;
+                _itemDataGridViewVisibility = value;
                 OnPropertyChanged("ItemDataGridViewVisibility");
             }
-
         }
+        #endregion
 
-        
-        //private ObservableCollection<ItemModel> _itemModel;
-
-        //public ObservableCollection<ItemModel> Lecturers
-        //{
-        //    get { return _itemModel; }
-        //    set
-        //    {
-        //        _itemModel = value;
-        //        this.OnPropertyChanged("Lecturers");
-        //    }
-        //}
+       
     }
-    
+
 }

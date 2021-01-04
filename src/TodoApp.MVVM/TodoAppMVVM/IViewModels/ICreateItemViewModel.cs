@@ -9,7 +9,7 @@ namespace TodoApp.MVVM.IViewModels
 {
     public interface ICreateItemViewModel 
     {
-        ICommand CreateItemCommand { get; }
+        ICommand CreateItemButton { get; }
         string Detailed { get; set; }
         int Id { get; set; }
         string ItemDetailed { get; set; }

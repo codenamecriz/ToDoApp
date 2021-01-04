@@ -14,14 +14,9 @@ using TodoAppMVVM.ViewModels;
 
 namespace TodoApp.MVVM
 {
-    public class NinjectConfiguration //: INinjectConfiguration
+    public class NinjectConfiguration
     {
-
-        public NinjectConfiguration()
-        {
-
-        }
-        public IKernel Configure()//object sender, StartupEventArgs e)
+        public IKernel Configure()
         {
             IKernel kernel = new StandardKernel();
             kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
@@ -29,16 +24,14 @@ namespace TodoApp.MVVM
             kernel.Bind<IWindowManager>().To<WindowManager>();
             kernel.Bind<ICreateTodoViewModel>().To<CreateTodoViewModel>();
             kernel.Bind<ICreateItemViewModel>().To<CreateItemViewModel>();
-            kernel.Bind<IMessageViewModel>().To<MessageViewModel>();
+          
             kernel.Bind<IQueryService>().To<QueryService>();
             kernel.Bind<ITodoService>().To<TodoService>();
             kernel.Bind<IItemService>().To<ItemService>();
-            //kernel.Bind<IGetDataQueryRepository>().To<GetDataQueryRepository>();
             kernel.Bind<IItemRepository>().To<ItemRepository>();
             kernel.Bind<ITodoRepository>().To<TodoRepository>();
             kernel.Bind<IKernel>().To<StandardKernel>();
             kernel.Bind<IDBContext>().To<DBContext>();
-            //kernel.Bind<INinjectConfiguration>().To<NinjectConfiguration>();
 
 
             return kernel;

@@ -10,6 +10,6 @@ namespace TodoAppMVVM.Services
 
         IQueryService QeuriesServices { get; }
 
-        string catchResult(List<string> actionResult);
+        string CatchResult(List<string> actionResult);
     }
 }

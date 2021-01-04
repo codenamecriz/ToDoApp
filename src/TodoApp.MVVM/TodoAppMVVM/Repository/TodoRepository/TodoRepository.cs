@@ -9,16 +9,16 @@ namespace TodoAppMVVM.Repository
 {
     public class TodoRepository : ITodoRepository
     {
-        //private readonly IBuildConnection context;
+        
         private SQLiteConnection connect;
         private readonly IBuildConnection buildConnection;
-        public TodoRepository(IBuildConnection _buildConnection)//IBuildConnection _context)
+        public TodoRepository(IBuildConnection _buildConnection)
         {
-            //context = _context;
             connect = new SQLiteConnection();
             buildConnection = _buildConnection;
         }
 
+        #region Get All Data From Database
         public IEnumerable<Todo> GetAllDatalist() // Get all Data
         {
             connect = buildConnection.DbConnection();
@@ -45,8 +45,9 @@ namespace TodoAppMVVM.Repository
             return listFile;
             //throw new NotImplementedException();
         }
+        #endregion
 
-
+        #region Create/Add in Database
         public string Add(Todo data) // Add to Datalist table
         {
             var name = data.Name;
@@ -62,7 +63,9 @@ namespace TodoAppMVVM.Repository
             return "Done Save From DB SQLITE Query";
             //throw new NotImplementedException();
         }
+        #endregion
 
+        #region Update/Edit in Database
         public string Update(Todo data)  // --------------> Update
         {
             int id = data.Id;
@@ -81,19 +84,12 @@ namespace TodoAppMVVM.Repository
             return "Update Succcessfully";
             //throw new NotImplementedException();
         }
-       
+        #endregion
 
+        #region Remove/Delete in Database
         public void RemoveList(int id) // -------------------> delete datalist
         {
-            //string[] datas = data.Split('&');
-            //var id = datas[0];
-            //var tableName = datas[1];
-            //var idName = "";
-            //if (tableName == "Itemlists")
-            //{
-            //    idName = "ItemlistId";
-            //}
-            //else { idName = "DatalistId"; }
+       
             connect = buildConnection.DbConnection();
             connect.Open();
             SQLiteCommand cmd = new SQLiteCommand(connect);
@@ -103,10 +99,9 @@ namespace TodoAppMVVM.Repository
             cmd.Prepare();
             cmd.ExecuteNonQuery();
             connect.Close();
-            //return "Successfuly Deleted! From DB SQLITE Query";
-            //throw new NotImplementedException();
+            
         }
-
+        #endregion
 
     }
 }

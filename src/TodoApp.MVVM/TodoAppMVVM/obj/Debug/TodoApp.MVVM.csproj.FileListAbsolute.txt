@@ -337,7 +337,6 @@ D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.MVVM\TodoAppMVVM\obj\Debug\
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.MVVM\TodoAppMVVM\obj\Debug\Views\CreateItemView.g.cs
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.MVVM\TodoAppMVVM\obj\Debug\Views\CreateTodoView.g.cs
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.MVVM\TodoAppMVVM\obj\Debug\Views\MainView.g.cs
-D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.MVVM\TodoAppMVVM\obj\Debug\Views\MessageView.g.cs
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.MVVM\TodoAppMVVM\obj\Debug\App.g.cs
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.MVVM\TodoAppMVVM\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.MVVM\TodoAppMVVM\obj\Debug\TodoApp.MVVM_MarkupCompile.cache
@@ -347,7 +346,6 @@ D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.MVVM\TodoAppMVVM\obj\Debug\
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.MVVM\TodoAppMVVM\obj\Debug\Views\CreateItemView.baml
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.MVVM\TodoAppMVVM\obj\Debug\Views\CreateTodoView.baml
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.MVVM\TodoAppMVVM\obj\Debug\Views\MainView.baml
-D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.MVVM\TodoAppMVVM\obj\Debug\Views\MessageView.baml
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.MVVM\TodoAppMVVM\obj\Debug\TodoApp.MVVM.g.resources
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.MVVM\TodoAppMVVM\obj\Debug\TodoApp.MVVM.Properties.Resources.resources
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.MVVM\TodoAppMVVM\obj\Debug\TodoApp.MVVM.csproj.GenerateResource.cache

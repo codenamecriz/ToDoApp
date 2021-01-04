@@ -1,4 +1,5 @@
-﻿using System;
+﻿/*
+ * using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Linq;
@@ -18,23 +19,11 @@ namespace TodoAppMVVM
 {
     public class Bootstrapper : BootstrapperBase
     {
-        //private const string ModuleFilePrefix = "CaliburnAndAutofac";
-        //private IContainer _container;
-
-        //protected override void BuildUp(object instance)
-        //{
-        //    _container.InjectProperties(instance);
-        //}
-
-
-
 
         private SimpleContainer _container = new SimpleContainer();
 
         public Bootstrapper()
         {
-            //context.CreateDb();
-
             Initialize();
         }
         protected override void Configure()
@@ -45,25 +34,13 @@ namespace TodoAppMVVM
                 .Singleton<IWindowManager, WindowManager>()
                 .Singleton<IEventAggregator, EventAggregator>();
 
-            //_container.RegisterInstance(typeof(CreateTodoViewModel), null, typeof(IUnitOfWork));
-            //_container.RegisterSingleton(typeof(CreateTodoViewModel), null, typeof(CreateTodoViewModel));
+
 
             _container
                .PerRequest<DBContext>();
             _container
                .PerRequest<SQLiteDataReader>();
 
-            //_container
-            //    .Singleton<CreateTodoViewModel>();
-            //_container
-            //   .Singleton<MainViewModel>();
-
-            //_container
-            //    .PerRequest<IGetAllTodoQuery, GetAllTodoQuery>();
-            //_container
-            //    .PerRequest<IGetDataQueryRepository, GetDataQueryRepository>();
-            //_container
-            //   .PerRequest<IGetAllItemQuery, GetAllItemQuery>();
             _container
                .Singleton<IUnitOfWork, UnitOfWork>();
             _container
@@ -78,9 +55,6 @@ namespace TodoAppMVVM
                .PerRequest<IBuildConnection, BuildConnection>();
             _container
                .PerRequest<IMainViewModel, MainViewModel>();
-
-
-
 
 
             GetType().Assembly.GetTypes()
@@ -109,5 +83,6 @@ namespace TodoAppMVVM
         }
     }
 }
+*/
 
 //https://www.youtube.com/watch?v=8E000zu8UhQ

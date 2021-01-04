@@ -17,6 +17,7 @@ namespace TodoApp.MVVM.Services
             todoRepository = _todoRepository;
             itemRepository = _itemRepository;
         }
+        #region Service Get All Todo Data
         public List<TodoListDTO> GetAll()
         {
             List<TodoListDTO> ObjTodoList = new List<TodoListDTO>();
@@ -36,6 +37,9 @@ namespace TodoApp.MVVM.Services
             }
             return ObjTodoList;
         }
+        #endregion
+
+        #region Service Get Item By Id
         public List<ItemDTO> GetItemById(int id)
         {
             List<ItemDTO> ObjItems = new List<ItemDTO>();
@@ -62,5 +66,6 @@ namespace TodoApp.MVVM.Services
             }
             return ObjItems;
         }
+        #endregion
     }
 }

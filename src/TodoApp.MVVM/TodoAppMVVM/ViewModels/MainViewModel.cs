@@ -34,10 +34,9 @@ namespace TodoAppMVVM.ViewModels
         private readonly ICreateItemViewModel createItemViewModel;
         private readonly ICreateTodoViewModel createTodoViewModel;
         public MainViewModel(IUnitOfWork _unitofWork,
-            IDBContext _dbContext,
-            //INinjectConfiguration _DI, 
+            IDBContext _dbContext, 
             ICreateItemViewModel _createItemViewModel,
-            ICreateTodoViewModel _createTodoViewModel)//IDBContext createDb
+            ICreateTodoViewModel _createTodoViewModel)
         {
             dbContext = _dbContext;
             if (File.Exists("TodoDatabase.db"))
@@ -55,35 +54,39 @@ namespace TodoAppMVVM.ViewModels
             ItemDataGridViewVisibility = false;
 
             Show();
-            //Todo Button
+            #region Todo Buttons
             EditCommand = new DelegateCommand<TodoListDTO>(ExecuteEditCommand);
             ViewCommand = new DelegateCommand<TodoListDTO>(ExecuteViewCommand);
             DeleteCommand = new DelegateCommand<TodoListDTO>(ExecuteDeleteCommand);
-            //Item Buttons
+            #endregion
+
+            #region Item Buttons
             EditItemCommand = new DelegateCommand<ItemDTO>(ExecuteEditItemCommand);
             DeleteItemCommand = new DelegateCommand<ItemDTO>(ExecuteDeleteItemCommand);
             BackViewListCommand = new DelegateCommand(ExecuteBackViewListCommand);
-
+            #endregion
 
         }
+        #region Show() Load Data Collection
         private void Show()
         {
             TodoListGrid = new ObservableCollection<TodoListDTO>(unitofWork.QeuriesServices.GetAll());
             ItemsGrid = new ObservableCollection<ItemDTO>(unitofWork.QeuriesServices.GetItemById(ListId));
 
         }
+        #endregion
 
         private int ListId;
 
-        //================== button Using ICommand
-        private ICommand _createItemCommand, _createTodoCommand;
-        public ICommand CreateItemCommand // sample declare a button using ICommand 
+        //button Using ICommand
+        #region Create Item Button
+        public ICommand CreateItemButton // sample declare a button using ICommand 
         {
             get
             {
-                if (_createItemCommand == null)
+                if (_createItemButton == null)
                 {
-                    _createItemCommand = new RelayCommand(() =>
+                    _createItemButton = new RelayCommand(() =>
                     {
                         createItemViewModel.TodoId = ListId;
                         createItemViewModel.Name = "";
@@ -95,18 +98,19 @@ namespace TodoAppMVVM.ViewModels
                         Show(); // load data
                     });
                 }
-                return _createItemCommand;
+                return _createItemButton;
             }
         }
+        #endregion
 
-        //private ICommand _createTodoCommand;
-        public ICommand CreateTodoCommand
+        #region Create Todo Button
+        public ICommand CreateTodoButton
         {
             get
             {
-                if (_createTodoCommand == null)
+                if (_createTodoButton == null)
                 {
-                    _createTodoCommand = new RelayCommand(() =>
+                    _createTodoButton = new RelayCommand(() =>
                     {
                         CreateTodoView todoview = new CreateTodoView();
                         createTodoViewModel.Id = 0;
@@ -118,23 +122,27 @@ namespace TodoAppMVVM.ViewModels
 
                     });
                 }
-                return _createTodoCommand;
+                return _createTodoButton;
             }
         }
-        // This Button Command using DelegateCommand install (Prism)
-        //========================================================= back to LIST View  (Deaclearing a Button using DeleGateCommand)
+        #endregion
 
+
+        // Button using DelegateCommand -> install (Prism)
+        
+        #region Back to Todo View Button
         void ExecuteBackViewListCommand()
         {
-            ListDataGridViewVisibility = true; // ListGridView
-            ItemDataGridViewVisibility = false; // ItemGridView
+            ListDataGridViewVisibility = true; 
+            ItemDataGridViewVisibility = false; 
 
             Btn_CreateListVisibility = true;
             Btn_CreateItemVisibility = false;
             Btn_BacktoListViewVisibility = false;
         }
-        //============================================================ Delete Todo Button 
-     
+        #endregion
+       
+        #region Todo Delete Button
         void ExecuteDeleteCommand(TodoListDTO parameter)
         {
             var todoParameter = new Todo
@@ -143,14 +151,14 @@ namespace TodoAppMVVM.ViewModels
                 Name = parameter.Name,
                 Description = parameter.Description
             };
-            var result = unitofWork.catchResult(unitofWork.TodoServices.RemoveList(todoParameter));
+            var result = unitofWork.CatchResult(unitofWork.TodoServices.RemoveList(todoParameter));
             MessageBox.Show(result);
             Show();
-            //parameter.TodoModelId
             //https://www.youtube.com/watch?v=IRE2PAD1kIM
         }
-        //============================================================ Delete ITEM Button DeleteItemCommand
- 
+        #endregion
+
+        #region Item Delete Button
         void ExecuteDeleteItemCommand(ItemDTO parameter)
         {
             var itemParameter = new Item {
@@ -160,12 +168,13 @@ namespace TodoAppMVVM.ViewModels
                 Status = parameter.Status,
 
             };
-            var result = unitofWork.catchResult(unitofWork.ItemServices.RemoveItem(itemParameter));
+            var result = unitofWork.CatchResult(unitofWork.ItemServices.RemoveItem(itemParameter));
             MessageBox.Show(result);
             Show();
         }
-        //========================================================== Edit Commnad 
+        #endregion
 
+        #region Todo Update Button
         void ExecuteEditCommand(TodoListDTO parameter)
         {
 
@@ -179,13 +188,12 @@ namespace TodoAppMVVM.ViewModels
 
             Show();
         }
-        //========================================================== Edit ITem
-    
+        #endregion
+
+        #region Item Update Button
         void ExecuteEditItemCommand(ItemDTO parameter)
         {
 
-            //var appVM = ninjectConfiguration.Configure().Get<CreateItemViewModel>();
-     
             createItemViewModel.Id = parameter.Id;
             createItemViewModel.Name = parameter.Name;
             createItemViewModel.Detailed = parameter.Detailed;
@@ -198,7 +206,9 @@ namespace TodoAppMVVM.ViewModels
 
             Show();
         }
-        //========================================================== View Item Commnad
+        #endregion
+
+        #region View Item Button
         void ExecuteViewCommand(TodoListDTO parameter)
         {
             ListId = parameter.Id;
@@ -208,9 +218,9 @@ namespace TodoAppMVVM.ViewModels
             Btn_CreateListVisibility = false;
             Btn_CreateItemVisibility = true;
             Btn_BacktoListViewVisibility = true;
-            //MessageBox.Show(itemsDataGrid..ToString());
-
+            
         }
+        #endregion
     }
 
 }

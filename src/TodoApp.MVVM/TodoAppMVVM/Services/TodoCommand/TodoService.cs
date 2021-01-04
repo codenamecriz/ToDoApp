@@ -10,43 +10,25 @@ namespace TodoAppMVVM.Services  // ListServices
 {
     public class TodoService : ITodoService
     {
-        //private readonly ITodoRepository todoRepository;
-        //private readonly IGetDataQueryRepository todoQueryRepository;
         private readonly ITodoRepository todoRepository;
-        //private readonly IGetDataQueryRepository todoQueryRepository;
-        private readonly List<Todo> newList = new List<Todo>();
-        private readonly List<Todo> updateList = new List<Todo>();
-        private readonly List<Todo> removeList = new List<Todo>();
-        private readonly List<Todo> ListContainer = new List<Todo>();
+        private readonly List<Todo> newList = new List<Todo>(),
+                                    updateList = new List<Todo>(),
+                                    removeList = new List<Todo>(),
+                                    ListContainer = new List<Todo>();
+
         private List<string> result = new List<string>();
-        public TodoService(ITodoRepository _todoRepository)//, IGetDataQueryRepository _todoQueryRepository)//ITodoRepository _listRepository, IGetDataQueryRepository _todoQueryRepository)
+        public TodoService(ITodoRepository _todoRepository)
         {
             todoRepository = _todoRepository;
-            //todoQueryRepository = _todoQueryRepository;
-            //todoRepository = _listRepository;
-            //todoQueryRepository = _todoQueryRepository;
+          
         }
         struct Message
         {
             public string msgs;
             public string validate;
         }
-        //public List<string> catchResult(List<string> actionResult) // ----> CatchResult Message
-        //{
-        //    //var actionResult = msg.Split("&");
-        //    var result = new List<string> { actionResult[0], actionResult[1] };
-        //    return result;
-        //}
-        //public IEnumerable<Todo> LoadList() // ------> Load all List to Container
-        //{
 
-        //    //listRepository = new TodoModelRepository();
-        //    ListContainer.AddRange(todoRepository.GetAllDatalist());
-           
-        //    return ListContainer;
-        //}
-
-
+        #region Service Add/Create Todo Data
         public List<string> Add(Todo data) //------------ Register New List
         {
             ListContainer.AddRange(todoRepository.GetAllDatalist());//LoadList();
@@ -78,6 +60,9 @@ namespace TodoAppMVVM.Services  // ListServices
             
             return result;
         }
+        #endregion
+
+        #region Service Update/Edit
         public List<string> Update(Todo data) //---------------------->> Update
         {
             Message Msg;
@@ -96,6 +81,9 @@ namespace TodoAppMVVM.Services  // ListServices
             //var result = msg + "&" + validate;
             return result;
         }
+        #endregion
+
+        #region Service Remove/Delete
         public List<string> RemoveList(Todo data) // -------->> Remove
         {
             Message Msg;
@@ -116,6 +104,9 @@ namespace TodoAppMVVM.Services  // ListServices
             //var result = msg + "&" + validate;
             return result;
         }
+        #endregion
+
+        #region Save
         public void  Save()
         {
             //---Save List
@@ -147,6 +138,9 @@ namespace TodoAppMVVM.Services  // ListServices
             Dispose();
             //context.SaveChanges();
         }
+        #endregion 
+
+        #region Dispose
         public void Dispose()
         {
             newList.Clear();
@@ -154,7 +148,7 @@ namespace TodoAppMVVM.Services  // ListServices
             removeList.Clear();
            
             ListContainer.Clear();
-            
         }
+        #endregion
     }
 }

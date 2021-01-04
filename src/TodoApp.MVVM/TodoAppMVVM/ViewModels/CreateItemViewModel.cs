@@ -17,7 +17,7 @@ using TodoAppMVVM.Views;
 
 namespace TodoAppMVVM.ViewModels
 {
-    public class CreateItemViewModel : VisibilityCommand, ICreateItemViewModel //VisibilityCommand
+    public class CreateItemViewModel : VisibilityCommand, ICreateItemViewModel
     {
         
         public int Id { get; set; }
@@ -25,23 +25,20 @@ namespace TodoAppMVVM.ViewModels
         public string Detailed { get; set; }
         public string Status { get; set; }
         public int TodoId { get; set; }
-        private readonly IUnitOfWork unitOfWork;
-        private readonly IMessageViewModel messageViewModel;
-        public CreateItemViewModel(IUnitOfWork _unitOfWork, IMessageViewModel _messageViewModel)//, INinjectConfiguration _DI
-        {
-          
-            unitOfWork = _unitOfWork;
-            messageViewModel = _messageViewModel;
-        }
-        private ICommand _createItemCommand;
 
-        public ICommand CreateItemCommand
+        private readonly IUnitOfWork unitOfWork;
+        public CreateItemViewModel(IUnitOfWork _unitOfWork)
+        {
+            unitOfWork = _unitOfWork;
+        }
+        #region Create/Update Button
+        public ICommand CreateItemButton
         {
             get
             {
-                if (_createItemCommand == null)
+                if (_createItemButton == null)
                 {
-                    _createItemCommand = new RelayCommand(() =>
+                    _createItemButton = new RelayCommand(() =>
                     {
                         var _message = "";
                         if (ItemName.Trim().Length != 0 && ItemDetailed.Trim().Length != 0 && SelectStatus.Length != 0)
@@ -56,7 +53,7 @@ namespace TodoAppMVVM.ViewModels
                                     Status = SelectStatus
                                 };
                                 Console.WriteLine(data.Id + "-" + data.Name + "-" + data.Detailed + "-" + data.Status);
-                                var result = unitOfWork.catchResult(unitOfWork.ItemServices.Update(data));
+                                var result = unitOfWork.CatchResult(unitOfWork.ItemServices.Update(data));
                                 _message = result;
                             }
                             else
@@ -68,32 +65,26 @@ namespace TodoAppMVVM.ViewModels
                                     Status = SelectStatus,
                                     TodoId = TodoId
                                 };
-                                //Console.WriteLine(data.TodoId+"<------");
-                                var result = unitOfWork.catchResult(unitOfWork.ItemServices.Add(data));
+                                var result = unitOfWork.CatchResult(unitOfWork.ItemServices.Add(data));
                                 _message = result;
 
                             }
-                            
-                            
-                            Close?.Invoke();  // Close windows
-
+                            // Close windows
+                            Close?.Invoke();  
                         }
                         else { _message = "Please Fill up All TextBox!!"; }
 
                         MessageBox.Show(_message);
-                        //messageViewModel.Message = _message;
-                        //MessageView todoview = new MessageView();
-                        //todoview.DataContext = messageViewModel;//appVM;
-                        ////Console.WriteLine(appVM.Message);
-                        //todoview.ShowDialog();
-
+                     
                     });
                 }
 
-                return _createItemCommand;
+                return _createItemButton;
             }
         }
-        
+        #endregion
+
+        #region UI Controls
         public string ItemName
         {
             get
@@ -125,5 +116,6 @@ namespace TodoAppMVVM.ViewModels
             }
             set { Status = value; }
         }
+        #endregion
     }
 }

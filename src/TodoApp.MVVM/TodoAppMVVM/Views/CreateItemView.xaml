@@ -51,7 +51,7 @@
 
                     <!-- Add Item Button -->
                     <Button x:Name="SaveButton" Grid.Row="4" Grid.ColumnSpan="2" Width="100" Content="Save" Margin="5" 
-                            Command="{Binding CreateItemCommand}"
+                            Command="{Binding CreateItemButton}"
                             HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     <!-- Cancel button Button -->
                     <Button Grid.Row="4" Grid.ColumnSpan="2" Width="100" Content="Cancel" Margin="5"

@@ -17,6 +17,7 @@ namespace TodoApp.MVVM.Models
         }
 
         private int id;
+        private string name, description;
 
         public int Id
         {
@@ -24,15 +25,11 @@ namespace TodoApp.MVVM.Models
             set { id = value; OnPropertyChanged("TodoId"); }
         }
 
-        private string name;
-
         public string Name
         {
             get { return name; }
             set { name = value; OnPropertyChanged("Name"); }
         }
-
-        private string description;
 
         public string Description
         {

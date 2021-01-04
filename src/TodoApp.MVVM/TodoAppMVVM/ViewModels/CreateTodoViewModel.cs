@@ -21,29 +21,25 @@ namespace TodoAppMVVM.ViewModels
 {
     public class CreateTodoViewModel : VisibilityCommand, ICreateTodoViewModel
     {
-       
-    
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
 
-        private readonly IUnitOfWork unitOfWork;// = new UnitOfWork();
-        private readonly IMessageViewModel messageViewModel;
-        public CreateTodoViewModel(IUnitOfWork _unitOfWork,  IMessageViewModel _messageViewModel)
+        private readonly IUnitOfWork unitOfWork;
+      
+        public CreateTodoViewModel(IUnitOfWork _unitOfWork)
         {
-            messageViewModel = _messageViewModel;
             unitOfWork = _unitOfWork;
         }
 
-        private ICommand _createTodoCommand;
-
-        public ICommand CreateTodoCommand
+        #region Create/Update Button
+        public ICommand CreateTodoButton
         {
             get
             {
-                if (_createTodoCommand == null)
+                if (_createTodoButton == null)
                 {
-                    _createTodoCommand = new RelayCommand(() =>
+                    _createTodoButton = new RelayCommand(() =>
                     {
                         var _message = "";
                         if (ListName.Trim().Length != 0 && ListDescription.Trim().Length != 0)
@@ -56,7 +52,7 @@ namespace TodoAppMVVM.ViewModels
                                     Name = ListName,
                                     Description = ListDescription,
                                 };
-                                var result = unitOfWork.catchResult(unitOfWork.TodoServices.Update(data));
+                                var result = unitOfWork.CatchResult(unitOfWork.TodoServices.Update(data));
                                 _message = result;
 
                             }
@@ -67,7 +63,7 @@ namespace TodoAppMVVM.ViewModels
                                     Name = Name,
                                     Description = Description,
                                 };
-                                var result = unitOfWork.catchResult(unitOfWork.TodoServices.Add(data));
+                                var result = unitOfWork.CatchResult(unitOfWork.TodoServices.Add(data));
                                 _message = result;
 
                             }
@@ -75,22 +71,17 @@ namespace TodoAppMVVM.ViewModels
 
                         }
                         else { _message = "Please Fill up All TextBox!!"; }
-                        //messageViewModel.Message = _message;
-                        //MessageView todoview = new MessageView();
-
-                        //todoview.DataContext = messageViewModel;//appVM;
-                        ////Console.WriteLine(appVM.Message);
-                        //todoview.ShowDialog();
+                   
                         MessageBox.Show(_message);
 
                     });
                 }
-
-                return _createTodoCommand;
+                return _createTodoButton;
             }
         }
-        
+        #endregion
 
+        #region UI Controls
         public string ListName
         {
             get
@@ -117,6 +108,7 @@ namespace TodoAppMVVM.ViewModels
             get { return Id; }
             set { Id = value; }
         }
+        #endregion
 
     }
 }

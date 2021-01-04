@@ -11,24 +11,6 @@ namespace TodoAppMVVM.SQLite
 {
     public class DBContext : IDBContext
     {
-        //public DbSet<ItemModel> Itemlists { get; set; }
-        //public DbSet<TodoModel> Datalists { get; set; }
-
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlite(
-        //        "Data Source=TodoDatabase.db");
-        //    optionsBuilder.UseLazyLoadingProxies();
-        //    base.OnConfiguring(optionsBuilder);
-        //}
-        //public void ConfigureServices(IServiceCollection services)
-        //{
-        //    services.AddControllers();
-
-        //    services.AddDbContext<ApplicationDbContext>(
-        //        options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
-        //}
-
         public void CreateDb()
         {
             try

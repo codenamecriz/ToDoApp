@@ -9,19 +9,19 @@ namespace TodoAppMVVM.Repository
 {
     public class ItemRepository : IItemRepository
     {
-        //private readonly IBuildConnection context;
+   
         private SQLiteConnection connect;
         private readonly IBuildConnection buildConnection;
-        public ItemRepository(IBuildConnection _buildConnection)//IBuildConnection _context)
+        public ItemRepository(IBuildConnection _buildConnection)
         {
-            //context = _context;
             connect = new SQLiteConnection();
             buildConnection = _buildConnection;
         }
-        public string Add(Item data) //-------------------------> Insert Item
+        #region Create/Add in Database
+        public string Add(Item data) 
         {
             connect = buildConnection.DbConnection();
-            //string Query = "INSERT INTO Itemlists(Name, Detailed,Status,DatalistId) VALUES('" + datas[0] + "', '" + datas[1] + "',)";
+    
             connect.Open();
             SQLiteCommand cmd = new SQLiteCommand(connect);
             cmd.CommandText = "INSERT INTO Item(Name, Detailed,Status,TodoModelId) VALUES(@name,@detailed,@status,@datalistId)";
@@ -36,7 +36,10 @@ namespace TodoAppMVVM.Repository
             return "Done Save From DB SQLITE Query";
 
         }
-        //============================================================ Delete
+        #endregion
+
+        #region Remove/Delete in Database
+
         public void RemoveItem(int id)
         {
             connect = buildConnection.DbConnection();
@@ -49,8 +52,10 @@ namespace TodoAppMVVM.Repository
             cmd.ExecuteNonQuery();
             connect.Close();
         }
+        #endregion
 
-        public IEnumerable<Item> GetItemById(int id) //--------------------------------> Get All Itemm By Id
+        #region Get All Item By Id in Database
+        public IEnumerable<Item> GetItemById(int id) 
         {
             var listFile = new List<Item>();
             connect = buildConnection.DbConnection();
@@ -69,14 +74,16 @@ namespace TodoAppMVVM.Repository
                     Name = rd.GetString(1),
                     Detailed = rd.GetString(2),
                     Status = rd.GetString(3)
-                    // etc... (0, 1 refer to the column index)
+             
                 });
             }
             connect.Close();
             return listFile;
-            //throw new NotImplementedException();
         }
-        public string Update(Item data) //------------------------------>> Update
+        #endregion
+
+        #region Update/Edit in Database
+        public string Update(Item data) 
         {
             int id = data.Id;
             string name = data.Name;
@@ -96,5 +103,6 @@ namespace TodoAppMVVM.Repository
             connect.Close();
             return "Done Update From DB SQLITE Query";
         }
+        #endregion
     }
 }

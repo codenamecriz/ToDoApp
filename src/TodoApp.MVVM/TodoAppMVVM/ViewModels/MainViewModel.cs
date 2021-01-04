@@ -26,7 +26,7 @@ using TodoApp.MVVM;
 
 namespace TodoAppMVVM.ViewModels
 {
-    public class MainViewModel : VisibilityCommand, IMainViewModel//:  INotifyPropertyChanged
+    public class MainViewModel : VisibilityCommand, IMainViewModel
     {
         private readonly IUnitOfWork unitofWork;
 

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using TodoApp.MVVM;
 using TodoApp.MVVM.Commands;
@@ -78,12 +79,13 @@ namespace TodoAppMVVM.ViewModels
 
                         }
                         else { _message = "Please Fill up All TextBox!!"; }
-            
-                        messageViewModel.Message = _message;
-                        MessageView todoview = new MessageView();
-                        todoview.DataContext = messageViewModel;//appVM;
-                        //Console.WriteLine(appVM.Message);
-                        todoview.ShowDialog();
+
+                        MessageBox.Show(_message);
+                        //messageViewModel.Message = _message;
+                        //MessageView todoview = new MessageView();
+                        //todoview.DataContext = messageViewModel;//appVM;
+                        ////Console.WriteLine(appVM.Message);
+                        //todoview.ShowDialog();
 
                     });
                 }

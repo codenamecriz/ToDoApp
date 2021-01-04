@@ -24,7 +24,7 @@ namespace TodoAppMVVM.Services  // ListServices
         }
         struct Message
         {
-            public string msgs;
+            public string message;
             public string validate;
         }
 
@@ -45,16 +45,16 @@ namespace TodoAppMVVM.Services  // ListServices
             if (data.Id == 0 && checkName == 0)
             {
                 newList.Add(data);
-                Msg.msgs = "New List Ssuccessfully Added!!!";
+                Msg.message = "New List Ssuccessfully Added!!!";
                
             }
             else
             {
-                Msg.msgs = "Data Already Registered.!!!";
+                Msg.message = "Data Already Registered.!!!";
                 Msg.validate = "false";
             }
 
-            result = new List<string> { Msg.msgs, Msg.validate };
+            result = new List<string> { Msg.message, Msg.validate };
 
             //var result = msg + "&" + validate;
             
@@ -70,14 +70,14 @@ namespace TodoAppMVVM.Services  // ListServices
             if (data.Id != 0 && !ListContainer.Contains(data))
             {
                 updateList.Add(data);
-                Msg.msgs = "List Ssuccessfully Updated!!!";
+                Msg.message = "List Ssuccessfully Updated!!!";
             }
             else
             {
-                Msg.msgs = "Data Cant Update Please Try Again!!! ";
+                Msg.message = "Data Cant Update Please Try Again!!! ";
                 Msg.validate = "false";
             }
-            result = new List<string> { Msg.msgs, Msg.validate };
+            result = new List<string> { Msg.message, Msg.validate };
             //var result = msg + "&" + validate;
             return result;
         }
@@ -91,16 +91,16 @@ namespace TodoAppMVVM.Services  // ListServices
             if (data.Id != 0 )
             {
                 removeList.Add(data);
-                Msg.msgs = "List has been Successfully Remove!";
+                Msg.message = "List has been Successfully Remove!";
                 Msg.validate = "true";
 
             }
             else
             {
-                Msg.msgs = "Sorry Your Request is Failed to Remove!";
+                Msg.message = "Sorry Your Request is Failed to Remove!";
                 Msg.validate = "false";
             }
-            result = new List<string> { Msg.msgs, Msg.validate };
+            result = new List<string> { Msg.message, Msg.validate };
             //var result = msg + "&" + validate;
             return result;
         }

@@ -46,24 +46,24 @@ namespace TodoAppMVVM.ViewModels
                         {
                             if (Id != 0)
                             {
-                                var data = new Todo
+                                var updateData = new Todo
                                 {
                                     Id = Id,
                                     Name = ListName,
                                     Description = ListDescription,
                                 };
-                                var result = _unitOfWork.CatchResult(_unitOfWork.TodoServices.Update(data));
+                                var result = _unitOfWork.CatchResult(_unitOfWork.TodoServices.Update(updateData));
                                 Message = result;
 
                             }
                             else
                             {
-                                var data = new Todo
+                                var AddData = new Todo
                                 {
                                     Name = Name,
                                     Description = Description,
                                 };
-                                var result = _unitOfWork.CatchResult(_unitOfWork.TodoServices.Add(data));
+                                var result = _unitOfWork.CatchResult(_unitOfWork.TodoServices.Add(AddData));
                                 Message = result;
 
                             }

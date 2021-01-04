@@ -22,7 +22,7 @@ namespace TodoAppMVVM.Services
         }
         struct Message
         {
-            public string msgs;
+            public string message;
             public string validate;
 
         }
@@ -37,16 +37,16 @@ namespace TodoAppMVVM.Services
             {
                 newItem.Add(data);
 
-                Msg.msgs = "New Item Successfully Added!!";
+                Msg.message = "New Item Successfully Added!!";
                 Msg.validate = "true";
             }
             else
             {
-                Msg.msgs = "Data Already Registered.!!!";
+                Msg.message = "Data Already Registered.!!!";
                 Msg.validate = "false";
             }
 
-            result = new List<string> { Msg.msgs, Msg.validate };
+            result = new List<string> { Msg.message, Msg.validate };
             return result;
 
         }
@@ -62,16 +62,16 @@ namespace TodoAppMVVM.Services
             if (data.Id != 0 && !ItemContainer.Contains(data))
             {
                 updateItem.Add(data);
-                Msg.msgs = "Item Successfully Updated!!";
+                Msg.message = "Item Successfully Updated!!";
                 Msg.validate = "true";
             }
             else
             {
-                Msg.msgs = "Request an Update Failed. Please try Again.!! ";
+                Msg.message = "Request an Update Failed. Please try Again.!! ";
                 Msg.validate = "false";
             }
 
-            result = new List<string> { Msg.msgs, Msg.validate };
+            result = new List<string> { Msg.message, Msg.validate };
             return result;
 
         }
@@ -85,16 +85,16 @@ namespace TodoAppMVVM.Services
             if (data.Id != 0 )
             {
                 removeItem.Add(data);
-                Msg.msgs = "Your Request Has Been Successfull. Item has been Remove.!";
+                Msg.message = "Your Request Has Been Successfull. Item has been Remove.!";
                 Msg.validate = "true";
             }
             else
             {
-                Msg.msgs = "Failed to Remove the Item";
+                Msg.message = "Failed to Remove the Item";
                 Msg.validate = "false";
             }
 
-            result = new List<string> { Msg.msgs, Msg.validate };
+            result = new List<string> { Msg.message, Msg.validate };
             return result;
 
         }

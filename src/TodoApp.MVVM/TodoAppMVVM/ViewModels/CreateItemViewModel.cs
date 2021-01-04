@@ -45,27 +45,27 @@ namespace TodoAppMVVM.ViewModels
                         {
                             if (Id != 0)
                             {
-                                var data = new Item
+                                var updateData = new Item
                                 {
                                     Id = Id,
                                     Name = ItemName,
                                     Detailed = ItemDetailed,
                                     Status = SelectStatus
                                 };
-                                Console.WriteLine(data.Id + "-" + data.Name + "-" + data.Detailed + "-" + data.Status);
-                                var result = _unitOfWork.CatchResult(_unitOfWork.ItemServices.Update(data));
+                                Console.WriteLine(updateData.Id + "-" + updateData.Name + "-" + updateData.Detailed + "-" + updateData.Status);
+                                var result = _unitOfWork.CatchResult(_unitOfWork.ItemServices.Update(updateData));
                                 Message = result;
                             }
                             else
                             {
-                                var data = new Item
+                                var AddData = new Item
                                 {
                                     Name = ItemName,
                                     Detailed = Detailed,
                                     Status = SelectStatus,
                                     TodoId = TodoId
                                 };
-                                var result = _unitOfWork.CatchResult(_unitOfWork.ItemServices.Add(data));
+                                var result = _unitOfWork.CatchResult(_unitOfWork.ItemServices.Add(AddData));
                                 Message = result;
 
                             }

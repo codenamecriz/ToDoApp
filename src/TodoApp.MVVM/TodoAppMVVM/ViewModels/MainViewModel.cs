@@ -28,8 +28,7 @@ namespace TodoAppMVVM.ViewModels
 {
     public class MainViewModel : VisibilityCommand, IMainViewModel
     {
-        private readonly IUnitOfWork _unitofWork;
-
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IDBContext _dbContext;
         private readonly ICreateItemViewModel _createItemViewModel;
         private readonly ICreateTodoViewModel _createTodoViewModel;
@@ -49,7 +48,7 @@ namespace TodoAppMVVM.ViewModels
 
             _createItemViewModel = createItemViewModel;
             _createTodoViewModel = createTodoViewModel;
-            _unitofWork = unitofWork;
+            _unitOfWork = unitofWork;
             Btn_CreateListVisibility = true;
             ListDataGridViewVisibility = true;
             ItemDataGridViewVisibility = false;
@@ -71,8 +70,8 @@ namespace TodoAppMVVM.ViewModels
         #region Show() Load Data Collection
         private void Show()
         {
-            TodoListGrid = new ObservableCollection<TodoListDTO>(_unitofWork.QeuriesServices.GetAll());
-            ItemsGrid = new ObservableCollection<ItemDTO>(_unitofWork.QeuriesServices.GetItemById(ListId));
+            TodoListGrid = new ObservableCollection<TodoListDTO>(_unitOfWork.QeuriesServices.GetAll());
+            ItemsGrid = new ObservableCollection<ItemDTO>(_unitOfWork.QeuriesServices.GetItemById(ListId));
 
         }
         #endregion
@@ -151,7 +150,7 @@ namespace TodoAppMVVM.ViewModels
                 Name = parameter.Name,
                 Description = parameter.Description
             };
-            var result = _unitofWork.CatchResult(_unitofWork.TodoServices.RemoveList(todoParameter));
+            var result = _unitOfWork.CatchResult(_unitOfWork.TodoServices.RemoveList(todoParameter));
             MessageBox.Show(result);
             Show();
             //https://www.youtube.com/watch?v=IRE2PAD1kIM
@@ -168,7 +167,7 @@ namespace TodoAppMVVM.ViewModels
                 Status = parameter.Status,
 
             };
-            var result = _unitofWork.CatchResult(_unitofWork.ItemServices.RemoveItem(itemParameter));
+            var result = _unitOfWork.CatchResult(_unitOfWork.ItemServices.RemoveItem(itemParameter));
             MessageBox.Show(result);
             Show();
         }

@@ -57,28 +57,28 @@ namespace TodoApp.MVVM.EventCommands
 
         #region Get All Item from Database
   
-        private ObservableCollection<ItemDTO> itemsGrid;
+        private ObservableCollection<ItemDTO> itemGrid;
         public ObservableCollection<ItemDTO> ItemsGrid
         {
-            get { return itemsGrid; }
-            set { itemsGrid = value; OnPropertyChanged("ItemsGrid"); }
+            get { return itemGrid; }
+            set { itemGrid = value; OnPropertyChanged("ItemsGrid"); }
         }
         #endregion
 
-        private bool _btn_CreateListVisibility,
-                      _btn_CreateItemVisibility,
-                     _btn_BacktoListViewVisibility,
-                     _listDataGridViewVisibility,
-                     _itemDataGridViewVisibility;
+        private bool btn_CreateListVisibility,
+                      btn_CreateItemVisibility,
+                     btn_BacktoListViewVisibility,
+                     listDataGridViewVisibility,
+                     itemDataGridViewVisibility;
 
         #region Visibility of Create List & Item Button
         // -->>Link for Tutorial Visibility Property https://www.technical-recipes.com/2016/binding-the-visibility-of-wpf-elements-to-a-property/
         public bool Btn_CreateListVisibility
         {
-            get { return _btn_CreateListVisibility; }
+            get { return btn_CreateListVisibility; }
              set
             {
-                _btn_CreateListVisibility =  value;
+                btn_CreateListVisibility =  value;
                 OnPropertyChanged("Btn_CreateListVisibility");
             }
             
@@ -86,10 +86,10 @@ namespace TodoApp.MVVM.EventCommands
         // Hide/Show Button Create Item
         public bool Btn_CreateItemVisibility
         {
-            get { return _btn_CreateItemVisibility; }
+            get { return btn_CreateItemVisibility; }
             set
             {
-                _btn_CreateItemVisibility = value;
+                btn_CreateItemVisibility = value;
                 OnPropertyChanged("Btn_CreateItemVisibility");
             }
         }
@@ -98,10 +98,10 @@ namespace TodoApp.MVVM.EventCommands
         #region Visibility Back to Todo DataGrid
         public bool Btn_BacktoListViewVisibility
         {
-            get { return _btn_BacktoListViewVisibility; }
+            get { return btn_BacktoListViewVisibility; }
             set
             {
-                _btn_BacktoListViewVisibility = value;
+                btn_BacktoListViewVisibility = value;
                 OnPropertyChanged("Btn_BacktoListViewVisibility");
             }
         }
@@ -111,10 +111,10 @@ namespace TodoApp.MVVM.EventCommands
 
         public bool ListDataGridViewVisibility
         {
-            get { return _listDataGridViewVisibility; }
+            get { return listDataGridViewVisibility; }
             set
             {
-                _listDataGridViewVisibility = value;
+                listDataGridViewVisibility = value;
                 OnPropertyChanged("ListDataGridViewVisibility");
             }
          
@@ -122,10 +122,10 @@ namespace TodoApp.MVVM.EventCommands
         //  Hide Item DataGridview
         public bool ItemDataGridViewVisibility
         {
-            get { return _itemDataGridViewVisibility; }
+            get { return itemDataGridViewVisibility; }
             set
             {
-                _itemDataGridViewVisibility = value;
+                itemDataGridViewVisibility = value;
                 OnPropertyChanged("ItemDataGridViewVisibility");
             }
         }

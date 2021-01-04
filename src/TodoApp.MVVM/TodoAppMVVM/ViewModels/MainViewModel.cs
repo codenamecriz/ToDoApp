@@ -33,6 +33,7 @@ namespace TodoAppMVVM.ViewModels
         private readonly IDBContext dbContext;
         private readonly ICreateItemViewModel createItemViewModel;
         private readonly ICreateTodoViewModel createTodoViewModel;
+        private int ListId;
         public MainViewModel(IUnitOfWork _unitofWork,
             IDBContext _dbContext, 
             ICreateItemViewModel _createItemViewModel,
@@ -76,7 +77,7 @@ namespace TodoAppMVVM.ViewModels
         }
         #endregion
 
-        private int ListId;
+        
 
         //button Using ICommand
         #region Create Item Button
@@ -183,7 +184,7 @@ namespace TodoAppMVVM.ViewModels
             createTodoViewModel.Description = parameter.Description;
 
             CreateTodoView todoview = new CreateTodoView();
-            todoview.DataContext = createTodoViewModel;//appVM;
+            todoview.DataContext = createTodoViewModel;
             todoview.ShowDialog();
 
             Show();
@@ -200,7 +201,7 @@ namespace TodoAppMVVM.ViewModels
             createItemViewModel.Status = parameter.Status;
 
             CreateItemView itemoview = new CreateItemView();
-            itemoview.DataContext = createItemViewModel;//appVM;
+            itemoview.DataContext = createItemViewModel;
             itemoview.ShowDialog();
             createItemViewModel.Id = 0;
 

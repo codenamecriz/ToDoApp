@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TodoApp.API.Services.Queries
+namespace TodoApp.API.Services.Commands.Todos.Update
 {
-    public class GetTodo : IGetTodo
+    public class TodoUpdateService
     {
     }
 }

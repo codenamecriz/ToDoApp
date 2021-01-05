@@ -8,27 +8,28 @@ namespace TodoApp.API.Data
 {
     public class TodoRepository : ITodoRepository
     {
-        private readonly AppDbContext appDbContext;
-        public TodoRepository(AppDbContext _appDbContext)
+        private readonly AppDbContext _appDbContext;
+        public TodoRepository(AppDbContext appDbContext)
         {
-            appDbContext = _appDbContext;
+            _appDbContext = appDbContext;
         }
 
-        public IEnumerable<Todo> GetList()
+        public async Task<IEnumerable<Todo>> GetAllTodo()
         {
-            return appDbContext.Todos;
+            await Task.Delay(1);
+            return _appDbContext.Todos;
         }
-        public Todo GetListById(int id)
+        public async Task< Todo> GetTodoById(int id)
         {
-            return appDbContext.Todos.Find(id);
+            return await Task.FromResult( _appDbContext.Todos.Find(id));
         }
-        public void CreateTodo(Todo data)
+        public async Task CreateTodo(Todo data)
         {
             if (data == null)
             {
                 throw new ArgumentNullException(nameof(data));
             }
-            appDbContext.Add(data);
+            await Task.FromResult( _appDbContext.Add(data));
         }
         public void UpdateTodo(Todo data)
         {
@@ -41,13 +42,11 @@ namespace TodoApp.API.Data
             {
                 throw new ArgumentNullException(nameof(data));
             }
-            appDbContext.Todos.Remove(data);
+            _appDbContext.Todos.Remove(data);
         }
         public bool SaveChanges()
         {
-            return (appDbContext.SaveChanges() >= 0); 
+            return (_appDbContext.SaveChanges() >= 0); 
         }
-
-       
     }
 }

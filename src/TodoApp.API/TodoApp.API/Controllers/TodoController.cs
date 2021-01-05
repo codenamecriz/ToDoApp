@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+﻿
+using AutoMapper;
+using MediatR;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,6 +11,8 @@ using TodoApp.API.Data;
 using TodoApp.API.DTOs;
 using TodoApp.API.DTOs.Todo;
 using TodoApp.API.Models;
+using TodoApp.API.Services.Commands.Todos.Create;
+using TodoApp.API.Services.Queries;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -21,107 +25,111 @@ namespace TodoApp.API.Controllers  // API Controller
     {
       
          List<TodoReadDto> todoList = new List<TodoReadDto>();
-        private readonly ITodoRepository todoRepo;
-        private readonly IMapper mapper;
+        private readonly ITodoRepository _todoRepo;
+        private readonly IMapper _mapper;
+        private readonly IMediator _mediator;
 
-        public TodoController(ITodoRepository _todoRepo,IMapper _mapper)
+        public TodoController(ITodoRepository todoRepo,IMapper mapper, IMediator mediator)
         {
-            todoRepo = _todoRepo;
-            mapper = _mapper;
+            _todoRepo = todoRepo;
+            _mapper = mapper;
+            _mediator = mediator;
         }
-        // GET: api/<TodoController>
+        // GET: api/todo
         [HttpGet]
-        public ActionResult< IEnumerable<TodoReadDto>> GetList()
+        public async Task<ActionResult< IEnumerable<TodoReadDto>>> GetAllTodo()
         {
-        
-            var todoData = todoRepo.GetList();
-            return Ok(mapper.Map < IEnumerable<TodoReadDto>>(todoData));
+            var query = new GetAllTodoQuery();
+            var result = await _mediator.Send(query);
+            return Ok(result);
         }
 
         //GET api/<TodoController>/5
-        [HttpGet("{id}", Name = "GetListById")]
-        public ActionResult<TodoReadDto> GetListById(int id)
+        [HttpGet("{id}", Name = "GetTodoById")]
+        public async Task< ActionResult<TodoReadDto>> GetTodoById(int id)
         {
-            var todoData = todoRepo.GetListById(id);
-            if (todoData != null)
-            {
-                return Ok(mapper.Map<TodoReadDto>(todoData));
-            }
-            return NotFound();
+            var query = new GetTodoByIdQuery(id);
+            var result = await _mediator.Send(query);
+            return result != null ? (ActionResult)Ok(result) : NotFound();
+            
         }
 
-        // POST api/<TodoController>
+        // POST api/todo
         [HttpPost]
-        public ActionResult<TodoReadDto> CreateTodo(TodoCreateDto dataDto)
+        public async Task< ActionResult<TodoReadDto>> CreateTodo(CreateTodoService dataDto)
         {
-            if (dataDto != null)
-            {
-                var todoModel = mapper.Map<Todo>(dataDto);
-                todoRepo.CreateTodo(todoModel);
-                todoRepo.SaveChanges();
-                var todoReadDto = mapper.Map<TodoReadDto>(todoModel);
-                return CreatedAtRoute(nameof(GetListById), new { Id = todoReadDto.Id }, todoReadDto ); 
+            var result = await _mediator.Send(dataDto);
+
+            return CreatedAtAction(nameof(GetTodoById), new { Id = result.Id }, result);
+
+            //if (dataDto != null)
+            //{
+            //    var todoModel = _mapper.Map<Todo>(dataDto);
+            //    _todoRepo.CreateTodo(todoModel);
+            //    _todoRepo.SaveChanges();
+            //    var todoReadDto = _mapper.Map<TodoReadDto>(todoModel);
+            //    return CreatedAtRoute(nameof(GetTodoById), new { Id = todoReadDto.Id }, todoReadDto ); 
                
-            }
-            return NotFound();
+            //}
+            //return NotFound();
         }
 
-        //PUT api/<TodoController>/5
-        [HttpPut("{id}")]
-        public ActionResult UpdateTodo(int id, TodoUpdateDto dataDto)
-        {
-            var dataFromRepo = todoRepo.GetListById(id);
-            if (dataFromRepo != null)
-            {
-                mapper.Map(dataDto, dataFromRepo);
-                todoRepo.UpdateTodo(dataFromRepo);
-                todoRepo.SaveChanges();
-                return NoContent();
-            }
-            return NotFound();
-        }
+        //PUT api/todo/5
+        //[HttpPut("{id}")]
+        //public ActionResult UpdateTodo(int id, TodoUpdateDto dataDto)
+        //{
+        //    var dataFromRepo = _todoRepo.GetTodoById(id);
+        //    if (dataFromRepo != null)
+        //    {
+        //        _mapper.Map(dataDto, dataFromRepo);
+        //        _todoRepo.UpdateTodo(dataFromRepo);
+        //        _todoRepo.SaveChanges();
+        //        return NoContent();
+        //    }
+        //    return NotFound();
+        //}
         //PATCH api/todo/5
-        [HttpPatch("{id}")]
-        public ActionResult PartialTodoUpdate(int id, JsonPatchDocument<TodoUpdateDto> pathDoc) //------------- Target the espisific filed to update
-        {
-            var todoFromRepo = todoRepo.GetListById(id);
-            if (todoFromRepo != null)
-            {
-                var todoToPatch = mapper.Map<TodoUpdateDto>(todoFromRepo);
-                pathDoc.ApplyTo(todoToPatch, ModelState);
+        //[HttpPatch("{id}")]
+        //public ActionResult PartialTodoUpdate(int id, JsonPatchDocument<TodoUpdateDto> pathDoc) //------------- Target the espisific filed to update
+        //{
+        //    var todoFromRepo = _todoRepo.GetTodoById(id);
+        //    if (todoFromRepo != null)
+        //    {
+        //        var todoToPatch = _mapper.Map<TodoUpdateDto>(todoFromRepo);
+        //        pathDoc.ApplyTo(todoToPatch, ModelState);
 
-                if (!TryValidateModel(todoToPatch))
-                {
-                    return ValidationProblem(ModelState);
-                }
-                mapper.Map(todoToPatch, todoFromRepo);
-                todoRepo.UpdateTodo(todoFromRepo);
-                todoRepo.SaveChanges();
-                return NoContent();
-            }
-            return NotFound();
-            // ----> sample format
-            //[
-            //    {
-            //        "op": "replace",
-            //        "path": "/description",
-            //        "value": "this is patch"
-            //    }
-            //]
-        }
+        //        if (!TryValidateModel(todoToPatch))
+        //        {
+        //            return ValidationProblem(ModelState);
+        //        }
+        //        _mapper.Map(todoToPatch, todoFromRepo);
+        //        _todoRepo.UpdateTodo(todoFromRepo);
+        //        _todoRepo.SaveChanges();
+        //        return NoContent();
+        //    }
+        //    return NotFound();
+        //    // ----> sample format
+        //    //[
+        //    //    {
+        //    //        "op": "replace",
+        //    //        "path": "/description",
+        //    //        "value": "this is patch"
+        //    //    }
+        //    //]
+        //}
 
-        // DELETE api/<TodoController>/5
-        [HttpDelete("{id}")]
-        public ActionResult DeleteTodo(int id)
-        {
-            var todoFromRepo = todoRepo.GetListById(id);
-            if (todoFromRepo != null)
-            {
-                todoRepo.DeleteTodo(todoFromRepo);
-                todoRepo.SaveChanges();
-                return NoContent();
-            }
-            return NotFound();
-        }
+        //// DELETE api/todo/5
+        //[HttpDelete("{id}")]
+        //public ActionResult DeleteTodo(int id)
+        //{
+        //    var todoFromRepo = _todoRepo.GetTodoById(id);
+        //    if (todoFromRepo != null)
+        //    {
+        //        _todoRepo.DeleteTodo(todoFromRepo);
+        //        _todoRepo.SaveChanges();
+        //        return NoContent();
+        //    }
+        //    return NotFound();
+        //}
     }
 }

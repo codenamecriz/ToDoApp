@@ -24,15 +24,15 @@ namespace TodoApp.API.Controllers  // API Controller
     public class TodoController : ControllerBase
     {
       
-         List<TodoReadDto> todoList = new List<TodoReadDto>();
-        private readonly ITodoRepository _todoRepo;
-        private readonly IMapper _mapper;
+        // List<TodoReadDto> todoList = new List<TodoReadDto>();
+        //private readonly ITodoRepository _todoRepo;
+        //private readonly IMapper _mapper;
         private readonly IMediator _mediator;
 
-        public TodoController(ITodoRepository todoRepo,IMapper mapper, IMediator mediator)
+        public TodoController( IMediator mediator)
         {
-            _todoRepo = todoRepo;
-            _mapper = mapper;
+            //_todoRepo = todoRepo;
+            //_mapper = mapper;
             _mediator = mediator;
         }
         // GET: api/todo

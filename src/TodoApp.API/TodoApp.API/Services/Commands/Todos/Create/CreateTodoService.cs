@@ -10,10 +10,10 @@ namespace TodoApp.API.Services.Commands.Todos.Create
 {
     public class CreateTodoService : IRequest<TodoReadDto>
     {
-        
+        //public int Id { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]
-        public string Description { get; set; }
+        public string Description { get; set; }//
     }
 }

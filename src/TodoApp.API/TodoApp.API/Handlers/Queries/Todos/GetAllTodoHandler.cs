@@ -11,7 +11,7 @@ using TodoApp.API.Services.Queries;
 
 namespace TodoApp.API.Handlers
 {
-    public class GetAllTodoHandler : IRequestHandler<GetAllTodoQuery, IEnumerable<TodoReadDto>>
+    public class GetAllTodoHandler : IRequestHandler<GetAllTodoRequest, IEnumerable<TodoReadDto>>
     {
         private readonly ITodoRepository _todoRepository;
         private readonly IMapper _mapper;
@@ -22,7 +22,7 @@ namespace TodoApp.API.Handlers
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<TodoReadDto>> Handle(GetAllTodoQuery request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<TodoReadDto>> Handle(GetAllTodoRequest request, CancellationToken cancellationToken)
         {
             var todoData = await _todoRepository.GetAllTodo();
             return  _mapper.Map<IEnumerable<TodoReadDto>>(todoData);

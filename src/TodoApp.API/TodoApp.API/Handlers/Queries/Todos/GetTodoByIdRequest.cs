@@ -7,11 +7,11 @@ using TodoApp.API.Models;
 
 namespace TodoApp.API.Services.Queries
 {
-    public class GetTodoByIdQuery : IRequest<TodoReadDto>
+    public class GetTodoByIdRequest : IRequest<TodoReadDto>
     {
         public int Id { get; }
 
-        public GetTodoByIdQuery(int id)
+        public GetTodoByIdRequest(int id)
         {
             Id = id;
         }

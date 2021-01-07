@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using TodoApp.API.Data;
 using TodoApp.API.DTOs;
 using TodoApp.API.DTOs.Todo;
+using TodoApp.API.Handlers.Commands.Todos.Update;
 using TodoApp.API.Models;
 using TodoApp.API.Services.Commands.Todos.Create;
 using TodoApp.API.Services.Queries;
@@ -39,7 +40,7 @@ namespace TodoApp.API.Controllers  // API Controller
         [HttpGet]
         public async Task<ActionResult< IEnumerable<TodoReadDto>>> GetAllTodo()
         {
-            var query = new GetAllTodoQuery();
+            var query = new GetAllTodoRequest();
             var result = await _mediator.Send(query);
             return Ok(result);
         }
@@ -48,7 +49,7 @@ namespace TodoApp.API.Controllers  // API Controller
         [HttpGet("{id}", Name = "GetTodoById")]
         public async Task< ActionResult<TodoReadDto>> GetTodoById(int id)
         {
-            var query = new GetTodoByIdQuery(id);
+            var query = new GetTodoByIdRequest(id);
             var result = await _mediator.Send(query);
             return result != null ? (ActionResult)Ok(result) : NotFound();
             
@@ -56,7 +57,7 @@ namespace TodoApp.API.Controllers  // API Controller
 
         // POST api/todo
         [HttpPost]
-        public async Task< ActionResult<TodoReadDto>> CreateTodo(CreateTodoService dataDto)
+        public async Task< ActionResult<TodoReadDto>> CreateTodo(CreateTodoRequest dataDto)
         {
             var result = await _mediator.Send(dataDto);
 
@@ -75,19 +76,21 @@ namespace TodoApp.API.Controllers  // API Controller
         }
 
         //PUT api/todo/5
-        //[HttpPut("{id}")]
-        //public ActionResult UpdateTodo(int id, TodoUpdateDto dataDto)
-        //{
-        //    var dataFromRepo = _todoRepo.GetTodoById(id);
-        //    if (dataFromRepo != null)
-        //    {
-        //        _mapper.Map(dataDto, dataFromRepo);
-        //        _todoRepo.UpdateTodo(dataFromRepo);
-        //        _todoRepo.SaveChanges();
-        //        return NoContent();
-        //    }
-        //    return NotFound();
-        //}
+        [HttpPut("{id}")]
+        public async Task <ActionResult> UpdateTodo(int id, TodoUpdateDto dataDto)
+        {
+            var result = await _mediator.Send(new UpdateTodoRequest(id, dataDto.Name, dataDto.Description));
+            return result != null ? (ActionResult)NoContent():NotFound();
+            //var dataFromRepo = _todoRepo.GetTodoById(id);
+            //if (dataFromRepo != null)
+            //{
+            //    _mapper.Map(dataDto, dataFromRepo);
+            //    _todoRepo.UpdateTodo(dataFromRepo);
+            //    _todoRepo.SaveChanges();
+            //    return NoContent();
+            //}
+            //return NotFound();
+        }
         //PATCH api/todo/5
         //[HttpPatch("{id}")]
         //public ActionResult PartialTodoUpdate(int id, JsonPatchDocument<TodoUpdateDto> pathDoc) //------------- Target the espisific filed to update

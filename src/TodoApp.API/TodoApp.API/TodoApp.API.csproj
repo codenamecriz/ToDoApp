@@ -5,11 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20201228062310_Init.cs" />
-    <Compile Remove="Migrations\20201228062310_Init.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <Folder Include="Handlers\Commands\Items\" />
+    <Folder Include="Handlers\Commands\Todos\Delete\" />
+    <Folder Include="Handlers\Queries\Items\" />
+    <Folder Include="Requests\" />
+    <Folder Include="Services\Commands\Todos\Create\" />
+    <Folder Include="Services\Queries\" />
     <Folder Include="Views\" />
   </ItemGroup>
 

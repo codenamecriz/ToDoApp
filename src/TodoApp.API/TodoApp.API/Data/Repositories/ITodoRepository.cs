@@ -10,7 +10,7 @@ namespace TodoApp.API.Data
         Task<Todo> GetTodoById(int id);
         
         Task CreateTodo(Todo data);
-        void UpdateTodo(Todo data);
+        Task UpdateTodo(Todo data);
         void DeleteTodo(Todo data);
         bool SaveChanges();
 

@@ -31,8 +31,10 @@ namespace TodoApp.API.Data
             }
             await Task.FromResult( _appDbContext.Add(data));
         }
-        public void UpdateTodo(Todo data)
+        public async Task UpdateTodo(Todo data)
         {
+            await Task.Delay(1);
+           
             //throw new NotImplementedException();
         }
         public void DeleteTodo(Todo data)

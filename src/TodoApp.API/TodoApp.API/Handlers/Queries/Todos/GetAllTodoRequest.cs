@@ -7,7 +7,7 @@ using TodoApp.API.Models;
 
 namespace TodoApp.API.Services.Queries
 {
-    public class GetAllTodoQuery : IRequest<IEnumerable<TodoReadDto>>
+    public class GetAllTodoRequest : IRequest<IEnumerable<TodoReadDto>>
     {
     }
 }

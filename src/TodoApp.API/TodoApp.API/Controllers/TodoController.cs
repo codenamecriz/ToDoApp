@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using TodoApp.API.Data;
 using TodoApp.API.DTOs;
 using TodoApp.API.DTOs.Todo;
+using TodoApp.API.Handlers.Commands.Todos.Delete;
+using TodoApp.API.Handlers.Commands.Todos.Put;
 using TodoApp.API.Handlers.Commands.Todos.Update;
 using TodoApp.API.Models;
 using TodoApp.API.Services.Commands.Todos.Create;
@@ -79,7 +81,7 @@ namespace TodoApp.API.Controllers  // API Controller
         [HttpPut("{id}")]
         public async Task <ActionResult> UpdateTodo(int id, TodoUpdateDto dataDto)
         {
-            var result = await _mediator.Send(new UpdateTodoRequest(id, dataDto.Name, dataDto.Description));
+            var result = await _mediator.Send(new UpdateTodoRequest(id, dataDto));//.Name, dataDto.Description));
             return result != null ? (ActionResult)NoContent():NotFound();
             //var dataFromRepo = _todoRepo.GetTodoById(id);
             //if (dataFromRepo != null)
@@ -92,47 +94,64 @@ namespace TodoApp.API.Controllers  // API Controller
             //return NotFound();
         }
         //PATCH api/todo/5
-        //[HttpPatch("{id}")]
-        //public ActionResult PartialTodoUpdate(int id, JsonPatchDocument<TodoUpdateDto> pathDoc) //------------- Target the espisific filed to update
-        //{
-        //    var todoFromRepo = _todoRepo.GetTodoById(id);
-        //    if (todoFromRepo != null)
-        //    {
-        //        var todoToPatch = _mapper.Map<TodoUpdateDto>(todoFromRepo);
-        //        pathDoc.ApplyTo(todoToPatch, ModelState);
+        [HttpPatch("{id}")]
+        public async Task< ActionResult> PartialUpdateTodo(int id, JsonPatchDocument<TodoUpdateDto> pathDoc) //------------- Target the espisific filed to update
+        {
+            var resultFromRepo = await _mediator.Send(new PatchTodoRequest(id,null));
+            if (resultFromRepo == null)
+            {
+                return NotFound();
+            }
+            var toPatch =  resultFromRepo;
+            pathDoc.ApplyTo(toPatch, ModelState);
+            if (!TryValidateModel(toPatch))
+            {
+                return ValidationProblem(ModelState);
+            }
+            var saveResult = await _mediator.Send(new PatchTodoRequest(id, toPatch));
 
-        //        if (!TryValidateModel(todoToPatch))
-        //        {
-        //            return ValidationProblem(ModelState);
-        //        }
-        //        _mapper.Map(todoToPatch, todoFromRepo);
-        //        _todoRepo.UpdateTodo(todoFromRepo);
-        //        _todoRepo.SaveChanges();
-        //        return NoContent();
-        //    }
-        //    return NotFound();
-        //    // ----> sample format
-        //    //[
-        //    //    {
-        //    //        "op": "replace",
-        //    //        "path": "/description",
-        //    //        "value": "this is patch"
-        //    //    }
-        //    //]
-        //}
 
-        //// DELETE api/todo/5
-        //[HttpDelete("{id}")]
-        //public ActionResult DeleteTodo(int id)
-        //{
-        //    var todoFromRepo = _todoRepo.GetTodoById(id);
-        //    if (todoFromRepo != null)
-        //    {
-        //        _todoRepo.DeleteTodo(todoFromRepo);
-        //        _todoRepo.SaveChanges();
-        //        return NoContent();
-        //    }
-        //    return NotFound();
-        //}
+            return NoContent();
+            //var todoFromRepo = _todoRepo.GetTodoById(id);
+            //if (todoFromRepo != null)
+            //{
+            //    var todoToPatch = _mapper.Map<TodoUpdateDto>(todoFromRepo);
+            //    pathDoc.ApplyTo(todoToPatch, ModelState);
+
+            //    if (!TryValidateModel(todoToPatch))
+            //    {
+            //        return ValidationProblem(ModelState);
+            //    }
+            //    _mapper.Map(todoToPatch, todoFromRepo);
+            //    _todoRepo.UpdateTodo(todoFromRepo);
+            //    _todoRepo.SaveChanges();
+            //    return NoContent();
+            //}
+            //return NotFound();
+            // ----> sample format
+            //[
+            //    {
+            //        "op": "replace",
+            //        "path": "/description",
+            //        "value": "this is patch"
+            //    }
+            //]
+        }
+
+        // DELETE api/todo/5
+        [HttpDelete("{id}")]
+        public async Task< ActionResult> DeleteTodo(int id)
+        {
+            var result = await _mediator.Send(new DeleteTodoRequest(id));
+            return result != null ? (ActionResult)NoContent() : NotFound();
+            //var todoFromRepo = _todoRepo.GetTodoById(id);
+            //if (todoFromRepo != null)
+            //{
+            //    _todoRepo.DeleteTodo(todoFromRepo);
+            //    _todoRepo.SaveChanges();
+            //    return NoContent();
+            //}
+            //return NotFound();
+        }
     }
 }

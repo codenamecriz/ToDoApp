@@ -11,7 +11,7 @@ namespace TodoApp.API.Data
         
         Task CreateTodo(Todo data);
         Task UpdateTodo(Todo data);
-        void DeleteTodo(Todo data);
+        Task DeleteTodo(Todo data);
         bool SaveChanges();
 
     }

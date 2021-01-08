@@ -11,17 +11,20 @@ using TodoApp.API.Services.Commands.Todos.Create;
 
 namespace TodoApp.API.Profiles
 {
-    public class TodoProfile : Profile
+    public class MapProfile : AutoMapper.Profile
     {
-        public TodoProfile()
+        public MapProfile()
         {
             // Source -> Target
             CreateMap<Todo, TodoReadDto>();
+            CreateMap<Todo, TodoUpdateDto>();
             CreateMap<TodoCreateDto, Todo>();
             CreateMap<TodoUpdateDto, Todo>();
-            CreateMap<Todo, TodoUpdateDto>();
+            
             CreateMap<CreateTodoRequest, Todo>(); // Create
             CreateMap<UpdateTodoRequest, Todo>(); // Update
+            CreateMap<TodoUpdateDto, UpdateTodoRequest>(); // Update
+            CreateMap<UpdateTodoRequest, TodoUpdateDto>(); // Update
         }
     }
 }

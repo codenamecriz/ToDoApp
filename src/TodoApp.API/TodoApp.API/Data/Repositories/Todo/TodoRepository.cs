@@ -25,10 +25,10 @@ namespace TodoApp.API.Data
         }
         public async Task CreateTodo(Todo data)
         {
-            if (data == null)
-            {
-                throw new ArgumentNullException(nameof(data));
-            }
+            //if (data == null)
+            //{
+            //    throw new ArgumentNullException(nameof(data));
+            //}
             await Task.FromResult( _appDbContext.Add(data));
         }
         public async Task UpdateTodo(Todo data)
@@ -37,14 +37,15 @@ namespace TodoApp.API.Data
            
             //throw new NotImplementedException();
         }
-        public void DeleteTodo(Todo data)
+        public async Task DeleteTodo(Todo data)
         {
 
-            if (data == null)
-            {
-                throw new ArgumentNullException(nameof(data));
-            }
-            _appDbContext.Todos.Remove(data);
+            //if (data == null)
+            //{
+            //    throw new ArgumentNullException(nameof(data));
+            //}
+            
+            await Task.FromResult( _appDbContext.Todos.Remove(data));
         }
         public bool SaveChanges()
         {

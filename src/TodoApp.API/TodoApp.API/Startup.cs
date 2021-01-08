@@ -29,11 +29,12 @@ namespace TodoApp.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(opt => opt
-            .UseMySql(Configuration.GetConnectionString("TodoAppConnection")));
+                            .UseMySql(Configuration.GetConnectionString("TodoAppConnection")));
 
             services.AddControllers().AddNewtonsoftJson(s => {
                 s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver(); });
 
+            
             services.AddScoped<ITodoRepository, TodoRepository>();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddMediatR(typeof(Startup));

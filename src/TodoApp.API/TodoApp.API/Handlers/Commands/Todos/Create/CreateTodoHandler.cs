@@ -27,6 +27,7 @@ namespace TodoApp.API.Handlers
         {
             var todoModel = _mapper.Map<Todo>(request);
             await _todoRepository.CreateTodo(todoModel);
+            _todoRepository.SaveChanges();
             return _mapper.Map<TodoReadDto>(todoModel);
         }
     }

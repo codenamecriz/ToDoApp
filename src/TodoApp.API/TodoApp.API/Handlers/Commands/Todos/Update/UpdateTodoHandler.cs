@@ -28,10 +28,12 @@ namespace TodoApp.API.Handlers
             var dataFromRepo = await _todoRepository.GetTodoById(request.Id);
             if (dataFromRepo != null)
             {
-                _mapper.Map(request, dataFromRepo);
+                //Console.WriteLine(request.);
+                _mapper.Map(request.TodoDataToUpdate, dataFromRepo);
                 await _todoRepository.UpdateTodo(dataFromRepo);
-                //    _todoRepo.SaveChanges();
-                var result = _mapper.Map<TodoUpdateDto>(request);
+                _todoRepository.SaveChanges();
+                var result = _mapper.Map<TodoUpdateDto>(request.TodoDataToUpdate);
+                //var result = new TodoUpdateDto { Name = dataFromRepo.Name, Description = dataFromRepo.Description };
                 return result;
             }
             return null;

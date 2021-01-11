@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace TodoApp.API.DTOs.Item
 {
-    public class BaseItemDto
+    public class ItemDeleteDto
     {
         public int Id { get; set; }
     }

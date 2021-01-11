@@ -24,12 +24,12 @@ namespace TodoApp.API.Handlers.Commands.Todos.Put
         {
             var todoFromRepo = await _todoRepository.GetTodoById(request.Id);
             var todoToPatch = _mapper.Map<TodoUpdateDto>(todoFromRepo);
-            if (request.TodoDataToUpdate == null)
+            if (request.TodoToPatch == null)
             {
                 return todoToPatch;
             }
 
-            var check = _mapper.Map(request.TodoDataToUpdate, todoFromRepo);
+            var check = _mapper.Map(request.TodoToPatch, todoFromRepo);
            
             await _todoRepository.UpdateTodo(todoFromRepo);
             _todoRepository.SaveChanges();

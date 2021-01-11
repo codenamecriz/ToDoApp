@@ -1,0 +1,15 @@
+Application Start Up.
+HTTP "GET" "/" responded 404 in 27.5250 ms
+HTTP "GET" "/api/item" responded 404 in 1.7368 ms
+HTTP "GET" "/api/item/1" responded 404 in 2.0266 ms
+HTTP "GET" "/api/items/1" responded 200 in 1817.9940 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 31.1486 ms
+HTTP "GET" "/api/items/1" responded 200 in 1322.5202 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 44.5375 ms
+HTTP "GET" "/api/todo/" responded 200 in 1639.1605 ms
+HTTP "DELETE" "/api/todo/3" responded 204 in 248.7675 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 53.1200 ms
+HTTP "POST" "/api/items/" responded 201 in 5205.4408 ms

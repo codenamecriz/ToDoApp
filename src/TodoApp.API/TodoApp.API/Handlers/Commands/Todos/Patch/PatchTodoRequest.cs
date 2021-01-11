@@ -11,12 +11,12 @@ namespace TodoApp.API.Handlers.Commands.Todos.Put
     public class PatchTodoRequest : IRequest<TodoUpdateDto>
     {
         public int Id { get; set; }
-        public TodoUpdateDto TodoDataToUpdate { get; set; }
+        public TodoUpdateDto TodoToPatch { get; set; }
 
         public PatchTodoRequest(int id, TodoUpdateDto todoDataToUpdate)
         {
             Id = id;
-            TodoDataToUpdate = todoDataToUpdate;
+            TodoToPatch = todoDataToUpdate;
         }
         //-----------------
         //public int Id { get; set; }

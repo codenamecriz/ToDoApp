@@ -47,3 +47,17 @@ D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\n
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\netcoreapp3.1\MediatR.dll
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\netcoreapp3.1\MediatR.Extensions.Microsoft.DependencyInjection.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\netcoreapp3.1\Serilog.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\netcoreapp3.1\Serilog.AspNetCore.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\netcoreapp3.1\Serilog.Enrichers.Environment.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\netcoreapp3.1\Serilog.Enrichers.Process.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\netcoreapp3.1\Serilog.Enrichers.Thread.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\netcoreapp3.1\Serilog.Extensions.Hosting.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\netcoreapp3.1\Serilog.Extensions.Logging.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\netcoreapp3.1\Serilog.Formatting.Compact.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\netcoreapp3.1\Serilog.Settings.Configuration.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\netcoreapp3.1\Serilog.Sinks.Console.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\netcoreapp3.1\Serilog.Sinks.Debug.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\netcoreapp3.1\Serilog.Sinks.File.dll

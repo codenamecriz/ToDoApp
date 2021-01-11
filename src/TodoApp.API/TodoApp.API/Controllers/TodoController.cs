@@ -95,7 +95,7 @@ namespace TodoApp.API.Controllers  // API Controller
         }
         //PATCH api/todo/5
         [HttpPatch("{id}")]
-        public async Task< ActionResult> PartialUpdateTodo(int id, JsonPatchDocument<TodoUpdateDto> pathDoc) //------------- Target the espisific filed to update
+        public async Task< ActionResult> PatchTodo(int id, JsonPatchDocument<TodoUpdateDto> pathDoc) //------------- Target the espisific filed to update
         {
             var resultFromRepo = await _mediator.Send(new PatchTodoRequest(id,null));
             if (resultFromRepo == null)

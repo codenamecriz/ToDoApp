@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json.Serialization;
+using Serilog;
 using TodoApp.API.Data;
 
 namespace TodoApp.API
@@ -36,6 +37,7 @@ namespace TodoApp.API
 
             
             services.AddScoped<ITodoRepository, TodoRepository>();
+            services.AddScoped<IItemRepository, ItemRepository>();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddMediatR(typeof(Startup));
         }
@@ -48,6 +50,7 @@ namespace TodoApp.API
                 app.UseDeveloperExceptionPage();
             }
             app.UseHttpsRedirection();
+            app.UseSerilogRequestLogging();
             app.UseRouting();
             app.UseAuthorization();
 

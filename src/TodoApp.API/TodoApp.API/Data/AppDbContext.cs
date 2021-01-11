@@ -26,5 +26,6 @@ namespace TodoApp.API.Data
         //                  .EnableSensitiveDataLogging()
         //                  .EnableDetailedErrors();
         //}
+       
     }
 }

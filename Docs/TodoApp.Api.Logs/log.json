@@ -1,0 +1,213 @@
+{
+  "Timestamp": "2021-01-11T14:36:02.1808672+08:00",
+  "Level": "Information",
+  "MessageTemplate": "Application Start Up.",
+  "Properties": {
+    "MachineName": "ZZZ-PALNF1689L",
+    "ProcessId": 19672,
+    "ThreadId": 1
+  }
+} {
+  "Timestamp": "2021-01-11T14:36:04.8628215+08:00",
+  "Level": "Information",
+  "MessageTemplate": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
+  "Properties": {
+    "RequestMethod": "GET",
+    "RequestPath": "/",
+    "StatusCode": 404,
+    "Elapsed": 31.1486,
+    "SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware",
+    "RequestId": "0HM5LVCLMAKI5:00000001",
+    "SpanId": "|180cd2e6-46460acc2c125811.",
+    "TraceId": "180cd2e6-46460acc2c125811",
+    "ParentId": "",
+    "MachineName": "ZZZ-PALNF1689L",
+    "ProcessId": 19672,
+    "ThreadId": 7
+  },
+  "Renderings": {
+    "Elapsed": [
+      {
+        "Format": "0.0000",
+        "Rendering": "31.1486"
+      }
+    ]
+  }
+} {
+  "Timestamp": "2021-01-11T14:36:24.4162911+08:00",
+  "Level": "Information",
+  "MessageTemplate": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
+  "Properties": {
+    "RequestMethod": "GET",
+    "RequestPath": "/api/items/1",
+    "StatusCode": 200,
+    "Elapsed": 1322.5202,
+    "SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware",
+    "RequestId": "0HM5LVCLMAKI5:00000003",
+    "SpanId": "|180cd2e7-46460acc2c125811.",
+    "TraceId": "180cd2e7-46460acc2c125811",
+    "ParentId": "",
+    "MachineName": "ZZZ-PALNF1689L",
+    "ProcessId": 19672,
+    "ThreadId": 7
+  },
+  "Renderings": {
+    "Elapsed": [
+      {
+        "Format": "0.0000",
+        "Rendering": "1322.5202"
+      }
+    ]
+  }
+} {
+  "Timestamp": "2021-01-11T15:12:07.7615838+08:00",
+  "Level": "Information",
+  "MessageTemplate": "Application Start Up.",
+  "Properties": {
+    "MachineName": "ZZZ-PALNF1689L",
+    "ProcessId": 22136,
+    "ThreadId": 1
+  }
+} {
+  "Timestamp": "2021-01-11T15:12:11.9687105+08:00",
+  "Level": "Information",
+  "MessageTemplate": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
+  "Properties": {
+    "RequestMethod": "GET",
+    "RequestPath": "/",
+    "StatusCode": 404,
+    "Elapsed": 44.5375,
+    "SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware",
+    "RequestId": "0HM5M00RBS8DM:00000001",
+    "SpanId": "|592bd31c-4a703a220e71350a.",
+    "TraceId": "592bd31c-4a703a220e71350a",
+    "ParentId": "",
+    "MachineName": "ZZZ-PALNF1689L",
+    "ProcessId": 22136,
+    "ThreadId": 4
+  },
+  "Renderings": {
+    "Elapsed": [
+      {
+        "Format": "0.0000",
+        "Rendering": "44.5375"
+      }
+    ]
+  }
+} {
+  "Timestamp": "2021-01-11T15:12:29.2087136+08:00",
+  "Level": "Information",
+  "MessageTemplate": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
+  "Properties": {
+    "RequestMethod": "GET",
+    "RequestPath": "/api/todo/",
+    "StatusCode": 200,
+    "Elapsed": 1639.1605,
+    "SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware",
+    "RequestId": "0HM5M00RBS8DO:00000001",
+    "SpanId": "|592bd31d-4a703a220e71350a.",
+    "TraceId": "592bd31d-4a703a220e71350a",
+    "ParentId": "",
+    "ConnectionId": "0HM5M00RBS8DO",
+    "MachineName": "ZZZ-PALNF1689L",
+    "ProcessId": 22136,
+    "ThreadId": 4
+  },
+  "Renderings": {
+    "Elapsed": [
+      {
+        "Format": "0.0000",
+        "Rendering": "1639.1605"
+      }
+    ]
+  }
+} {
+  "Timestamp": "2021-01-11T15:12:41.2604118+08:00",
+  "Level": "Information",
+  "MessageTemplate": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
+  "Properties": {
+    "RequestMethod": "DELETE",
+    "RequestPath": "/api/todo/3",
+    "StatusCode": 204,
+    "Elapsed": 248.7675,
+    "SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware",
+    "RequestId": "0HM5M00RBS8DO:00000002",
+    "SpanId": "|592bd31e-4a703a220e71350a.",
+    "TraceId": "592bd31e-4a703a220e71350a",
+    "ParentId": "",
+    "ConnectionId": "0HM5M00RBS8DO",
+    "MachineName": "ZZZ-PALNF1689L",
+    "ProcessId": 22136,
+    "ThreadId": 9
+  },
+  "Renderings": {
+    "Elapsed": [
+      {
+        "Format": "0.0000",
+        "Rendering": "248.7675"
+      }
+    ]
+  }
+} {
+  "Timestamp": "2021-01-11T16:45:44.3791563+08:00",
+  "Level": "Information",
+  "MessageTemplate": "Application Start Up.",
+  "Properties": {
+    "MachineName": "ZZZ-PALNF1689L",
+    "ProcessId": 23592,
+    "ThreadId": 1
+  }
+} {
+  "Timestamp": "2021-01-11T16:45:52.9551737+08:00",
+  "Level": "Information",
+  "MessageTemplate": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
+  "Properties": {
+    "RequestMethod": "GET",
+    "RequestPath": "/",
+    "StatusCode": 404,
+    "Elapsed": 53.12,
+    "SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware",
+    "RequestId": "0HM5M1L6G62U2:00000001",
+    "SpanId": "|7e366c7e-4f738f95a73cc3c2.",
+    "TraceId": "7e366c7e-4f738f95a73cc3c2",
+    "ParentId": "",
+    "MachineName": "ZZZ-PALNF1689L",
+    "ProcessId": 23592,
+    "ThreadId": 4
+  },
+  "Renderings": {
+    "Elapsed": [
+      {
+        "Format": "0.0000",
+        "Rendering": "53.1200"
+      }
+    ]
+  }
+} {
+  "Timestamp": "2021-01-11T16:46:52.8611467+08:00",
+  "Level": "Information",
+  "MessageTemplate": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
+  "Properties": {
+    "RequestMethod": "POST",
+    "RequestPath": "/api/items/",
+    "StatusCode": 201,
+    "Elapsed": 5205.4408,
+    "SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware",
+    "RequestId": "0HM5M1L6G62U4:00000001",
+    "SpanId": "|7e366c7f-4f738f95a73cc3c2.",
+    "TraceId": "7e366c7f-4f738f95a73cc3c2",
+    "ParentId": "",
+    "ConnectionId": "0HM5M1L6G62U4",
+    "MachineName": "ZZZ-PALNF1689L",
+    "ProcessId": 23592,
+    "ThreadId": 5
+  },
+  "Renderings": {
+    "Elapsed": [
+      {
+        "Format": "0.0000",
+        "Rendering": "5205.4408"
+      }
+    ]
+  }
+}

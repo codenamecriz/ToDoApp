@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,11 +24,17 @@ namespace TodoApp.API.Handlers.Commands.Items.Create
         }
         public async Task<ItemCreateDto> Handle(CreateItemRequest request, CancellationToken cancellationToken)
         {
-
-            var itemModel = _mapper.Map<Item>(request);
-            await _itemRepository.CreateItem(itemModel);
-            _itemRepository.SaveChanges();
-            return _mapper.Map<ItemCreateDto>(itemModel);
+            if (request.Name != null && request.Detailed != null && request.Status != null)
+            {
+                var itemModel = _mapper.Map<Item>(request);
+                await _itemRepository.CreateItem(itemModel);
+                _itemRepository.SaveChanges();
+                Log.Information("New Item Successfully Created Id:{id}.",itemModel.Id);
+                return _mapper.Map<ItemCreateDto>(itemModel);
+            }
+            Log.Warning("Request must Required Name:{name} , Detailed:{detailed} , Status:{status}.", request.Name, request.Detailed,request.Status);
+            //Log.CloseAndFlush();
+            return null;
         }
     }
 }

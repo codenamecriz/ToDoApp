@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,7 @@ namespace TodoApp.API.Handlers.Queries.Items
         {
             //Console.WriteLine(request.Id);
             var itemFromRepo = await _itemRepository.GetTodoItemsById(request.Id);
+            Log.Information("Request all Items where TodoId = {id} from Repository.", request.Id);
             //Console.WriteLine(itemFromRepo != null);
             return itemFromRepo != null ? _mapper.Map<IEnumerable<ItemReadDto>>(itemFromRepo) : null;
             //return _mapper.Map<IEnumerable<ItemReadDto>>(itemsFromRepo);

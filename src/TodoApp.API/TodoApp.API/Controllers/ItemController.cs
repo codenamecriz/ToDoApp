@@ -17,7 +17,7 @@ using TodoApp.API.Models;
 
 namespace TodoApp.API.Controllers
 {
-    [Route("api/items")]
+    [Route("items")]
     [ApiController]
     public class ItemController : ControllerBase
     {
@@ -26,10 +26,9 @@ namespace TodoApp.API.Controllers
 
         public ItemController(IMediator mediator)
         {
-            
             _mediator = mediator;
         }
-        // GET: api/items/5
+        #region GetItemBy(TodoId): /items/5
         [HttpGet("{id}")]
         public async Task<ActionResult<ItemReadDto>> GetAllItem(int id)
         {
@@ -37,9 +36,11 @@ namespace TodoApp.API.Controllers
             var result = await _mediator.Send(query); 
             return Ok(result);
         }
+        #endregion
 
-        //GET api/items/item/5
-        [HttpGet("item/{id}", Name = "GetItemById")]
+        #region GetItemBy(PrimaryId): /items/item/5
+        
+        [HttpGet("pk/{id}", Name = "GetItemById")]
         public async Task<ActionResult<ItemReadDto>> GetItemById(int id)
         {
 
@@ -48,7 +49,9 @@ namespace TodoApp.API.Controllers
             return result != null ? (ActionResult)Ok(result) : NotFound();
 
         }
+        #endregion
 
+        #region POST: /items
         // POST api/items
         [HttpPost]
         public async Task<ActionResult<ItemReadDto>> CreateItem(CreateItemRequest request)
@@ -59,8 +62,9 @@ namespace TodoApp.API.Controllers
 
 
         }
+        #endregion
 
-        //PUT api/items/5
+        #region PUT: /items/5
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdateItem(int id, ItemUpdateDto request)
         {
@@ -68,7 +72,9 @@ namespace TodoApp.API.Controllers
             return result != null ? (ActionResult)NoContent() : NotFound();
 
         }
-        //PATCH api/items/5
+        #endregion
+
+        #region PATCH: /items/5
         [HttpPatch("{id}")]
         public async Task<ActionResult> PatchItem(int id, JsonPatchDocument<ItemUpdateDto> pathDoc) //------------- Target the espisific filed to update
         {
@@ -89,8 +95,9 @@ namespace TodoApp.API.Controllers
             return NoContent();
 
         }
+        #endregion
 
-        // DELETE api/items/5
+        #region DELETE: /items/5
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteTodo(int id)
         {
@@ -98,5 +105,6 @@ namespace TodoApp.API.Controllers
             return result != null ? (ActionResult)NoContent() : NotFound();
 
         }
+        #endregion
     }
 }

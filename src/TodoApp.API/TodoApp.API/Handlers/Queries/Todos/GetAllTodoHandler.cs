@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace TodoApp.API.Handlers
         public async Task<IEnumerable<TodoReadDto>> Handle(GetAllTodoRequest request, CancellationToken cancellationToken)
         {
             var todoData = await _todoRepository.GetAllTodo();
+            Log.Information("Request All Todo Data From Repository.");
             return  _mapper.Map<IEnumerable<TodoReadDto>>(todoData);
         }
     }

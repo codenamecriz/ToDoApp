@@ -1,15 +1,46 @@
 Application Start Up.
-HTTP "GET" "/" responded 404 in 27.5250 ms
-HTTP "GET" "/api/item" responded 404 in 1.7368 ms
-HTTP "GET" "/api/item/1" responded 404 in 2.0266 ms
-HTTP "GET" "/api/items/1" responded 200 in 1817.9940 ms
+HTTP "GET" "/" responded 404 in 40.7870 ms
+HTTP "GET" "/api/todo/" responded 200 in 2391.5778 ms
+HTTP "GET" "/api/todo/6" responded 200 in 225.3598 ms
+New Todo Successfully Created Id:7
+HTTP "POST" "/api/todo/" responded 201 in 272.0998 ms
+Request Id:7 Successfully Updated.
+HTTP "PUT" "/api/todo/7" responded 204 in 59.1025 ms
+HTTP "GET" "/api/todo/7" responded 200 in 7.3294 ms
+Id:7 Successfully Patched
+HTTP "PATCH" "/api/todo/7" responded 204 in 83.6288 ms
+HTTP "GET" "/api/todo/7" responded 200 in 11.7886 ms
+Id:7 has Successfully Deleted.
+HTTP "DELETE" "/api/todo/7" responded 204 in 31.3581 ms
 Application Start Up.
-HTTP "GET" "/" responded 404 in 31.1486 ms
-HTTP "GET" "/api/items/1" responded 200 in 1322.5202 ms
+HTTP "GET" "/" responded 404 in 24.3267 ms
+HTTP "GET" "/api/items/" responded 405 in 12.3777 ms
+HTTP "GET" "/api/items/1" responded 200 in 1774.4427 ms
+New Item Successfully Created Id5
+HTTP "POST" "/api/items/" responded 201 in 318.2102 ms
+HTTP "GET" "/api/items/1" responded 200 in 20.8218 ms
+HTTP "PUT" "/api/item/5" responded 404 in 0.6855 ms
+HTTP "GET" "/api/items/1" responded 200 in 12.4863 ms
+Request Item Id:5 Successfully Updated.
+HTTP "PUT" "/api/items/5" responded 204 in 85.1196 ms
+HTTP "GET" "/api/items/1" responded 200 in 10.6747 ms
+Request Item Id:5 Successfully Updated.
+HTTP "PUT" "/api/items/5" responded 204 in 47.0243 ms
+HTTP "GET" "/api/items/1" responded 200 in 9.7671 ms
+HTTP "GET" "/api/items/1" responded 200 in 11.9946 ms
+Item Id:5 Requested Not Found.
+Item Id:5 Successfully Patched.
+HTTP "PATCH" "/api/items/5" responded 204 in 84.5226 ms
+HTTP "GET" "/api/items/1" responded 200 in 8.5038 ms
+Item Id:5 has Successfully Deleted.
+HTTP "DELETE" "/api/items/5" responded 204 in 31.5136 ms
+HTTP "GET" "/api/items/1" responded 200 in 7.2957 ms
 Application Start Up.
-HTTP "GET" "/" responded 404 in 44.5375 ms
-HTTP "GET" "/api/todo/" responded 200 in 1639.1605 ms
-HTTP "DELETE" "/api/todo/3" responded 204 in 248.7675 ms
+HTTP "GET" "/" responded 404 in 25.9225 ms
+Item Id:4 Successfully Patched.
+HTTP "PATCH" "/api/items/4" responded 204 in 1843.9377 ms
+HTTP "GET" "/api/items/1" responded 200 in 124.2685 ms
 Application Start Up.
-HTTP "GET" "/" responded 404 in 53.1200 ms
-HTTP "POST" "/api/items/" responded 201 in 5205.4408 ms
+HTTP "GET" "/" responded 404 in 41.3899 ms
+HTTP "GET" "/todo/" responded 200 in 1936.0373 ms
+HTTP "GET" "/todo/7" responded 404 in 213.1478 ms

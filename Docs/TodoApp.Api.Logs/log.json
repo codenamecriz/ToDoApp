@@ -1,213 +1,356 @@
 {
-  "Timestamp": "2021-01-11T14:36:02.1808672+08:00",
+  "Timestamp": "2021-01-12T11:05:35.2483158+08:00",
   "Level": "Information",
   "MessageTemplate": "Application Start Up.",
   "Properties": {
     "MachineName": "ZZZ-PALNF1689L",
-    "ProcessId": 19672,
+    "ProcessId": 7444,
     "ThreadId": 1
   }
 } {
-  "Timestamp": "2021-01-11T14:36:04.8628215+08:00",
+  "Timestamp": "2021-01-12T11:05:40.0745940+08:00",
   "Level": "Information",
   "MessageTemplate": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
   "Properties": {
     "RequestMethod": "GET",
     "RequestPath": "/",
     "StatusCode": 404,
-    "Elapsed": 31.1486,
+    "Elapsed": 40.787,
     "SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware",
-    "RequestId": "0HM5LVCLMAKI5:00000001",
-    "SpanId": "|180cd2e6-46460acc2c125811.",
-    "TraceId": "180cd2e6-46460acc2c125811",
+    "RequestId": "0HM5MKROAVJGN:00000001",
+    "SpanId": "|922e6827-42103bf285bc1a9f.",
+    "TraceId": "922e6827-42103bf285bc1a9f",
     "ParentId": "",
     "MachineName": "ZZZ-PALNF1689L",
-    "ProcessId": 19672,
+    "ProcessId": 7444,
     "ThreadId": 7
   },
   "Renderings": {
     "Elapsed": [
       {
         "Format": "0.0000",
-        "Rendering": "31.1486"
+        "Rendering": "40.7870"
       }
     ]
   }
 } {
-  "Timestamp": "2021-01-11T14:36:24.4162911+08:00",
-  "Level": "Information",
-  "MessageTemplate": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
-  "Properties": {
-    "RequestMethod": "GET",
-    "RequestPath": "/api/items/1",
-    "StatusCode": 200,
-    "Elapsed": 1322.5202,
-    "SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware",
-    "RequestId": "0HM5LVCLMAKI5:00000003",
-    "SpanId": "|180cd2e7-46460acc2c125811.",
-    "TraceId": "180cd2e7-46460acc2c125811",
-    "ParentId": "",
-    "MachineName": "ZZZ-PALNF1689L",
-    "ProcessId": 19672,
-    "ThreadId": 7
-  },
-  "Renderings": {
-    "Elapsed": [
-      {
-        "Format": "0.0000",
-        "Rendering": "1322.5202"
-      }
-    ]
-  }
-} {
-  "Timestamp": "2021-01-11T15:12:07.7615838+08:00",
-  "Level": "Information",
-  "MessageTemplate": "Application Start Up.",
-  "Properties": {
-    "MachineName": "ZZZ-PALNF1689L",
-    "ProcessId": 22136,
-    "ThreadId": 1
-  }
-} {
-  "Timestamp": "2021-01-11T15:12:11.9687105+08:00",
-  "Level": "Information",
-  "MessageTemplate": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
-  "Properties": {
-    "RequestMethod": "GET",
-    "RequestPath": "/",
-    "StatusCode": 404,
-    "Elapsed": 44.5375,
-    "SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware",
-    "RequestId": "0HM5M00RBS8DM:00000001",
-    "SpanId": "|592bd31c-4a703a220e71350a.",
-    "TraceId": "592bd31c-4a703a220e71350a",
-    "ParentId": "",
-    "MachineName": "ZZZ-PALNF1689L",
-    "ProcessId": 22136,
-    "ThreadId": 4
-  },
-  "Renderings": {
-    "Elapsed": [
-      {
-        "Format": "0.0000",
-        "Rendering": "44.5375"
-      }
-    ]
-  }
-} {
-  "Timestamp": "2021-01-11T15:12:29.2087136+08:00",
+  "Timestamp": "2021-01-12T11:05:55.0554747+08:00",
   "Level": "Information",
   "MessageTemplate": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
   "Properties": {
     "RequestMethod": "GET",
     "RequestPath": "/api/todo/",
     "StatusCode": 200,
-    "Elapsed": 1639.1605,
+    "Elapsed": 2391.5778,
     "SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware",
-    "RequestId": "0HM5M00RBS8DO:00000001",
-    "SpanId": "|592bd31d-4a703a220e71350a.",
-    "TraceId": "592bd31d-4a703a220e71350a",
+    "RequestId": "0HM5MKROAVJGP:00000001",
+    "SpanId": "|922e6828-42103bf285bc1a9f.",
+    "TraceId": "922e6828-42103bf285bc1a9f",
     "ParentId": "",
-    "ConnectionId": "0HM5M00RBS8DO",
+    "ConnectionId": "0HM5MKROAVJGP",
     "MachineName": "ZZZ-PALNF1689L",
-    "ProcessId": 22136,
-    "ThreadId": 4
+    "ProcessId": 7444,
+    "ThreadId": 7
   },
   "Renderings": {
     "Elapsed": [
       {
         "Format": "0.0000",
-        "Rendering": "1639.1605"
+        "Rendering": "2391.5778"
       }
     ]
   }
 } {
-  "Timestamp": "2021-01-11T15:12:41.2604118+08:00",
-  "Level": "Information",
-  "MessageTemplate": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
-  "Properties": {
-    "RequestMethod": "DELETE",
-    "RequestPath": "/api/todo/3",
-    "StatusCode": 204,
-    "Elapsed": 248.7675,
-    "SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware",
-    "RequestId": "0HM5M00RBS8DO:00000002",
-    "SpanId": "|592bd31e-4a703a220e71350a.",
-    "TraceId": "592bd31e-4a703a220e71350a",
-    "ParentId": "",
-    "ConnectionId": "0HM5M00RBS8DO",
-    "MachineName": "ZZZ-PALNF1689L",
-    "ProcessId": 22136,
-    "ThreadId": 9
-  },
-  "Renderings": {
-    "Elapsed": [
-      {
-        "Format": "0.0000",
-        "Rendering": "248.7675"
-      }
-    ]
-  }
-} {
-  "Timestamp": "2021-01-11T16:45:44.3791563+08:00",
-  "Level": "Information",
-  "MessageTemplate": "Application Start Up.",
-  "Properties": {
-    "MachineName": "ZZZ-PALNF1689L",
-    "ProcessId": 23592,
-    "ThreadId": 1
-  }
-} {
-  "Timestamp": "2021-01-11T16:45:52.9551737+08:00",
+  "Timestamp": "2021-01-12T11:06:19.4079564+08:00",
   "Level": "Information",
   "MessageTemplate": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
   "Properties": {
     "RequestMethod": "GET",
-    "RequestPath": "/",
-    "StatusCode": 404,
-    "Elapsed": 53.12,
+    "RequestPath": "/api/todo/6",
+    "StatusCode": 200,
+    "Elapsed": 225.3598,
     "SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware",
-    "RequestId": "0HM5M1L6G62U2:00000001",
-    "SpanId": "|7e366c7e-4f738f95a73cc3c2.",
-    "TraceId": "7e366c7e-4f738f95a73cc3c2",
+    "RequestId": "0HM5MKROAVJGP:00000002",
+    "SpanId": "|922e6829-42103bf285bc1a9f.",
+    "TraceId": "922e6829-42103bf285bc1a9f",
     "ParentId": "",
+    "ConnectionId": "0HM5MKROAVJGP",
     "MachineName": "ZZZ-PALNF1689L",
-    "ProcessId": 23592,
-    "ThreadId": 4
+    "ProcessId": 7444,
+    "ThreadId": 8
   },
   "Renderings": {
     "Elapsed": [
       {
         "Format": "0.0000",
-        "Rendering": "53.1200"
+        "Rendering": "225.3598"
       }
     ]
   }
 } {
-  "Timestamp": "2021-01-11T16:46:52.8611467+08:00",
+  "Timestamp": "2021-01-12T11:07:10.7167866+08:00",
+  "Level": "Information",
+  "MessageTemplate": "New Todo Successfully Created Id:{id}",
+  "Properties": {
+    "id": 7,
+    "ActionId": "18d89f7c-f087-437b-ad3c-c9842770323a",
+    "ActionName": "TodoApp.API.Controllers.TodoController.CreateTodo (TodoApp.API)",
+    "RequestId": "0HM5MKROAVJGP:00000003",
+    "RequestPath": "/api/todo/",
+    "SpanId": "|922e682a-42103bf285bc1a9f.",
+    "TraceId": "922e682a-42103bf285bc1a9f",
+    "ParentId": "",
+    "ConnectionId": "0HM5MKROAVJGP",
+    "MachineName": "ZZZ-PALNF1689L",
+    "ProcessId": 7444,
+    "ThreadId": 12
+  }
+} {
+  "Timestamp": "2021-01-12T11:07:10.7775096+08:00",
   "Level": "Information",
   "MessageTemplate": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
   "Properties": {
     "RequestMethod": "POST",
-    "RequestPath": "/api/items/",
+    "RequestPath": "/api/todo/",
     "StatusCode": 201,
-    "Elapsed": 5205.4408,
+    "Elapsed": 272.0998,
     "SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware",
-    "RequestId": "0HM5M1L6G62U4:00000001",
-    "SpanId": "|7e366c7f-4f738f95a73cc3c2.",
-    "TraceId": "7e366c7f-4f738f95a73cc3c2",
+    "RequestId": "0HM5MKROAVJGP:00000003",
+    "SpanId": "|922e682a-42103bf285bc1a9f.",
+    "TraceId": "922e682a-42103bf285bc1a9f",
     "ParentId": "",
-    "ConnectionId": "0HM5M1L6G62U4",
+    "ConnectionId": "0HM5MKROAVJGP",
     "MachineName": "ZZZ-PALNF1689L",
-    "ProcessId": 23592,
-    "ThreadId": 5
+    "ProcessId": 7444,
+    "ThreadId": 12
   },
   "Renderings": {
     "Elapsed": [
       {
         "Format": "0.0000",
-        "Rendering": "5205.4408"
+        "Rendering": "272.0998"
+      }
+    ]
+  }
+} {
+  "Timestamp": "2021-01-12T11:08:36.5437975+08:00",
+  "Level": "Information",
+  "MessageTemplate": "Request Id:{id} Successfully Updated.",
+  "Properties": {
+    "id": 7,
+    "ActionId": "8a7b0001-49c4-48a4-813e-beac2019db3f",
+    "ActionName": "TodoApp.API.Controllers.TodoController.UpdateTodo (TodoApp.API)",
+    "RequestId": "0HM5MKROAVJGP:00000004",
+    "RequestPath": "/api/todo/7",
+    "SpanId": "|922e682b-42103bf285bc1a9f.",
+    "TraceId": "922e682b-42103bf285bc1a9f",
+    "ParentId": "",
+    "ConnectionId": "0HM5MKROAVJGP",
+    "MachineName": "ZZZ-PALNF1689L",
+    "ProcessId": 7444,
+    "ThreadId": 7
+  }
+} {
+  "Timestamp": "2021-01-12T11:08:36.5479319+08:00",
+  "Level": "Information",
+  "MessageTemplate": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
+  "Properties": {
+    "RequestMethod": "PUT",
+    "RequestPath": "/api/todo/7",
+    "StatusCode": 204,
+    "Elapsed": 59.1025,
+    "SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware",
+    "RequestId": "0HM5MKROAVJGP:00000004",
+    "SpanId": "|922e682b-42103bf285bc1a9f.",
+    "TraceId": "922e682b-42103bf285bc1a9f",
+    "ParentId": "",
+    "ConnectionId": "0HM5MKROAVJGP",
+    "MachineName": "ZZZ-PALNF1689L",
+    "ProcessId": 7444,
+    "ThreadId": 7
+  },
+  "Renderings": {
+    "Elapsed": [
+      {
+        "Format": "0.0000",
+        "Rendering": "59.1025"
+      }
+    ]
+  }
+} {
+  "Timestamp": "2021-01-12T11:08:49.0610718+08:00",
+  "Level": "Information",
+  "MessageTemplate": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
+  "Properties": {
+    "RequestMethod": "GET",
+    "RequestPath": "/api/todo/7",
+    "StatusCode": 200,
+    "Elapsed": 7.3294,
+    "SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware",
+    "RequestId": "0HM5MKROAVJGP:00000005",
+    "SpanId": "|922e682c-42103bf285bc1a9f.",
+    "TraceId": "922e682c-42103bf285bc1a9f",
+    "ParentId": "",
+    "ConnectionId": "0HM5MKROAVJGP",
+    "MachineName": "ZZZ-PALNF1689L",
+    "ProcessId": 7444,
+    "ThreadId": 14
+  },
+  "Renderings": {
+    "Elapsed": [
+      {
+        "Format": "0.0000",
+        "Rendering": "7.3294"
+      }
+    ]
+  }
+} {
+  "Timestamp": "2021-01-12T11:09:23.7095909+08:00",
+  "Level": "Information",
+  "MessageTemplate": "Id:{id} Successfully Patched",
+  "Properties": {
+    "id": 7,
+    "ActionId": "6a17c643-3903-49a5-9652-0480dd8ffb7a",
+    "ActionName": "TodoApp.API.Controllers.TodoController.PatchTodo (TodoApp.API)",
+    "RequestId": "0HM5MKROAVJGP:00000006",
+    "RequestPath": "/api/todo/7",
+    "SpanId": "|922e682d-42103bf285bc1a9f.",
+    "TraceId": "922e682d-42103bf285bc1a9f",
+    "ParentId": "",
+    "ConnectionId": "0HM5MKROAVJGP",
+    "MachineName": "ZZZ-PALNF1689L",
+    "ProcessId": 7444,
+    "ThreadId": 18
+  }
+} {
+  "Timestamp": "2021-01-12T11:09:23.7122741+08:00",
+  "Level": "Information",
+  "MessageTemplate": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
+  "Properties": {
+    "RequestMethod": "PATCH",
+    "RequestPath": "/api/todo/7",
+    "StatusCode": 204,
+    "Elapsed": 83.6288,
+    "SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware",
+    "RequestId": "0HM5MKROAVJGP:00000006",
+    "SpanId": "|922e682d-42103bf285bc1a9f.",
+    "TraceId": "922e682d-42103bf285bc1a9f",
+    "ParentId": "",
+    "ConnectionId": "0HM5MKROAVJGP",
+    "MachineName": "ZZZ-PALNF1689L",
+    "ProcessId": 7444,
+    "ThreadId": 18
+  },
+  "Renderings": {
+    "Elapsed": [
+      {
+        "Format": "0.0000",
+        "Rendering": "83.6288"
+      }
+    ]
+  }
+} {
+  "Timestamp": "2021-01-12T11:09:31.2771517+08:00",
+  "Level": "Information",
+  "MessageTemplate": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
+  "Properties": {
+    "RequestMethod": "GET",
+    "RequestPath": "/api/todo/7",
+    "StatusCode": 200,
+    "Elapsed": 11.7886,
+    "SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware",
+    "RequestId": "0HM5MKROAVJGP:00000007",
+    "SpanId": "|922e682e-42103bf285bc1a9f.",
+    "TraceId": "922e682e-42103bf285bc1a9f",
+    "ParentId": "",
+    "ConnectionId": "0HM5MKROAVJGP",
+    "MachineName": "ZZZ-PALNF1689L",
+    "ProcessId": 7444,
+    "ThreadId": 18
+  },
+  "Renderings": {
+    "Elapsed": [
+      {
+        "Format": "0.0000",
+        "Rendering": "11.7886"
+      }
+    ]
+  }
+} {
+  "Timestamp": "2021-01-12T11:09:48.5036911+08:00",
+  "Level": "Information",
+  "MessageTemplate": "Id:{id} has Successfully Deleted.",
+  "Properties": {
+    "id": 7,
+    "ActionId": "e76ee42f-9029-421b-bcb0-d27cc36420ab",
+    "ActionName": "TodoApp.API.Controllers.TodoController.DeleteTodo (TodoApp.API)",
+    "RequestId": "0HM5MKROAVJGP:00000008",
+    "RequestPath": "/api/todo/7",
+    "SpanId": "|922e682f-42103bf285bc1a9f.",
+    "TraceId": "922e682f-42103bf285bc1a9f",
+    "ParentId": "",
+    "ConnectionId": "0HM5MKROAVJGP",
+    "MachineName": "ZZZ-PALNF1689L",
+    "ProcessId": 7444,
+    "ThreadId": 12
+  }
+} {
+  "Timestamp": "2021-01-12T11:09:48.5070460+08:00",
+  "Level": "Information",
+  "MessageTemplate": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
+  "Properties": {
+    "RequestMethod": "DELETE",
+    "RequestPath": "/api/todo/7",
+    "StatusCode": 204,
+    "Elapsed": 31.3581,
+    "SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware",
+    "RequestId": "0HM5MKROAVJGP:00000008",
+    "SpanId": "|922e682f-42103bf285bc1a9f.",
+    "TraceId": "922e682f-42103bf285bc1a9f",
+    "ParentId": "",
+    "ConnectionId": "0HM5MKROAVJGP",
+    "MachineName": "ZZZ-PALNF1689L",
+    "ProcessId": 7444,
+    "ThreadId": 12
+  },
+  "Renderings": {
+    "Elapsed": [
+      {
+        "Format": "0.0000",
+        "Rendering": "31.3581"
       }
     ]
   }
 }
+{"Timestamp":"2021-01-12T11:14:35.5711861+08:00","Level":"Information","MessageTemplate":"Application Start Up.","Properties":{"MachineName":"ZZZ-PALNF1689L","ProcessId":6096,"ThreadId":1}}
+{"Timestamp":"2021-01-12T11:14:38.7178333+08:00","Level":"Information","MessageTemplate":"HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms","Properties":{"RequestMethod":"GET","RequestPath":"/","StatusCode":404,"Elapsed":24.3267,"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HM5ML0OTL8OL:00000001","SpanId":"|de5cc6a1-400886ec2aeef449.","TraceId":"de5cc6a1-400886ec2aeef449","ParentId":"","MachineName":"ZZZ-PALNF1689L","ProcessId":6096,"ThreadId":9},"Renderings":{"Elapsed":[{"Format":"0.0000","Rendering":"24.3267"}]}}
+{"Timestamp":"2021-01-12T11:14:49.0662379+08:00","Level":"Information","MessageTemplate":"HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms","Properties":{"RequestMethod":"GET","RequestPath":"/api/items/","StatusCode":405,"Elapsed":12.3777,"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HM5ML0OTL8ON:00000001","SpanId":"|de5cc6a2-400886ec2aeef449.","TraceId":"de5cc6a2-400886ec2aeef449","ParentId":"","ConnectionId":"0HM5ML0OTL8ON","MachineName":"ZZZ-PALNF1689L","ProcessId":6096,"ThreadId":13},"Renderings":{"Elapsed":[{"Format":"0.0000","Rendering":"12.3777"}]}}
+{"Timestamp":"2021-01-12T11:15:45.3732313+08:00","Level":"Information","MessageTemplate":"HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms","Properties":{"RequestMethod":"GET","RequestPath":"/api/items/1","StatusCode":200,"Elapsed":1774.4427,"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HM5ML0OTL8ON:00000002","SpanId":"|de5cc6a3-400886ec2aeef449.","TraceId":"de5cc6a3-400886ec2aeef449","ParentId":"","ConnectionId":"0HM5ML0OTL8ON","MachineName":"ZZZ-PALNF1689L","ProcessId":6096,"ThreadId":10},"Renderings":{"Elapsed":[{"Format":"0.0000","Rendering":"1774.4427"}]}}
+{"Timestamp":"2021-01-12T11:17:29.5873882+08:00","Level":"Information","MessageTemplate":"New Item Successfully Created Id{id}","Properties":{"id":5,"ActionId":"2f6b5a1d-88d3-4c67-b1e2-3647bda9305b","ActionName":"TodoApp.API.Controllers.ItemController.CreateItem (TodoApp.API)","RequestId":"0HM5ML0OTL8ON:00000003","RequestPath":"/api/items/","SpanId":"|de5cc6a4-400886ec2aeef449.","TraceId":"de5cc6a4-400886ec2aeef449","ParentId":"","ConnectionId":"0HM5ML0OTL8ON","MachineName":"ZZZ-PALNF1689L","ProcessId":6096,"ThreadId":10}}
+{"Timestamp":"2021-01-12T11:17:29.6365980+08:00","Level":"Information","MessageTemplate":"HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms","Properties":{"RequestMethod":"POST","RequestPath":"/api/items/","StatusCode":201,"Elapsed":318.2102,"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HM5ML0OTL8ON:00000003","SpanId":"|de5cc6a4-400886ec2aeef449.","TraceId":"de5cc6a4-400886ec2aeef449","ParentId":"","ConnectionId":"0HM5ML0OTL8ON","MachineName":"ZZZ-PALNF1689L","ProcessId":6096,"ThreadId":10},"Renderings":{"Elapsed":[{"Format":"0.0000","Rendering":"318.2102"}]}}
+{"Timestamp":"2021-01-12T11:17:41.2143805+08:00","Level":"Information","MessageTemplate":"HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms","Properties":{"RequestMethod":"GET","RequestPath":"/api/items/1","StatusCode":200,"Elapsed":20.8218,"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HM5ML0OTL8ON:00000004","SpanId":"|de5cc6a5-400886ec2aeef449.","TraceId":"de5cc6a5-400886ec2aeef449","ParentId":"","ConnectionId":"0HM5ML0OTL8ON","MachineName":"ZZZ-PALNF1689L","ProcessId":6096,"ThreadId":8},"Renderings":{"Elapsed":[{"Format":"0.0000","Rendering":"20.8218"}]}}
+{"Timestamp":"2021-01-12T11:19:39.3290700+08:00","Level":"Information","MessageTemplate":"HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms","Properties":{"RequestMethod":"PUT","RequestPath":"/api/item/5","StatusCode":404,"Elapsed":0.6855,"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HM5ML0OTL8ON:00000005","SpanId":"|de5cc6a6-400886ec2aeef449.","TraceId":"de5cc6a6-400886ec2aeef449","ParentId":"","ConnectionId":"0HM5ML0OTL8ON","MachineName":"ZZZ-PALNF1689L","ProcessId":6096,"ThreadId":8},"Renderings":{"Elapsed":[{"Format":"0.0000","Rendering":"0.6855"}]}}
+{"Timestamp":"2021-01-12T11:19:54.0884800+08:00","Level":"Information","MessageTemplate":"HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms","Properties":{"RequestMethod":"GET","RequestPath":"/api/items/1","StatusCode":200,"Elapsed":12.4863,"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HM5ML0OTL8ON:00000006","SpanId":"|de5cc6a7-400886ec2aeef449.","TraceId":"de5cc6a7-400886ec2aeef449","ParentId":"","ConnectionId":"0HM5ML0OTL8ON","MachineName":"ZZZ-PALNF1689L","ProcessId":6096,"ThreadId":20},"Renderings":{"Elapsed":[{"Format":"0.0000","Rendering":"12.4863"}]}}
+{"Timestamp":"2021-01-12T11:20:25.6341557+08:00","Level":"Information","MessageTemplate":"Request Item Id:{id} Successfully Updated.","Properties":{"id":5,"ActionId":"6186d08a-3497-4e52-a6a5-c0e055f32bf4","ActionName":"TodoApp.API.Controllers.ItemController.UpdateItem (TodoApp.API)","RequestId":"0HM5ML0OTL8ON:00000007","RequestPath":"/api/items/5","SpanId":"|de5cc6a8-400886ec2aeef449.","TraceId":"de5cc6a8-400886ec2aeef449","ParentId":"","ConnectionId":"0HM5ML0OTL8ON","MachineName":"ZZZ-PALNF1689L","ProcessId":6096,"ThreadId":22}}
+{"Timestamp":"2021-01-12T11:20:25.6458044+08:00","Level":"Information","MessageTemplate":"HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms","Properties":{"RequestMethod":"PUT","RequestPath":"/api/items/5","StatusCode":204,"Elapsed":85.1196,"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HM5ML0OTL8ON:00000007","SpanId":"|de5cc6a8-400886ec2aeef449.","TraceId":"de5cc6a8-400886ec2aeef449","ParentId":"","ConnectionId":"0HM5ML0OTL8ON","MachineName":"ZZZ-PALNF1689L","ProcessId":6096,"ThreadId":22},"Renderings":{"Elapsed":[{"Format":"0.0000","Rendering":"85.1196"}]}}
+{"Timestamp":"2021-01-12T11:20:33.9926458+08:00","Level":"Information","MessageTemplate":"HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms","Properties":{"RequestMethod":"GET","RequestPath":"/api/items/1","StatusCode":200,"Elapsed":10.6747,"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HM5ML0OTL8ON:00000008","SpanId":"|de5cc6a9-400886ec2aeef449.","TraceId":"de5cc6a9-400886ec2aeef449","ParentId":"","ConnectionId":"0HM5ML0OTL8ON","MachineName":"ZZZ-PALNF1689L","ProcessId":6096,"ThreadId":11},"Renderings":{"Elapsed":[{"Format":"0.0000","Rendering":"10.6747"}]}}
+{"Timestamp":"2021-01-12T11:21:34.4811902+08:00","Level":"Information","MessageTemplate":"Request Item Id:{id} Successfully Updated.","Properties":{"id":5,"ActionId":"6186d08a-3497-4e52-a6a5-c0e055f32bf4","ActionName":"TodoApp.API.Controllers.ItemController.UpdateItem (TodoApp.API)","RequestId":"0HM5ML0OTL8ON:00000009","RequestPath":"/api/items/5","SpanId":"|de5cc6aa-400886ec2aeef449.","TraceId":"de5cc6aa-400886ec2aeef449","ParentId":"","ConnectionId":"0HM5ML0OTL8ON","MachineName":"ZZZ-PALNF1689L","ProcessId":6096,"ThreadId":21}}
+{"Timestamp":"2021-01-12T11:21:34.4837711+08:00","Level":"Information","MessageTemplate":"HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms","Properties":{"RequestMethod":"PUT","RequestPath":"/api/items/5","StatusCode":204,"Elapsed":47.0243,"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HM5ML0OTL8ON:00000009","SpanId":"|de5cc6aa-400886ec2aeef449.","TraceId":"de5cc6aa-400886ec2aeef449","ParentId":"","ConnectionId":"0HM5ML0OTL8ON","MachineName":"ZZZ-PALNF1689L","ProcessId":6096,"ThreadId":21},"Renderings":{"Elapsed":[{"Format":"0.0000","Rendering":"47.0243"}]}}
+{"Timestamp":"2021-01-12T11:21:37.6038858+08:00","Level":"Information","MessageTemplate":"HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms","Properties":{"RequestMethod":"GET","RequestPath":"/api/items/1","StatusCode":200,"Elapsed":9.7671,"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HM5ML0OTL8ON:0000000A","SpanId":"|de5cc6ab-400886ec2aeef449.","TraceId":"de5cc6ab-400886ec2aeef449","ParentId":"","ConnectionId":"0HM5ML0OTL8ON","MachineName":"ZZZ-PALNF1689L","ProcessId":6096,"ThreadId":11},"Renderings":{"Elapsed":[{"Format":"0.0000","Rendering":"9.7671"}]}}
+{"Timestamp":"2021-01-12T11:23:42.6871815+08:00","Level":"Information","MessageTemplate":"HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms","Properties":{"RequestMethod":"GET","RequestPath":"/api/items/1","StatusCode":200,"Elapsed":11.9946,"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HM5ML0OTL8ON:0000000B","SpanId":"|de5cc6ac-400886ec2aeef449.","TraceId":"de5cc6ac-400886ec2aeef449","ParentId":"","ConnectionId":"0HM5ML0OTL8ON","MachineName":"ZZZ-PALNF1689L","ProcessId":6096,"ThreadId":27},"Renderings":{"Elapsed":[{"Format":"0.0000","Rendering":"11.9946"}]}}
+{"Timestamp":"2021-01-12T11:23:47.7214737+08:00","Level":"Warning","MessageTemplate":"Item Id:{id} Requested Not Found.","Properties":{"id":5,"ActionId":"8e63e4ca-ddfd-4220-8c03-8e73973284e4","ActionName":"TodoApp.API.Controllers.ItemController.PatchItem (TodoApp.API)","RequestId":"0HM5ML0OTL8ON:0000000C","RequestPath":"/api/items/5","SpanId":"|de5cc6ad-400886ec2aeef449.","TraceId":"de5cc6ad-400886ec2aeef449","ParentId":"","ConnectionId":"0HM5ML0OTL8ON","MachineName":"ZZZ-PALNF1689L","ProcessId":6096,"ThreadId":30}}
+{"Timestamp":"2021-01-12T11:23:47.7499083+08:00","Level":"Information","MessageTemplate":"Item Id:{id} Successfully Patched.","Properties":{"id":5,"ActionId":"8e63e4ca-ddfd-4220-8c03-8e73973284e4","ActionName":"TodoApp.API.Controllers.ItemController.PatchItem (TodoApp.API)","RequestId":"0HM5ML0OTL8ON:0000000C","RequestPath":"/api/items/5","SpanId":"|de5cc6ad-400886ec2aeef449.","TraceId":"de5cc6ad-400886ec2aeef449","ParentId":"","ConnectionId":"0HM5ML0OTL8ON","MachineName":"ZZZ-PALNF1689L","ProcessId":6096,"ThreadId":28}}
+{"Timestamp":"2021-01-12T11:23:47.7511860+08:00","Level":"Information","MessageTemplate":"HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms","Properties":{"RequestMethod":"PATCH","RequestPath":"/api/items/5","StatusCode":204,"Elapsed":84.5226,"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HM5ML0OTL8ON:0000000C","SpanId":"|de5cc6ad-400886ec2aeef449.","TraceId":"de5cc6ad-400886ec2aeef449","ParentId":"","ConnectionId":"0HM5ML0OTL8ON","MachineName":"ZZZ-PALNF1689L","ProcessId":6096,"ThreadId":28},"Renderings":{"Elapsed":[{"Format":"0.0000","Rendering":"84.5226"}]}}
+{"Timestamp":"2021-01-12T11:23:52.5966970+08:00","Level":"Information","MessageTemplate":"HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms","Properties":{"RequestMethod":"GET","RequestPath":"/api/items/1","StatusCode":200,"Elapsed":8.5038,"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HM5ML0OTL8ON:0000000D","SpanId":"|de5cc6ae-400886ec2aeef449.","TraceId":"de5cc6ae-400886ec2aeef449","ParentId":"","ConnectionId":"0HM5ML0OTL8ON","MachineName":"ZZZ-PALNF1689L","ProcessId":6096,"ThreadId":28},"Renderings":{"Elapsed":[{"Format":"0.0000","Rendering":"8.5038"}]}}
+{"Timestamp":"2021-01-12T11:24:10.4672694+08:00","Level":"Information","MessageTemplate":"Item Id:{id} has Successfully Deleted.","Properties":{"id":5,"ActionId":"7883f70c-9526-415c-adc5-09b48358b18d","ActionName":"TodoApp.API.Controllers.ItemController.DeleteTodo (TodoApp.API)","RequestId":"0HM5ML0OTL8ON:0000000E","RequestPath":"/api/items/5","SpanId":"|de5cc6af-400886ec2aeef449.","TraceId":"de5cc6af-400886ec2aeef449","ParentId":"","ConnectionId":"0HM5ML0OTL8ON","MachineName":"ZZZ-PALNF1689L","ProcessId":6096,"ThreadId":27}}
+{"Timestamp":"2021-01-12T11:24:10.4694914+08:00","Level":"Information","MessageTemplate":"HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms","Properties":{"RequestMethod":"DELETE","RequestPath":"/api/items/5","StatusCode":204,"Elapsed":31.5136,"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HM5ML0OTL8ON:0000000E","SpanId":"|de5cc6af-400886ec2aeef449.","TraceId":"de5cc6af-400886ec2aeef449","ParentId":"","ConnectionId":"0HM5ML0OTL8ON","MachineName":"ZZZ-PALNF1689L","ProcessId":6096,"ThreadId":27},"Renderings":{"Elapsed":[{"Format":"0.0000","Rendering":"31.5136"}]}}
+{"Timestamp":"2021-01-12T11:24:15.5214271+08:00","Level":"Information","MessageTemplate":"HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms","Properties":{"RequestMethod":"GET","RequestPath":"/api/items/1","StatusCode":200,"Elapsed":7.2957,"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HM5ML0OTL8ON:0000000F","SpanId":"|de5cc6b0-400886ec2aeef449.","TraceId":"de5cc6b0-400886ec2aeef449","ParentId":"","ConnectionId":"0HM5ML0OTL8ON","MachineName":"ZZZ-PALNF1689L","ProcessId":6096,"ThreadId":31},"Renderings":{"Elapsed":[{"Format":"0.0000","Rendering":"7.2957"}]}}
+{"Timestamp":"2021-01-12T11:28:44.6813494+08:00","Level":"Information","MessageTemplate":"Application Start Up.","Properties":{"MachineName":"ZZZ-PALNF1689L","ProcessId":13624,"ThreadId":1}}
+{"Timestamp":"2021-01-12T11:28:47.4609138+08:00","Level":"Information","MessageTemplate":"HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms","Properties":{"RequestMethod":"GET","RequestPath":"/","StatusCode":404,"Elapsed":25.9225,"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HM5ML8LRNR2Q:00000001","SpanId":"|6175d464-4e1d78ad01514dde.","TraceId":"6175d464-4e1d78ad01514dde","ParentId":"","MachineName":"ZZZ-PALNF1689L","ProcessId":13624,"ThreadId":4},"Renderings":{"Elapsed":[{"Format":"0.0000","Rendering":"25.9225"}]}}
+{"Timestamp":"2021-01-12T11:29:20.4419007+08:00","Level":"Information","MessageTemplate":"Item Id:{id} Successfully Patched.","Properties":{"id":4,"ActionId":"2bf685a1-d4d6-476e-8487-b1675085f76d","ActionName":"TodoApp.API.Controllers.ItemController.PatchItem (TodoApp.API)","RequestId":"0HM5ML8LRNR2S:00000001","RequestPath":"/api/items/4","SpanId":"|6175d465-4e1d78ad01514dde.","TraceId":"6175d465-4e1d78ad01514dde","ParentId":"","ConnectionId":"0HM5ML8LRNR2S","MachineName":"ZZZ-PALNF1689L","ProcessId":13624,"ThreadId":14}}
+{"Timestamp":"2021-01-12T11:29:20.4656611+08:00","Level":"Information","MessageTemplate":"HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms","Properties":{"RequestMethod":"PATCH","RequestPath":"/api/items/4","StatusCode":204,"Elapsed":1843.9377,"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HM5ML8LRNR2S:00000001","SpanId":"|6175d465-4e1d78ad01514dde.","TraceId":"6175d465-4e1d78ad01514dde","ParentId":"","ConnectionId":"0HM5ML8LRNR2S","MachineName":"ZZZ-PALNF1689L","ProcessId":13624,"ThreadId":14},"Renderings":{"Elapsed":[{"Format":"0.0000","Rendering":"1843.9377"}]}}
+{"Timestamp":"2021-01-12T11:29:23.4993706+08:00","Level":"Information","MessageTemplate":"HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms","Properties":{"RequestMethod":"GET","RequestPath":"/api/items/1","StatusCode":200,"Elapsed":124.2685,"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HM5ML8LRNR2S:00000002","SpanId":"|6175d466-4e1d78ad01514dde.","TraceId":"6175d466-4e1d78ad01514dde","ParentId":"","ConnectionId":"0HM5ML8LRNR2S","MachineName":"ZZZ-PALNF1689L","ProcessId":13624,"ThreadId":11},"Renderings":{"Elapsed":[{"Format":"0.0000","Rendering":"124.2685"}]}}
+{"Timestamp":"2021-01-12T11:49:08.1784260+08:00","Level":"Information","MessageTemplate":"Application Start Up.","Properties":{"MachineName":"ZZZ-PALNF1689L","ProcessId":20400,"ThreadId":1}}
+{"Timestamp":"2021-01-12T11:49:12.9580895+08:00","Level":"Information","MessageTemplate":"HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms","Properties":{"RequestMethod":"GET","RequestPath":"/","StatusCode":404,"Elapsed":41.3899,"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HM5MLK2T8PLT:00000001","SpanId":"|f073fc57-4358435e563768cd.","TraceId":"f073fc57-4358435e563768cd","ParentId":"","MachineName":"ZZZ-PALNF1689L","ProcessId":20400,"ThreadId":4},"Renderings":{"Elapsed":[{"Format":"0.0000","Rendering":"41.3899"}]}}
+{"Timestamp":"2021-01-12T11:49:28.3915198+08:00","Level":"Information","MessageTemplate":"HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms","Properties":{"RequestMethod":"GET","RequestPath":"/todo/","StatusCode":200,"Elapsed":1936.0373,"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HM5MLK2T8PLV:00000001","SpanId":"|f073fc58-4358435e563768cd.","TraceId":"f073fc58-4358435e563768cd","ParentId":"","ConnectionId":"0HM5MLK2T8PLV","MachineName":"ZZZ-PALNF1689L","ProcessId":20400,"ThreadId":9},"Renderings":{"Elapsed":[{"Format":"0.0000","Rendering":"1936.0373"}]}}
+{"Timestamp":"2021-01-12T11:49:36.1292090+08:00","Level":"Information","MessageTemplate":"HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms","Properties":{"RequestMethod":"GET","RequestPath":"/todo/7","StatusCode":404,"Elapsed":213.1478,"SourceContext":"Serilog.AspNetCore.RequestLoggingMiddleware","RequestId":"0HM5MLK2T8PLV:00000002","SpanId":"|f073fc59-4358435e563768cd.","TraceId":"f073fc59-4358435e563768cd","ParentId":"","ConnectionId":"0HM5MLK2T8PLV","MachineName":"ZZZ-PALNF1689L","ProcessId":20400,"ThreadId":11},"Renderings":{"Elapsed":[{"Format":"0.0000","Rendering":"213.1478"}]}}

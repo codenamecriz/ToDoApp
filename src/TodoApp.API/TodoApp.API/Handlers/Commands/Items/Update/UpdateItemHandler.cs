@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,8 +32,10 @@ namespace TodoApp.API.Handlers.Commands.Items.Update
                 _itemRepository.SaveChanges();
                 var result = _mapper.Map<ItemUpdateDto>(request.ItemToUpdate);
                 //var result = new TodoUpdateDto { Name = dataFromRepo.Name, Description = dataFromRepo.Description };
+                Log.Information("Request Item Id:{id} Successfully Updated.", request.Id);
                 return result;
             }
+            Log.Warning("Request Item Id:{id} To Update Not Found.", request.Id);
             return null;
         }
     }

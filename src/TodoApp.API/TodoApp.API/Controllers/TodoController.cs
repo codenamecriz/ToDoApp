@@ -21,24 +21,18 @@ using TodoApp.API.Services.Queries;
 
 namespace TodoApp.API.Controllers  // API Controller
 {
-    //[Route("api/[controller]")] //----> route for generic
-    [Route("api/todo")] //----------> route for specific
+    //[Route("/[controller]")] //----> route for generic
+    [Route("todo")] //----------> route for specific
     [ApiController]
     public class TodoController : ControllerBase
     {
-      
-        // List<TodoReadDto> todoList = new List<TodoReadDto>();
-        //private readonly ITodoRepository _todoRepo;
-        //private readonly IMapper _mapper;
         private readonly IMediator _mediator;
 
         public TodoController( IMediator mediator)
         {
-            //_todoRepo = todoRepo;
-            //_mapper = mapper;
             _mediator = mediator;
         }
-        // GET: api/todo
+        #region GET: /todo
         [HttpGet]
         public async Task<ActionResult< IEnumerable<TodoReadDto>>> GetAllTodo()
         {
@@ -46,8 +40,9 @@ namespace TodoApp.API.Controllers  // API Controller
             var result = await _mediator.Send(query);
             return Ok(result);
         }
+        #endregion
 
-        //GET api/<TodoController>/5
+        #region GetById: /todo/5
         [HttpGet("{id}", Name = "GetTodoById")]
         public async Task< ActionResult<TodoReadDto>> GetTodoById(int id)
         {
@@ -56,14 +51,15 @@ namespace TodoApp.API.Controllers  // API Controller
             return result != null ? (ActionResult)Ok(result) : NotFound();
             
         }
+        #endregion
 
-        // POST api/todo
+        #region POST: /todo
         [HttpPost]
         public async Task< ActionResult<TodoReadDto>> CreateTodo(CreateTodoRequest dataDto)
         {
             var result = await _mediator.Send(dataDto);
 
-            return CreatedAtAction(nameof(GetTodoById), new { Id = result.Id }, result);
+            return result != null ? (ActionResult) CreatedAtAction(nameof(GetTodoById), new { Id = result.Id }, result) : BadRequest();
 
             //if (dataDto != null)
             //{
@@ -76,8 +72,9 @@ namespace TodoApp.API.Controllers  // API Controller
             //}
             //return NotFound();
         }
+        #endregion
 
-        //PUT api/todo/5
+        #region PUT: /todo/5
         [HttpPut("{id}")]
         public async Task <ActionResult> UpdateTodo(int id, TodoUpdateDto dataDto)
         {
@@ -93,7 +90,9 @@ namespace TodoApp.API.Controllers  // API Controller
             //}
             //return NotFound();
         }
-        //PATCH api/todo/5
+        #endregion
+
+        #region PATCH: /todo/5
         [HttpPatch("{id}")]
         public async Task< ActionResult> PatchTodo(int id, JsonPatchDocument<TodoUpdateDto> pathDoc) //------------- Target the espisific filed to update
         {
@@ -137,8 +136,9 @@ namespace TodoApp.API.Controllers  // API Controller
             //    }
             //]
         }
+        #endregion
 
-        // DELETE api/todo/5
+        #region DELETE: /todo/5
         [HttpDelete("{id}")]
         public async Task< ActionResult> DeleteTodo(int id)
         {
@@ -153,5 +153,6 @@ namespace TodoApp.API.Controllers  // API Controller
             //}
             //return NotFound();
         }
+        #endregion
     }
 }

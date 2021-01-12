@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,9 +31,11 @@ namespace TodoApp.API.Handlers.Commands.Todos.Delete
                 //    return NoContent();
                 //}
                 var result = new TodoDeleteDto { Id = request.Id };
+                Log.Information("Todo Id:{id} has Successfully Deleted.", request.Id);
                 return result;
             }
-            return null; ;
+            Log.Warning("The Todo Request Id:{id} To Delete Not Found.", request.Id);
+            return null; 
         }
     }
 }

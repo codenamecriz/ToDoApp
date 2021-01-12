@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace TodoApp.API.Handlers.Queries.Items
         public async Task<ItemReadDto> Handle(GetItemByIdRequest request, CancellationToken cancellationToken)
         {
             var itemFromRepo = await _itemRepository.GetItemById(request.Id);
+            Log.Information("Request Item where Primary Key = {id} From Repository.",request.Id);
             return itemFromRepo != null ? _mapper.Map<ItemReadDto>(itemFromRepo) : null;
         }
     }

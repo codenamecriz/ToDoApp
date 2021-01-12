@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,7 @@ namespace TodoApp.API.Handlers
         public async Task<TodoReadDto> Handle(GetTodoByIdRequest request, CancellationToken cancellationToken)
         {
             var todoData = await _todoRepository.GetTodoById(request.Id);
+            Log.Information("Request Todo Id: {id} from Repository.",request.Id);
             return todoData != null ? _mapper.Map<TodoReadDto>(todoData) : null; 
             //if (todoData != null)
             //{

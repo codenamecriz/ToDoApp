@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,14 @@ namespace TodoApp.API.Handlers.Commands.Todos.Put
         }
         public async Task<TodoUpdateDto> Handle(PatchTodoRequest request, CancellationToken cancellationToken)
         {
+
             var todoFromRepo = await _todoRepository.GetTodoById(request.Id);
+            if (todoFromRepo == null)
+            {
+                Log.Warning("Todo Id:{id} Requested Not Found.",request.Id);
+                return null;
+            }
+       
             var todoToPatch = _mapper.Map<TodoUpdateDto>(todoFromRepo);
             if (request.TodoToPatch == null)
             {
@@ -33,22 +41,9 @@ namespace TodoApp.API.Handlers.Commands.Todos.Put
            
             await _todoRepository.UpdateTodo(todoFromRepo);
             _todoRepository.SaveChanges();
+            Log.Information("Todo Id:{id} Successfully Patched", request.Id);
             return null;
-            //var todoFromRepo = _todoRepo.GetTodoById(id);
-            //if (todoFromRepo != null)
-            //{
-            //    var todoToPatch = _mapper.Map<TodoUpdateDto>(todoFromRepo);
-            //    pathDoc.ApplyTo(todoToPatch, ModelState);
-
-            //    if (!TryValidateModel(todoToPatch))
-            //    {
-            //        return ValidationProblem(ModelState);
-            //    }
-            //    _mapper.Map(todoToPatch, todoFromRepo);
-            //    _todoRepo.UpdateTodo(todoFromRepo);
-            //    _todoRepo.SaveChanges();
-            //    return NoContent();
-            //}
+            
         }
     }
 }

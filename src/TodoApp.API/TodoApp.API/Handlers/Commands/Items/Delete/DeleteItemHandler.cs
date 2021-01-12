@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,8 +30,10 @@ namespace TodoApp.API.Handlers.Commands.Items.Delete
                 _itemRepository.SaveChanges();
             
                 var result = new ItemDeleteDto { Id = request.Id };
+                Log.Information("Item Id:{id} has Successfully Deleted.", request.Id);
                 return result;
             }
+            Log.Warning("The Request Item Id:{id} To Delete Not Found.", request.Id);
             return null; ;
         }
     }

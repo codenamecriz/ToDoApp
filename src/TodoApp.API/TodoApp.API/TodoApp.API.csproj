@@ -2,7 +2,30 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aa8715c2-5351-4e8d-9700-87bad710f080</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>.</DockerfileContext>
+    <DockerComposeProjectPath>docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20210107063840_NewMigration.cs" />
+    <Compile Remove="Migrations\20210107063840_NewMigration.Designer.cs" />
+    <Compile Remove="Migrations\20210114064243_dockerMigrating.cs" />
+    <Compile Remove="Migrations\20210114064243_dockerMigrating.Designer.cs" />
+    <Compile Remove="Migrations\20210115014610_InitialCreate.cs" />
+    <Compile Remove="Migrations\20210115014610_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20210116063301_mysqldb.cs" />
+    <Compile Remove="Migrations\20210116063301_mysqldb.Designer.cs" />
+    <Compile Remove="Migrations\20210118080840_initialize.cs" />
+    <Compile Remove="Migrations\20210118080840_initialize.Designer.cs" />
+    <Compile Remove="Migrations\20210118083224_initialize.cs" />
+    <Compile Remove="Migrations\20210118083224_initialize.Designer.cs" />
+    <Compile Remove="Migrations\20210118090131_initialize.cs" />
+    <Compile Remove="Migrations\20210118090131_initialize.Designer.cs" />
+    <Compile Remove="Migrations\20210119052209_initialize DB.cs" />
+    <Compile Remove="Migrations\20210119052209_initialize DB.Designer.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Services\Commands\Todos\Create\" />
@@ -20,6 +43,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.1.1" />
     <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
     <PackageReference Include="Serilog.Enrichers.Environment" Version="2.1.3" />

@@ -17,20 +17,19 @@ using TodoApp.API.Models;
 
 namespace TodoApp.API.Controllers
 {
-    [Route("items")]
+    [Route("item")]
     [ApiController]
     public class ItemController : ControllerBase
     {
-        // GET: api/item
         private readonly IMediator _mediator;
 
         public ItemController(IMediator mediator)
         {
             _mediator = mediator;
         }
-        #region GetItemBy(TodoId): /items/5
+        #region GetItemBy(TodoId): /item/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<ItemReadDto>> GetAllItem(int id)
+        public async Task<ActionResult<ItemResponseDto>> GetAllItem(int id)
         {
             var query = new GetTodoItemsByIdRequest(id);
             var result = await _mediator.Send(query); 
@@ -38,7 +37,7 @@ namespace TodoApp.API.Controllers
         }
         #endregion
 
-        #region GetItemBy(PrimaryId): /items/item/5
+        #region GetItemBy(PrimaryId): /item/pk/5
         
         [HttpGet("pk/{id}", Name = "GetItemById")]
         public async Task<ActionResult<ItemReadDto>> GetItemById(int id)
@@ -51,7 +50,7 @@ namespace TodoApp.API.Controllers
         }
         #endregion
 
-        #region POST: /items
+        #region POST: /item
         // POST api/items
         [HttpPost]
         public async Task<ActionResult<ItemReadDto>> CreateItem(CreateItemRequest request)
@@ -60,11 +59,10 @@ namespace TodoApp.API.Controllers
 
             return CreatedAtAction(nameof(GetItemById), new { Id = result.Id }, result);
 
-
         }
         #endregion
 
-        #region PUT: /items/5
+        #region PUT: /item/5
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdateItem(int id, ItemUpdateDto request)
         {
@@ -74,7 +72,7 @@ namespace TodoApp.API.Controllers
         }
         #endregion
 
-        #region PATCH: /items/5
+        #region PATCH: /item/5
         [HttpPatch("{id}")]
         public async Task<ActionResult> PatchItem(int id, JsonPatchDocument<ItemUpdateDto> pathDoc) //------------- Target the espisific filed to update
         {
@@ -97,7 +95,7 @@ namespace TodoApp.API.Controllers
         }
         #endregion
 
-        #region DELETE: /items/5
+        #region DELETE: /item/5
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteTodo(int id)
         {

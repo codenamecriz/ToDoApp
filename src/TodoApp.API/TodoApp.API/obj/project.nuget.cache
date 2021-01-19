@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wFTTbOH/0dB1RqAoUTTokj786HYOQbdJQUICWTn3/7KOTsyymnk6OUS1jbWFpgcKlAauzWUNUyg/z5fZIV6COQ==",
+  "dgSpecHash": "bfYJrAS74TWRxVS/irC8IVKyWh6zlLzfAwOSBl5v0Xgia7ZTvZdznKNAuWWwjfFSCyew/9RprCpp1BLK5b6nmw==",
   "success": true,
   "projectFilePath": "D:\\PPS SE\\Training Projects\\TodoApp.MVVM\\src\\TodoApp.API\\TodoApp.API\\TodoApp.API.csproj",
   "expectedPackageFiles": [
@@ -37,6 +37,7 @@
     "C:\\Users\\cjabuni\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.3\\microsoft.extensions.primitives.3.1.3.nupkg.sha512",
     "C:\\Users\\cjabuni\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\cjabuni\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\cjabuni\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512",
     "C:\\Users\\cjabuni\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\cjabuni\\.nuget\\packages\\microsoft.win32.registry\\4.0.0\\microsoft.win32.registry.4.0.0.nupkg.sha512",
     "C:\\Users\\cjabuni\\.nuget\\packages\\mysqlconnector\\0.61.0\\mysqlconnector.0.61.0.nupkg.sha512",

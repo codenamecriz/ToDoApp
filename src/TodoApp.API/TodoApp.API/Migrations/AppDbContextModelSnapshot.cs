@@ -22,7 +22,7 @@ namespace TodoApp.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Detailed")
+                    b.Property<string>("Details")
                         .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 

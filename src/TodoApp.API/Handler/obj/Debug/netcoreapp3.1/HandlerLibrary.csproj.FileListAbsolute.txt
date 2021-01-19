@@ -1,9 +1,0 @@
-D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Handler\bin\Debug\netcoreapp3.1\HandlerLibrary.deps.json
-D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Handler\bin\Debug\netcoreapp3.1\HandlerLibrary.dll
-D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Handler\bin\Debug\netcoreapp3.1\HandlerLibrary.pdb
-D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Handler\obj\Debug\netcoreapp3.1\HandlerLibrary.csprojAssemblyReference.cache
-D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Handler\obj\Debug\netcoreapp3.1\HandlerLibrary.AssemblyInfoInputs.cache
-D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Handler\obj\Debug\netcoreapp3.1\HandlerLibrary.AssemblyInfo.cs
-D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Handler\obj\Debug\netcoreapp3.1\HandlerLibrary.csproj.CoreCompileInputs.cache
-D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Handler\obj\Debug\netcoreapp3.1\HandlerLibrary.dll
-D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Handler\obj\Debug\netcoreapp3.1\HandlerLibrary.pdb

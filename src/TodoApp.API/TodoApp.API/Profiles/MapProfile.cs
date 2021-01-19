@@ -39,7 +39,11 @@ namespace TodoApp.API.Profiles
             CreateMap<Item, ItemUpdateDto>();
             CreateMap<ItemUpdateDto, Item>();
             
+            CreateMap<ItemCommandDto, Item>();
+            CreateMap<Item, ItemCommandDto>();
 
+            CreateMap<ItemResponseDto, Item>();
+            CreateMap<Item, ItemResponseDto>();
         }
     }
 }

@@ -16,7 +16,22 @@ namespace TodoApp.API.Data
         }
         public virtual DbSet<Todo> Todos { get; set; }
         public virtual DbSet<Item> Items { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
 
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
+            //builder.Property(b => b.Party).HasConversion(c => c.ToString(), c => Enum.Parse<Party>(c));
+
+            //modelBuilder.Entity<Item>()
+            //    .Property(s => s.Status)
+            //    .HasConversion(c => c.ToString(), c => Enum.Parse<Item.ItemStatus>(c));
+
+            modelBuilder.Entity<Item>()
+               .Property(s => s.Status)
+               .HasConversion<string>();
+
+            base.OnModelCreating(modelBuilder);
+        }
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
         //    optionsBuilder
@@ -26,6 +41,6 @@ namespace TodoApp.API.Data
         //                  .EnableSensitiveDataLogging()
         //                  .EnableDetailedErrors();
         //}
-       
+
     }
 }

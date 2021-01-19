@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using TodoApp.API.Data;
 using TodoApp.API.DTOs;
 using TodoApp.API.Models;
+using static TodoApp.API.Enum.EnumItemStatus;
 
 namespace TodoApp.API.Handlers.Commands.Items.Create
 {
@@ -24,15 +25,21 @@ namespace TodoApp.API.Handlers.Commands.Items.Create
         }
         public async Task<ItemCreateDto> Handle(CreateItemRequest request, CancellationToken cancellationToken)
         {
-            if (request.Name != null && request.Detailed != null && request.Status != null)
+            if (request.Name != null && request.Details != null)
             {
+                //if (request.Status == ItemStatus.Done)
+                //{ request.Status = ItemStatus.Done; Console.WriteLine("Done"); }
+                //else { request.Status = ItemStatus.Pending; Console.WriteLine("Pending"); }
+                //request.Status = (request.Status == ItemStatus.Done ??  ItemStatus.Done : ItemStatus.Done);
+                
                 var itemModel = _mapper.Map<Item>(request);
+                //Console.WriteLine("ItemModel--> " + itemModel.Status);
                 await _itemRepository.CreateItem(itemModel);
                 _itemRepository.SaveChanges();
                 Log.Information("New Item Successfully Created Id:{id}.",itemModel.Id);
                 return _mapper.Map<ItemCreateDto>(itemModel);
             }
-            Log.Warning("Request must Required Name:{name} , Detailed:{detailed} , Status:{status}.", request.Name, request.Detailed,request.Status);
+            Log.Warning("Request must Required Name:{name} , Detailed:{detailed} , Status:{status}.", request.Name, request.Details,request.Status);
             //Log.CloseAndFlush();
             return null;
         }

@@ -7,11 +7,7 @@ namespace TodoApp.API.Enum
 {
     public enum EnumItemStatus
     {
-        Pending,
+        Pending ,
         Done
-        //public enum ItemStatus
-        //{
-           
-        //}
     }
 }

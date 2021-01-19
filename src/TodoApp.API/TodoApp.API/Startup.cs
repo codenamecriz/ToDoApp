@@ -39,16 +39,16 @@ namespace TodoApp.API
                     });
             });
 
-            //var host = Configuration["DBHost"] ?? "db";
-            //var port = Configuration["DBPort"] ?? "3306";
+            /*var host = Configuration["DBHost"] ?? "db";
+            var port = Configuration["DBPort"] ?? "3306";
 
-            //services.AddDbContext<AppDbContext>(option =>
-            //{
-            //    option.UseMySql($"server={host};port={port}; userid=root; password=testroot;database=ppg_todo", builder =>
-            //    {
-            //        builder.EnableRetryOnFailure(10, TimeSpan.FromSeconds(1), null);
-            //    });
-            //});
+            services.AddDbContext<AppDbContext>(option =>
+            {
+                option.UseMySql($"server={host};port={port}; userid=root; password=testroot;database=ppg_todo", builder =>
+                {
+                    builder.EnableRetryOnFailure(10, TimeSpan.FromSeconds(1), null);
+                });
+            }); */
 
             services.AddControllers().AddNewtonsoftJson(s =>
             {

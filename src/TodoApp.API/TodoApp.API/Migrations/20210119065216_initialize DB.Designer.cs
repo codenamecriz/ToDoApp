@@ -8,7 +8,7 @@ using TodoApp.API.Data;
 namespace TodoApp.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210119052753_initialize DB")]
+    [Migration("20210119065216_initialize DB")]
     partial class initializeDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,9 +33,8 @@ namespace TodoApp.API.Migrations
                         .HasColumnType("varchar(250) CHARACTER SET utf8mb4")
                         .HasMaxLength(250);
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.Property<int>("TodoId")
                         .HasColumnType("int");

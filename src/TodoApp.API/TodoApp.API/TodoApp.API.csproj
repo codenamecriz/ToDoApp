@@ -25,6 +25,14 @@
     <Compile Remove="Migrations\20210118090131_initialize.Designer.cs" />
     <Compile Remove="Migrations\20210119052209_initialize DB.cs" />
     <Compile Remove="Migrations\20210119052209_initialize DB.Designer.cs" />
+    <Compile Remove="Migrations\20210119052753_initialize DB.cs" />
+    <Compile Remove="Migrations\20210119052753_initialize DB.Designer.cs" />
+    <Compile Remove="Migrations\20210119062021_initialize DB.cs" />
+    <Compile Remove="Migrations\20210119062021_initialize DB.Designer.cs" />
+    <Compile Remove="Migrations\20210119062417_initialize DB.cs" />
+    <Compile Remove="Migrations\20210119062417_initialize DB.Designer.cs" />
+    <Compile Remove="Migrations\20210119063200_initialize DB.cs" />
+    <Compile Remove="Migrations\20210119063200_initialize DB.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

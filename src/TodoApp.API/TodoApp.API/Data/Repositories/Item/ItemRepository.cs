@@ -16,9 +16,7 @@ namespace TodoApp.API.Data
 
         public async Task<IEnumerable<Item>> GetTodoItemsById(int id)
         {
-            //await Task.Delay(1);
-            //return await Task.FromResult( _appDbContext.Items.Find(id));
-
+    
             return await Task.FromResult(_appDbContext.Items.Where(item => item.TodoId == id));
         }
         public async Task<Item> GetItemById(int id)

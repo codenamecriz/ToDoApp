@@ -20,27 +20,39 @@ namespace TodoApp.API.Data
         {
 
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
-            //builder.Property(b => b.Party).HasConversion(c => c.ToString(), c => Enum.Parse<Party>(c));
+            /*                                                 For Example Purposes
+             * builder.Property(b => b.Party).HasConversion(c => c.ToString(), c => Enum.Parse<Party>(c));
 
-            //modelBuilder.Entity<Item>()
-            //    .Property(s => s.Status)
-            //    .HasConversion(c => c.ToString(), c => Enum.Parse<Item.ItemStatus>(c));
+            modelBuilder.Entity<Item>()
+                .Property(s => s.Status)
+                .HasConversion(c => c.ToString(), c => Enum.Parse<Item.ItemStatus>(c));
 
             modelBuilder.Entity<Item>()
                .Property(s => s.Status)
                .HasConversion<string>();
+           
 
-            base.OnModelCreating(modelBuilder);
+
+            var converter = new ValueConverter<EquineBeast, string>(
+                                v => v.ToString(),
+                                v => (EquineBeast)Enum.Parse(typeof(EquineBeast), v));
+
+            modelBuilder
+                .Entity<Item>()
+                .Property(e => e.Status)
+                .HasConversion(converter);
+            base.OnModelCreating(modelBuilder); */
         }
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder
-        //        .UseMySql("server=127.0.0.1;port=3306;user=testroot;password=testroot;database=ppg_todo")
-        //        .UseLoggerFactory(LoggerFactory.Create(b => b.AddConsole()
-        //                        .AddFilter(level => level > LogLevel.Information)))
-        //                  .EnableSensitiveDataLogging()
-        //                  .EnableDetailedErrors();
-        //}
+        /*
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder
+                .UseMySql("server=127.0.0.1;port=3306;user=testroot;password=testroot;database=ppg_todo")
+                .UseLoggerFactory(LoggerFactory.Create(b => b.AddConsole()
+                                .AddFilter(level => level > LogLevel.Information)))
+                          .EnableSensitiveDataLogging()
+                          .EnableDetailedErrors();
+        }*/
 
     }
 }

@@ -13,8 +13,6 @@ using TodoApp.API.Handlers.Commands.Items.Update;
 using TodoApp.API.Handlers.Queries.Items;
 using TodoApp.API.Models;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace TodoApp.API.Controllers
 {
     [Route("item")]
@@ -51,7 +49,7 @@ namespace TodoApp.API.Controllers
         #endregion
 
         #region POST: /item
-        // POST api/items
+        
         [HttpPost]
         public async Task<ActionResult<ItemReadDto>> CreateItem(CreateItemRequest request)
         {
@@ -66,7 +64,7 @@ namespace TodoApp.API.Controllers
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdateItem(int id, ItemUpdateDto request)
         {
-            var result = await _mediator.Send(new UpdateItemRequest(id, request));//.Name, dataDto.Description));
+            var result = await _mediator.Send(new UpdateItemRequest(id, request));
             return result != null ? (ActionResult)NoContent() : NotFound();
 
         }
@@ -74,7 +72,7 @@ namespace TodoApp.API.Controllers
 
         #region PATCH: /item/5
         [HttpPatch("{id}")]
-        public async Task<ActionResult> PatchItem(int id, JsonPatchDocument<ItemUpdateDto> pathDoc) //------------- Target the espisific filed to update
+        public async Task<ActionResult> PatchItem(int id, JsonPatchDocument<ItemUpdateDto> pathDoc) 
         {
             var resultFromRepo = await _mediator.Send(new PatchItemRequest(id, null));
             if (resultFromRepo == null)

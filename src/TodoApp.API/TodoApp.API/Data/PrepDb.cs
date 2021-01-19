@@ -23,7 +23,7 @@ namespace TodoApp.API.Data
             context.Database.Migrate();
             if (!context.Todos.Any())
             {
-                //adding sample data
+                //adding sample data for debuging purposes.
                 context.Todos.Add(new Todo
                 {
                     Id = 1,
@@ -43,8 +43,8 @@ namespace TodoApp.API.Data
                 context.Items.Add(new Item
                 {
                     Id = 2,
-                    Name = "Windows",
-                    Details = "Cleaning Dust",
+                    Name = "Flore",
+                    Details = "Sweep",
                     Status = EnumItemStatus.Done,
                     TodoId = 1
 

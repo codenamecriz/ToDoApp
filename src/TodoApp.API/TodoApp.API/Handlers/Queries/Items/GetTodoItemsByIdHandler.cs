@@ -29,8 +29,7 @@ namespace TodoApp.API.Handlers.Queries.Items
             //Console.WriteLine(request.Id);
             var itemFromRepo = await _itemRepository.GetTodoItemsById(request.Id);
             Log.Information("Request all Items where TodoId = {id} from Repository.", request.Id);
-            //Console.WriteLine(itemFromRepo != null);
-            //_mapper.Map<IEnumerable<ItemResponseDto>>(itemFromRepo);
+    
             /*var itemCollection = new List<ItemResponseDto>();
             foreach (var item in itemFromRepo)
             {
@@ -47,8 +46,9 @@ namespace TodoApp.API.Handlers.Queries.Items
 
             }
             return itemCollection;*/
+            Console.WriteLine(itemFromRepo);
             return itemFromRepo != null ? _mapper.Map<IEnumerable<ItemResponseDto>>(itemFromRepo) : null;
-            //return _mapper.Map<IEnumerable<ItemReadDto>>(itemsFromRepo);
+          
         }
     }
 }

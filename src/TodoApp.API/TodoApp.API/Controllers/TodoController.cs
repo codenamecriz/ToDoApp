@@ -17,12 +17,10 @@ using TodoApp.API.Models;
 using TodoApp.API.Services.Commands.Todos.Create;
 using TodoApp.API.Services.Queries;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
-namespace TodoApp.API.Controllers  // API Controller
+namespace TodoApp.API.Controllers 
 {
-    //[Route("/[controller]")] //----> route for generic
-    [Route("todo")] //----------> route for specific
+    
+    [Route("todo")] 
     [ApiController]
     public class TodoController : ControllerBase
     {
@@ -60,17 +58,7 @@ namespace TodoApp.API.Controllers  // API Controller
             var result = await _mediator.Send(dataDto);
 
             return result != null ? (ActionResult) CreatedAtAction(nameof(GetTodoById), new { Id = result.Id }, result) : BadRequest();
-
-            //if (dataDto != null)
-            //{
-            //    var todoModel = _mapper.Map<Todo>(dataDto);
-            //    _todoRepo.CreateTodo(todoModel);
-            //    _todoRepo.SaveChanges();
-            //    var todoReadDto = _mapper.Map<TodoReadDto>(todoModel);
-            //    return CreatedAtRoute(nameof(GetTodoById), new { Id = todoReadDto.Id }, todoReadDto ); 
-               
-            //}
-            //return NotFound();
+            
         }
         #endregion
 
@@ -78,23 +66,15 @@ namespace TodoApp.API.Controllers  // API Controller
         [HttpPut("{id}")]
         public async Task <ActionResult> UpdateTodo(int id, TodoUpdateDto dataDto)
         {
-            var result = await _mediator.Send(new UpdateTodoRequest(id, dataDto));//.Name, dataDto.Description));
+            var result = await _mediator.Send(new UpdateTodoRequest(id, dataDto));
             return result != null ? (ActionResult)NoContent():NotFound();
-            //var dataFromRepo = _todoRepo.GetTodoById(id);
-            //if (dataFromRepo != null)
-            //{
-            //    _mapper.Map(dataDto, dataFromRepo);
-            //    _todoRepo.UpdateTodo(dataFromRepo);
-            //    _todoRepo.SaveChanges();
-            //    return NoContent();
-            //}
-            //return NotFound();
+          
         }
         #endregion
 
         #region PATCH: /todo/5
         [HttpPatch("{id}")]
-        public async Task< ActionResult> PatchTodo(int id, JsonPatchDocument<TodoUpdateDto> pathDoc) //------------- Target the espisific filed to update
+        public async Task< ActionResult> PatchTodo(int id, JsonPatchDocument<TodoUpdateDto> pathDoc) 
         {
             var resultFromRepo = await _mediator.Send(new PatchTodoRequest(id,null));
             if (resultFromRepo == null)
@@ -111,30 +91,16 @@ namespace TodoApp.API.Controllers  // API Controller
 
 
             return NoContent();
-            //var todoFromRepo = _todoRepo.GetTodoById(id);
-            //if (todoFromRepo != null)
-            //{
-            //    var todoToPatch = _mapper.Map<TodoUpdateDto>(todoFromRepo);
-            //    pathDoc.ApplyTo(todoToPatch, ModelState);
-
-            //    if (!TryValidateModel(todoToPatch))
-            //    {
-            //        return ValidationProblem(ModelState);
-            //    }
-            //    _mapper.Map(todoToPatch, todoFromRepo);
-            //    _todoRepo.UpdateTodo(todoFromRepo);
-            //    _todoRepo.SaveChanges();
-            //    return NoContent();
-            //}
-            //return NotFound();
-            // ----> sample format
-            //[
-            //    {
-            //        "op": "replace",
-            //        "path": "/description",
-            //        "value": "this is patch"
-            //    }
-            //]
+            /*
+             ----> sample format
+            [
+                {
+                    "op": "replace",
+                    "path": "/description",
+                    "value": "this is patch"
+                }
+            ]
+            */
         }
         #endregion
 
@@ -144,14 +110,7 @@ namespace TodoApp.API.Controllers  // API Controller
         {
             var result = await _mediator.Send(new DeleteTodoRequest(id));
             return result != null ? (ActionResult)NoContent() : NotFound();
-            //var todoFromRepo = _todoRepo.GetTodoById(id);
-            //if (todoFromRepo != null)
-            //{
-            //    _todoRepo.DeleteTodo(todoFromRepo);
-            //    _todoRepo.SaveChanges();
-            //    return NoContent();
-            //}
-            //return NotFound();
+           
         }
         #endregion
     }

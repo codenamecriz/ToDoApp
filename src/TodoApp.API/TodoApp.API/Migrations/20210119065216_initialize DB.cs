@@ -29,7 +29,7 @@ namespace TodoApp.API.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(maxLength: 250, nullable: false),
                     Details = table.Column<string>(nullable: false),
-                    Status = table.Column<string>(nullable: false),
+                    Status = table.Column<int>(nullable: false),
                     TodoId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

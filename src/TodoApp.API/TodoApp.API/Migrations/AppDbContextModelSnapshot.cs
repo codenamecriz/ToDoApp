@@ -31,9 +31,8 @@ namespace TodoApp.API.Migrations
                         .HasColumnType("varchar(250) CHARACTER SET utf8mb4")
                         .HasMaxLength(250);
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.Property<int>("TodoId")
                         .HasColumnType("int");

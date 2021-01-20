@@ -8,25 +8,25 @@ namespace TodoApp.API.Data
 {
     public class ItemRepository : IItemRepository
     {
-        private readonly AppDbContext _appDbContext;
-        public ItemRepository(AppDbContext appDbContext)
+        private readonly AppDbContext _context;
+        public ItemRepository(AppDbContext context)
         {
-            _appDbContext = appDbContext;
+            _context = context;
         }
 
         public async Task<IEnumerable<Item>> GetTodoItemsById(int id)
         {
     
-            return await Task.FromResult(_appDbContext.Items.Where(item => item.TodoId == id));
+            return await Task.FromResult(_context.Items.Where(item => item.TodoId == id));
         }
         public async Task<Item> GetItemById(int id)
         {
-            return await Task.FromResult(_appDbContext.Items.Find(id));
+            return await Task.FromResult(_context.Items.Find(id));
         }
 
         public async Task CreateItem(Item data)
         {
-            await Task.FromResult(_appDbContext.Add(data));
+            await Task.FromResult(_context.Add(data));
         }
         public async Task UpdateItem(Item data)
         {
@@ -34,12 +34,12 @@ namespace TodoApp.API.Data
         }
         public async Task DeleteItem(Item data)
         {
-            await Task.FromResult(_appDbContext.Items.Remove(data));
+            await Task.FromResult(_context.Items.Remove(data));
         }
 
         public bool SaveChanges()
         {
-            return (_appDbContext.SaveChanges() >= 0);
+            return (_context.SaveChanges() >= 0);
         }
 
         

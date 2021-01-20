@@ -8,24 +8,24 @@ namespace TodoApp.API.Data
 {
     public class TodoRepository : ITodoRepository
     {
-        private readonly AppDbContext _appDbContext;
-        public TodoRepository(AppDbContext appDbContext)
+        private readonly AppDbContext _context;
+        public TodoRepository(AppDbContext context)
         {
-            _appDbContext = appDbContext;
+            _context = context;
         }
 
         public async Task<IEnumerable<Todo>> GetAllTodo()
         {
-            return await Task.FromResult(_appDbContext.Todos);
+            return await Task.FromResult(_context.Todos);
         }
         public async Task< Todo> GetTodoById(int id)
         {
-            return await Task.FromResult( _appDbContext.Todos.Find(id));
+            return await Task.FromResult(_context.Todos.Find(id));
         }
         public async Task CreateTodo(Todo data)
         {
          
-            await Task.FromResult( _appDbContext.Add(data));
+            await Task.FromResult(_context.Add(data));
         }
         public async Task UpdateTodo(Todo data)
         {
@@ -34,11 +34,11 @@ namespace TodoApp.API.Data
         }
         public async Task DeleteTodo(Todo data)
         {            
-            await Task.FromResult( _appDbContext.Todos.Remove(data));
+            await Task.FromResult(_context.Todos.Remove(data));
         }
         public bool SaveChanges()
         {
-            return (_appDbContext.SaveChanges() >= 0); 
+            return (_context.SaveChanges() >= 0); 
         }
     }
 }

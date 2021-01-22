@@ -66,8 +66,8 @@ namespace TodoApp.API.Migrations
 
             modelBuilder.Entity("TodoApp.API.Models.Item", b =>
                 {
-                    b.HasOne("TodoApp.API.Models.Todo", "TodoModel")
-                        .WithMany("TodoItemModels")
+                    b.HasOne("TodoApp.API.Models.Todo", "Todos")
+                        .WithMany("Items")
                         .HasForeignKey("TodoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

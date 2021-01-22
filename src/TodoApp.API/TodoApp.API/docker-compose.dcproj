@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>fca2ccb8-a78b-46a3-9b0b-d6e0b5e9d6e6</ProjectGuid>
+    <ProjectGuid>43dd5a3e-955b-42a8-a446-69c5142ea72d</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
     <DockerServiceName>todoapp.api</DockerServiceName>

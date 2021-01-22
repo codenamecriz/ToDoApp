@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using AutoMapper;
+using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +18,7 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using Serilog;
 using TodoApp.API.Data;
+using TodoApp.API.Filters;
 
 namespace TodoApp.API
 {
@@ -31,6 +34,8 @@ namespace TodoApp.API
         public IConfiguration Configuration { get; }
         public void ConfigureServices(IServiceCollection services)
         {
+            //Log.Information("Connecting to Database");
+            
             services.AddDbContext<AppDbContext>(opt =>
             {
                 opt.UseMySql(Configuration.GetConnectionString("TodoAppConnection"), mySqlOptionsAction: MySqlOptions =>
@@ -50,16 +55,35 @@ namespace TodoApp.API
                 });
             }); */
 
-            services.AddControllers().AddNewtonsoftJson(s =>
-            {
-                s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-            });
-             
+            services.AddControllers(opt =>
+                {
+                    opt.Filters.Add<ValidationFilter>();
+                })
+                .AddFluentValidation(mvcConfig => mvcConfig.RegisterValidatorsFromAssemblyContaining<Startup>())
+                .AddNewtonsoftJson(s => { s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver(); });
+                //.ConfigureApiBehaviorOptions(options =>
+                //{
+                //    options.InvalidModelStateResponseFactory = context =>
+                //    {
+                //        // Get an instance of ILogger (see below) and log accordingly.
+                    
+                //        return new BadRequestObjectResult(context.ModelState);
+                //    };
+                //});
             
+
+            //services.AddValidatorsFromAssembly(typeof(Startup).Assembly);
             services.AddScoped<ITodoRepository, TodoRepository>();
             services.AddScoped<IItemRepository, ItemRepository>();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddMediatR(typeof(Startup));
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.SuppressConsumesConstraintForFormFileParameters = true;
+                //options.SuppressInferBindingSourcesForParameters = true;
+                options.SuppressModelStateInvalidFilter = true;
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -102,5 +102,23 @@ namespace TodoApp.API.Controllers
 
         }
         #endregion
+
+        #region Test Return: /item/test
+    
+        [HttpGet("test")]
+        public ActionResult Test()
+        {
+            var test = new List<Item>();
+            test.Add(new Item
+            {
+                Name = "test name",
+                Details = "test details",
+                Status = Enum.EnumItemStatus.Done,
+                TodoId = 1
+            });
+            return Ok(test);
+
+        }
+        #endregion
     }
 }

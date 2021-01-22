@@ -25,6 +25,6 @@ namespace TodoApp.API.Models
         [Required]
         public int TodoId { get; set; }
 
-        public virtual Todo TodoModel { get; set; }
+        public virtual Todo Todos { get; set; }
     }
 }

@@ -33,16 +33,25 @@
     <Compile Remove="Migrations\20210119062417_initialize DB.Designer.cs" />
     <Compile Remove="Migrations\20210119063200_initialize DB.cs" />
     <Compile Remove="Migrations\20210119063200_initialize DB.Designer.cs" />
+    <Compile Remove="Migrations\20210119065216_initialize DB.cs" />
+    <Compile Remove="Migrations\20210119065216_initialize DB.Designer.cs" />
+    <Compile Remove="Migrations\20210120015934_initialize db.cs" />
+    <Compile Remove="Migrations\20210120015934_initialize db.Designer.cs" />
+    <Compile Remove="Migrations\20210120022403_initialize db.cs" />
+    <Compile Remove="Migrations\20210120022403_initialize db.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\Commands\Todos\Create\" />
+    <Folder Include="Migrations\" />
+    <Folder Include="Services\Commands\Items\" />
+    <Folder Include="Services\Commands\Todos\" />
     <Folder Include="Services\Queries\" />
     <Folder Include="Views\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="9.4.0" />
     <PackageReference Include="MediatR" Version="9.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.3" />

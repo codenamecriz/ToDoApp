@@ -1,0 +1,30 @@
+services:
+  db:
+    container_name: mysqldb
+    environment:
+      MYSQL_ROOT_PASSWORD: testroot
+      MYSQL_USER: testroot
+    image: mysql:5.6.50
+    ports:
+    - published: 3306
+      target: 3306
+    restart: always
+    volumes:
+    - d:\mysqldata:/var/lib/mysql:rw
+  todoapp.api:
+    build:
+      context: D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API
+      dockerfile: Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: todoappapi
+    ports:
+    - published: 8080
+      target: 80
+    - target: 80
+    - target: 443
+    volumes:
+    - C:\Users\cjabuni\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\cjabuni\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+version: '3.4'

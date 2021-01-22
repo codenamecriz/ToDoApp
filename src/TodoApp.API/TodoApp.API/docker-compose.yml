@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+  db:
+    image: mysql:5.6.50
+    container_name: mysqldb
+    environment:
+      - MYSQL_ROOT_PASSWORD=testroot
+      - MYSQL_USER=testroot
+      #- MYSQL_DATABASE=ppg_todo
+    ports:
+      - "3306:3306"
+    restart: always
+    volumes: 
+      - d:\mysqldata:/var/lib/mysql
+
+  todoapp.api:
+    image: ${DOCKER_REGISTRY-}todoappapi
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"

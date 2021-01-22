@@ -1,2 +1,221 @@
 Application Start Up.
-HTTP "GET" "/" responded 404 in 47.9784 ms
+HTTP "GET" "/" responded 404 in 30.4246 ms
+HTTP "POST" "/todo/" responded 400 in 248.1926 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 55.3362 ms
+HTTP "POST" "/todo/" responded 400 in 241.5216 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 41.7216 ms
+HTTP "POST" "/todo/" responded 400 in 265.2335 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 50.8450 ms
+HTTP "POST" "/todo/" responded 400 in 221.2060 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 45.0126 ms
+HTTP "POST" "/todo/" responded 400 in 210.6452 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 57.1243 ms
+HTTP "POST" "/todo/" responded 500 in 199.4621 ms
+System.FormatException: Input string was not in a correct format.
+   at System.Text.StringBuilder.FormatError()
+   at System.Text.StringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.IO.StreamWriter.WriteFormatHelper(String format, ParamsArray args, Boolean appendNewLine)
+   at System.IO.StreamWriter.WriteLine(String format, Object arg0)
+   at System.IO.TextWriter.SyncTextWriter.WriteLine(String format, Object arg0)
+   at System.Console.WriteLine(String format, Object arg0)
+   at TodoApp.API.Filters.ValidationFilter.OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next) in D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\Filters\ValidationFilter.cs:line 49
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+An unhandled exception has occurred while executing the request.
+System.FormatException: Input string was not in a correct format.
+   at System.Text.StringBuilder.FormatError()
+   at System.Text.StringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.IO.StreamWriter.WriteFormatHelper(String format, ParamsArray args, Boolean appendNewLine)
+   at System.IO.StreamWriter.WriteLine(String format, Object arg0)
+   at System.IO.TextWriter.SyncTextWriter.WriteLine(String format, Object arg0)
+   at System.Console.WriteLine(String format, Object arg0)
+   at TodoApp.API.Filters.ValidationFilter.OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next) in D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\Filters\ValidationFilter.cs:line 49
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+Application Start Up.
+Application Start Up.
+HTTP "GET" "/" responded 404 in 51.7758 ms
+HTTP "POST" "/todo/" responded 400 in 216.4457 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 60.2153 ms
+Error Found: in Field Name: "'Name' must not be empty." Error Message: {message}Name
+Error Found: in Field Name: "'Description' must not be empty." Error Message: {message}Description
+HTTP "POST" "/todo/" responded 400 in 271.7410 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 44.9656 ms
+Error Found: in Field Name: "Name" Error Message: "'Name' must not be empty."
+Error Found: in Field Name: "Description" Error Message: "'Description' must not be empty."
+HTTP "POST" "/todo/" responded 400 in 252.2364 ms
+Error Found: in Field Name: "Name" Error Message: "'Name' must not be empty."
+Error Found: in Field Name: "Description" Error Message: "'Description' must not be empty."
+HTTP "POST" "/todo/" responded 400 in 6.0399 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 615.6547 ms
+HTTP "GET" "/favicon.ico" responded 404 in 0.1166 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 43.1678 ms
+Error Found: in Field Name: "Name" Error Message: "'Name' must not be empty."
+Error Found: in Field Name: "Description" Error Message: "'Description' must not be empty."
+HTTP "POST" "/todo/" responded 400 in 227.2596 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 44.8486 ms
+New Todo Successfully Created Id:11
+HTTP "POST" "/todo/" responded 201 in 907.7949 ms
+HTTP "POST" "/todo/" responded 400 in 53.7554 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 51.7366 ms
+HTTP "POST" "/todo/" responded 400 in 225.6844 ms
+New Todo Successfully Created Id:12
+HTTP "POST" "/todo/" responded 201 in 471.5417 ms
+HTTP "POST" "/todo/" responded 400 in 6.2026 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 31.1862 ms
+HTTP "POST" "/todo/" responded 400 in 225.6105 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 38.6762 ms
+HTTP "POST" "/todo/" responded 400 in 395.8722 ms
+New Todo Successfully Created Id:13
+HTTP "POST" "/todo/" responded 201 in 534.9046 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 54.0194 ms
+HTTP "POST" "/todo/" responded 400 in 232.1379 ms
+HTTP "POST" "/todo/" responded 400 in 5.4443 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 44.7012 ms
+New Todo Successfully Created Id:14
+HTTP "POST" "/todo/" responded 201 in 708.7022 ms
+Error Found: in Field Name: "Description" Error Message: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 32.8942 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 39.7612 ms
+Error Found: in Field Name: "Description" Error Message: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 231.9742 ms
+New Todo Successfully Created Id:15
+HTTP "POST" "/todo/" responded 201 in 482.6570 ms
+Application Start Up.
+Application Start Up.
+HTTP "GET" "/" responded 404 in 50.3600 ms
+Error Found: in Field Name: "Name" -> Error_Information: "'Name' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 311.3319 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 51.4453 ms
+Error Found: in Field Name: "Name" -> Error_Information: "'Name' is not in the correct format."
+Application Start Up.
+HTTP "GET" "/" responded 404 in 57.9761 ms
+Error Found: in Field Name: "Name" -> Error_Information: "'Name' is not in the correct format."
+Application Start Up.
+HTTP "GET" "/" responded 404 in 46.6994 ms
+New Todo Successfully Created Id:17
+HTTP "POST" "/todo/" responded 201 in 677.6684 ms
+HTTP "POST" "/todo/" responded 400 in 50.9560 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 62.1643 ms
+Error Found: in Field Name: "Name" -> Error_Information: "'Name' is not in the correct format."
+Application Start Up.
+HTTP "GET" "/" responded 404 in 99.0720 ms
+New Todo Successfully Created Id:19
+HTTP "POST" "/todo/" responded 201 in 1242.9437 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+Application Start Up.
+HTTP "GET" "/" responded 404 in 185.3388 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 572.0878 ms
+New Todo Successfully Created Id:20
+HTTP "POST" "/todo/" responded 201 in 691.5798 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 36.1403 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 85.2487 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 112.6515 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 61.3478 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 98.7171 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 69.0322 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 46.8695 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 1281.9990 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 101.0889 ms
+Error Found: in Field Name: "id" -> Error_Information: "The value 'Default' is not valid."
+HTTP "GET" "/todo/Default" responded 400 in 1434.8296 ms
+Error Found: in Field Name: "id" -> Error_Information: "The value 'Default' is not valid."
+HTTP "GET" "/todo/Default" responded 400 in 11.2013 ms
+Error Found: in Field Name: "id" -> Error_Information: "The value 'Default' is not valid."
+HTTP "GET" "/todo/Default" responded 400 in 4.9288 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 1549.1543 ms
+Error Found: in Field Name: "id" -> Error_Information: "The value 'Default' is not valid."
+HTTP "GET" "/todo/Default" responded 400 in 25.1602 ms
+Error Found: in Field Name: "id" -> Error_Information: "The value 'Default' is not valid."
+HTTP "GET" "/todo/Default" responded 400 in 10.1779 ms
+Error Found: in Field Name: "id" -> Error_Information: "The value 'Default' is not valid."
+HTTP "GET" "/todo/Default" responded 400 in 6.2661 ms
+HTTP "GET" "/todo/1/Default" responded 404 in 0.2718 ms
+Request Todo Id: 1 from Repository.
+HTTP "GET" "/todo/1" responded 200 in 304.1263 ms
+Error Found: in Field Name: "id" -> Error_Information: "The value 'Default' is not valid."
+HTTP "GET" "/todo/Default" responded 400 in 11.6510 ms
+Request Todo Id: 999 from Repository.
+HTTP "GET" "/todo/999" responded 404 in 158.4569 ms
+Error Found: in Field Name: "id" -> Error_Information: "The value 'Todo' is not valid."
+HTTP "GET" "/todo/Todo" responded 400 in 8.6874 ms
+Error Found: in Field Name: "id" -> Error_Information: "The value 'Todos' is not valid."
+HTTP "GET" "/todo/Todos" responded 400 in 9.6540 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 13.1218 ms
+Request Todo Id: 1 from Repository.
+HTTP "GET" "/todo/1" responded 200 in 28.4429 ms
+Request Todo Id: 1 from Repository.
+HTTP "GET" "/todo/1" responded 200 in 13.9114 ms
+Request Todo Id: 1 from Repository.
+HTTP "GET" "/todo/1" responded 200 in 25.0461 ms
+New Todo Successfully Created Id:21
+HTTP "POST" "/todo" responded 201 in 916.1837 ms
+Request Todo Id: 21 from Repository.
+HTTP "GET" "/todo/21" responded 200 in 107.5351 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 26.2551 ms
+New Todo Successfully Created Id:22
+HTTP "POST" "/todo" responded 201 in 42.2650 ms
+Request Todo Id:21 Successfully Updated.
+HTTP "PUT" "/todo/21" responded 204 in 170.9186 ms
+Request Todo Id: 21 from Repository.
+HTTP "GET" "/todo/21" responded 200 in 58.5964 ms
+Request Todo Id: 22 from Repository.
+HTTP "GET" "/todo/22" responded 200 in 8.0521 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 8.0000 ms
+New Todo Successfully Created Id:23
+HTTP "POST" "/todo" responded 201 in 9.6155 ms
+Request Todo Id:21 Successfully Updated.
+HTTP "PUT" "/todo/21" responded 204 in 25.8499 ms
+Todo Id:22 has Successfully Deleted.
+HTTP "DELETE" "/todo/22" responded 204 in 40.6646 ms
+Request Todo Id: 22 from Repository.
+HTTP "GET" "/todo/22" responded 404 in 8.9442 ms

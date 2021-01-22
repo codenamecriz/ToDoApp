@@ -7,10 +7,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["TodoApp.API.csproj", "TodoApp.API"]
-RUN dotnet restore "TodoApp.API/TodoApp.API.csproj"
+COPY ["TodoApp.API.csproj", "./"]
+RUN dotnet restore "TodoApp.API.csproj"
 COPY . .
-WORKDIR "/src/."
+WORKDIR "/src/"
 RUN dotnet build "TodoApp.API.csproj" -c Release -o /app/build
 
 FROM build AS publish

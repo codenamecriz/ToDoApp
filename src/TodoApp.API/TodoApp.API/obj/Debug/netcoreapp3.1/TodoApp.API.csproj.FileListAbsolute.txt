@@ -61,3 +61,8 @@ D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\obj\Debug\n
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\obj\Debug\netcoreapp3.1\TodoApp.API.pdb
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\obj\Debug\netcoreapp3.1\TodoApp.API.genruntimeconfig.cache
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\obj\Debug\netcoreapp3.1\TodoApp.API.csprojAssemblyReference.cache
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\netcoreapp3.1\DPPS SETraining ProjectsTodoApp.MVVMDocsTodoApp.Api.Logslog.json
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\obj\Debug\netcoreapp3.1\TodoApp.API.MvcApplicationPartsAssemblyInfo.cs
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\netcoreapp3.1\FluentValidation.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll

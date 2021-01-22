@@ -59,7 +59,7 @@ services:
 
 
       //==========================================================
-      version: '3.4'
+version: '3.4'
 
 services:
   db:
@@ -67,6 +67,7 @@ services:
     container_name: mysqldb
     environment:
       - MYSQL_ROOT_PASSWORD=testroot
+      - MYSQL_USER=testroot
       #- MYSQL_DATABASE=ppg_todo
     ports:
       - "3306:3306"
@@ -81,7 +82,7 @@ services:
       dockerfile: Dockerfile
     restart: always
     ports:
-      - "8080:80"
+      - "8000:80"
     depends_on:
       - db
 

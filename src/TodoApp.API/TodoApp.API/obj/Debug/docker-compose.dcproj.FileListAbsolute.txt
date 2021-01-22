@@ -1,10 +1,13 @@
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\appsettings.Development.json
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\appsettings.json
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\DPPS SETraining ProjectsTodoApp.MVVMDocsTodoApp.Api.Logslog.json
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\TodoApp.API.exe
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\TodoApp.API.dll
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Microsoft.EntityFrameworkCore.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Pomelo.EntityFrameworkCore.MySql.dll
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\AutoMapper.dll
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
@@ -19,7 +22,6 @@ D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\S
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\MediatR.Extensions.Microsoft.DependencyInjection.dll
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Serilog.AspNetCore.dll
-D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Pomelo.EntityFrameworkCore.MySql.dll
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Newtonsoft.Json.dll
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
@@ -30,12 +32,13 @@ D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\M
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Microsoft.Extensions.Logging.dll
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Microsoft.Extensions.Options.dll
-D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Newtonsoft.Json.Bson.dll
-D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Microsoft.DotNet.PlatformAbstractions.dll
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\MySqlConnector.dll
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Pomelo.JsonObject.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Newtonsoft.Json.Bson.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Microsoft.DotNet.PlatformAbstractions.dll
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\TodoApp.API.pdb
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\obj\Debug\docker-compose.dcprojAssemblyReference.cache
-D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\obj\Debug\docker-compose.dcproj.CopyComplete
-D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\DPPS SETraining ProjectsTodoApp.MVVMDocsTodoApp.Api.Logslog.json
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\FluentValidation.AspNetCore.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\FluentValidation.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\FluentValidation.DependencyInjectionExtensions.dll

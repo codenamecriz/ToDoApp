@@ -16,6 +16,6 @@ namespace TodoApp.API.Models
         public string Name { get; set; }
         [Required]
         public string Description { get; set; }
-        public virtual ICollection<Item> TodoItemModels { get; private set; } = new ObservableCollection<Item>();
+        public virtual ICollection<Item> Items { get; private set; } = new ObservableCollection<Item>();
     }
 }

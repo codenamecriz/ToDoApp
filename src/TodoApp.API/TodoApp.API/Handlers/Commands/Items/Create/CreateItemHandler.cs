@@ -25,17 +25,17 @@ namespace TodoApp.API.Handlers.Commands.Items.Create
         }
         public async Task<ItemCreateDto> Handle(CreateItemRequest request, CancellationToken cancellationToken)
         {
-            if (request.Name != null && request.Details != null)
-            {                
+            //if (request.Name != null && request.Details != null)
+            //{                
                 var itemModel = _mapper.Map<Item>(request);
                 await _itemRepository.CreateItem(itemModel);
                 _itemRepository.SaveChanges();
                 Log.Information("New Item Successfully Created Id:{id}.",itemModel.Id);
                 return _mapper.Map<ItemCreateDto>(itemModel);
-            }
-            Log.Warning("Request must Required Name:{name} , Detailed:{detailed} , Status:{status}.", request.Name, request.Details,request.Status);
+            //}
+            //Log.Warning("Request must Required Name:{name} , Detailed:{detailed} , Status:{status}.", request.Name, request.Details,request.Status);
             //Log.CloseAndFlush();
-            return null;
+            //return null;
         }
     }
 }

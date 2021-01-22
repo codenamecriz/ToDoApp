@@ -1,0 +1,12 @@
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TestConsoleApp2\obj\Debug\TestConsoleApp2.csprojAssemblyReference.cache
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TestConsoleApp2\obj\Debug\TestConsoleApp2.csproj.CoreCompileInputs.cache
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TestConsoleApp2\bin\Debug\TestConsoleApp2.exe.config
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TestConsoleApp2\bin\Debug\TestConsoleApp2.exe
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TestConsoleApp2\bin\Debug\TestConsoleApp2.pdb
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TestConsoleApp2\bin\Debug\Newtonsoft.Json.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TestConsoleApp2\bin\Debug\Newtonsoft.Json.xml
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TestConsoleApp2\obj\Debug\TestConsoleApp2.csproj.CopyComplete
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TestConsoleApp2\obj\Debug\TestConsoleApp2.exe
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TestConsoleApp2\obj\Debug\TestConsoleApp2.pdb
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TestConsoleApp2\bin\Debug\RestSharp.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TestConsoleApp2\bin\Debug\RestSharp.xml

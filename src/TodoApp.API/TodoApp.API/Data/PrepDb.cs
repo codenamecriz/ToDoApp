@@ -38,7 +38,7 @@ namespace TodoApp.API.Data
                     Details = "Cleaning Dust",
                     Status = EnumItemStatus.Pending,
                     TodoId = 1
-                    
+
                 });
                 context.Items.Add(new Item
                 {

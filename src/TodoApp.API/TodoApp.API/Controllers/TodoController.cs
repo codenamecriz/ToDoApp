@@ -55,8 +55,9 @@ namespace TodoApp.API.Controllers
         [HttpPost]
         public async Task< ActionResult<TodoReadDto>> CreateTodo(CreateTodoRequest dataDto)
         {
+           
             var result = await _mediator.Send(dataDto);
-
+            
             return result != null ? (ActionResult) CreatedAtAction(nameof(GetTodoById), new { Id = result.Id }, result) : BadRequest();
             
         }

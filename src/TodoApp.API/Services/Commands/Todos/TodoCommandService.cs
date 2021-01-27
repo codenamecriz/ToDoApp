@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using Domain.IRepository;
+using Services.IRepository;
 using TodoApp.API.Models;
 
 namespace Services.Commands.Todos
@@ -21,7 +21,7 @@ namespace Services.Commands.Todos
         public async Task<Todo> CreateTodoAsync(Todo data)
         {
             var result = _dbAuthentication.CheckingIfExist(data);
-            if (result == 1)
+            if (result.Result == 1)
             {
                 Log.Warning("Error:(CREATE) Name: {name} -> The Data that you what to Create Have Matches in Database.", data.Id, data.Name);
                 return null;
@@ -35,7 +35,7 @@ namespace Services.Commands.Todos
         public async Task DeleteTodoAsync(Todo data)
         {
             var result = _dbAuthentication.CheckingIfExist(data);
-            if (result == 1)
+            if (result.Result == 1)
             {
                 await _todoRepository.DeleteTodo(data);
                 _todoRepository.SaveChanges();
@@ -50,7 +50,7 @@ namespace Services.Commands.Todos
         public async Task UpdateTodoAsync(Todo data)
         {
             var result = _dbAuthentication.CheckingIfExist(data);
-            if (result == 1)
+            if (result.Result == 1)
             {
                 await _todoRepository.UpdateTodo(data);
                 _todoRepository.SaveChanges();

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using Domain.IRepository;
+using Services.IRepository;
 using TodoApp.API.Models;
 
 namespace Services.Queries.Items

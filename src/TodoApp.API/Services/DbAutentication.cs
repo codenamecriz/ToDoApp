@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Domain.IRepository;
+using System.Threading.Tasks;
+using Services.IRepository;
 using TodoApp.API.Models;
 
 namespace Services
@@ -19,13 +20,14 @@ namespace Services
             _itemRepository = itemRepository;
             _todoRepository = todoRepository;
 
-            todoContainer.AddRange((IEnumerable<Todo>)_todoRepository.GetAllTodo());
-            itemContainer.AddRange((IEnumerable<Item>)_itemRepository.GetAllItem());
+            
+            
         }
 
         
-        public int CheckingIfExist(Todo data)
+        public async Task<int> CheckingIfExist(Todo data)
         {
+            todoContainer.AddRange((IEnumerable<Todo>) await _todoRepository.GetAllTodo());
             var value = 0;
             foreach (var todoItem in todoContainer)
             {
@@ -36,8 +38,9 @@ namespace Services
             }
             return value;
         }
-        public int CheckingIfExist(Item data)
+        public async Task<int>  CheckingIfExist(Item data)
         {
+            itemContainer.AddRange((IEnumerable<Item>) await _itemRepository.GetAllItem());
             var value = 0;
             foreach (var Item in itemContainer)
             {

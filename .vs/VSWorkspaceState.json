@@ -2,9 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\TodoApp.API",
-    "\\src\\TodoApp.API\\TodoApp.API"
+    "\\src\\TodoApp.API"
   ],
-  "SelectedNode": "\\src\\TodoApp.API\\TodoApp.API\\TodoApp.API.sln",
+  "SelectedNode": "\\src\\TodoApp.API\\TestConsoleApp2",
   "PreviewInSolutionExplorer": false
 }

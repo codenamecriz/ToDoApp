@@ -23,7 +23,7 @@ using Services.Commands.Todos;
 using Services.Queries.Items;
 using Services.Queries.Todos;
 using TodoApp.API.Data;
-using Domain.IRepository;
+using Services.IRepository;
 using TodoApp.API.Helpers.Filters;
 
 namespace TodoApp.API

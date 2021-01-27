@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TodoApp.API.Models;
 
-namespace Domain.IRepository
+namespace Services.IRepository
 {
     public interface IItemRepository
     {

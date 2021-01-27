@@ -30,6 +30,9 @@
             "projectReferences": {
               "D:\\PPS SE\\Training Projects\\TodoApp.MVVM\\src\\TodoApp.API\\Models\\Domain.csproj": {
                 "projectPath": "D:\\PPS SE\\Training Projects\\TodoApp.MVVM\\src\\TodoApp.API\\Models\\Domain.csproj"
+              },
+              "D:\\PPS SE\\Training Projects\\TodoApp.MVVM\\src\\TodoApp.API\\Services\\Services.csproj": {
+                "projectPath": "D:\\PPS SE\\Training Projects\\TodoApp.MVVM\\src\\TodoApp.API\\Services\\Services.csproj"
               }
             }
           }
@@ -164,9 +167,6 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "D:\\PPS SE\\Training Projects\\TodoApp.MVVM\\src\\TodoApp.API\\Data\\Data.csproj": {
-                "projectPath": "D:\\PPS SE\\Training Projects\\TodoApp.MVVM\\src\\TodoApp.API\\Data\\Data.csproj"
-              },
               "D:\\PPS SE\\Training Projects\\TodoApp.MVVM\\src\\TodoApp.API\\Models\\Domain.csproj": {
                 "projectPath": "D:\\PPS SE\\Training Projects\\TodoApp.MVVM\\src\\TodoApp.API\\Models\\Domain.csproj"
               }

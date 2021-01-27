@@ -1365,3 +1365,115 @@ Application Start Up.
 HTTP "GET" "/" responded 404 in 40.4822 ms
 Request All Todo Data From Repository.
 HTTP "GET" "/todo" responded 200 in 518.5543 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 34.7138 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 1429.8573 ms
+HTTP "GET" "/favicon.ico" responded 404 in 1.1182 ms
+HTTP "GET" "//i" responded 404 in 0.6908 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 376.9670 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 43.1089 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 1235.8392 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 396.9221 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 32.7525 ms
+Error Found: in Field Name: "status" -> Error_Information: "Error converting value \"Pendi/ng\" to type 'TodoApp.API.Enum.EnumItemStatus'. Path 'status', line 4, position 24."
+HTTP "POST" "/item/" responded 400 in 1170.7696 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 36.3238 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 46.9580 ms
+HTTP "POST" "/item/" responded 500 in 1576.0819 ms
+System.InvalidCastException: Unable to cast object of type 'System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[TodoApp.API.Models.Item]]' to type 'System.Collections.Generic.IEnumerable`1[TodoApp.API.Models.Item]'.
+   at Services.DbAutentication.CheckingIfExist(Item data) in D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Services\DbAutentication.cs:line 42
+   at Services.Commands.Items.ItemCommandService.CreateItemAsync(Item data) in D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Services\Commands\Items\ItemCommandService.cs:line 23
+   at Handlers.Commands.CreateItemHandler.Handle(CreateItemRequest request, CancellationToken cancellationToken) in D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\Handlers\Commands\Items\Create\CreateItemHandler.cs:line 31
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at TodoApp.API.Controllers.ItemController.CreateItem(CreateItemRequest request) in D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\Controllers\ItemController.cs:line 60
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+An unhandled exception has occurred while executing the request.
+System.InvalidCastException: Unable to cast object of type 'System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[TodoApp.API.Models.Item]]' to type 'System.Collections.Generic.IEnumerable`1[TodoApp.API.Models.Item]'.
+   at Services.DbAutentication.CheckingIfExist(Item data) in D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Services\DbAutentication.cs:line 42
+   at Services.Commands.Items.ItemCommandService.CreateItemAsync(Item data) in D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Services\Commands\Items\ItemCommandService.cs:line 23
+   at Handlers.Commands.CreateItemHandler.Handle(CreateItemRequest request, CancellationToken cancellationToken) in D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\Handlers\Commands\Items\Create\CreateItemHandler.cs:line 31
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at TodoApp.API.Controllers.ItemController.CreateItem(CreateItemRequest request) in D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\Controllers\ItemController.cs:line 60
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+Application Start Up.
+HTTP "GET" "/" responded 404 in 37.0709 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 37.4259 ms
+New Item Successfully Created Id:8.
+HTTP "POST" "/item/" responded 201 in 2345.2786 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 47.8903 ms
+Error:(CREATE) Name: 0 -> The Data that you what to Create Have Matches in Database.
+New Todo Successfully Created Id:0
+HTTP "POST" "/todo/" responded 201 in 1750.0370 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 34.3791 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 1296.9364 ms
+New Todo Successfully Created Id:39
+HTTP "POST" "/todo/" responded 201 in 966.2889 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 10.1708 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 36.8994 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' must not be empty."
+HTTP "POST" "/todo/" responded 400 in 621.9946 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 26.5115 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' must not be empty."
+HTTP "POST" "/todo/" responded 400 in 225.2213 ms
+Error:(CREATE) Name: 0 -> The Data that you what to Create Have Matches in Database.
+New Todo Successfully Created Id:0
+HTTP "POST" "/todo/" responded 201 in 412.4877 ms
+Error:(CREATE) Name: 0 -> The Data that you what to Create Have Matches in Database.
+New Todo Successfully Created Id:0
+HTTP "POST" "/todo/" responded 201 in 52.5474 ms
+New Todo Successfully Created Id:40
+HTTP "POST" "/todo/" responded 201 in 169.9532 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' must not be empty."
+HTTP "POST" "/todo/" responded 400 in 7.4674 ms

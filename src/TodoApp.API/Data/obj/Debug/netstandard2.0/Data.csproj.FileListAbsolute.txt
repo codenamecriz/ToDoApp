@@ -10,3 +10,5 @@ D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Data\obj\Debug\netstand
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Data\obj\Debug\netstandard2.0\Data.pdb
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Data\bin\Debug\netstandard2.0\Domain.dll
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Data\bin\Debug\netstandard2.0\Domain.pdb
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Data\bin\Debug\netstandard2.0\Services.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Data\bin\Debug\netstandard2.0\Services.pdb

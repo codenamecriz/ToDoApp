@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/vYMnyWxZW/Badw1DDhHfAXbk9AIAxITjL14n6lr7pjTLnq7o8AlNLUrsUBLmviKPEiUudbNEFwRU+UvqpsQxQ==",
+  "dgSpecHash": "AZhrSaTVV9XghDWVaq1bwsYgOoamHBVloDepLRzxM34ZSbTi4ti8/Xu/Xs1zluIoropNa18JsOBR/lkp/iu0sQ==",
   "success": true,
   "projectFilePath": "D:\\PPS SE\\Training Projects\\TodoApp.MVVM\\src\\TodoApp.API\\TodoApp.API\\TodoApp.API.csproj",
   "expectedPackageFiles": [

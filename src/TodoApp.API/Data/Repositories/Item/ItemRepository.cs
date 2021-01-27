@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TodoApp.API.Models;
-using Domain.IRepository;
+using Services.IRepository;
 
 namespace TodoApp.API.Data
 {

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using Domain.IRepository;
+using Services.IRepository;
 using TodoApp.API.Models;
 
 namespace Services.Commands.Items
@@ -21,9 +21,9 @@ namespace Services.Commands.Items
         public async Task<Item> CreateItemAsync(Item data)
         {
             var result = _dbAuthentication.CheckingIfExist(data);
-            if (result == 1)
+            if (result.Result == 1)
             {
-                Log.Warning("Error:(CREATE) Name: {name} -> The 'ITEM' that you what to Create Have Matches in Database.", data.Id, data.Name);
+                Log.Warning("Error:(CREATE) Name: {name} -> The 'ITEM' that you what to Create Have Matches in Database.",  data.Name);
                 return null;
             }
             await _itemRepository.CreateItem(data);
@@ -34,7 +34,7 @@ namespace Services.Commands.Items
         public async Task DeleteItemAsync(Item data)
         {
             var result = _dbAuthentication.CheckingIfExist(data);
-            if (result == 1)
+            if (result.Result == 1)
             {
                 await _itemRepository.DeleteItem(data);
                 _itemRepository.SaveChanges();
@@ -47,7 +47,7 @@ namespace Services.Commands.Items
         public async Task UpdateItemAsync(Item data)
         {
             var result = _dbAuthentication.CheckingIfExist(data);
-            if (result == 1)
+            if (result.Result == 1)
             {
                 await _itemRepository.UpdateItem(data);
                 _itemRepository.SaveChanges();

@@ -7,29 +7,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Domain.IRepository;
+using Services.IRepository;
+using Services.Commands.Items;
+using Services.Queries.Items;
 
 namespace Handlers.Commands
 {
     public class DeleteItemHandler : IRequestHandler<DeleteItemRequest, ItemDeleteDto>
     {
-        private readonly IItemRepository _itemRepository;
-        //private readonly IItemRepository _itemRepository;
+        private readonly IItemCommandService _itemCommandService;
+        private readonly IItemQueryService _itemQueryService;
         private readonly IMapper _mapper;
 
-        public DeleteItemHandler(IItemRepository itemRepository, IMapper mapper)
+        public DeleteItemHandler(IItemCommandService itemCommandService, IMapper mapper, IItemQueryService itemQueryService)
         {
-            _itemRepository = itemRepository;
+            _itemCommandService = itemCommandService;
             _mapper = mapper;
+            _itemQueryService = itemQueryService;
         }
         public async Task<ItemDeleteDto> Handle(DeleteItemRequest request, CancellationToken cancellationToken)
         {
-            var itemFromRepo = await _itemRepository.GetItemById(request.Id);
+            var itemFromRepo = await _itemQueryService.GetItemByIdAsync(request.Id);
             if (itemFromRepo != null)
             {
-                await _itemRepository.DeleteItem(itemFromRepo);
-                _itemRepository.SaveChanges();
-            
+
+                await _itemCommandService.DeleteItemAsync(itemFromRepo);
+        
                 var result = new ItemDeleteDto { Id = request.Id };
                 Log.Information("Item Id:{id} has Successfully Deleted.", request.Id);
                 return result;

@@ -7,19 +7,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Domain.IRepository;
+using Services.IRepository;
 using TodoApp.API.Models;
+using Services.Commands.Todos;
 
 namespace Handlers.Commands
 {
     public class CreateTodoHandler : IRequestHandler<CreateTodoRequest, TodoReadDto>
     {
-        private readonly ITodoRepository _todoRepository;
+        private readonly ITodoCommandService _todoCommandService;
         private readonly IMapper _mapper;
-        public CreateTodoHandler(ITodoRepository todoRepository, IMapper mapper)
+        public CreateTodoHandler(IMapper mapper, ITodoCommandService todoCommandService)
         {
-            _todoRepository = todoRepository;
+
             _mapper = mapper;
+            _todoCommandService = todoCommandService;
         }
 
 
@@ -27,8 +29,7 @@ namespace Handlers.Commands
         {
            
                 var todoModel = _mapper.Map<Todo>(request);
-                await _todoRepository.CreateTodo(todoModel);
-                _todoRepository.SaveChanges();
+                await _todoCommandService.CreateTodoAsync(todoModel);
                 Log.Information("New Todo Successfully Created Id:{id}",todoModel.Id);
                 return _mapper.Map<TodoReadDto>(todoModel);
                 

@@ -7,19 +7,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Domain.IRepository;
+using Services.IRepository;
 using TodoApp.API.Models;
+using Services.Commands.Items;
 
 namespace Handlers.Commands
 {
     public class CreateItemHandler : IRequestHandler<CreateItemRequest, ItemCreateDto>
     {
-        private readonly IItemRepository _itemRepository;
+        private readonly IItemCommandService _itemService;
         private readonly IMapper _mapper;
 
-        public CreateItemHandler(IItemRepository itemRepository, IMapper mapper)
+        public CreateItemHandler(IItemCommandService itemService, IMapper mapper)
         {
-            _itemRepository = itemRepository;
+            _itemService = itemService;
             _mapper = mapper;
         }
         public async Task<ItemCreateDto> Handle(CreateItemRequest request, CancellationToken cancellationToken)
@@ -27,8 +28,8 @@ namespace Handlers.Commands
             //if (request.Name != null && request.Details != null)
             //{                
                 var itemModel = _mapper.Map<Item>(request);
-                await _itemRepository.CreateItem(itemModel);
-                _itemRepository.SaveChanges();
+                await _itemService.CreateItemAsync(itemModel);
+           
                 Log.Information("New Item Successfully Created Id:{id}.",itemModel.Id);
                 return _mapper.Map<ItemCreateDto>(itemModel);
             //}

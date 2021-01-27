@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace TodoApp.API.Models
+{
+    public class Todo
+    {
+    
+        public int Id { get; set; }
+        [Required]
+        [MaxLength(40)]
+        public string Name { get; set; }
+        [Required]
+        public string Description { get; set; }
+        public virtual ICollection<Item> Items { get; private set; } = new ObservableCollection<Item>();
+    }
+}

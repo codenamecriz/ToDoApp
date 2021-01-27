@@ -1,0 +1,16 @@
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Handlers\obj\Debug\netstandard2.0\Handlers.csprojAssemblyReference.cache
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Handlers\obj\Debug\netstandard2.0\Handlers.AssemblyInfoInputs.cache
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Handlers\obj\Debug\netstandard2.0\Handlers.AssemblyInfo.cs
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Handlers\obj\Debug\netstandard2.0\Handlers.csproj.CoreCompileInputs.cache
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Handlers\bin\Debug\netstandard2.0\Handlers.deps.json
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Handlers\bin\Debug\netstandard2.0\Handlers.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Handlers\bin\Debug\netstandard2.0\Handlers.pdb
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Handlers\bin\Debug\netstandard2.0\Data.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Handlers\bin\Debug\netstandard2.0\Models.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Handlers\bin\Debug\netstandard2.0\Data.pdb
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Handlers\bin\Debug\netstandard2.0\Models.pdb
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Handlers\obj\Debug\netstandard2.0\Handlers.csproj.CopyComplete
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Handlers\obj\Debug\netstandard2.0\Handlers.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Handlers\obj\Debug\netstandard2.0\Handlers.pdb
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Handlers\bin\Debug\netstandard2.0\Services.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Handlers\bin\Debug\netstandard2.0\Services.pdb

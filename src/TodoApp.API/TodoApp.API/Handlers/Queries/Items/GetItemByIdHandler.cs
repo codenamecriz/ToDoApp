@@ -1,17 +1,17 @@
 ﻿using AutoMapper;
 using MediatR;
+using Models.DTOs;
 using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using TodoApp.API.Data;
-using TodoApp.API.DTOs.Item;
+using Domain.IRepository;
 using TodoApp.API.Enum;
 using TodoApp.API.Models;
 
-namespace TodoApp.API.Handlers.Queries.Items
+namespace Handlers.Queries
 {
     public class GetItemByIdHandler : IRequestHandler<GetItemByIdRequest, ItemResponseDto>
     {

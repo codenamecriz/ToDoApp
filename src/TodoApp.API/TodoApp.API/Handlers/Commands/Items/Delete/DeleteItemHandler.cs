@@ -1,19 +1,20 @@
 ﻿using AutoMapper;
 using MediatR;
+using Models.DTOs;
 using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using TodoApp.API.Data;
-using TodoApp.API.DTOs.Item;
+using Domain.IRepository;
 
-namespace TodoApp.API.Handlers.Commands.Items.Delete
+namespace Handlers.Commands
 {
     public class DeleteItemHandler : IRequestHandler<DeleteItemRequest, ItemDeleteDto>
     {
         private readonly IItemRepository _itemRepository;
+        //private readonly IItemRepository _itemRepository;
         private readonly IMapper _mapper;
 
         public DeleteItemHandler(IItemRepository itemRepository, IMapper mapper)

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1oAksmWokP+NWFHA9vSWQLZua0KRwMj7hiGoXVmgmzxaUh49CzYpYW3+v4FZLCb5oKzTmfzI2ZdyvB6oovo/hQ==",
+  "dgSpecHash": "/vYMnyWxZW/Badw1DDhHfAXbk9AIAxITjL14n6lr7pjTLnq7o8AlNLUrsUBLmviKPEiUudbNEFwRU+UvqpsQxQ==",
   "success": true,
   "projectFilePath": "D:\\PPS SE\\Training Projects\\TodoApp.MVVM\\src\\TodoApp.API\\TodoApp.API\\TodoApp.API.csproj",
   "expectedPackageFiles": [
@@ -82,7 +82,7 @@
     "C:\\Users\\cjabuni\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\cjabuni\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
     "C:\\Users\\cjabuni\\.nuget\\packages\\system.collections.immutable\\1.7.0\\system.collections.immutable.1.7.0.nupkg.sha512",
-    "C:\\Users\\cjabuni\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
+    "C:\\Users\\cjabuni\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\cjabuni\\.nuget\\packages\\system.console\\4.3.0\\system.console.4.3.0.nupkg.sha512",
     "C:\\Users\\cjabuni\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",
     "C:\\Users\\cjabuni\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.0\\system.diagnostics.diagnosticsource.4.7.0.nupkg.sha512",

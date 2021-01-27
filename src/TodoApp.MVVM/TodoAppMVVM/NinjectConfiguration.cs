@@ -5,6 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TodoApp.MVVM.Helpers.RequestApi;
+using TodoApp.MVVM.Helpers.RequestApi.RequestCommands.RequestItem;
+using TodoApp.MVVM.Helpers.RequestApi.RequestCommands.RequestTodo;
+using TodoApp.MVVM.Helpers.RequestApi.RequestQueries.RequestItem;
+using TodoApp.MVVM.Helpers.RequestApi.RequestQueries.RequestTodo;
 using TodoApp.MVVM.IViewModels;
 using TodoApp.MVVM.Services;
 using TodoAppMVVM.Repository;
@@ -32,6 +37,19 @@ namespace TodoApp.MVVM
             kernel.Bind<ITodoRepository>().To<TodoRepository>();
             kernel.Bind<IKernel>().To<StandardKernel>();
             kernel.Bind<IDBContext>().To<DBContext>();
+
+          
+
+            //--> API Config
+            kernel.Bind<IRequestApi>().To<RequestApi>();
+            kernel.Bind<IRequestConfig>().To<RequestConfig>();
+
+            kernel.Bind<ITodoGetRequest>().To<TodoGetRequest>();
+            kernel.Bind<ITodoSendRequest>().To<TodoSendRequest>();
+
+            kernel.Bind<IItemGetRequest>().To<ItemGetRequest>();
+            kernel.Bind<IItemSendRequest>().To<ItemSendRequest>();
+
 
 
             return kernel;

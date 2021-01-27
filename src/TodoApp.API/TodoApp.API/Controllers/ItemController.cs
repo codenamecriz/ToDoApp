@@ -1,16 +1,14 @@
-﻿using MediatR;
+﻿
+using Handlers.Commands;
+using Handlers.Queries;
+using MediatR;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using Models.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TodoApp.API.DTOs.Item;
-using TodoApp.API.Handlers.Commands.Items.Create;
-using TodoApp.API.Handlers.Commands.Items.Delete;
-using TodoApp.API.Handlers.Commands.Items.Patch;
-using TodoApp.API.Handlers.Commands.Items.Update;
-using TodoApp.API.Handlers.Queries.Items;
 using TodoApp.API.Models;
 
 namespace TodoApp.API.Controllers
@@ -25,6 +23,8 @@ namespace TodoApp.API.Controllers
         {
             _mediator = mediator;
         }
+
+
         #region GetItemBy(TodoId): /item/5
         [HttpGet("{id}")]
         public async Task<ActionResult<ItemResponseDto>> GetAllItem(int id)
@@ -53,6 +53,10 @@ namespace TodoApp.API.Controllers
         [HttpPost]
         public async Task<ActionResult<ItemReadDto>> CreateItem(CreateItemRequest request)
         {
+            if (!ModelState.IsValid)
+            {
+                
+            }
             var result = await _mediator.Send(request);
 
             return CreatedAtAction(nameof(GetItemById), new { Id = result.Id }, result);
@@ -105,20 +109,20 @@ namespace TodoApp.API.Controllers
 
         #region Test Return: /item/test
     
-        [HttpGet("test")]
-        public ActionResult Test()
-        {
-            var test = new List<Item>();
-            test.Add(new Item
-            {
-                Name = "test name",
-                Details = "test details",
-                Status = Enum.EnumItemStatus.Done,
-                TodoId = 1
-            });
-            return Ok(test);
+        //[HttpGet("test")]
+        //public ActionResult Test()
+        //{
+        //    var test = new List<Item>();
+        //    test.Add(new Item
+        //    {
+        //        Name = "test name",
+        //        Details = "test details",
+        //        Status = Enum.EnumItemStatus.Done,
+        //        TodoId = 1
+        //    });
+        //    return Ok(test);
 
-        }
+        //}
         #endregion
     }
 }

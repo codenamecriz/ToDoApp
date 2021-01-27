@@ -219,3 +219,1149 @@ Todo Id:22 has Successfully Deleted.
 HTTP "DELETE" "/todo/22" responded 204 in 40.6646 ms
 Request Todo Id: 22 from Repository.
 HTTP "GET" "/todo/22" responded 404 in 8.9442 ms
+Application Start Up.
+An error occurred using the connection to database '""' on server '"db"'.
+An error occurred using the connection to database '""' on server '"db"'.
+An error occurred using the connection to database '""' on server '"db"'.
+An error occurred using the connection to database '""' on server '"db"'.
+Application Start Up.
+HTTP "GET" "/" responded 404 in 70.6712 ms
+HTTP "GET" "/todo" responded 500 in 206.2763 ms
+System.InvalidOperationException: Handler was not found for request of type MediatR.IRequestHandler`2[Handlers.Queries.GetAllTodoRequest,System.Collections.Generic.IEnumerable`1[TodoApp.API.Models.TodoReadDto]]. Register your handlers with the container. See the samples in GitHub for examples.
+   at MediatR.Internal.RequestHandlerBase.GetHandler[THandler](ServiceFactory factory)
+   at MediatR.Internal.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at TodoApp.API.Controllers.TodoController.GetAllTodo() in D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\Controllers\TodoController.cs:line 36
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Handler was not found for request of type MediatR.IRequestHandler`2[Handlers.Queries.GetAllTodoRequest,System.Collections.Generic.IEnumerable`1[TodoApp.API.Models.TodoReadDto]]. Register your handlers with the container. See the samples in GitHub for examples.
+   at MediatR.Internal.RequestHandlerBase.GetHandler[THandler](ServiceFactory factory)
+   at MediatR.Internal.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at TodoApp.API.Controllers.TodoController.GetAllTodo() in D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\Controllers\TodoController.cs:line 36
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+HTTP "GET" "/favicon.ico" responded 404 in 9.2792 ms
+Application Start Up.
+Application Start Up.
+HTTP "GET" "/" responded 404 in 26.5985 ms
+HTTP "GET" "/todo" responded 500 in 91.6412 ms
+System.InvalidOperationException: Handler was not found for request of type MediatR.IRequestHandler`2[Handlers.Queries.GetAllTodoRequest,System.Collections.Generic.IEnumerable`1[Models.DTOs.TodoReadDto]]. Register your handlers with the container. See the samples in GitHub for examples.
+   at MediatR.Internal.RequestHandlerBase.GetHandler[THandler](ServiceFactory factory)
+   at MediatR.Internal.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at TodoApp.API.Controllers.TodoController.GetAllTodo() in D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\Controllers\TodoController.cs:line 34
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Handler was not found for request of type MediatR.IRequestHandler`2[Handlers.Queries.GetAllTodoRequest,System.Collections.Generic.IEnumerable`1[Models.DTOs.TodoReadDto]]. Register your handlers with the container. See the samples in GitHub for examples.
+   at MediatR.Internal.RequestHandlerBase.GetHandler[THandler](ServiceFactory factory)
+   at MediatR.Internal.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at TodoApp.API.Controllers.TodoController.GetAllTodo() in D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\Controllers\TodoController.cs:line 34
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+Application Start Up.
+HTTP "GET" "/" responded 404 in 48.6271 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 588.9527 ms
+Request Todo Id: 1 from Repository.
+HTTP "GET" "/todo/1" responded 200 in 159.7229 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 32.0424 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 440.1481 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 126.2548 ms
+New Todo Successfully Created Id:24
+HTTP "POST" "/todo/" responded 201 in 341.1155 ms
+Request Todo Id:24 Successfully Updated.
+HTTP "PUT" "/todo/24" responded 204 in 85.6097 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 9.0440 ms
+Todo Id:23 has Successfully Deleted.
+HTTP "DELETE" "/todo/23" responded 204 in 41.3926 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 8.2296 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 34.8128 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 708.1207 ms
+New Todo Successfully Created Id:25
+HTTP "POST" "/todo/" responded 201 in 289.9977 ms
+Item Id:2 has Successfully Deleted.
+HTTP "DELETE" "/item/2" responded 204 in 46.8576 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 10.3442 ms
+New Item Successfully Created Id:3.
+HTTP "POST" "/item/" responded 201 in 62.3567 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 7.6654 ms
+HTTP "PUT" "/item/pk/3" responded 405 in 0.3058 ms
+Request Item Id:3 Successfully Updated.
+HTTP "PUT" "/item/3" responded 204 in 68.8830 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 6.6960 ms
+Item Id:3 Successfully Patched.
+HTTP "PATCH" "/item/3" responded 204 in 90.3417 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 7.3346 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 28.2697 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 480.4167 ms
+Error Found: in Field Name: "Details" -> Error_Information: "'Details' is not in the correct format."
+HTTP "POST" "/item/" responded 400 in 78.2247 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 28.1736 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 81.0705 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 1626.0799 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 45.8934 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 467.0799 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 30.6870 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 700.5498 ms
+New Todo Successfully Created Id:26
+HTTP "POST" "/todo/" responded 201 in 510.7819 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 6.0532 ms
+Request Todo Id:26 Successfully Updated.
+HTTP "PUT" "/todo/26" responded 204 in 98.0278 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 16.3751 ms
+Todo Id:25 Successfully Patched
+HTTP "PATCH" "/todo/25" responded 204 in 82.6759 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 7.1163 ms
+Todo Id:24 has Successfully Deleted.
+HTTP "DELETE" "/todo/24" responded 204 in 47.7393 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 9.0012 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 5.6817 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 41.6306 ms
+New Item Successfully Created Id:4.
+HTTP "POST" "/item/" responded 201 in 108.9134 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 8.1485 ms
+Request Item Id:4 Successfully Updated.
+HTTP "PUT" "/item/4" responded 204 in 53.7378 ms
+New Item Successfully Created Id:5.
+HTTP "POST" "/item/" responded 201 in 13.0813 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 7.6874 ms
+Item Id:5 Successfully Patched.
+HTTP "PATCH" "/item/5" responded 204 in 54.0939 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 8.0000 ms
+Item Id:5 has Successfully Deleted.
+HTTP "DELETE" "/item/5" responded 204 in 19.2611 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 68.0880 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 37.7761 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 39.4931 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 519.4623 ms
+HTTP "GET" "/favicon.ico" responded 404 in 0.5515 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 37.4659 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 25.0306 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 668.1439 ms
+New Todo Successfully Created Id:27
+HTTP "POST" "/todo" responded 201 in 368.8907 ms
+Request Todo Id:21 Successfully Updated.
+HTTP "PUT" "/todo/21" responded 204 in 70.8652 ms
+The Todo Request Id:23 To Delete Not Found.
+HTTP "DELETE" "/todo/23" responded 404 in 37.7482 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 58.7461 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 5.6440 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 29.8744 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 778.7371 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 48.5032 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 27.6064 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 13.6494 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 24.8361 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 8.1050 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 13.1852 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 4.7761 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 20.2224 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 209.2568 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 17.5630 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 70.1023 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 10.1530 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 15.4409 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 6.8214 ms
+Request all Items where TodoId = 4 from Repository.
+HTTP "GET" "/item/4" responded 200 in 5.6301 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 13.6575 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 11.3655 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 10.4345 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 11.3561 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 11.5514 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 9.6900 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 61.3393 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 925.0740 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 180.4210 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 30.7233 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 238.5180 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 28.9066 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 44.0175 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 12.1416 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 16.4277 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 22.8143 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 13.0297 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 11.6672 ms
+Request all Items where TodoId = 2 from Repository.
+HTTP "GET" "/item/2" responded 200 in 25.1490 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 11.5292 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 14.9418 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 55.0662 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 17.2790 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 27.9989 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 16.4135 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 10.6623 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 5.6000 ms
+Request all Items where TodoId = 3 from Repository.
+HTTP "GET" "/item/3" responded 200 in 6.7949 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 11.7470 ms
+Request all Items where TodoId = 2 from Repository.
+HTTP "GET" "/item/2" responded 200 in 4.5347 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 3.7312 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 5.0576 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 41.4790 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 1173.3604 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 310.3368 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 22.4629 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 88.5344 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 19.7362 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 9.1044 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 98.4521 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 9.9745 ms
+New Todo Successfully Created Id:28
+HTTP "POST" "/todo/" responded 201 in 309.3590 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 6.5753 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 6.8841 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 10.9565 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 11.1649 ms
+New Todo Successfully Created Id:29
+HTTP "POST" "/todo/" responded 201 in 27.8270 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 5.8005 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 6.2060 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 9.1747 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 10.9754 ms
+New Todo Successfully Created Id:30
+HTTP "POST" "/todo/" responded 201 in 17.1082 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 4.8301 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 5.2654 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 12.0744 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 8.0513 ms
+Request Todo Id:30 Successfully Updated.
+HTTP "PUT" "/todo/30" responded 204 in 74.4766 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 4.4653 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 4.9791 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 6.5478 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 6.4589 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 4.7099 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 4.2915 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 10.8306 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 10.8597 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 14.1793 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 6.9182 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 11.1349 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 7.2498 ms
+Todo Id:5 has Successfully Deleted.
+HTTP "DELETE" "/todo/5" responded 204 in 26.6402 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 3.4391 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 4.4312 ms
+Todo Id:3 has Successfully Deleted.
+HTTP "DELETE" "/todo/3" responded 204 in 11.3727 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 3.2730 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 4.1361 ms
+Todo Id:4 has Successfully Deleted.
+HTTP "DELETE" "/todo/4" responded 204 in 14.7375 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 2.4213 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 4.4824 ms
+Todo Id:6 has Successfully Deleted.
+HTTP "DELETE" "/todo/6" responded 204 in 6.3683 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 2.8441 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 5.3564 ms
+Todo Id:7 has Successfully Deleted.
+HTTP "DELETE" "/todo/7" responded 204 in 9.7563 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 2.4807 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 5.1617 ms
+Todo Id:8 has Successfully Deleted.
+HTTP "DELETE" "/todo/8" responded 204 in 8.3265 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 2.8754 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 2.7362 ms
+Todo Id:9 has Successfully Deleted.
+HTTP "DELETE" "/todo/9" responded 204 in 7.0836 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 2.4924 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 4.1978 ms
+Todo Id:10 has Successfully Deleted.
+HTTP "DELETE" "/todo/10" responded 204 in 6.7033 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 2.7401 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 3.5425 ms
+Todo Id:11 has Successfully Deleted.
+HTTP "DELETE" "/todo/11" responded 204 in 14.8634 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 2.6304 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 2.9029 ms
+Todo Id:12 has Successfully Deleted.
+HTTP "DELETE" "/todo/12" responded 204 in 6.5072 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 2.6116 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 2.7918 ms
+Todo Id:13 has Successfully Deleted.
+HTTP "DELETE" "/todo/13" responded 204 in 6.5530 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 2.2109 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 3.1380 ms
+Todo Id:14 has Successfully Deleted.
+HTTP "DELETE" "/todo/14" responded 204 in 8.8802 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 2.1489 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 2.7811 ms
+Todo Id:15 has Successfully Deleted.
+HTTP "DELETE" "/todo/15" responded 204 in 9.6926 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 2.6108 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 3.0713 ms
+Todo Id:16 has Successfully Deleted.
+HTTP "DELETE" "/todo/16" responded 204 in 10.2301 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 2.6168 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 3.5214 ms
+Todo Id:17 has Successfully Deleted.
+HTTP "DELETE" "/todo/17" responded 204 in 14.6181 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 2.7024 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 2.7488 ms
+Todo Id:18 has Successfully Deleted.
+HTTP "DELETE" "/todo/18" responded 204 in 15.5289 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 3.0825 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 3.4804 ms
+Todo Id:19 has Successfully Deleted.
+HTTP "DELETE" "/todo/19" responded 204 in 14.8633 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 3.0384 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 10.4905 ms
+Todo Id:20 has Successfully Deleted.
+HTTP "DELETE" "/todo/20" responded 204 in 12.9274 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 2.2731 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 3.4096 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 13.0802 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 6.2809 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 48.9527 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 1559.7104 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 423.8382 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 6.1763 ms
+Request all Items where TodoId = 2 from Repository.
+HTTP "GET" "/item/2" responded 200 in 7.0087 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 8.1035 ms
+Request all Items where TodoId = 2 from Repository.
+HTTP "GET" "/item/2" responded 200 in 6.1208 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 16.1758 ms
+Request all Items where TodoId = 2 from Repository.
+HTTP "GET" "/item/2" responded 200 in 14.8572 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 8.4792 ms
+Request all Items where TodoId = 2 from Repository.
+HTTP "GET" "/item/2" responded 200 in 5.7691 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 20.0289 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 8.6165 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 19.7937 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 13.9864 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 7.6312 ms
+Request all Items where TodoId = 2 from Repository.
+HTTP "GET" "/item/2" responded 200 in 5.1167 ms
+New Item Successfully Created Id:5.
+HTTP "POST" "/item/" responded 201 in 425.0389 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 7.0855 ms
+Request all Items where TodoId = 2 from Repository.
+HTTP "GET" "/item/2" responded 200 in 6.5301 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 4.7291 ms
+Request all Items where TodoId = 2 from Repository.
+HTTP "GET" "/item/2" responded 200 in 5.0826 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 10.0646 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 14.2118 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 4.4742 ms
+Request all Items where TodoId = 2 from Repository.
+HTTP "GET" "/item/2" responded 200 in 5.9478 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 3.3069 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 4.6518 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 16.0038 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 9.9060 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 6.5078 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 14.4452 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 4.2722 ms
+Request all Items where TodoId = 2 from Repository.
+HTTP "GET" "/item/2" responded 200 in 4.3293 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 6.0811 ms
+Request all Items where TodoId = 21 from Repository.
+HTTP "GET" "/item/21" responded 200 in 4.2566 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 2.9279 ms
+Request all Items where TodoId = 21 from Repository.
+HTTP "GET" "/item/21" responded 200 in 3.3783 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 4.1135 ms
+Request all Items where TodoId = 21 from Repository.
+HTTP "GET" "/item/21" responded 200 in 3.8369 ms
+Todo Id:28 has Successfully Deleted.
+HTTP "DELETE" "/todo/28" responded 204 in 65.4038 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 4.1492 ms
+Request all Items where TodoId = 21 from Repository.
+HTTP "GET" "/item/21" responded 200 in 6.2642 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 2.9575 ms
+Request all Items where TodoId = 2 from Repository.
+HTTP "GET" "/item/2" responded 200 in 4.6240 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 3.6033 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 4.9910 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 4.1030 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 5.7560 ms
+Request Item Id:4 Successfully Updated.
+HTTP "PUT" "/item/4" responded 204 in 72.1793 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 3.5210 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 6.4142 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 8.1523 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 7.7531 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 13.3913 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 15.9712 ms
+Item Id:3 has Successfully Deleted.
+HTTP "DELETE" "/item/3" responded 204 in 59.4478 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 9.2346 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 9.6945 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 9.6395 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 7.7532 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 52.2134 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 24.0939 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 136.8155 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 22.9481 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 6.5130 ms
+Request all Items where TodoId = 2 from Repository.
+HTTP "GET" "/item/2" responded 200 in 9.4281 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 9.0982 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 12.3344 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 10.7252 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 10.7232 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 6.4089 ms
+Request all Items where TodoId = 2 from Repository.
+HTTP "GET" "/item/2" responded 200 in 7.4568 ms
+Request Item Id:5 Successfully Updated.
+HTTP "PUT" "/item/5" responded 204 in 36.6606 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 5.2917 ms
+Request all Items where TodoId = 2 from Repository.
+HTTP "GET" "/item/2" responded 200 in 7.0020 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 10.3654 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 22.8816 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 87.6679 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 11.3612 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 10.1180 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 19.5974 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 9.5700 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 9.5146 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 4.4035 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 4.3839 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 9.8989 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 9.5725 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 7.3871 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 4.8487 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 10.3952 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 4.2856 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 6.1371 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 4.9662 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 5.8487 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 12.1229 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 128.6970 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 30.6487 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 22.7102 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 9.5960 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 24.0019 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 38.1632 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 9.8348 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 17.4955 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 31.7982 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 6.9663 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 5.7154 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 39.2845 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 14.9086 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 5.4315 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 8.1805 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 8.1959 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 11.4852 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 15.2775 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 6.5601 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 115.1646 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 9.3950 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 36.4047 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 13.7848 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 8.7666 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 17.3267 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 5.8399 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 8.9904 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 103.4058 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 122.2042 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 8.0057 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 18.3971 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 9.0887 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 6.4406 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 132.6140 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 12.0139 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 14.2975 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 31.1466 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 118.2547 ms
+Error Found: in Field Name: "status" -> Error_Information: "Error converting value \"Pendi/ng\" to type 'TodoApp.API.Enum.EnumItemStatus'. Path 'status', line 4, position 24."
+HTTP "POST" "/item/" responded 400 in 226.4179 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 12.7420 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 378.6383 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 9.1664 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 119.8025 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 10.8883 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 55.2660 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 33.9655 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 7.1898 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 13.1877 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 8.9584 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 66.6142 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 820.5376 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 1730.1722 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 505.7464 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 16.5464 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 25.3475 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 17.5040 ms
+New Todo Successfully Created Id:31
+HTTP "POST" "/todo/" responded 201 in 470.6306 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 20.9109 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 15.4661 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 12.7139 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 28.1265 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 9.8228 ms
+New Todo Successfully Created Id:32
+HTTP "POST" "/todo/" responded 201 in 23.5613 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 11.9861 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 12.0722 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 7.0432 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 33.9707 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 28.8446 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 7.5133 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 18.5854 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 88.0406 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 41.3205 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 17.0079 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 15.8482 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 10.9282 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 5.4032 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 8.9531 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 12.4109 ms
+New Todo Successfully Created Id:33
+HTTP "POST" "/todo/" responded 201 in 26.3361 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 7.2826 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 9.8790 ms
+Todo Id:33 has Successfully Deleted.
+HTTP "DELETE" "/todo/33" responded 204 in 80.6207 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 6.3150 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 9.1028 ms
+Todo Id:32 has Successfully Deleted.
+HTTP "DELETE" "/todo/32" responded 204 in 12.2846 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 7.4317 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 9.8830 ms
+Todo Id:31 has Successfully Deleted.
+HTTP "DELETE" "/todo/31" responded 204 in 20.1221 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 5.7866 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 10.5766 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 7.0716 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 12.6101 ms
+New Todo Successfully Created Id:34
+HTTP "POST" "/todo/" responded 201 in 17.8044 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 5.1886 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 7.6159 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 5.1364 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 11.9843 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 19.3361 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 4.6954 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 5.2422 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 11.6041 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 7.3842 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 36.2037 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 22.9036 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 6.1687 ms
+New Todo Successfully Created Id:35
+HTTP "POST" "/todo/" responded 201 in 37.2493 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 41.3317 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 31.8188 ms
+New Todo Successfully Created Id:36
+HTTP "POST" "/todo/" responded 201 in 19.7159 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 12.5557 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 6.9289 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 6.4752 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 15.0230 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 41.3568 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 18.2628 ms
+Request all Items where TodoId = 2 from Repository.
+HTTP "GET" "/item/2" responded 200 in 183.7851 ms
+New Item Successfully Created Id:6.
+HTTP "POST" "/item/" responded 201 in 117.3049 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 16.3300 ms
+Request all Items where TodoId = 2 from Repository.
+HTTP "GET" "/item/2" responded 200 in 17.7905 ms
+Error Found: in Field Name: "Details" -> Error_Information: "'Details' is not in the correct format."
+HTTP "POST" "/item/" responded 400 in 5.9233 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 5.8915 ms
+Request all Items where TodoId = 2 from Repository.
+HTTP "GET" "/item/2" responded 200 in 7.6855 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 27.5908 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 12.5628 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 6.8801 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 39.6296 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 11.6765 ms
+New Todo Successfully Created Id:37
+HTTP "POST" "/todo/" responded 201 in 16.4264 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 15.3580 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 6.7369 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 7.5883 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 23.2668 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 19.4909 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 3.4764 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 17.2493 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 24.4990 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 8.1783 ms
+Request all Items where TodoId = 2 from Repository.
+HTTP "GET" "/item/2" responded 200 in 8.0159 ms
+New Item Successfully Created Id:7.
+HTTP "POST" "/item/" responded 201 in 22.9760 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 5.7722 ms
+Request all Items where TodoId = 2 from Repository.
+HTTP "GET" "/item/2" responded 200 in 19.6887 ms
+Error Found: in Field Name: "Details" -> Error_Information: "'Details' is not in the correct format."
+HTTP "POST" "/item/" responded 400 in 4.4270 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 6.8803 ms
+Request all Items where TodoId = 2 from Repository.
+HTTP "GET" "/item/2" responded 200 in 6.7287 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 270.5036 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 13.5883 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 3.9850 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 8.1246 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 9.3949 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 3.5201 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 10.5265 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 13.4629 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 12.9891 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 7.7996 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 9.1962 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 4.5469 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 12.3859 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 10.4528 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 2.7635 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 2.3935 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 13.4445 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 9.9561 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 3.8479 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 14.1510 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 6.2010 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 174.4305 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 2650.3673 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 686.5121 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 228.2237 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 18.3235 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 19.0167 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 35.7821 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 24.2679 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 14.3624 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo/" responded 200 in 31.0342 ms
+Request all Items where TodoId = 0 from Repository.
+HTTP "GET" "/item/0" responded 200 in 16.0107 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 110.3451 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 1241.7681 ms
+Application Start Up.
+The Application Failed To Start.
+System.IO.FileNotFoundException: Could not load file or assembly 'Handlers, Culture=neutral, PublicKeyToken=null'. The system cannot find the file specified.
+File name: 'Handlers, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, RuntimeAssembly assemblyContext, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, StackCrawlMark& stackMark, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at System.AppDomain.Load(String assemblyString)
+   at TodoApp.API.Startup.ConfigureServices(IServiceCollection services) in D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\Startup.cs:line 96
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.InvokeCore(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass9_0.<Invoke>g__Startup|0(IServiceCollection serviceCollection)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.Invoke(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass8_0.<Build>b__0(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.UseStartup(Type startupType, HostBuilderContext context, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass12_0.<UseStartup>b__0(HostBuilderContext context, IServiceCollection services)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at TodoApp.API.Program.Main(String[] args) in D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\Program.cs:line 28
+
+
+Application Start Up.
+The Application Failed To Start.
+System.IO.FileNotFoundException: Could not load file or assembly 'Handlers, Culture=neutral, PublicKeyToken=null'. The system cannot find the file specified.
+File name: 'Handlers, Culture=neutral, PublicKeyToken=null'
+   at System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, RuntimeAssembly assemblyContext, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, StackCrawlMark& stackMark, AssemblyLoadContext assemblyLoadContext)
+   at System.Reflection.Assembly.Load(String assemblyString)
+   at System.AppDomain.Load(String assemblyString)
+   at TodoApp.API.Startup.ConfigureServices(IServiceCollection services) in D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\Startup.cs:line 96
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.InvokeCore(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass9_0.<Invoke>g__Startup|0(IServiceCollection serviceCollection)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.Invoke(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass8_0.<Build>b__0(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.UseStartup(Type startupType, HostBuilderContext context, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass12_0.<UseStartup>b__0(HostBuilderContext context, IServiceCollection services)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at TodoApp.API.Program.Main(String[] args) in D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\Program.cs:line 28
+
+
+Application Start Up.
+HTTP "GET" "/" responded 404 in 78.0417 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 1755.4613 ms
+Error Found: in Field Name: "Description" -> Error_Information: "'Description' is not in the correct format."
+HTTP "POST" "/todo/" responded 400 in 410.0764 ms
+New Todo Successfully Created Id:38
+HTTP "POST" "/todo/" responded 201 in 770.8334 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 99.7950 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 4455.8923 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 116.3372 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 4789.8082 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 42.4597 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 1085.7002 ms
+HTTP "GET" "/favicon.ico" responded 404 in 0.6634 ms
+Request all Items where TodoId = 1 from Repository.
+HTTP "GET" "/item/1" responded 200 in 229.3004 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 30.7907 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 567.7762 ms
+Application Start Up.
+HTTP "GET" "/" responded 404 in 40.4822 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 518.5543 ms

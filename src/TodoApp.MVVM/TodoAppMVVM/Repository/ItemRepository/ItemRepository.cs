@@ -26,7 +26,7 @@ namespace TodoAppMVVM.Repository
             SQLiteCommand cmd = new SQLiteCommand(connect);
             cmd.CommandText = "INSERT INTO Item(Name, Detailed,Status,TodoModelId) VALUES(@name,@detailed,@status,@datalistId)";
             cmd.Parameters.AddWithValue("@name", data.Name);
-            cmd.Parameters.AddWithValue("@detailed", data.Detailed);
+            cmd.Parameters.AddWithValue("@detailed", data.Details);
             cmd.Parameters.AddWithValue("@status", data.Status);
             cmd.Parameters.AddWithValue("@datalistId", data.TodoId);
 
@@ -72,7 +72,7 @@ namespace TodoAppMVVM.Repository
                 {
                     Id = rd.GetInt32(0),
                     Name = rd.GetString(1),
-                    Detailed = rd.GetString(2),
+                    Details = rd.GetString(2),
                     Status = rd.GetString(3)
              
                 });
@@ -87,7 +87,7 @@ namespace TodoAppMVVM.Repository
         {
             int id = data.Id;
             string name = data.Name;
-            string des = data.Detailed;
+            string des = data.Details;
             string status = data.Status;
             connect = _buildConnection.DbConnection();
 

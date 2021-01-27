@@ -10,6 +10,7 @@ using System.Windows.Input;
 using TodoApp.MVVM;
 using TodoApp.MVVM.Commands;
 using TodoApp.MVVM.EventCommands;
+using TodoApp.MVVM.Helpers.RequestApi;
 using TodoApp.MVVM.IViewModels;
 using TodoAppMVVM.Models;
 using TodoAppMVVM.Services;
@@ -27,9 +28,11 @@ namespace TodoAppMVVM.ViewModels
         public int TodoId { get; set; }
 
         private readonly IUnitOfWork _unitOfWork;
-        public CreateItemViewModel(IUnitOfWork unitOfWork)
+        private readonly IRequestApi _request;
+        public CreateItemViewModel(IUnitOfWork unitOfWork, IRequestApi request)
         {
             _unitOfWork = unitOfWork;
+            _request = request;
         }
         #region Create/Update Button
         public ICommand CreateItemButton
@@ -38,7 +41,7 @@ namespace TodoAppMVVM.ViewModels
             {
                 if (createItemButton == null)
                 {
-                    createItemButton = new RelayCommand(() =>
+                    createItemButton = new RelayCommand(async () =>
                     {
                         var Message = "";
                         if (ItemName.Trim().Length != 0 && ItemDetailed.Trim().Length != 0 && SelectStatus.Length != 0)
@@ -49,24 +52,26 @@ namespace TodoAppMVVM.ViewModels
                                 {
                                     Id = Id,
                                     Name = ItemName,
-                                    Detailed = ItemDetailed,
+                                    Details = ItemDetailed,
                                     Status = SelectStatus
                                 };
-                                Console.WriteLine(updateData.Id + "-" + updateData.Name + "-" + updateData.Detailed + "-" + updateData.Status);
-                                var result = _unitOfWork.CatchResult(_unitOfWork.ItemServices.Update(updateData));
-                                Message = result;
+                                //Console.WriteLine(updateData.Id + "-" + updateData.Name + "-" + updateData.Details + "-" + updateData.Status);
+                                //var result = _unitOfWork.CatchResult(_unitOfWork.ItemServices.Update(updateData));
+                                var result = _request.ItemSendRequest.PutAsync(updateData);
+                                Message = result.ToString();
                             }
                             else
                             {
                                 var AddData = new Item
                                 {
                                     Name = ItemName,
-                                    Detailed = Detailed,
+                                    Details = Detailed,
                                     Status = SelectStatus,
                                     TodoId = TodoId
                                 };
-                                var result = _unitOfWork.CatchResult(_unitOfWork.ItemServices.Add(AddData));
-                                Message = result;
+                                //var result = _unitOfWork.CatchResult(_unitOfWork.ItemServices.Add(AddData));
+                                var result = await _request.ItemSendRequest.PostAsync(AddData);
+                                Message = result.ToString();
 
                             }
                             // Close windows

@@ -1,0 +1,12 @@
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Data\obj\Debug\netstandard2.0\Data.csprojAssemblyReference.cache
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Data\obj\Debug\netstandard2.0\Data.AssemblyInfoInputs.cache
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Data\obj\Debug\netstandard2.0\Data.AssemblyInfo.cs
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Data\obj\Debug\netstandard2.0\Data.csproj.CoreCompileInputs.cache
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Data\bin\Debug\netstandard2.0\Data.deps.json
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Data\bin\Debug\netstandard2.0\Data.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Data\bin\Debug\netstandard2.0\Data.pdb
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Data\obj\Debug\netstandard2.0\Data.csproj.CopyComplete
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Data\obj\Debug\netstandard2.0\Data.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Data\obj\Debug\netstandard2.0\Data.pdb
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Data\bin\Debug\netstandard2.0\Domain.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Data\bin\Debug\netstandard2.0\Domain.pdb

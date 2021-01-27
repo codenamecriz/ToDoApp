@@ -1,17 +1,16 @@
 ﻿using AutoMapper;
 using MediatR;
+using Models.DTOs;
 using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using TodoApp.API.Data;
-using TodoApp.API.DTOs.Todo;
-using TodoApp.API.Handlers.Commands.Todos.Update;
+using Domain.IRepository;
 using TodoApp.API.Models;
 
-namespace TodoApp.API.Handlers
+namespace Handlers.Commands
 {
     public class UpdateTodoHandler : IRequestHandler<UpdateTodoRequest, TodoUpdateDto>
     {

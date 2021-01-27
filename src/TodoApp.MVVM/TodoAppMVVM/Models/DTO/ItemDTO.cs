@@ -31,7 +31,7 @@ namespace TodoApp.MVVM.Models
             set { name = value; OnPropertyChanged("Name"); }
         }
 
-        public string Detailed
+        public string Details
         {
             get { return detailed; }
             set { detailed = value; OnPropertyChanged("Detailed"); }

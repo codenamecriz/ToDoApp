@@ -23,6 +23,7 @@ using System.Windows.Input;
 using TodoApp.MVVM.Commands;
 using TodoApp.MVVM.Services;
 using TodoApp.MVVM;
+using TodoApp.MVVM.Helpers.RequestApi;
 
 namespace TodoAppMVVM.ViewModels
 {
@@ -32,11 +33,13 @@ namespace TodoAppMVVM.ViewModels
         private readonly IDBContext _dbContext;
         private readonly ICreateItemViewModel _createItemViewModel;
         private readonly ICreateTodoViewModel _createTodoViewModel;
+        private readonly IRequestApi _request;
         private int ListId;
         public MainViewModel(IUnitOfWork unitofWork,
-            IDBContext dbContext, 
+            IDBContext dbContext,
             ICreateItemViewModel createItemViewModel,
-            ICreateTodoViewModel createTodoViewModel)
+            ICreateTodoViewModel createTodoViewModel, 
+            IRequestApi request)
         {
             _dbContext = dbContext;
             if (File.Exists("TodoDatabase.db"))
@@ -64,14 +67,18 @@ namespace TodoAppMVVM.ViewModels
             EditItemCommand = new DelegateCommand<ItemDTO>(ExecuteEditItemCommand);
             DeleteItemCommand = new DelegateCommand<ItemDTO>(ExecuteDeleteItemCommand);
             BackViewListCommand = new DelegateCommand(ExecuteBackViewListCommand);
+            _request = request;
             #endregion
 
         }
         #region Show() Load Data Collection
-        private void Show()
+        private async void Show()
         {
-            TodoListGrid = new ObservableCollection<TodoListDTO>(_unitOfWork.QeuriesServices.GetAll());
-            ItemsGrid = new ObservableCollection<ItemDTO>(_unitOfWork.QeuriesServices.GetItemById(ListId));
+            var todoDto = await _unitOfWork.QeuriesServices.GetAll();
+            TodoListGrid = new ObservableCollection<TodoListDTO>(todoDto);
+
+            var itemDto = await _unitOfWork.QeuriesServices.GetItemById(ListId);
+            ItemsGrid = new ObservableCollection<ItemDTO>(itemDto);
 
         }
         #endregion
@@ -150,8 +157,10 @@ namespace TodoAppMVVM.ViewModels
                 Name = parameter.Name,
                 Description = parameter.Description
             };
-            var result = _unitOfWork.CatchResult(_unitOfWork.TodoServices.RemoveList(todoParameter));
-            MessageBox.Show(result);
+            //var result = _unitOfWork.CatchResult(_unitOfWork.TodoServices.RemoveList(todoParameter));
+            //MessageBox.Show(result);
+            var result = _request.TodoSendRequest.DeleteAsync(parameter.Id);
+            MessageBox.Show(result.ToString());
             Show();
             //https://www.youtube.com/watch?v=IRE2PAD1kIM
         }
@@ -163,12 +172,13 @@ namespace TodoAppMVVM.ViewModels
             var itemParameter = new Item {
                 Id = parameter.Id,
                 Name = parameter.Name,
-                Detailed = parameter.Detailed,
+                Details = parameter.Details,
                 Status = parameter.Status,
 
             };
-            var result = _unitOfWork.CatchResult(_unitOfWork.ItemServices.RemoveItem(itemParameter));
-            MessageBox.Show(result);
+            //var result = _unitOfWork.CatchResult(_unitOfWork.ItemServices.RemoveItem(itemParameter));
+            var result = _request.ItemSendRequest.DeleteAsync(parameter.Id);
+            MessageBox.Show(result.ToString());
             Show();
         }
         #endregion
@@ -195,7 +205,7 @@ namespace TodoAppMVVM.ViewModels
 
             _createItemViewModel.Id = parameter.Id;
             _createItemViewModel.Name = parameter.Name;
-            _createItemViewModel.Detailed = parameter.Detailed;
+            _createItemViewModel.Detailed = parameter.Details;
             _createItemViewModel.Status = parameter.Status;
 
             CreateItemView itemoview = new CreateItemView();

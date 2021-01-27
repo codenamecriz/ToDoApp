@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using TodoApp.API.Enum;
+
+namespace Models.DTOs
+{
+    public class ItemUpdateDto
+    {
+    
+        public string Name { get; set; }
+      
+        public string Details { get; set; }
+        public EnumItemStatus Status { get; set; }
+        //public int TodoId { get; set; }
+    }
+}

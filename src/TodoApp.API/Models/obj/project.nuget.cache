@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "nSexcyWNWWMos3h9D8bJfRXs9mo07/XFRHkKz3dNHrDZCr+CXST6V0/JVoATLb30qlBZ19SYGZYqVG15Totcwg==",
+  "success": true,
+  "projectFilePath": "D:\\PPS SE\\Training Projects\\TodoApp.MVVM\\src\\TodoApp.API\\Models\\Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\cjabuni\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\cjabuni\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\cjabuni\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

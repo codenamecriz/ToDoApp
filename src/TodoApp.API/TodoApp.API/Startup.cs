@@ -17,8 +17,14 @@ using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using Serilog;
+using Services;
+using Services.Commands.Items;
+using Services.Commands.Todos;
+using Services.Queries.Items;
+using Services.Queries.Todos;
 using TodoApp.API.Data;
-using TodoApp.API.Filters;
+using Domain.IRepository;
+using TodoApp.API.Helpers.Filters;
 
 namespace TodoApp.API
 {
@@ -75,8 +81,23 @@ namespace TodoApp.API
             //services.AddValidatorsFromAssembly(typeof(Startup).Assembly);
             services.AddScoped<ITodoRepository, TodoRepository>();
             services.AddScoped<IItemRepository, ItemRepository>();
+
+            services.AddTransient<IDbAuthentication, DbAutentication>();
+           
+            services.AddScoped<IItemQueryService, ItemQueryService>();
+            services.AddScoped<IItemCommandService, ItemCommandService>();
+
+            services.AddScoped<ITodoQueryService, TodoQueryService>();
+            services.AddScoped<ITodoCommandService, TodoCommandService>();
+
+
+
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddMediatR(typeof(Startup));
+
+            //var assembly = AppDomain.CurrentDomain.Load("Handlers");
+            //services.AddMediatR(assembly);
+
             services.Configure<ApiBehaviorOptions>(options =>
             {
                 options.SuppressConsumesConstraintForFormFileParameters = true;

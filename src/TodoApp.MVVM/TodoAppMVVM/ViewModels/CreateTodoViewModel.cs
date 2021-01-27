@@ -11,7 +11,10 @@ using System.Windows.Input;
 using TodoApp.MVVM;
 using TodoApp.MVVM.Commands;
 using TodoApp.MVVM.EventCommands;
+using TodoApp.MVVM.Helpers.RequestApi;
 using TodoApp.MVVM.IViewModels;
+using TodoApp.MVVM.Models;
+using TodoApp.MVVM.Models.ValueObject;
 using TodoAppMVVM.Models;
 using TodoAppMVVM.Services;
 using TodoAppMVVM.Views;
@@ -26,10 +29,12 @@ namespace TodoAppMVVM.ViewModels
         public string Description { get; set; }
 
         private readonly IUnitOfWork _unitOfWork;
-      
-        public CreateTodoViewModel(IUnitOfWork unitOfWork)
+        private readonly IRequestApi _request;
+
+        public CreateTodoViewModel(IUnitOfWork unitOfWork, IRequestApi request)
         {
             _unitOfWork = unitOfWork;
+            _request = request;
         }
 
         #region Create/Update Button
@@ -39,7 +44,7 @@ namespace TodoAppMVVM.ViewModels
             {
                 if (createTodoButton == null)
                 {
-                    createTodoButton = new RelayCommand(() =>
+                    createTodoButton = new RelayCommand(async () =>
                     {
                         var Message = "";
                         if (ListName.Trim().Length != 0 && ListDescription.Trim().Length != 0)
@@ -52,19 +57,31 @@ namespace TodoAppMVVM.ViewModels
                                     Name = ListName,
                                     Description = ListDescription,
                                 };
-                                var result = _unitOfWork.CatchResult(_unitOfWork.TodoServices.Update(updateData));
-                                Message = result;
+                                //var result = _unitOfWork.CatchResult(_unitOfWork.TodoServices.Update(updateData));
+                                
+                                _request.TodoSendRequest.PutAsync(updateData);
+                                Message = "Successfully Updated.!";
 
                             }
                             else
                             {
-                                var AddData = new Todo
+                                var AddData = new TodoListDTO
                                 {
                                     Name = Name,
-                                    Description = Description,
+                                    Description = Description
                                 };
-                                var result = _unitOfWork.CatchResult(_unitOfWork.TodoServices.Add(AddData));
-                                Message = result;
+                                //var result = _unitOfWork.CatchResult(_unitOfWork.TodoServices.Add(AddData));
+                                var result = await _request.TodoSendRequest.PostAsync(AddData);
+
+                                if (result.Error == true)
+                                {
+                                    Message = $"Error: Field Name: {result.FieldName}.  Error Message: {result.ErrorInformation}.";
+                                }
+                                else
+                                {
+
+                                    Message = "New Data Successfully Added.!";//result.ToString();
+                                }
 
                             }
                             Close?.Invoke();  // Close windows

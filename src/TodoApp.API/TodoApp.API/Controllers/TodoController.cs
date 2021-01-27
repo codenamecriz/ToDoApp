@@ -1,21 +1,16 @@
 ﻿
 using AutoMapper;
+using Handlers.Commands;
+using Handlers.Queries;
 using MediatR;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using Models.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TodoApp.API.Data;
-using TodoApp.API.DTOs;
-using TodoApp.API.DTOs.Todo;
-using TodoApp.API.Handlers.Commands.Todos.Delete;
-using TodoApp.API.Handlers.Commands.Todos.Put;
-using TodoApp.API.Handlers.Commands.Todos.Update;
 using TodoApp.API.Models;
-using TodoApp.API.Services.Commands.Todos.Create;
-using TodoApp.API.Services.Queries;
 
 namespace TodoApp.API.Controllers 
 {

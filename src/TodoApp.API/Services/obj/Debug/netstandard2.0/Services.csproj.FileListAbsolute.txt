@@ -1,0 +1,14 @@
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Services\bin\Debug\netstandard2.0\Services.deps.json
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Services\bin\Debug\netstandard2.0\Services.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Services\bin\Debug\netstandard2.0\Services.pdb
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Services\bin\Debug\netstandard2.0\Data.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Services\bin\Debug\netstandard2.0\Data.pdb
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Services\obj\Debug\netstandard2.0\Services.csprojAssemblyReference.cache
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Services\obj\Debug\netstandard2.0\Services.AssemblyInfoInputs.cache
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Services\obj\Debug\netstandard2.0\Services.AssemblyInfo.cs
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Services\obj\Debug\netstandard2.0\Services.csproj.CoreCompileInputs.cache
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Services\obj\Debug\netstandard2.0\Services.csproj.CopyComplete
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Services\obj\Debug\netstandard2.0\Services.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Services\obj\Debug\netstandard2.0\Services.pdb
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Services\bin\Debug\netstandard2.0\Domain.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\Services\bin\Debug\netstandard2.0\Domain.pdb

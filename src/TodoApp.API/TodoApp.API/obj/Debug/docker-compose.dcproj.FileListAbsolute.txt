@@ -42,3 +42,9 @@ D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\obj\Debug\d
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\FluentValidation.AspNetCore.dll
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\FluentValidation.dll
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\FluentValidation.DependencyInjectionExtensions.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Data.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Handlers.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Models.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Data.pdb
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Handlers.pdb
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Models.pdb

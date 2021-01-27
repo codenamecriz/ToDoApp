@@ -144,7 +144,7 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Visibility="Hidden" Width="35" Header="Id" Binding="{Binding ItemId}"/>
                     <DataGridTextColumn Width="150" Header="Name" Binding="{Binding Name}"/>
-                    <DataGridTextColumn Width="*" Header="Detail" Binding="{Binding Detailed}"/>
+                    <DataGridTextColumn Width="*" Header="Detail" Binding="{Binding Details}"/>
                     <DataGridTextColumn Width="70" Header="Status" Binding="{Binding Status}"/>
 
 

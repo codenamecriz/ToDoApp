@@ -1,17 +1,16 @@
 ﻿using AutoMapper;
 using MediatR;
+using Models.DTOs;
 using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using TodoApp.API.Data;
-using TodoApp.API.DTOs;
+using Domain.IRepository;
 using TodoApp.API.Models;
-using static TodoApp.API.Enum.EnumItemStatus;
 
-namespace TodoApp.API.Handlers.Commands.Items.Create
+namespace Handlers.Commands
 {
     public class CreateItemHandler : IRequestHandler<CreateItemRequest, ItemCreateDto>
     {

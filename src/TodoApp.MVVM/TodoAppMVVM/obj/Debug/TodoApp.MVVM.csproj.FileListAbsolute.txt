@@ -353,3 +353,5 @@ D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.MVVM\TodoAppMVVM\obj\Debug\
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.MVVM\TodoAppMVVM\obj\Debug\TodoApp.MVVM.csproj.CopyComplete
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.MVVM\TodoAppMVVM\obj\Debug\TodoApp.MVVM.exe
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.MVVM\TodoAppMVVM\obj\Debug\TodoApp.MVVM.pdb
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.MVVM\TodoAppMVVM\bin\Debug\RestSharp.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.MVVM\TodoAppMVVM\bin\Debug\RestSharp.xml

@@ -248,3 +248,15 @@ Request Todo Id:21 To Update Not Found.
 HTTP "PUT" "/todo/21" responded 404 in 80.7603 ms
 The Todo Request Id:23 To Delete Not Found.
 HTTP "DELETE" "/todo/23" responded 404 in 45.0383 ms
+Application Start Up.
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 839.2390 ms
+HTTP "GET" "/favicon.ico" responded 404 in 1.0910 ms
+New Todo Successfully Created Id:3
+HTTP "POST" "/todo" responded 201 in 552.2333 ms
+Request Todo Id:21 To Update Not Found.
+HTTP "PUT" "/todo/21" responded 404 in 99.4417 ms
+The Todo Request Id:23 To Delete Not Found.
+HTTP "DELETE" "/todo/23" responded 404 in 31.0257 ms
+Request All Todo Data From Repository.
+HTTP "GET" "/todo" responded 200 in 19.5730 ms

@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "..\Data\Data.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "..\Models\Domain.csproj", "{53CB49DF-09D1-45E1-B8C1-5EBA839CC1A2}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoAppServices.UnitTest", "..\..\TodoApp.API.TEST\Services.UnitTest\TodoAppServices.UnitTest.csproj", "{737274F8-3F75-49C1-AD51-50CF707451F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoAppAPI.UnitTest", "..\..\TodoApp.API.TEST\TodoAppAPI.UnitTest\TodoAppAPI.UnitTest.csproj", "{3E0FA85A-18A4-41FB-986B-5BA2125D44FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{53CB49DF-09D1-45E1-B8C1-5EBA839CC1A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53CB49DF-09D1-45E1-B8C1-5EBA839CC1A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53CB49DF-09D1-45E1-B8C1-5EBA839CC1A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{737274F8-3F75-49C1-AD51-50CF707451F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{737274F8-3F75-49C1-AD51-50CF707451F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{737274F8-3F75-49C1-AD51-50CF707451F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{737274F8-3F75-49C1-AD51-50CF707451F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E0FA85A-18A4-41FB-986B-5BA2125D44FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E0FA85A-18A4-41FB-986B-5BA2125D44FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E0FA85A-18A4-41FB-986B-5BA2125D44FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E0FA85A-18A4-41FB-986B-5BA2125D44FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

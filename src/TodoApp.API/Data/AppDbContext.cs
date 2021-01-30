@@ -40,8 +40,9 @@ namespace TodoApp.API.Data
             modelBuilder
                 .Entity<Item>()
                 .Property(e => e.Status)
-                .HasConversion(converter);
-            base.OnModelCreating(modelBuilder); */
+                .HasConversion(converter);*/
+
+            base.OnModelCreating(modelBuilder); 
         }
         /*
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

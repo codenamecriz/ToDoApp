@@ -16,20 +16,43 @@ namespace Services.Queries.Items
             _itemRepository = itemRepository;
         }
 
-        public async Task<Item> GetItemByIdAsync(int id)
+       
+
+        public async Task<IEnumerable<GetItemDto>> GetTodoItemsByIdAsync(GetItemQuery queryId)
         {
-            if (id > 0)
+            if (queryId.Id > 0)
             {
-                return await _itemRepository.GetItemById(id);
+                var result =  await _itemRepository.GetTodoItemsById(queryId.Id);
+                var response = new List<GetItemDto>();
+                foreach(var item in  result)
+                {
+                    response.Add(new GetItemDto
+                    {
+                        Id = item.Id,
+                        Name = item.Name,
+                        Details = item.Details,
+                        Status = item.Status
+                        
+                    });
+                }
+                return response;
             }
             return null;
         }
 
-        public async Task<IEnumerable<Item>> GetTodoItemsByIdAsync(int id)
+        public async Task<GetItemDto> GetItemByIdAsync(GetItemQuery queryId)
         {
-            if (id > 0)
+            //var itemId = new Item { Id = queryId.Id };
+            if (queryId.Id > 0)
             {
-                return await _itemRepository.GetTodoItemsById(id);
+                 var result = await _itemRepository.GetItemById(queryId.Id);
+                var reponse = new GetItemDto 
+                {
+                    Id = result.Id,
+                    Name = result.Name,
+                    Details = result.Details
+                };
+                return reponse;
             }
             return null;
         }

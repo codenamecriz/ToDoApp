@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ODvDAS5zL4wCSbC82CRxfTMbR/L+XjTjN1rwxWBp+TBw+b7m8G1yULYoeZph40nv66/xGZMC71hLP37mKLFcFQ==",
+  "dgSpecHash": "vpB5L09vCYdR/+kRjHLUhYUqAExgc3BT3Ay3nHTb5nEcNI9P8X+YJ9xIYWv6UopoSgXUgFisgEtysqiY9dF7MA==",
   "success": true,
   "projectFilePath": "D:\\PPS SE\\Training Projects\\TodoApp.MVVM\\src\\TodoApp.API\\Data\\Data.csproj",
   "expectedPackageFiles": [
@@ -96,7 +96,9 @@
     "C:\\Users\\cjabuni\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.2\\system.threading.tasks.extensions.4.5.2.nupkg.sha512",
     "C:\\Users\\cjabuni\\.nuget\\packages\\system.threading.thread\\4.0.0\\system.threading.thread.4.0.0.nupkg.sha512",
     "C:\\Users\\cjabuni\\.nuget\\packages\\system.threading.threadpool\\4.0.10\\system.threading.threadpool.4.0.10.nupkg.sha512",
-    "C:\\Users\\cjabuni\\.nuget\\packages\\system.threading.timer\\4.0.1\\system.threading.timer.4.0.1.nupkg.sha512"
+    "C:\\Users\\cjabuni\\.nuget\\packages\\system.threading.timer\\4.0.1\\system.threading.timer.4.0.1.nupkg.sha512",
+    "C:\\Users\\cjabuni\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",
+    "C:\\Users\\cjabuni\\.nuget\\packages\\xunit.extensibility.core\\2.4.1\\xunit.extensibility.core.2.4.1.nupkg.sha512"
   ],
   "logs": []
 }

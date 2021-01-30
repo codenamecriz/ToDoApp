@@ -53,13 +53,13 @@ namespace TodoApp.API.Controllers
         [HttpPost]
         public async Task<ActionResult<ItemReadDto>> CreateItem(CreateItemRequest request)
         {
-            if (!ModelState.IsValid)
-            {
+            //if (!ModelState.IsValid)
+            //{
                 
-            }
+            //}
             var result = await _mediator.Send(request);
 
-            return CreatedAtAction(nameof(GetItemById), new { Id = result.Id }, result);
+            return result != null ? (ActionResult)CreatedAtAction(nameof(GetItemById), new { Id = result.Id }, result) : BadRequest();
 
         }
         #endregion
@@ -101,7 +101,7 @@ namespace TodoApp.API.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteTodo(int id)
         {
-            var result = await _mediator.Send(new DeleteItemRequest(id));
+            var result = await _mediator.Send(new DeleteItemRequest( id));
             return result != null ? (ActionResult)NoContent() : NotFound();
 
         }

@@ -25,17 +25,20 @@ namespace Handlers.Commands
         }
         public async Task<ItemCreateDto> Handle(CreateItemRequest request, CancellationToken cancellationToken)
         {
-            //if (request.Name != null && request.Details != null)
-            //{                
-                var itemModel = _mapper.Map<Item>(request);
-                await _itemService.CreateItemAsync(itemModel);
-           
-                Log.Information("New Item Successfully Created Id:{id}.",itemModel.Id);
-                return _mapper.Map<ItemCreateDto>(itemModel);
-            //}
-            //Log.Warning("Request must Required Name:{name} , Detailed:{detailed} , Status:{status}.", request.Name, request.Details,request.Status);
-            //Log.CloseAndFlush();
-            //return null;
+                  
+            var itemModel = _mapper.Map<CreateItemCommand>(request);
+            var result = await _itemService.CreateItemAsync(itemModel);
+
+            if(result.Id != 0)
+            {
+                Log.Information("New Item Successfully Created Id:{id}.", result.Id);
+                var itemDto =  _mapper.Map<ItemCreateDto>(itemModel);
+                var itemDto2 = _mapper.Map(result, itemDto);
+                return itemDto2;// _mapper.Map<ItemCreateDto>(itemModel);
+            }
+
+            return null;
+
         }
     }
 }

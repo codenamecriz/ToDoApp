@@ -2,6 +2,7 @@
 using Handlers;
 using Handlers.Commands;
 using Models.DTOs;
+using Services.Commands.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +42,15 @@ namespace TodoApp.API.Helpers.Profiles
 
             CreateMap<ItemResponseDto, Item>();
             CreateMap<Item, ItemResponseDto>();
+
+            CreateMap<CreateItemCommand, CreateItemRequest>();
+            CreateMap<CreateItemRequest, CreateItemCommand>();
+
+            CreateMap<CreateItemCommand, ItemCreateDto>();
+            CreateMap<ItemCreateDto, CreateItemCommand>();
+
+            CreateMap<ItemCreateDto, ResponseItemDto>();
+            CreateMap<ResponseItemDto, ItemCreateDto>();
         }
     }
 }

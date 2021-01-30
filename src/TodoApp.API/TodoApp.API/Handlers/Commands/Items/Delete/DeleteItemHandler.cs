@@ -10,29 +10,43 @@ using System.Threading.Tasks;
 using Services.IRepository;
 using Services.Commands.Items;
 using Services.Queries.Items;
+using TodoApp.API.Models;
+using Services.Commands.Items.Request;
 
 namespace Handlers.Commands
 {
-    public class DeleteItemHandler : IRequestHandler<DeleteItemRequest, ItemDeleteDto>
+    public class DeleteItemHandler : IRequestHandler<DeleteItemRequest, ItemDeleteDto> 
     {
-        private readonly IItemCommandService _itemCommandService;
-        private readonly IItemQueryService _itemQueryService;
+        //private readonly IItemCommandService _itemCommandService;
+        //private readonly IItemQueryService _itemQueryService;
+        private readonly IItemRepository _itemRepository;
         private readonly IMapper _mapper;
 
-        public DeleteItemHandler(IItemCommandService itemCommandService, IMapper mapper, IItemQueryService itemQueryService)
+        public DeleteItemHandler(IItemRepository itemRepository, IMapper mapper)//, IItemQueryService itemQueryService)
         {
-            _itemCommandService = itemCommandService;
+            //_itemCommandService = itemCommandService;
+            _itemRepository = itemRepository;
             _mapper = mapper;
-            _itemQueryService = itemQueryService;
+            //_itemQueryService = itemQueryService;
         }
         public async Task<ItemDeleteDto> Handle(DeleteItemRequest request, CancellationToken cancellationToken)
         {
-            var itemFromRepo = await _itemQueryService.GetItemByIdAsync(request.Id);
+            //GetItemQuery itemId = new GetItemQuery(request.Id);
+
+            //var itemFromRepo = await _itemQueryService.GetItemByIdAsync(itemId);
+            var itemFromRepo = await _itemRepository.GetItemById(request.Id);
             if (itemFromRepo != null)
             {
-
-                await _itemCommandService.DeleteItemAsync(itemFromRepo);
-        
+                //var deleteItem = new Item 
+                //{ 
+                //    Id = itemFromRepo.Id,
+                //    Name = itemFromRepo.Name,
+                //    Details = itemFromRepo.Details,
+                //    Status = itemFromRepo.Status
+                //};
+                //await _itemCommandService.DeleteItemAsync(deleteItem);
+                await _itemRepository.DeleteItem(itemFromRepo);
+                _itemRepository.SaveChanges();
                 var result = new ItemDeleteDto { Id = request.Id };
                 Log.Information("Item Id:{id} has Successfully Deleted.", request.Id);
                 return result;

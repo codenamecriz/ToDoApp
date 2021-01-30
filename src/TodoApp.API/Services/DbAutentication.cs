@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Services.Commands.Items;
+using Services.Commands.Items.Request;
 using Services.IRepository;
 using TodoApp.API.Models;
 
+
 namespace Services
 {
+   
     public class DbAutentication : IDbAuthentication
     {
         private readonly IItemRepository _itemRepository;
@@ -20,8 +24,6 @@ namespace Services
             _itemRepository = itemRepository;
             _todoRepository = todoRepository;
 
-            
-            
         }
 
         
@@ -38,13 +40,14 @@ namespace Services
             }
             return value;
         }
-        public async Task<int>  CheckingIfExist(Item data)
+       
+        public async Task<int>  CheckingIfExist(BaseCommand data)
         {
             itemContainer.AddRange((IEnumerable<Item>) await _itemRepository.GetAllItem());
             var value = 0;
-            foreach (var Item in itemContainer)
+            foreach (var item in itemContainer)
             {
-                if (Item.Name == data.Name)
+                if (item.Name == data.Name)
                 {
                     value = 1;
                 }

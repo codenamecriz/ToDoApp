@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Services.IRepository;
 using TodoApp.API.Models;
+using Services.Commands.Items.Request;
 
 namespace Services.Commands.Items
 {
@@ -18,43 +19,75 @@ namespace Services.Commands.Items
             _dbAuthentication = dbAuthentication;
         }
 
-        public async Task<Item> CreateItemAsync(Item data)
+        public async Task<ResponseItemDto> CreateItemAsync(CreateItemCommand data)
         {
-            var result = _dbAuthentication.CheckingIfExist(data);
+            BaseCommand baseCmd = new BaseCommand {Name = data.Name };
+            var response = new ResponseItemDto(0);
+            var result = _dbAuthentication.CheckingIfExist(baseCmd);
             if (result.Result == 1)
             {
                 Log.Warning("Error:(CREATE) Name: {name} -> The 'ITEM' that you what to Create Have Matches in Database.",  data.Name);
-                return null;
+                return response;
             }
-            await _itemRepository.CreateItem(data);
+            Item itemModel = new Item 
+            {
+                Name = data.Name ,
+                Details = data.Details,
+                Status = data.Status,
+                TodoId = data.TodoId
+            };
+            await _itemRepository.CreateItem(itemModel);
             _itemRepository.SaveChanges();
-            return data;
+
+            response = new ResponseItemDto(itemModel.Id);
+            Console.WriteLine(itemModel.Id);
+            Console.WriteLine(response.Id);
+            return response;
         }
 
-        public async Task DeleteItemAsync(Item data)
+        
+        public async Task UpdateItemAsync(UpdateItemCommand data)
         {
-            var result = _dbAuthentication.CheckingIfExist(data);
+            BaseCommand baseCmd = new BaseCommand { Name = data.Name };
+            var result = _dbAuthentication.CheckingIfExist(baseCmd);
             if (result.Result == 1)
             {
-                await _itemRepository.DeleteItem(data);
-                _itemRepository.SaveChanges();
-            }
-            else 
-            { 
-                Log.Warning("Error:(DELETE) Id: {id} and Name: {name} -> The 'ITEM' that you what to Delete. Not Found in Database.", data.Id, data.Name); 
-            }
-        }
-        public async Task UpdateItemAsync(Item data)
-        {
-            var result = _dbAuthentication.CheckingIfExist(data);
-            if (result.Result == 1)
-            {
-                await _itemRepository.UpdateItem(data);
+                Item itemModel = new Item
+                {
+                    Name = data.Name,
+                    Details = data.Details,
+                    Status = data.Status,
+                };
+                await _itemRepository.UpdateItem(itemModel);
                 _itemRepository.SaveChanges();
             }
             else
             {
                 Log.Warning("Error:(UPDATE) Id: {id} and Name: {name} -> The 'ITEM' that you what to Update. Not Found in Database.", data.Id, data.Name);
+            }
+        }
+
+        public async Task DeleteItemAsync(DeleteItemCommand data)
+        {
+            BaseCommand baseCmd = new BaseCommand { Name = data.Name };
+            var result = _dbAuthentication.CheckingIfExist(baseCmd);
+            if (result.Result == 1)
+            {
+                Item itemModel = new Item
+                {
+                    Id = data.Id,
+                    Name = data.Name,
+                    Details = data.Details,
+                    Status = data.Status,
+                    TodoId = data.TodoId
+                    
+                };
+                await _itemRepository.DeleteItem(itemModel);
+                _itemRepository.SaveChanges();
+            }
+            else
+            {
+                Log.Warning("Error:(DELETE) Id: {id} and Name: {name} -> The 'ITEM' that you what to Delete. Not Found in Database.", data.Id, data.Name);
             }
         }
     }

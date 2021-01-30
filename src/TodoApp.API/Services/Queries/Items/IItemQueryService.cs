@@ -6,8 +6,8 @@ namespace Services.Queries.Items
 {
     public interface IItemQueryService
     {
-        Task<IEnumerable<Item>> GetTodoItemsByIdAsync(int id);
-        Task<Item> GetItemByIdAsync(int id);
+        Task<IEnumerable<GetItemDto>> GetTodoItemsByIdAsync(GetItemQuery id);
+        Task<GetItemDto> GetItemByIdAsync(GetItemQuery id);
 
     }
 }

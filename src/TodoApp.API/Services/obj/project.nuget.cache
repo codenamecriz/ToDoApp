@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9hDWvfMLU6M9o+ByAwAFXSqm4O36slvlWmZEMAtOMxlUb3ZEeulD46k9me8Ov3f0ylhmTsNqF8SEIbI4NGdxGQ==",
+  "dgSpecHash": "bzj1m1VnJjRV8s2WppCZ9LHknH3yPn2PHKzBtCi8VZeS/H6wIEedmQkzCxV5uK9DioACZeg33ax4ycNBm1SDRQ==",
   "success": true,
   "projectFilePath": "D:\\PPS SE\\Training Projects\\TodoApp.MVVM\\src\\TodoApp.API\\Services\\Services.csproj",
   "expectedPackageFiles": [
@@ -86,7 +86,9 @@
     "C:\\Users\\cjabuni\\.nuget\\packages\\system.threading.threadpool\\4.0.10\\system.threading.threadpool.4.0.10.nupkg.sha512",
     "C:\\Users\\cjabuni\\.nuget\\packages\\system.threading.timer\\4.0.1\\system.threading.timer.4.0.1.nupkg.sha512",
     "C:\\Users\\cjabuni\\.nuget\\packages\\system.xml.readerwriter\\4.0.11\\system.xml.readerwriter.4.0.11.nupkg.sha512",
-    "C:\\Users\\cjabuni\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512"
+    "C:\\Users\\cjabuni\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512",
+    "C:\\Users\\cjabuni\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",
+    "C:\\Users\\cjabuni\\.nuget\\packages\\xunit.extensibility.core\\2.4.1\\xunit.extensibility.core.2.4.1.nupkg.sha512"
   ],
   "logs": []
 }

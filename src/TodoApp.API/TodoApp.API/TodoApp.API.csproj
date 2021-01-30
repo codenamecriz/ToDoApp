@@ -39,6 +39,8 @@
     <Compile Remove="Migrations\20210120015934_initialize db.Designer.cs" />
     <Compile Remove="Migrations\20210120022403_initialize db.cs" />
     <Compile Remove="Migrations\20210120022403_initialize db.Designer.cs" />
+    <Compile Remove="Migrations\20210120061106_Initalize Db.cs" />
+    <Compile Remove="Migrations\20210120061106_Initalize Db.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -63,6 +65,7 @@
     <PackageReference Include="Serilog.Enrichers.Process" Version="2.0.1" />
     <PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
     <PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
   <ItemGroup>

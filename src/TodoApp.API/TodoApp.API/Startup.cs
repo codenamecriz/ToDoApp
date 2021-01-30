@@ -25,6 +25,7 @@ using Services.Queries.Todos;
 using TodoApp.API.Data;
 using Services.IRepository;
 using TodoApp.API.Helpers.Filters;
+using Microsoft.OpenApi.Models;
 
 namespace TodoApp.API
 {
@@ -47,6 +48,7 @@ namespace TodoApp.API
                 opt.UseMySql(Configuration.GetConnectionString("TodoAppConnection"), mySqlOptionsAction: MySqlOptions =>
                     {
                         MySqlOptions.EnableRetryOnFailure(maxRetryCount: 10, maxRetryDelay: TimeSpan.FromSeconds(1), errorNumbersToAdd: null);
+                        MySqlOptions.MigrationsAssembly("TodoApp.API");
                     });
             });
 
@@ -61,7 +63,7 @@ namespace TodoApp.API
                 });
             }); */
 
-            services.AddControllers(opt =>
+            services.AddMvc(opt =>
                 {
                     opt.Filters.Add<ValidationFilter>();
                 })
@@ -89,7 +91,7 @@ namespace TodoApp.API
 
             services.AddScoped<ITodoQueryService, TodoQueryService>();
             services.AddScoped<ITodoCommandService, TodoCommandService>();
-
+            //services.AddTransient<IDbAuthenticationTests, DbAuthenticationTests>();
 
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -105,6 +107,14 @@ namespace TodoApp.API
                 options.SuppressModelStateInvalidFilter = true;
             });
 
+            services.AddSwaggerGen(c => {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "TodoApp.API",
+                    Description = "Asp.net CORE Web API TodoApp"
+                }); });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -116,6 +126,14 @@ namespace TodoApp.API
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c => 
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json","TodoApp.API");
+                c.RoutePrefix = string.Empty;
+            });
+
             PrepDb.PrepPopulation(app);
             app.UseHttpsRedirection();
             app.UseSerilogRequestLogging();

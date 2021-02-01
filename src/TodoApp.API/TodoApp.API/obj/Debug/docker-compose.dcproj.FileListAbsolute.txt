@@ -52,9 +52,3 @@ D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\S
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Microsoft.OpenApi.dll
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Domain.pdb
 D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Services.pdb
-D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\Microsoft.TestPlatform.PlatformAbstractions.dll
-D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\testhost.exe
-D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\testhost.dll
-D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\xunit.runner.visualstudio.dotnetcore.testadapter.dll
-D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\xunit.runner.reporters.netcoreapp10.dll
-D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API\bin\Debug\xunit.runner.utility.netcoreapp10.dll

@@ -1,0 +1,22 @@
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API.TEST\TodoAppAPI.UnitTest\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API.TEST\TodoAppAPI.UnitTest\bin\Debug\netcoreapp3.1\appsettings.json
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API.TEST\TodoAppAPI.UnitTest\bin\Debug\netcoreapp3.1\DPPS SETraining ProjectsTodoApp.MVVMDocsTodoApp.Api.Logslog.json
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API.TEST\TodoAppAPI.UnitTest\bin\Debug\netcoreapp3.1\TodoApp.API.exe
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API.TEST\TodoAppAPI.UnitTest\bin\Debug\netcoreapp3.1\TodoAppAPI.UnitTest.deps.json
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API.TEST\TodoAppAPI.UnitTest\bin\Debug\netcoreapp3.1\TodoAppAPI.UnitTest.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API.TEST\TodoAppAPI.UnitTest\bin\Debug\netcoreapp3.1\TodoAppAPI.UnitTest.pdb
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API.TEST\TodoAppAPI.UnitTest\bin\Debug\netcoreapp3.1\Data.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API.TEST\TodoAppAPI.UnitTest\bin\Debug\netcoreapp3.1\Domain.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API.TEST\TodoAppAPI.UnitTest\bin\Debug\netcoreapp3.1\Services.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API.TEST\TodoAppAPI.UnitTest\bin\Debug\netcoreapp3.1\TodoApp.API.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API.TEST\TodoAppAPI.UnitTest\bin\Debug\netcoreapp3.1\TodoApp.API.pdb
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API.TEST\TodoAppAPI.UnitTest\bin\Debug\netcoreapp3.1\Data.pdb
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API.TEST\TodoAppAPI.UnitTest\bin\Debug\netcoreapp3.1\Domain.pdb
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API.TEST\TodoAppAPI.UnitTest\bin\Debug\netcoreapp3.1\Services.pdb
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API.TEST\TodoAppAPI.UnitTest\obj\Debug\netcoreapp3.1\TodoAppAPI.UnitTest.csprojAssemblyReference.cache
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API.TEST\TodoAppAPI.UnitTest\obj\Debug\netcoreapp3.1\TodoAppAPI.UnitTest.AssemblyInfoInputs.cache
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API.TEST\TodoAppAPI.UnitTest\obj\Debug\netcoreapp3.1\TodoAppAPI.UnitTest.AssemblyInfo.cs
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API.TEST\TodoAppAPI.UnitTest\obj\Debug\netcoreapp3.1\TodoAppAPI.UnitTest.csproj.CoreCompileInputs.cache
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API.TEST\TodoAppAPI.UnitTest\obj\Debug\netcoreapp3.1\TodoAppAPI.UnitTest.csproj.CopyComplete
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API.TEST\TodoAppAPI.UnitTest\obj\Debug\netcoreapp3.1\TodoAppAPI.UnitTest.dll
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API.TEST\TodoAppAPI.UnitTest\obj\Debug\netcoreapp3.1\TodoAppAPI.UnitTest.pdb

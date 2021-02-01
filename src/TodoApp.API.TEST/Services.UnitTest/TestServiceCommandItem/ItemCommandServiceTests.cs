@@ -3,6 +3,7 @@ using Moq;
 using NSubstitute;
 using Services;
 using Services.Commands.Items;
+using Services.Commands.Items.Request;
 using Services.IRepository;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,7 @@ namespace TodoAppServices.UnitTest.TestServiceCommandItem
         }
 
         [Fact]
-        public async Task CreateItemAsync_ShouldReturnId_WhenSuccessfulyCreated()
+        public async Task CreateItemAsync_ShouldBeSuccess_WhenCreated()
         {
             //Range - Expected
             var itemData = new CreateItemCommand 
@@ -43,8 +44,8 @@ namespace TodoAppServices.UnitTest.TestServiceCommandItem
             //_itemRepositoryMock.Setup(x => x.GetAllItem()).ReturnsAsync(GetItemByIdSampleData());
 
             //_itemRepositoryMock.Setup(x => x.SaveChanges()).Returns((Delegate)_itemRepositoryMock.Setup(x => x.CreateItem(itemToSave)).Returns(CreatedItem()));
-            Mock<AppDbContext> dbContext = new Mock<AppDbContext>();
-
+            //Mock<AppDbContext> dbContext = new Mock<AppDbContext>();
+          
             _itemRepositoryMock.Setup(x => x.CreateItem(item));
             //_itemRepositoryMock.Setup(x => x.SaveChanges());
             var result = await _sut.CreateItemAsync(itemData);
@@ -56,6 +57,62 @@ namespace TodoAppServices.UnitTest.TestServiceCommandItem
             //Assert.True(result.Id > 0);
 
         }
+        [Theory]
+        [InlineData(4, "House", "Detalye", EnumItemStatus.Done, 1)]
+        //[InlineData(4, "", "Ditalye", EnumItemStatus.Done, 1)]
+        public async Task CreateItemAsync_ShouldFaild_If_The_EntryName_Is_ExistInDatabase(
+            int id,
+            string name,
+            string details,
+            EnumItemStatus status,
+            int todoId)
+        {
+            var expected = new ResponseItemDto(0);
+            var itemData = new CreateItemCommand
+            {
+                Name = name,
+                Details = details,
+                Status = status,
+                TodoId = todoId
+            };
+            var baseCommand = new BaseCommand { Id = id, Name = name};
+            //Actual
+        
+            _dbAuthenticationMock.Setup(x => x.CheckingIfExist(It.IsAny<BaseCommand>())).ReturnsAsync(() => 1);
+            var result = await _sut.CreateItemAsync(itemData);
+            
+            //var finalResult = result.Returns();
+            //int res = result.Id;
+            result.Should().Be(expected);
+            //Assert
+
+        }
+
+        //[Theory]
+        //[InlineData(4, "House", "", EnumItemStatus.Done, 1)]
+        ////[InlineData(4, "", "Ditalye", EnumItemStatus.Done, 1)]
+        //public async Task CreateItemAsync_ShouldFaild_IfOneOfTheFieldIsEmptyAsync(
+        //    int id,
+        //    string name,
+        //    string details,
+        //    EnumItemStatus status,
+        //    int todoId)
+        //{
+        //    var itemData = new CreateItemCommand
+        //    {
+        //        Name = name,
+        //        Details = details,
+        //        Status = status,
+        //        TodoId = todoId
+        //    };
+        //    var baseCommand = new BaseCommand { Id = id, Name = name };
+        //    //Actual
+        //    var item = GetItemByIdSampleData()[0];
+        //    _dbAuthenticationMock.Setup(x => x.CheckingIfExist(baseCommand)).ReturnsAsync(1);
+
+
+        //}
+
         private List<Item> GetItemByIdSampleData()
         {
             var itemData = new List<Item>

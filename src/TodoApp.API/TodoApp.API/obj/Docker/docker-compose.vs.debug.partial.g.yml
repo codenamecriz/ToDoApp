@@ -16,7 +16,7 @@ services:
     volumes:
       - D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API:/app
       - D:\PPS SE\Training Projects\TodoApp.MVVM\src\TodoApp.API\TodoApp.API:/src
-      - C:\Users\CARL JAYSON A. BUÑI\vsdbg\vs2017u5:/remote_debugger:rw
+      - C:\Users\cjabuni\vsdbg\vs2017u5:/remote_debugger:rw
 #$nuget_volume_mapping_todoapp.api$
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro

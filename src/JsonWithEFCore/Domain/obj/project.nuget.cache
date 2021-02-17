@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "AIMRCOVHjGa/1r9UDG8eQM9SMP7h+bwwHUkeQVw3ILQaqA1m5O6df7D+UKdqSdGSp6XpAgzuhSiJ+VuEWn3FtQ==",
+  "success": true,
+  "projectFilePath": "D:\\ITD_Files\\PPS_Project\\JsonWithEFCore\\Domain\\Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\cjabuni\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\cjabuni\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\cjabuni\\.nuget\\packages\\pomelo.jsonobject\\2.2.1\\pomelo.jsonobject.2.2.1.nupkg.sha512"
+  ],
+  "logs": []
+}

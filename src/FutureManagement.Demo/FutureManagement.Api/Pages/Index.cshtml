@@ -1,0 +1,47 @@
+﻿
+
+
+@page
+@model IndexModel
+
+@using Microsoft.FeatureManagement
+@inject IFeatureManager FeatureManager
+@addTagHelper *, Microsoft.FeatureManagement.AspNetCore
+
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+
+    <feature name="MessageScheduleFlag">
+        <h2>Message Send.</h2>
+    </feature>
+
+
+    <feature name="NewFeatureFlag" requirement="All">
+        <a asp-action="NewFeature">Go To the new feature</a>
+
+    </feature>
+
+    <feature name="BrowserFlag">
+        <h2>You can see this in edge browser.</h2>
+    </feature>
+
+    <feature name="DevEnvironment">
+        <h3>This is Development.</h3>
+    </feature>
+
+    <feature name="SwitchFlag">
+        <h3>This is SwitchFlag.</h3>
+    </feature>
+
+    <feature name="MessagesGreetingsFlag">
+        <h3>This is MessagesGreetingsFlag.</h3>
+    </feature>
+
+    <div class="small">@DateTime.UtcNow.ToString("O")</div>
+</div>

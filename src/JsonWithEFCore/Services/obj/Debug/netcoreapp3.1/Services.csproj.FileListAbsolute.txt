@@ -1,0 +1,9 @@
+D:\ITD_Files\PPS_Project\JsonWithEFCore\Services\bin\Debug\netcoreapp3.1\Services.deps.json
+D:\ITD_Files\PPS_Project\JsonWithEFCore\Services\bin\Debug\netcoreapp3.1\Services.dll
+D:\ITD_Files\PPS_Project\JsonWithEFCore\Services\bin\Debug\netcoreapp3.1\Services.pdb
+D:\ITD_Files\PPS_Project\JsonWithEFCore\Services\obj\Debug\netcoreapp3.1\Services.csprojAssemblyReference.cache
+D:\ITD_Files\PPS_Project\JsonWithEFCore\Services\obj\Debug\netcoreapp3.1\Services.AssemblyInfoInputs.cache
+D:\ITD_Files\PPS_Project\JsonWithEFCore\Services\obj\Debug\netcoreapp3.1\Services.AssemblyInfo.cs
+D:\ITD_Files\PPS_Project\JsonWithEFCore\Services\obj\Debug\netcoreapp3.1\Services.csproj.CoreCompileInputs.cache
+D:\ITD_Files\PPS_Project\JsonWithEFCore\Services\obj\Debug\netcoreapp3.1\Services.dll
+D:\ITD_Files\PPS_Project\JsonWithEFCore\Services\obj\Debug\netcoreapp3.1\Services.pdb

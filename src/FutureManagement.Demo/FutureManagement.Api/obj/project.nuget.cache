@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "LR+o57esQUBb2i9eWt4OlxRym4/Ob6YskrBnPceh0m/5QngvriX26mkFgZ4s/go8qE9VGH+gEIr74PgZXMWQgQ==",
+  "success": true,
+  "projectFilePath": "D:\\PPS SE\\Training Projects\\TodoApp.MVVM\\src\\FutureManagement.Demo\\FutureManagement.Api\\FutureManagement.Api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\cjabuni\\.nuget\\packages\\microsoft.extensions.configuration\\2.1.1\\microsoft.extensions.configuration.2.1.1.nupkg.sha512",
+    "C:\\Users\\cjabuni\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\2.1.1\\microsoft.extensions.configuration.abstractions.2.1.1.nupkg.sha512",
+    "C:\\Users\\cjabuni\\.nuget\\packages\\microsoft.extensions.configuration.binder\\2.1.10\\microsoft.extensions.configuration.binder.2.1.10.nupkg.sha512",
+    "C:\\Users\\cjabuni\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.1.1\\microsoft.extensions.dependencyinjection.abstractions.2.1.1.nupkg.sha512",
+    "C:\\Users\\cjabuni\\.nuget\\packages\\microsoft.extensions.logging\\2.1.1\\microsoft.extensions.logging.2.1.1.nupkg.sha512",
+    "C:\\Users\\cjabuni\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\2.1.1\\microsoft.extensions.logging.abstractions.2.1.1.nupkg.sha512",
+    "C:\\Users\\cjabuni\\.nuget\\packages\\microsoft.extensions.options\\2.1.1\\microsoft.extensions.options.2.1.1.nupkg.sha512",
+    "C:\\Users\\cjabuni\\.nuget\\packages\\microsoft.extensions.primitives\\2.1.1\\microsoft.extensions.primitives.2.1.1.nupkg.sha512",
+    "C:\\Users\\cjabuni\\.nuget\\packages\\microsoft.featuremanagement\\2.2.0\\microsoft.featuremanagement.2.2.0.nupkg.sha512",
+    "C:\\Users\\cjabuni\\.nuget\\packages\\microsoft.featuremanagement.aspnetcore\\2.2.0\\microsoft.featuremanagement.aspnetcore.2.2.0.nupkg.sha512",
+    "C:\\Users\\cjabuni\\.nuget\\packages\\system.memory\\4.5.1\\system.memory.4.5.1.nupkg.sha512",
+    "C:\\Users\\cjabuni\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.1\\system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512"
+  ],
+  "logs": []
+}

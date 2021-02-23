@@ -1,0 +1,15 @@
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\RedisDemoApp\RedisDemo\obj\Debug\netcoreapp3.1\RedisDemo.csprojAssemblyReference.cache
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\RedisDemoApp\RedisDemo\obj\Debug\netcoreapp3.1\RedisDemo.AssemblyInfoInputs.cache
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\RedisDemoApp\RedisDemo\obj\Debug\netcoreapp3.1\RedisDemo.AssemblyInfo.cs
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\RedisDemoApp\RedisDemo\obj\Debug\netcoreapp3.1\RedisDemo.csproj.CoreCompileInputs.cache
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\RedisDemoApp\RedisDemo\obj\Debug\netcoreapp3.1\RedisDemo.MvcApplicationPartsAssemblyInfo.cache
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\RedisDemoApp\RedisDemo\obj\Debug\netcoreapp3.1\RedisDemo.RazorComponent.input.cache
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\RedisDemoApp\RedisDemo\obj\Debug\netcoreapp3.1\RazorDeclaration\App.razor.g.cs
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\RedisDemoApp\RedisDemo\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Counter.razor.g.cs
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\RedisDemoApp\RedisDemo\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\FetchData.razor.g.cs
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\RedisDemoApp\RedisDemo\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Index.razor.g.cs
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\RedisDemoApp\RedisDemo\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\MainLayout.razor.g.cs
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\RedisDemoApp\RedisDemo\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\NavMenu.razor.g.cs
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\RedisDemoApp\RedisDemo\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\RedisDemoApp\RedisDemo\obj\Debug\netcoreapp3.1\RazorDeclaration\_Imports.razor.g.cs
+D:\PPS SE\Training Projects\TodoApp.MVVM\src\RedisDemoApp\RedisDemo\obj\Debug\netcoreapp3.1\RedisDemo.RazorComponent.output.cache
